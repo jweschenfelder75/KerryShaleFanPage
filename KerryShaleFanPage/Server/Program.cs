@@ -11,12 +11,31 @@ namespace KerryShaleFanPage
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
-            builder.Services.AddControllersWithViews();
-            builder.Services.AddRazorPages();
+            ConfigureServices(builder.Services);
 
             var app = builder.Build();
 
+            app = ConfigureApplication(app);
+
+            app.Run();
+        }
+
+        /// <summary>
+        /// Configures the given ServiceCollection
+        /// </summary>
+        /// <param name="services">ServiceCollection</param>
+        private static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+        }
+
+        /// <summary>
+        /// Configures the given WebApplication
+        /// </summary>
+        /// <param name="app">WebApplication</param>
+        private static WebApplication ConfigureApplication(WebApplication app)
+        {
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -36,12 +55,11 @@ namespace KerryShaleFanPage
 
             app.UseRouting();
 
-
             app.MapRazorPages();
             app.MapControllers();
             app.MapFallbackToFile("index.html");
 
-            app.Run();
+            return app;
         }
     }
 }
