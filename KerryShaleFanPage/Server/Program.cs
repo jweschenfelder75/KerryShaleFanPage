@@ -3,10 +3,25 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using NLog;
 using NLog.Extensions.Logging;
 using NLog.Web;
-using System;
+using KerryShaleFanPage.Server.Services;
+using KerryShaleFanPage.Shared.Objects.ListenNotes;
+using KerryShaleFanPage.Shared.Objects.Spotify;
+using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
+using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
+using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
+using KerryShaleFanPage.Server.Services.BusinessLogic;
+using KerryShaleFanPage.Context.Contexts;
+using KerryShaleFanPage.Context.Entities;
+using KerryShaleFanPage.Context.Repositories;
+using KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo;
+using KerryShaleFanPage.Server.Interfaces.Repositories;
+using KerryShaleFanPage.Server.Services.Repositories;
+using KerryShaleFanPage.Shared.Objects;
+using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
 
 namespace KerryShaleFanPage
 {
@@ -26,7 +41,7 @@ namespace KerryShaleFanPage
                 var builder = WebApplication.CreateBuilder(args);
 
                 // Add services to the container.
-                ConfigureServices(builder.Services);
+                ConfigureServices(builder.Services, builder.Configuration);
 
                 var app = builder.Build();
 
@@ -45,7 +60,7 @@ namespace KerryShaleFanPage
         }
 
         /// <summary>
-        /// Creates the Host Buiilder
+        /// Creates the Host Builder
         /// </summary>
         /// <param name="args">Optional arguments from Main method</param>
         /// <returns></returns>
@@ -60,10 +75,24 @@ namespace KerryShaleFanPage
         /// Configures the given ServiceCollection
         /// </summary>
         /// <param name="services">ServiceCollection</param>
-        private static void ConfigureServices(IServiceCollection services)
+        /// <param name="configuration"></param>
+        private static void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.Add(new ServiceDescriptor(typeof(PodcastEpisodeDbContext), new PodcastEpisodeDbContext(configuration.GetConnectionString("Storage"))));
+            services.AddSingleton<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
+            services.AddSingleton<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
+
+            // services.AddSingleton<ITwitterCrawlApiService, TwitterCrawlApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
+            // services.AddSingleton<ITwitterTweetApiService, TwitterTweetApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
+            // services.AddSingleton<IGenericCrawlHtmlService<TwitterEpisode>, TwitterCrawlHtmlService>();  // TODO: Unfinished & untested.
+            services.AddSingleton<IGenericCrawlHtmlService<ListenNotesEpisode>, ListenNotesCrawlHtmlService>();
+            services.AddSingleton<IGenericCrawlHtmlService<SpotifyEpisode>, SpotifyCrawlHtmlService>();
+            services.AddSingleton<IPodcastBusinessLogicService, PodcastBusinessLogicService>();
+
+            services.AddHostedService<TimedHostedService>();
         }
 
         /// <summary>
