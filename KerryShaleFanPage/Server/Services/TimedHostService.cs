@@ -11,6 +11,7 @@ namespace KerryShaleFanPage.Server.Services
     {
         private readonly ILogger<TimedHostedService> _logger;  // TODO: Implement logging!
         private readonly IPodcastBusinessLogicService _podcastBusinessLogicService;
+        private Timer? _timer = null;
 
         private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(1);  // Make configurable!
 
@@ -20,27 +21,42 @@ namespace KerryShaleFanPage.Server.Services
             _podcastBusinessLogicService = twitterBusinessLogicService;
         }
 
-        public async Task StartAsync(CancellationToken cancellationToken)
+        public Task StartAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation($"Timed Hosted Service running.");
 
+            _timer = new Timer(DoWork, cancellationToken, TimeSpan.Zero, _sleepPeriod);
+
+            return Task.CompletedTask;
+        }
+
+        private async void DoWork(object? state)
+        {
+            _logger.LogInformation($"Timed Hosted Service is working (execution every: {_sleepPeriod.TotalMinutes} min).");
+
+            CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+            var cancellationToken = cancellationTokenSource.Token;
+            if (state != null && state is CancellationToken) 
+            { 
+                cancellationToken = (CancellationToken)state;
+            }
+
+            // Ensure we cancel ourselves if the parent is cancelled.
+            cancellationToken.ThrowIfCancellationRequested();
+
+            using var childCancellationTokenSource = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+
+            // Set a timeout because sometimes stuff gets stuck.
+            childCancellationTokenSource.CancelAfter(TimeSpan.FromSeconds(30));
+
             try
             {
-                //while (!cancellationToken.IsCancellationRequested)  // TODO: BUG!!! Temporarily disabled!
-                //{
-                //    _logger.LogInformation($"Timed Hosted Service is working (execution every: {_sleepPeriod.TotalMinutes} min).");
+                await _podcastBusinessLogicService.DoWorkAsync(childCancellationTokenSource.Token);
 
-                //    try
-                //    {
-                //        await _podcastBusinessLogicService.DoWorkAsync(cancellationToken);
-
-                //        await Task.Delay(_sleepPeriod, cancellationToken);
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        var exception = ex;  // TODO: Log exception!
-                //    }
-                //}
+            }
+            catch (OperationCanceledException ex) when (childCancellationTokenSource.IsCancellationRequested)
+            {
+                var cancelledException = ex;  // TODO: Log exception!
             }
             catch (OperationCanceledException ex)
             {
@@ -50,17 +66,22 @@ namespace KerryShaleFanPage.Server.Services
             {
                 var exception = ex;  // TODO: Log exception!
             }
+
+            await Task.Delay(_sleepPeriod, cancellationToken);
         }
 
-        public Task StopAsync(CancellationToken stoppingToken)
+        public Task StopAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation("Timed Hosted Service is stopping.");
+
+            _timer?.Change(Timeout.Infinite, 0);
 
             return Task.CompletedTask;
         }
 
         public void Dispose()
         {
+            _timer?.Dispose();
         }
     }
 }

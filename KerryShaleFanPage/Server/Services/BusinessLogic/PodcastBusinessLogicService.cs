@@ -54,6 +54,8 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
 
                 _logger.LogInformation($"Podcast Business Logic Service (via Timed Hosted Service) was called.");
 
+                var latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceAsync(cancellationToken);
+
                 // var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
 
                 // latestPodcastEpisodeDto = FetchLatestPodcastEpisodeFromDatabase();
@@ -66,6 +68,8 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             {
                 var exception = ex;  // TODO: Log exception!
             }
+
+            return;
         }
 
         /// <summary>
