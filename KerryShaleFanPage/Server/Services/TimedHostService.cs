@@ -26,14 +26,21 @@ namespace KerryShaleFanPage.Server.Services
 
             try
             {
-                while (!cancellationToken.IsCancellationRequested)
-                {
-                    _logger.LogInformation($"Timed Hosted Service is working (execution every: {_sleepPeriod.TotalMinutes} min).");
+                //while (!cancellationToken.IsCancellationRequested)  // TODO: BUG!!! Temporarily disabled!
+                //{
+                //    _logger.LogInformation($"Timed Hosted Service is working (execution every: {_sleepPeriod.TotalMinutes} min).");
 
-                    await _podcastBusinessLogicService.DoWorkAsync(cancellationToken);
+                //    try
+                //    {
+                //        await _podcastBusinessLogicService.DoWorkAsync(cancellationToken);
 
-                    await Task.Delay(_sleepPeriod, cancellationToken);
-                }
+                //        await Task.Delay(_sleepPeriod, cancellationToken);
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        var exception = ex;  // TODO: Log exception!
+                //    }
+                //}
             }
             catch (OperationCanceledException ex)
             {
