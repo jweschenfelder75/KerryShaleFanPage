@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-// using System.Collections.Generic;
+using System.Collections.Generic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
 using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
@@ -10,8 +10,8 @@ using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects.ListenNotes;
 using KerryShaleFanPage.Shared.Objects.Spotify;
 using KerryShaleFanPage.Shared.Objects;
-// using KerryShaleFanPage.Server.Services.HtmlAndApiServices;  // TODO: Unfinished & untested.
-// using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;  // TODO: Unfinished & untested.
+using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
+using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
 
 namespace KerryShaleFanPage.Server.Services.BusinessLogic
 {

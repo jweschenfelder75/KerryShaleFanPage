@@ -11,12 +11,9 @@ namespace KerryShaleFanPage.Context.Contexts
             ConnectionString = connectionString;
         }
 
-        private MySqlConnection GetConnection()
-        {
-            return new MySqlConnection(ConnectionString);
-        }
+        public MySqlConnection GetConnection => new MySqlConnection(ConnectionString);
 
-        public string ConnectionString { get; set; }
+        public string ConnectionString { get; private set; }
 
         public DbSet<PodcastEpisode>? PodcastEpisodes { get; set; }
     }

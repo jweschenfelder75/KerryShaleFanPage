@@ -15,12 +15,22 @@ namespace KerryShaleFanPage.Server.Services
 
         private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(1);  // Make configurable!
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="twitterBusinessLogicService"></param>
         public TimedHostedService(ILogger<TimedHostedService> logger, IPodcastBusinessLogicService twitterBusinessLogicService)
         {
             _logger = logger;
             _podcastBusinessLogicService = twitterBusinessLogicService;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public Task StartAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation($"Timed Hosted Service running.");
@@ -30,14 +40,40 @@ namespace KerryShaleFanPage.Server.Services
             return Task.CompletedTask;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public Task StopAsync(CancellationToken cancellationToken)
+        {
+            _logger.LogInformation("Timed Hosted Service is stopping.");
+
+            _timer?.Change(Timeout.Infinite, 0);
+
+            return Task.CompletedTask;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Dispose()
+        {
+            _timer?.Dispose();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="state"></param>
         private async void DoWork(object? state)
         {
             _logger.LogInformation($"Timed Hosted Service is working (execution every: {_sleepPeriod.TotalMinutes} min).");
 
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
             var cancellationToken = cancellationTokenSource.Token;
-            if (state != null && state is CancellationToken) 
-            { 
+            if (state != null && state is CancellationToken)
+            {
                 cancellationToken = (CancellationToken)state;
             }
 
@@ -68,20 +104,6 @@ namespace KerryShaleFanPage.Server.Services
             }
 
             await Task.Delay(_sleepPeriod, cancellationToken);
-        }
-
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            _logger.LogInformation("Timed Hosted Service is stopping.");
-
-            _timer?.Change(Timeout.Infinite, 0);
-
-            return Task.CompletedTask;
-        }
-
-        public void Dispose()
-        {
-            _timer?.Dispose();
         }
     }
 }
