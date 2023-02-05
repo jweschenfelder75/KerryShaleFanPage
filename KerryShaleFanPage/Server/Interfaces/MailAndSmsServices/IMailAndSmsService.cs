@@ -13,7 +13,7 @@ public interface IMailAndSmsService
     /// <param name="message"></param>
     /// <param name="episode"></param>
     /// <returns></returns>
-    public bool SendMailNotification(string from, string to, string subject, string message, PodcastEpisodeDto? episode);
+    public bool SendMailNotification(string from, string to, string subject, string? message, PodcastEpisodeDto? episode);
 
     /// <summary>
     /// 
@@ -23,7 +23,7 @@ public interface IMailAndSmsService
     /// <param name="subject"></param>
     /// <param name="message"></param>
     /// <returns></returns>
-    public bool SendMailNotification(string from, string to, string subject, string message);
+    public bool SendMailNotification(string from, string to, string subject, string? message);
 
     /// <summary>
     /// 
@@ -34,7 +34,7 @@ public interface IMailAndSmsService
     /// <param name="message"></param>
     /// <param name="episode"></param>
     /// <returns></returns>
-    public bool SendSmsNotification(string from, string to, string subject, string message, PodcastEpisodeDto? episode);
+    public bool SendSmsNotification(string from, string to, string subject, string? message, PodcastEpisodeDto? episode);
 
     /// <summary>
     /// 
@@ -44,5 +44,5 @@ public interface IMailAndSmsService
     /// <param name="subject"></param>
     /// <param name="message"></param>
     /// <returns></returns>
-    public bool SendSmsNotification(string from, string to, string subject, string message);
+    public bool SendSmsNotification(string from, string to, string subject, string? message);
 }

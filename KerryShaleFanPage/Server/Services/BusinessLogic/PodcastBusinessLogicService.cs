@@ -3,9 +3,10 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
-using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
+using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
 using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects.ListenNotes;
@@ -18,6 +19,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
     public class PodcastBusinessLogicService : IPodcastBusinessLogicService
     {
         private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
+        private readonly IMailAndSmsService _mailAndSmsService;
         private readonly IGenericRepositoryService<PodcastEpisodeDto> _repositoryService;
         private readonly IGenericCrawlHtmlService<ListenNotesEpisode> _listenNotesCrawlService;
         private readonly IGenericCrawlHtmlService<SpotifyEpisode> _spotifyCrawlService;
@@ -28,12 +30,14 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// <summary>
         /// 
         /// </summary>
-        public PodcastBusinessLogicService(ILogger<PodcastBusinessLogicService> logger, IGenericRepositoryService<PodcastEpisodeDto> repositoryService,
-            IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
+        public PodcastBusinessLogicService(ILogger<PodcastBusinessLogicService> logger, IMailAndSmsService mailAndSmsService, 
+            IGenericRepositoryService<PodcastEpisodeDto> repositoryService, IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, 
+            IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
             /* , ITwitterCrawlApiService twitterCrawlApiService, ITwitterTweetApiService twitterTweetApiService */
             /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */)
         {
             _logger = logger;
+            _mailAndSmsService = mailAndSmsService;
             _repositoryService = repositoryService;
             _listenNotesCrawlService = listenNotesCrawlService;
             _spotifyCrawlService = spotifyCrawlService;
@@ -55,6 +59,8 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 _logger.LogInformation($"Podcast Business Logic Service (via Timed Hosted Service) was called.");
 
                 var latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceAsync(cancellationToken);
+
+                // var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);
 
                 // var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using AutoMapper.Configuration.Annotations;
 using Newtonsoft.Json;
 
@@ -48,13 +49,14 @@ namespace KerryShaleFanPage.Shared.Objects
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}"
-                , "Id:", Id, Environment.NewLine
-                , "Title:", Title, Environment.NewLine
-                , "Description:", Description, Environment.NewLine
-                , "ImageUrl:", ImageUrl, Environment.NewLine
-                , "Date:", Date, Environment.NewLine
-                , "Duration:", Duration, Environment.NewLine);
+            return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}"
+                , "Date: ", Date?.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture), Environment.NewLine
+                , "Title: ", Title, Environment.NewLine
+                , "TweetText: ", $"New podcast episode is out: Kerry Shale and Lucas Hare interview \"{Title}\". The next episode will probably be published on {CalculatedExpectedNextDate.ToString("dd MMM yyyy", CultureInfo.InvariantCulture)}.", Environment.NewLine
+                , "ImageUrl: ", ImageUrl, Environment.NewLine
+                , "Description: ", Description, Environment.NewLine
+                , "Duration: ", Duration, Environment.NewLine
+                , "Id: ", Id, Environment.NewLine);
         }
 
         /// <summary>

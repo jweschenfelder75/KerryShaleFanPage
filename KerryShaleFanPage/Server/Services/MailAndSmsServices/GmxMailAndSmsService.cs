@@ -9,8 +9,8 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
 {
     public class GmxMailAndSmsService : IMailAndSmsService
     {
-        public string UserName => "";
-        public string UserPassword => "";
+        public string UserName => "";  // TODO: Make configurable!
+        public string UserPassword => "";  // TODO: Make configurable!
 
         private const string _SMS_PREFIX = "[kerryshalefanpg-sms]";
         private const string _HOSTNAME = "mail.gmx.com";
@@ -27,7 +27,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
         }
 
         /// <inheritdoc cref="IMailAndSmsService"/>
-        public bool SendMailNotification(string from, string to, string subject, string message, PodcastEpisodeDto? episode)
+        public bool SendMailNotification(string from, string to, string subject, string? message, PodcastEpisodeDto? episode)
         {
             using var client = new SmtpClient
             {
@@ -43,7 +43,9 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
             using var mail = new MailMessage(from, to)
             {
                 Subject = subject,
-                Body = $"{message} {Environment.NewLine}{Environment.NewLine} {content}"
+                Body = (!string.IsNullOrWhiteSpace(message))
+                    ? $"{message}{Environment.NewLine}{Environment.NewLine}{content}"
+                    : content
             };
 
             try
@@ -61,7 +63,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
         }
 
         /// <inheritdoc cref="IMailAndSmsService"/>
-        public bool SendMailNotification(string from, string to, string subject, string message)
+        public bool SendMailNotification(string from, string to, string subject, string? message)
         {
             using var client = new SmtpClient
             {
@@ -76,7 +78,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
             using var mail = new MailMessage(from, to)
             {
                 Subject = subject,
-                Body = $"{message}"
+                Body = message ?? string.Empty
             };
 
             try
@@ -94,7 +96,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
         }
 
         /// <inheritdoc cref="IMailAndSmsService"/>
-        public bool SendSmsNotification(string from, string to, string subject, string message, PodcastEpisodeDto? episode)
+        public bool SendSmsNotification(string from, string to, string subject, string? message, PodcastEpisodeDto? episode)
         {
             // I cannot see at the moment that GMX supports it. Workaround: Send an e-mail and apply GMX filter rule then which sends an SMS.
 
@@ -102,7 +104,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
         }
 
         /// <inheritdoc cref="IMailAndSmsService"/>
-        public bool SendSmsNotification(string from, string to, string subject, string message)
+        public bool SendSmsNotification(string from, string to, string subject, string? message)
         {
             // I cannot see at the moment that GMX supports it. Workaround: Send an e-mail and apply GMX filter rule then which sends an SMS.
 
