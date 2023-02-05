@@ -2,8 +2,8 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using KerryShaleFanPage.Context.Entities;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo;
+using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
 {
@@ -26,7 +26,7 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
 
         /// TODO: UNFINISHED METHOD!
         /// <inheritdoc cref="ITwitterTweetPostService"/>
-        public async Task<bool> SendTweet(PodcastEpisode? episode, CancellationToken cancellationToken = default)
+        public async Task<bool> SendTweet(PodcastEpisodeDto? episode, CancellationToken cancellationToken = default)
         {
             // Current idea: Store all data from episode in files (TXT and JPG/PNG), then let some Monkey script read the data and send the tweet.
             // Question: Can a monkey script access a database directly? https://gist.github.com/n-bell/b375c80b638d3a59a250e903afb4a36b?

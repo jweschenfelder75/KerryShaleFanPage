@@ -46,6 +46,21 @@ namespace KerryShaleFanPage.Shared.Objects
         /// 
         /// </summary>
         /// <returns></returns>
+        public override string ToString()
+        {
+            return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}"
+                , "Id:", Id, Environment.NewLine
+                , "Title:", Title, Environment.NewLine
+                , "Description:", Description, Environment.NewLine
+                , "ImageUrl:", ImageUrl, Environment.NewLine
+                , "Date:", Date, Environment.NewLine
+                , "Duration:", Duration, Environment.NewLine);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private DateTime CalculateExpectedNextDate()
         {
             var today = DateTime.Now.Date;

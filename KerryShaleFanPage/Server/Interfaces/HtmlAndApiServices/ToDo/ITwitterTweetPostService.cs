@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using KerryShaleFanPage.Context.Entities;
+using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo
 {
@@ -14,6 +14,6 @@ namespace KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo
         /// <param name="episode"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public Task<bool> SendTweet(PodcastEpisode? episode, CancellationToken cancellationToken = default);
+        public Task<bool> SendTweet(PodcastEpisodeDto? episode, CancellationToken cancellationToken = default);
     }
 }
