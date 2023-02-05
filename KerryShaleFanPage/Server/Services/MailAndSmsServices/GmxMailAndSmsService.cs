@@ -1,10 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Net;
 using System.Net.Mail;
 using KerryShaleFanPage.Shared.Objects;
-using System;
+using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
 
-namespace KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo
+namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
 {
     public class GmxMailAndSmsService : IMailAndSmsService
     {

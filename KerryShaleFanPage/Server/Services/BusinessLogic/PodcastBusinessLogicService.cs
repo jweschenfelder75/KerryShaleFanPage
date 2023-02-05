@@ -6,11 +6,11 @@ using System.Collections.Generic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
 using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
+using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects.ListenNotes;
 using KerryShaleFanPage.Shared.Objects.Spotify;
 using KerryShaleFanPage.Shared.Objects;
-using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
 using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
 
 namespace KerryShaleFanPage.Server.Services.BusinessLogic

@@ -10,15 +10,18 @@ using NLog.Web;
 using KerryShaleFanPage.Server.Services;
 using KerryShaleFanPage.Shared.Objects.ListenNotes;
 using KerryShaleFanPage.Shared.Objects.Spotify;
-using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
-using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
-using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
-using KerryShaleFanPage.Server.Services.BusinessLogic;
 using KerryShaleFanPage.Context.Contexts;
 using KerryShaleFanPage.Context.Entities;
 using KerryShaleFanPage.Context.Repositories;
-using KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo;
+using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
+using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
+using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo;
+using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
+using KerryShaleFanPage.Server.Services.BusinessLogic;
+using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
+using KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo;
+using KerryShaleFanPage.Server.Services.MailAndSmsServices;
 using KerryShaleFanPage.Server.Services.Repositories;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
@@ -85,6 +88,7 @@ namespace KerryShaleFanPage
             services.AddSingleton<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
             services.AddSingleton<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
 
+            services.AddSingleton<IMailAndSmsService, GmxMailAndSmsService>();
             // services.AddSingleton<ITwitterCrawlApiService, TwitterCrawlApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
             // services.AddSingleton<ITwitterTweetApiService, TwitterTweetApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
             // services.AddSingleton<IGenericCrawlHtmlService<TwitterEpisode>, TwitterCrawlHtmlService>();  // TODO: Unfinished & untested.
