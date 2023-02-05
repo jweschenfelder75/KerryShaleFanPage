@@ -187,8 +187,8 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             var latestListenNotesEpisode = await _listenNotesCrawlService.GetLatestEpisodeAsync(cancellationToken);  // ListenNotes is obviously late
             if (latestListenNotesEpisode != null)
             {
-                var latestListenNotesImageData = await _listenNotesCrawlService.GetImageAsByteArrayAsync(latestListenNotesEpisode.ImageUrl ?? String.Empty, cancellationToken);
-                var latestListenNotesImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestListenNotesEpisode.ImageUrl ?? String.Empty, cancellationToken);
+                var latestListenNotesImageData = await _listenNotesCrawlService.GetImageAsByteArrayAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
+                var latestListenNotesImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
 
                 return new PodcastEpisodeDto()
                 {
@@ -220,8 +220,8 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             var latestSpotifyEpisode = await _spotifyCrawlService.GetLatestEpisodeAsync(cancellationToken);  // Backup 1, Spotify is obvioulsy faster than ListenNotes
             if (latestSpotifyEpisode != null)
             {
-                var latestSpotifyImageData = await _spotifyCrawlService.GetImageAsByteArrayAsync(latestSpotifyEpisode.ImageUrl ?? String.Empty, cancellationToken);  // Backup
-                var latestSpotifyImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestSpotifyEpisode.ImageUrl ?? String.Empty, cancellationToken);
+                var latestSpotifyImageData = await _spotifyCrawlService.GetImageAsByteArrayAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);  // Backup
+                var latestSpotifyImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);
 
                 return new PodcastEpisodeDto()
                 {

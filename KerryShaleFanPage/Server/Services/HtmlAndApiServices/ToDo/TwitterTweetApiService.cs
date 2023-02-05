@@ -23,8 +23,8 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
         public string ConsumerKey => "";  // TODO: Make configurable!
         public string ConsumerSecret => "";  // TODO: Make configurable!
 
-        private const string AuthorizationKey = "Authorization";
-        private const string ContentTypeValue = "application/json";
+        private const string _AUTHORIZATION_KEY = "Authorization";
+        private const string _CONTENT_TYPE = "application/json";
 
         private readonly ILogger<TwitterTweetApiService> _logger;  // TODO: Implement logging!
 
@@ -77,7 +77,7 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
             };
 
             await SendPostRequestAsync(baseUrl, queryParameters, cancellationToken);
-            //return JsonConvert.DeserializeObject<Tweets>(result ?? String.Empty);
+            //return JsonConvert.DeserializeObject<Tweets>(result ?? string.Empty);
             return false;
         }
 
@@ -181,8 +181,8 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
 
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Clear();
-            _httpClient.DefaultRequestHeaders.Add(AuthorizationKey, $"Bearer {bearerToken}");
-            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(ContentTypeValue));
+            _httpClient.DefaultRequestHeaders.Add(_AUTHORIZATION_KEY, $"Bearer {bearerToken}");
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(_CONTENT_TYPE));
         }
 
         /// <summary>
@@ -202,8 +202,8 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
 
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Clear();
-            _httpClient.DefaultRequestHeaders.Add(AuthorizationKey, $"Basic {stringBearerRequest}");
-            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(ContentTypeValue));
+            _httpClient.DefaultRequestHeaders.Add(_AUTHORIZATION_KEY, $"Basic {stringBearerRequest}");
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(_CONTENT_TYPE));
         }
     }
 }

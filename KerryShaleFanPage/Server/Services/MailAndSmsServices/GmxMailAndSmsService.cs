@@ -12,11 +12,11 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
         public string UserName => "";
         public string UserPassword => "";
 
-        private readonly ILogger<GmxMailAndSmsService> _logger;  // TODO: Implement logging!
-
         private const string _SMS_PREFIX = "[kerryshalefanpg-sms]";
         private const string _HOSTNAME = "mail.gmx.com";
         private const int _PORT = 587;
+
+        private readonly ILogger<GmxMailAndSmsService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 

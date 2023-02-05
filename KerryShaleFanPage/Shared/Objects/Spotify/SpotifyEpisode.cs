@@ -19,12 +19,12 @@ namespace KerryShaleFanPage.Shared.Objects.Spotify
         // https://i.scdn.co/image/ab67656300005f1fbe2a0e10f1a9ef6d28a93415 300w
         // https://i.scdn.co/image/ab6765630000ba8abe2a0e10f1a9ef6d28a93415 640w  <= This is what we want!
 
-        private const string SmallImagePrefix = "ab6765630000f68d";  // 64w
-        private const string MediumImagePrefix = "ab67656300005f1f";  // 300w
-        private const string LargeImagePrefix = "ab6765630000ba8a";  // 640w  <= This is what we want!
+        private const string _SMALL_IMAGE_PREFIX = "ab6765630000f68d";  // 64w
+        private const string _MEDIUM_IMAGE_PREFIX = "ab67656300005f1f";  // 300w
+        private const string _LARGE_IMAGE_PREFIX = "ab6765630000ba8a";  // 640w  <= This is what we want!
 
-        private const string LiteImageUrlPrefix = "https://lite-images-i.scdn.co";
-        private const string DefaultImageUrlPrefix = "https://i.scdn.co";  // <= This is what we want!
+        private const string _LITE_IMAGE_URL_PREFIX = "https://lite-images-i.scdn.co";
+        private const string _DEFAULT_IMAGE_URL_PREFIX = "https://i.scdn.co";  // <= This is what we want!
 
         [Key]
         public Guid Id { get; set; }
@@ -57,9 +57,9 @@ namespace KerryShaleFanPage.Shared.Objects.Spotify
             }
 
             return ImageBaseUrl
-                .Replace(LiteImageUrlPrefix, DefaultImageUrlPrefix)
-                .Replace(SmallImagePrefix, LargeImagePrefix)
-                .Replace(MediumImagePrefix, LargeImagePrefix);
+                .Replace(_LITE_IMAGE_URL_PREFIX, _DEFAULT_IMAGE_URL_PREFIX)
+                .Replace(_SMALL_IMAGE_PREFIX, _LARGE_IMAGE_PREFIX)
+                .Replace(_MEDIUM_IMAGE_PREFIX, _LARGE_IMAGE_PREFIX);
         }
 
         /// <summary>

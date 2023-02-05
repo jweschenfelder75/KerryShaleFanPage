@@ -8,7 +8,7 @@ namespace KerryShaleFanPage.Shared.Objects
     [Serializable]
     public class PodcastEpisodeDto
     {
-        private const int EpisodesTimePeriodInDays = 4 * 7;  // Every 4 weeks on a Sunday, TODO: Make configurable!
+        private const int _EPISODES_TIME_PERIOD_IN_DAYS = 4 * 7;  // Every 4 weeks on a Sunday, TODO: Make configurable!
 
         private readonly DateTime _initialReferenceDate = new DateTime(2023, 01, 22, 0, 0, 0);  // It is a Sunday, TODO: Make configurable!
 
@@ -70,7 +70,7 @@ namespace KerryShaleFanPage.Shared.Objects
 
             while (expectedNextDate < today && count < maxTries)
             {
-                expectedNextDate = expectedNextDate.AddDays(EpisodesTimePeriodInDays);
+                expectedNextDate = expectedNextDate.AddDays(_EPISODES_TIME_PERIOD_IN_DAYS);
                 count++;
             }
 
