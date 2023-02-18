@@ -14,7 +14,7 @@ namespace KerryShaleFanPage.Shared.Objects
         private readonly DateTime _initialReferenceDate = new DateTime(2023, 01, 22, 0, 0, 0);  // It is a Sunday, TODO: Make configurable!
 
         [Key]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         [StringLength(100)]
         public string? Title { get; set; }

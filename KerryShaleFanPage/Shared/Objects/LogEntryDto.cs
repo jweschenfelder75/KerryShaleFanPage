@@ -7,8 +7,8 @@ namespace KerryShaleFanPage.Shared.Objects
 {
     public class LogEntryDto : BaseDto
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        [Key]
+        public long Id { get; set; }
 
         public DateTime TimeStamp { get; set; }
 

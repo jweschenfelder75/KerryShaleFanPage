@@ -8,7 +8,7 @@ namespace KerryShaleFanPage.Shared.Objects
     public class ConfigurationDto : BaseDto
     {
         [Key]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         [StringLength(255)]
         public string? Key { get; set; }

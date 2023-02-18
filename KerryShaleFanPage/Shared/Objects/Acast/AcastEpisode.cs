@@ -32,7 +32,7 @@ namespace KerryShaleFanPage.Shared.Objects.Acast
         private const string _IMAGE_URL_TEMPLATE = "https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/{ShowId}{EpisodeId}.jpg";
 
         [Key]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         public string? Title => GetTitle();
 

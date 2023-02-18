@@ -16,7 +16,7 @@ namespace KerryShaleFanPage.Shared.Objects.ListenNotes
         // https://production.listennotes.com/podcasts/is-it-rolling-bob/matt-rowland-hill-S6WJ5jpnugU-E_xBUeLO8-y.1400x1400.jpg 1400w  <= This is what we want!
 
         [Key]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         public string? Title { get; set; }  // HTML encoded text
 

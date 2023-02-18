@@ -27,7 +27,7 @@ namespace KerryShaleFanPage.Shared.Objects.Spotify
         private const string _DEFAULT_IMAGE_URL_PREFIX = "https://i.scdn.co";  // <= This is what we want!
 
         [Key]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         public string? Title { get; set; }  // HTML encoded text
 
