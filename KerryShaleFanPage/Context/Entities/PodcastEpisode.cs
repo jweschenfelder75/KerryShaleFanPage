@@ -7,7 +7,7 @@ namespace KerryShaleFanPage.Shared.Objects
     public class PodcastEpisode : BaseEntity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         [StringLength(100)]
         public string? Title { get; set; }

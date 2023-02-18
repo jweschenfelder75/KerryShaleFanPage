@@ -24,7 +24,7 @@ namespace KerryShaleFanPage.Shared.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public TEntity? GetById(Guid id);
+        public TEntity? GetById(long id);
 
         /// <summary>
         /// 
@@ -40,6 +40,6 @@ namespace KerryShaleFanPage.Shared.Repositories
         /// <param name="id"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public Task<bool> DeleteByIdAsync(Guid id, CancellationToken cancellationToken = default);
+        public Task<bool> DeleteByIdAsync(long id, CancellationToken cancellationToken = default);
     }
 }

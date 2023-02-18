@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,7 +9,6 @@ using System;
 using System.Data;
 using System.IO;
 using System.Text;
-using MySql.Data.MySqlClient;
 using NLog;
 using NLog.Config;
 using NLog.Extensions.Logging;
@@ -49,12 +49,9 @@ namespace KerryShaleFanPage
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).Build();
             LogManager.Configuration = new NLogLoggingConfiguration(config.GetSection(_NLOG_SECTION_NAME));
+            LogManager.ThrowExceptions = true;
             LogManager.ThrowConfigExceptions = true;
-
-            var strConnectionString = "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};";  // TODO: Make configurable!
-            GetDBLogger(strConnectionString);
-            LogManager.ReconfigExistingLoggers();
-            LogManager.Setup().ReloadConfiguration();
+            ConfigureDbTarget();
 
             var logger = NLogBuilder.ConfigureNLog(LogManager.Configuration).GetCurrentClassLogger();
             try
@@ -67,6 +64,7 @@ namespace KerryShaleFanPage
 
                 var app = builder.Build();
 
+                // Configure app.
                 app = ConfigureApplication(app);
 
                 app.Run();
@@ -80,30 +78,6 @@ namespace KerryShaleFanPage
                 LogManager.Shutdown();
             }
         }
-
-        /// <summary>
-        /// Creates the Host Builder
-        /// </summary>
-        /// <param name="args">Optional arguments from Main method</param>
-        /// <returns></returns>
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureLogging(logging =>
-                {
-                    // TODO: LoggingLevel is not working via DI yet. It is only working in this class so far. A
-                    logging.ClearProviders();
-                    logging.AddConsole();
-                    logging.AddNLog();
-                    logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Warning);
-                    logging.AddFilter("Microsoft.AspNetCore", Microsoft.Extensions.Logging.LogLevel.Error);
-                    logging.AddFilter("Microsoft.AspNetCore.*", Microsoft.Extensions.Logging.LogLevel.Error);
-                 })
-                .UseNLog(new NLogAspNetCoreOptions()
-                {
-                    // TODO: LoggingLevel is not working via DI yet. It is only working in this class so far. A
-                    LoggingConfigurationSectionName = _NLOG_SECTION_NAME,
-                    RemoveLoggerFactoryFilter = true
-                });
 
         /// <summary>
         /// Configures the given ServiceCollection
@@ -121,26 +95,28 @@ namespace KerryShaleFanPage
                 logging.AddConsole();
                 logging.AddNLog();
                 logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Warning);
-                logging.AddFilter("Microsoft.AspNetCore", Microsoft.Extensions.Logging.LogLevel.Error);
-                logging.AddFilter("Microsoft.AspNetCore.*", Microsoft.Extensions.Logging.LogLevel.Error);
             });
 
-            services.AddSingleton<SecurityProvider>();
-            services.AddSingleton<ISecurityService, SecurityService>();
-            services.Add(new ServiceDescriptor(typeof(PodcastEpisodeDbContext), new PodcastEpisodeDbContext(configuration.GetConnectionString("Storage"))));
-            services.AddSingleton<IMailAndSmsService, GmxMailAndSmsService>();
-            services.AddSingleton<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
-            services.AddSingleton<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
+            services.AddDbContext<ConfigurationDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
+            services.AddDbContext<LogDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
+            services.AddDbContext<PodcastEpisodeDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
 
-            // services.AddSingleton<ITwitterCrawlApiService, TwitterCrawlApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
-            // services.AddSingleton<ITwitterTweetApiService, TwitterTweetApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
-            // services.AddSingleton<IGenericCrawlHtmlService<TwitterEpisode>, TwitterCrawlHtmlService>();  // TODO: Unfinished & untested.
-            services.AddSingleton<IGenericCrawlHtmlService<AcastEpisode>, AcastCrawlHtmlService>();
-            services.AddSingleton<IGenericCrawlHtmlService<ListenNotesEpisode>, ListenNotesCrawlHtmlService>();
-            services.AddSingleton<IGenericCrawlHtmlService<SpotifyEpisode>, SpotifyCrawlHtmlService>();
-            services.AddSingleton<IPodcastBusinessLogicService, PodcastBusinessLogicService>();
+            services.AddScoped<SecurityProvider>();
+            services.AddScoped<ISecurityService, SecurityService>();
+            services.AddScoped<IMailAndSmsService, GmxMailAndSmsService>();
+            services.AddScoped<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
+            services.AddScoped<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
 
-            services.AddHostedService<TimedHostedService>();
+            // services.AddScoped<ITwitterCrawlApiService, TwitterCrawlApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
+            // services.AddScoped<ITwitterTweetApiService, TwitterTweetApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
+            // services.AddScoped<IGenericCrawlHtmlService<TwitterEpisode>, TwitterCrawlHtmlService>();  // TODO: Unfinished & untested.
+            services.AddScoped<IGenericCrawlHtmlService<AcastEpisode>, AcastCrawlHtmlService>();
+            services.AddScoped<IGenericCrawlHtmlService<ListenNotesEpisode>, ListenNotesCrawlHtmlService>();
+            services.AddScoped<IGenericCrawlHtmlService<SpotifyEpisode>, SpotifyCrawlHtmlService>();
+
+            services.AddScoped<IPodcastBusinessLogicService, PodcastBusinessLogicService>();
+
+            services.AddHostedService<ScopedBackgroundService>();
         }
 
         /// <summary>
@@ -178,135 +154,39 @@ namespace KerryShaleFanPage
         /// <summary>
         /// TODO: Move code in another class!
         /// 
-        /// See: https://stackoverflow.com/questions/20101809/creating-a-database-programatically-in-nlog-to-enable-using-databasetarget
         /// </summary>
-        private static void GetDBLogger(string strConnectionString)
+        private static void ConfigureDbTarget()
         {
-            var sb = new StringBuilder();
-            var installationContext = new InstallationContext();
-
-            var builder = new MySqlConnectionStringBuilder()
-            {
-                ConnectionString = strConnectionString
-            };
-            var strDatabase = builder.Database;
-
-            DatabaseTarget targetDB = new DatabaseTarget()
-            {
-                Name = "allDatabase",
-                //KeepConnection = false,
-                DBProvider = "MySql.Data.MySqlClient.MySqlConnection, MySql.Data",
-                ConnectionString = strConnectionString,
-                CommandText = "INSERT INTO Logs (Created,CreatedBy,Modified,ModifiedBy,TimeStamp,LogLevel,Logger,Message,Exception) VALUES (@Created,@CreatedBy,@Modified,@ModifiedBy,@TimeStamp,@LogLevel,@Logger,@Message,@Exception);"
-            };
-
-            DatabaseParameterInfo paramDB;
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@Created",
-                Layout = "${date}"
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@CreatedBy",
-                Layout = _NLOG_SECTION_NAME
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@Modified",
-                Layout = "${date}"
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@ModifiedBy",
-                Layout = _NLOG_SECTION_NAME
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@TimeStamp",
-                Layout = "${date}"
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@LogLevel",
-                Layout = "${level}"
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@Logger",
-                Layout = "${logger:truncate=255}"
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@Message",
-                Layout = "${message:truncate=1024}"
-            };
-            targetDB.Parameters.Add(paramDB);
-
-            paramDB = new DatabaseParameterInfo()
-            {
-                Name = "@Exception",
-                Layout = "${exception:tostring:truncate=1024}"
-            };
-            targetDB.Parameters.Add(paramDB);
+            var strInstallConnectionString = "server=127.0.0.1;database=sys;uid={username};pwd={password};";  // TODO: Make configurable!
+            var strConnectionString = "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};";  // TODO: Make configurable!
 
             var config = LogManager.Configuration;
-            config ??= new LoggingConfiguration();
+            var dbTarget = (DatabaseTarget)config.FindTargetByName("allDatabase");
+            dbTarget.ConnectionString = strConnectionString;
 
-            config.AddTarget(targetDB.Name, targetDB);
-
-            var rule1 = new LoggingRule("Microsoft.AspNetCore.*", NLog.LogLevel.Warn, targetDB);
-            config.LoggingRules.Add(rule1);
-            var rule2 = new LoggingRule("Microsoft.AspNetCore", NLog.LogLevel.Warn, targetDB);
-            config.LoggingRules.Add(rule2);
-            var rule3 = new LoggingRule("*", NLog.LogLevel.Info, targetDB);
-            config.LoggingRules.Add(rule3);
-            LogManager.Configuration = config;
-
-            var builder2 = new MySqlConnectionStringBuilder()
+            var installationContext = new InstallationContext();
+            DatabaseCommandInfo createDBCommand = new DatabaseCommandInfo()
             {
-                ConnectionString = strConnectionString,
-                Database = "sys"
-            };
-
-            targetDB.InstallConnectionString = builder2.ConnectionString;
-
-            sb.AppendLine($"CREATE DATABASE IF NOT EXISTS {strDatabase}");
-
-            var createDBCommand = new DatabaseCommandInfo()
-            {
-                Text = sb.ToString(),
+                Text = "CREATE DATABASE IF NOT EXISTS kerryshalefanpg",
                 CommandType = CommandType.Text
             };
-            targetDB.InstallDdlCommands.Add(createDBCommand);
+            dbTarget.InstallConnectionString = strInstallConnectionString;
+            dbTarget.InstallDdlCommands.Clear();
+            dbTarget.InstallDdlCommands.Add(createDBCommand);
 
+            // Create the database if it does not exist
             try
             {
-                targetDB.Install(installationContext);
+                dbTarget.Install(installationContext);
             }
             catch (Exception ex)
             {
                 var exception = ex;  // TODO: Log exception!
             }
 
-            targetDB.InstallDdlCommands.Clear();
-            sb.Clear();
-            sb.AppendLine("CREATE TABLE IF NOT EXISTS Logs (");
-            sb.AppendLine("Id VARCHAR(40) NOT NULL DEFAULT (uuid()),");
+            var sb = new StringBuilder();
+            sb.AppendLine("CREATE TABLE IF NOT EXISTS logentries (");
+            sb.AppendLine("Id BIGINT NOT NULL AUTO_INCREMENT,");
             sb.AppendLine("Created TIMESTAMP NULL,");
             sb.AppendLine("CreatedBy NVARCHAR(50) NULL,");
             sb.AppendLine("Modified TIMESTAMP NULL,");
@@ -315,27 +195,28 @@ namespace KerryShaleFanPage
             sb.AppendLine("LogLevel NVARCHAR(25) NULL,");
             sb.AppendLine("Logger NVARCHAR(255) NULL,");
             sb.AppendLine("Message NVARCHAR(1024) NULL,");
-            sb.AppendLine("Exception NVARCHAR(1024) NULL, ");
-            sb.AppendLine("PRIMARY KEY (Id)) ");
-
+            sb.AppendLine("Exception NVARCHAR(1024) NULL,");
+            sb.AppendLine("PRIMARY KEY (Id))");
             var createTableCommand = new DatabaseCommandInfo()
             {
                 Text = sb.ToString(),
                 CommandType = CommandType.Text
             };
-            targetDB.InstallDdlCommands.Add(createTableCommand);
+            dbTarget.InstallConnectionString = strConnectionString;
+            dbTarget.InstallDdlCommands.Clear();
+            dbTarget.InstallDdlCommands.Add(createTableCommand);
 
-            targetDB.InstallConnectionString = strConnectionString;
-
+            // Create the table if it does not exist
             try
             {
-                targetDB.Install(installationContext);
+                dbTarget.Install(installationContext);
             }
             catch (Exception ex)
             {
                 var exception = ex;  // TODO: Log exception!
             }
-            SimpleConfigurator.ConfigureForTargetLogging(targetDB);
+
+            LogManager.ReconfigExistingLoggers();
         }
     }
 }

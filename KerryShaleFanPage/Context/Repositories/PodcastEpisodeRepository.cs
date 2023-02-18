@@ -43,7 +43,7 @@ namespace KerryShaleFanPage.Shared.Repositories
         }
 
         /// <inheritdoc cref="IGenericRepository{PodcastEpisode}" />
-        public PodcastEpisode? GetById(Guid id)
+        public PodcastEpisode? GetById(long id)
         {
             if (_dbContext.PodcastEpisodes == null || !_dbContext.PodcastEpisodes.Any())
             {
@@ -88,7 +88,7 @@ namespace KerryShaleFanPage.Shared.Repositories
         }
 
         /// <inheritdoc cref="IGenericRepository{PodcastEpisode}" />
-        public async Task<bool> DeleteByIdAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task<bool> DeleteByIdAsync(long id, CancellationToken cancellationToken = default)
         {
             if (_dbContext.PodcastEpisodes == null || !_dbContext.PodcastEpisodes.Any())
             {

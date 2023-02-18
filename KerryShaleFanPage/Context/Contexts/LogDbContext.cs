@@ -1,20 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using KerryShaleFanPage.Shared.Objects;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace KerryShaleFanPage.Shared.Contexts
 {
-    public class ConfigurationDbContext : DbContext
+    public class LogDbContext : DbContext
     {
         private readonly string? _connectionString;
 
-        public ConfigurationDbContext(DbContextOptions<ConfigurationDbContext> options)
-            : base(options) 
+        public LogDbContext(DbContextOptions<LogDbContext> options)
+            : base(options)
         {
             Database.Migrate();
         }
 
-        public ConfigurationDbContext(string? connectionString)
+        public LogDbContext(string? connectionString)
         {
             _connectionString = connectionString;
         }
@@ -29,6 +28,6 @@ namespace KerryShaleFanPage.Shared.Contexts
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<ConfigurationEntry>? ConfigurationEntries { get; set; }
+        public DbSet<LogEntry>? LogEntries { get; set; }
     }
 }

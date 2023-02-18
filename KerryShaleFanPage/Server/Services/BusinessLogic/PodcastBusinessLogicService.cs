@@ -19,6 +19,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
 {
     public class PodcastBusinessLogicService : IPodcastBusinessLogicService
     {
+        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(15);  // Make configurable!
         private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
         private readonly IMailAndSmsService _mailAndSmsService;
         private readonly IGenericRepositoryService<PodcastEpisodeDto> _repositoryService;
@@ -52,14 +53,9 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// <inheritdoc cref="IPodcastBusinessLogicService" />
         public async Task DoWorkAsync(CancellationToken cancellationToken = default)
         {
-            try
+            while (!cancellationToken.IsCancellationRequested)
             {
-                if (cancellationToken.IsCancellationRequested)
-                {
-                    return;
-                }
-
-                _logger.LogInformation($"Podcast Business Logic Service (via Timed Hosted Service) was called.");
+                _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {_sleepPeriod.TotalMinutes} min).");
 
                 var latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceAsync(cancellationToken);
 
@@ -68,17 +64,9 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 // var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
 
                 // latestPodcastEpisodeDto = FetchLatestPodcastEpisodeFromDatabase();
-            }
-            catch (OperationCanceledException ex)
-            {
-                var cancelledException = ex;  // TODO: Log exception!
-            }
-            catch (Exception ex)
-            {
-                var exception = ex;  // TODO: Log exception!
-            }
 
-            return;
+                await Task.Delay((int)_sleepPeriod.TotalMilliseconds, cancellationToken);
+            }
         }
 
         /// <summary>

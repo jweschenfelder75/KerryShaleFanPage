@@ -53,7 +53,7 @@ namespace KerryShaleFanPage.Server.Services.Repositories
         }
 
         /// <inheritdoc cref="IGenericRepositoryService{PodcastEpisodeDto}" />
-        public PodcastEpisodeDto? GetById(Guid id)
+        public PodcastEpisodeDto? GetById(long id)
         {
             var result = _repository.GetById(id);
 
@@ -81,7 +81,7 @@ namespace KerryShaleFanPage.Server.Services.Repositories
         }
 
         /// <inheritdoc cref="IGenericRepositoryService{PodcastEpisodeDto}" />
-        public async Task<bool> DeleteByIdAsync(Guid id, CancellationToken cancellationToken = default)
+        public async Task<bool> DeleteByIdAsync(long id, CancellationToken cancellationToken = default)
         {
             return await _repository.DeleteByIdAsync(id, cancellationToken);
         }

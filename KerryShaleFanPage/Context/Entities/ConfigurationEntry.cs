@@ -1,13 +1,12 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KerryShaleFanPage.Shared.Objects
 {
-    public class Configuration : BaseEntity
+    public class ConfigurationEntry : BaseEntity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+        public long Id { get; set; }
 
         [StringLength(255)]
         public string? Key { get; set; }

@@ -1,19 +1,32 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using KerryShaleFanPage.Shared.Objects;
-using MySql.Data.MySqlClient;
 
 namespace KerryShaleFanPage.Shared.Contexts
 {
     public class PodcastEpisodeDbContext : DbContext
     {
-        public PodcastEpisodeDbContext(string connectionString)
+        private readonly string? _connectionString;
+
+        public PodcastEpisodeDbContext(DbContextOptions<PodcastEpisodeDbContext> options)
+            : base(options)
         {
-            ConnectionString = connectionString;
+            Database.Migrate();
         }
 
-        public MySqlConnection GetConnection => new MySqlConnection(ConnectionString);
+        public PodcastEpisodeDbContext(string? connectionString)
+        {
+            _connectionString = connectionString;
+        }
 
-        public string ConnectionString { get; private set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseMySQL(_connectionString ?? "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};");  // TODO: Make configurable!
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
 
         public DbSet<PodcastEpisode>? PodcastEpisodes { get; set; }
     }
