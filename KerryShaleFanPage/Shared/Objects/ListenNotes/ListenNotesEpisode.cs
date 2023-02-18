@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using KerryShaleFanPage.Shared.Extensions;
 
-namespace KerryShaleFanPage.Shared.Objects.Acast
+namespace KerryShaleFanPage.Shared.Objects.ListenNotes
 {
     [Serializable]
     public class ListenNotesEpisode

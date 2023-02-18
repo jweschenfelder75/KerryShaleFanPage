@@ -31,6 +31,7 @@ using KerryShaleFanPage.Shared.Contexts;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
+using KerryShaleFanPage.Shared.Objects.ListenNotes;
 using KerryShaleFanPage.Shared.Objects.Spotify;
 using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
 using KerryShaleFanPage.Shared.Repositories;

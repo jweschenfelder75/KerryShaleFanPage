@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
-using KerryShaleFanPage.Shared.Objects.Acast;
+using KerryShaleFanPage.Shared.Objects.ListenNotes;
 
 namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
 {
