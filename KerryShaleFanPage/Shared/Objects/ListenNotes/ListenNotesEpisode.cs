@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using KerryShaleFanPage.Shared.Extensions;
 
-namespace KerryShaleFanPage.Shared.Objects.ListenNotes
+namespace KerryShaleFanPage.Shared.Objects.Acast
 {
     [Serializable]
     public class ListenNotesEpisode
@@ -47,6 +47,7 @@ namespace KerryShaleFanPage.Shared.Objects.ListenNotes
 
         /// <summary>
         /// 
+        /// It is used to figure out if the data has changed without checking every single property. If the data changes, the checksum will do the same.
         /// </summary>
         /// <returns></returns>
         private string? ComputeMd5Checksum()

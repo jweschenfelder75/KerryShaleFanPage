@@ -8,28 +8,28 @@ using KerryShaleFanPage.Shared.Objects.Acast;
 
 namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
 {
-    public class ListenNotesCrawlHtmlService : IGenericCrawlHtmlService<ListenNotesEpisode>
+    public class AcastCrawlHtmlService : IGenericCrawlHtmlService<AcastEpisode>
     {
-        public string ShowId => "is-it-rolling-bob-talking-dylan-lucas-hare-Fc6aE4N8pHR";  // TODO: Make configurable!
+        public string ShowId => "63d0e60777d9ee0011a4f45b";  // TODO: Make configurable!
 
         public string ShowTitle => @"Is It Rolling, Bob? Talking Dylan";  // TODO: Make configurable!
 
-        private readonly ILogger<ListenNotesCrawlHtmlService> _logger;  // TODO: Implement logging!
+        private readonly ILogger<AcastCrawlHtmlService> _logger;  // TODO: Implement logging!
 
         private readonly HttpClient _httpClient = new HttpClient();
 
         /// <summary>
         /// 
         /// </summary>
-        public ListenNotesCrawlHtmlService(ILogger<ListenNotesCrawlHtmlService> logger)
+        public AcastCrawlHtmlService(ILogger<AcastCrawlHtmlService> logger)
         {
             _logger = logger;
         }
 
-        /// <inheritdoc cref="IGenericCrawlHtmlService{ListenNotesEpisode}"/>
-        public async Task<ListenNotesEpisode?> GetLatestEpisodeAsync(CancellationToken cancellationToken = default)
+        /// <inheritdoc cref="IGenericCrawlHtmlService{AcastEpisode}"/>
+        public async Task<AcastEpisode?> GetLatestEpisodeAsync(CancellationToken cancellationToken = default)
         {
-            var html = await GetHtmlAsync($"https://www.listennotes.com/podcasts/{ShowId}", cancellationToken);
+            var html = await GetHtmlAsync($"https://shows.acast.com/{ShowId}", cancellationToken);
             var doc = Supremes.Dcsoup.Parse(html);
             var episodeTitle = string.Empty;
             var imageSrc = string.Empty;
@@ -37,61 +37,54 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
             var episodeDate = string.Empty;
             var episodeLength = string.Empty;
 
-            var showTitleTag = doc.Select("h1[class*=ln-l1-text] > a");
-            if (showTitleTag == null || !showTitleTag.HasText || showTitleTag.Text != ShowTitle)
+            var showTitleTag = doc.Select("h1");
+            if (showTitleTag is not { HasText: true } || showTitleTag.Text != ShowTitle)
             {
                 return null;
             }
-            var latestEpisodeTag = doc.Select("div[id=ln-episode-list]");
+            var latestEpisodeTag = doc.Select("div[class^=\"ant-row EpisodesGrid__FirstEpisode\"]");
             if (latestEpisodeTag == null)
             {
                 return null;
             }
-            var episodeTitleTag = latestEpisodeTag.Select("h3");
-            if (episodeTitleTag is { HasText: true })
+            var latestEpisodeSubTag = latestEpisodeTag.Select("span[class^=CardEpisode__Tag]");
+            if (latestEpisodeSubTag == null || latestEpisodeSubTag is { HasText: false } || (!latestEpisodeSubTag.Text.Equals("Latest Episode", StringComparison.InvariantCultureIgnoreCase)))
             {
-                episodeTitle = episodeTitleTag.Text;
+                return null;
             }
-            var imageSrcTag = latestEpisodeTag.Select($"a[title={episodeTitle}]");
-            if (imageSrcTag != null && imageSrcTag.HasAttr("href"))
-            {
-                imageSrc = imageSrcTag.Attr("href");
-                if (string.IsNullOrWhiteSpace(imageSrc))  // Backup
-                {
-                    imageSrcTag = latestEpisodeTag.Select("img");
-                    if (imageSrcTag != null && imageSrcTag.HasAttr("src"))
-                    {
-                        imageSrc = imageSrcTag.Attr("src");
-                    }
-                }
-            }
-            var episodeDescriptionTag = latestEpisodeTag.Select("div[class=text-sm line-clamp-2 ln-wrap-line leading-normal]");
-            if (episodeDescriptionTag is { HasText: true })
-            {
-                episodeDescription = episodeDescriptionTag.Text;
-            }
-            var episodeDateTag = latestEpisodeTag.Select("time");
+            var episodeDateTag = latestEpisodeTag.Select("span[class^=CardEpisode__DatePublishFeat]");
             if (episodeDateTag is { HasText: true })
             {
                 episodeDate = episodeDateTag.Text;
             }
-            var episodeLengthTag = latestEpisodeTag.Select("div[data-type=episode-audio-player]");
-            if (episodeLengthTag != null && episodeLengthTag.HasAttr("data-duration"))
+            var episodeTitleTag = latestEpisodeTag.Select("h2");
+            if (episodeTitleTag is { HasText: true })
             {
-                episodeLength = episodeLengthTag.Attr("data-duration");
+                episodeTitle = episodeTitleTag.Text;
+            }
+            var episodeDescriptionTag = latestEpisodeTag.Select("div[class^=CardEpisode__FeatCardSummary]");
+            if (episodeDescriptionTag is { HasText: true })
+            {
+                episodeDescription = episodeDescriptionTag.Text;
+            }
+            var imageSrcTag = latestEpisodeTag.Select("a[class^=Link__LinkElement]");
+            if (imageSrcTag != null && imageSrcTag.HasAttr("href"))
+            {
+                imageSrc = imageSrcTag.Attr("href");
             }
 
-            return new ListenNotesEpisode()
+            return new AcastEpisode()
             {
-                Title = episodeTitle,
+                BaseTitle = episodeTitle,
                 Description = episodeDescription,
                 Date = episodeDate,
                 Duration = episodeLength,
-                ImageBaseUrl = imageSrc
+                ImageBaseUrl = imageSrc,
+                EpisodeShowId = ShowId
             };
         }
 
-        /// <inheritdoc cref="IGenericCrawlHtmlService{ListenNotesEpisode}"/>
+        /// <inheritdoc cref="IGenericCrawlHtmlService{AcastEpisode}"/>
         public async Task<byte[]> GetImageAsByteArrayAsync(string url, CancellationToken cancellationToken = default)
         {
             // using var _httpClient = new HttpClient();
@@ -99,10 +92,10 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
 
             var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
 
-            return bytes ?? Array.Empty<byte>();
+            return bytes;
         }
 
-        /// <inheritdoc cref="IGenericCrawlHtmlService{ListenNotesEpisode}"/>
+        /// <inheritdoc cref="IGenericCrawlHtmlService{AcastEpisode}"/>
         public async Task<string> GetImageAsBase64StringAsync(string url, CancellationToken cancellationToken = default)
         {
             // using var _httpClient = new HttpClient();

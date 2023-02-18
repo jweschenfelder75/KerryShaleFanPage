@@ -197,6 +197,7 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
             var stringBearerRequest = $"{HttpUtility.UrlEncode(ConsumerKey)}:{HttpUtility.UrlEncode(ConsumerSecret)}";
             stringBearerRequest = Convert.ToBase64String(Encoding.UTF8.GetBytes(stringBearerRequest));
 
+            // using var _httpClient = new HttpClient();
             _httpClient.DefaultRequestHeaders.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Add(_AUTHORIZATION_KEY, $"Basic {stringBearerRequest}");

@@ -14,6 +14,6 @@ namespace KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo
         /// <param name="episode"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public Task<bool> SendTweet(PodcastEpisodeDto? episode, CancellationToken cancellationToken = default);
+        public Task<bool> SendTweetAsync(PodcastEpisodeDto? episode, CancellationToken cancellationToken = default);
     }
 }

@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace KerryShaleFanPage.Context.Entities
+namespace KerryShaleFanPage.Shared.Objects
 {
-    public class PodcastEpisode
+    public class PodcastEpisode : BaseEntity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
@@ -12,10 +12,10 @@ namespace KerryShaleFanPage.Context.Entities
         [StringLength(100)]
         public string? Title { get; set; }
 
-        [StringLength(2500)]
+        [StringLength(1000)]
         public string? Description { get; set; }
 
-        [StringLength(100)]
+        [StringLength(255)]
         public string? ImageUrl { get; set; }
 
         public byte[]? ImageData { get; set; }
@@ -25,8 +25,11 @@ namespace KerryShaleFanPage.Context.Entities
 
         public DateTime? Date { get; set; }
 
-        [StringLength(20)]
+        [StringLength(25)]
         public string? Duration { get; set; }  // e.g. 58 mins 38 secs
+
+        [StringLength(40)]
+        public string? Checksum { get; set; }  // e.g. A33398586A6D02628DFCDFD929219F45
 
         public DateTime? FetchedExpectedNextDate { get; set; }
 

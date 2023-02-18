@@ -4,9 +4,9 @@ using MySql.Data.MySqlClient;
 
 namespace KerryShaleFanPage.Shared.Contexts
 {
-    public class PodcastEpisodeDbContext : DbContext
+    public class ConfigurationDbContext : DbContext
     {
-        public PodcastEpisodeDbContext(string connectionString)
+        public ConfigurationDbContext(string connectionString)
         {
             ConnectionString = connectionString;
         }

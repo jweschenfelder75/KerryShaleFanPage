@@ -1,12 +1,12 @@
-﻿using KerryShaleFanPage.Context.Contexts;
-using KerryShaleFanPage.Context.Entities;
+﻿using KerryShaleFanPage.Shared.Contexts;
+using KerryShaleFanPage.Shared.Objects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace KerryShaleFanPage.Context.Repositories
+namespace KerryShaleFanPage.Shared.Repositories
 {
     /// <summary>
     /// TODO: This is EF Core logic, it needs to be adjusted for MySQL!

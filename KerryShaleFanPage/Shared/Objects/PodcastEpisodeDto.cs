@@ -19,10 +19,10 @@ namespace KerryShaleFanPage.Shared.Objects
         [StringLength(100)]
         public string? Title { get; set; }
 
-        [StringLength(2500)]
+        [StringLength(1000)]
         public string? Description { get; set; }
 
-        [StringLength(100)]
+        [StringLength(255)]
         public string? ImageUrl { get; set; }
 
         public byte[]? ImageData { get; set; }
@@ -32,8 +32,11 @@ namespace KerryShaleFanPage.Shared.Objects
 
         public DateTime? Date { get; set; }
 
-        [StringLength(20)]
-        public string? Duration { get; set; }  // e.g. "58 min 38 sec" or "00:58:38"
+        [StringLength(25)]
+        public string? Duration { get; set; }  // e.g. 58 mins 38 secs
+
+        [StringLength(40)]
+        public string? Checksum { get; set; }  // e.g. A33398586A6D02628DFCDFD929219F45
 
         public DateTime? FetchedExpectedNextDate { get; set; }
 
@@ -49,13 +52,14 @@ namespace KerryShaleFanPage.Shared.Objects
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}"
+            return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}"
                 , "Date: ", Date?.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture), Environment.NewLine
                 , "Title: ", Title, Environment.NewLine
                 , "TweetText: ", $"New podcast episode is out: Kerry Shale and Lucas Hare interview \"{Title}\". The next episode will probably be published on {CalculatedExpectedNextDate.ToString("dd MMM yyyy", CultureInfo.InvariantCulture)}.", Environment.NewLine
                 , "ImageUrl: ", ImageUrl, Environment.NewLine
                 , "Description: ", Description, Environment.NewLine
                 , "Duration: ", Duration, Environment.NewLine
+                , "Checksum: ", Checksum, Environment.NewLine
                 , "Id: ", Id, Environment.NewLine);
         }
 

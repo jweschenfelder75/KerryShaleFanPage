@@ -64,6 +64,7 @@ namespace KerryShaleFanPage.Shared.Objects.Spotify
 
         /// <summary>
         /// 
+        /// It is used to figure out if the data has changed without checking every single property. If the data changes, the checksum will do the same.
         /// </summary>
         /// <returns></returns>
         private string? ComputeMd5Checksum()

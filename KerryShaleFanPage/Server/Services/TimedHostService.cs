@@ -13,7 +13,7 @@ namespace KerryShaleFanPage.Server.Services
         private readonly IPodcastBusinessLogicService _podcastBusinessLogicService;
         private Timer? _timer = null;
 
-        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(1);  // Make configurable!
+        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(15);  // Make configurable!
 
         /// <summary>
         /// 

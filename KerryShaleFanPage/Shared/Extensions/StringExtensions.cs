@@ -65,7 +65,7 @@ namespace KerryShaleFanPage.Shared.Extensions
                 return fallbackValue;
             }
 
-            return DateTime.TryParseExact(dateTimeAsStr, formatStr, CultureInfo.GetCultureInfo("en-US"), DateTimeStyles.None, out var result) 
+            return DateTime.TryParseExact(dateTimeAsStr, formatStr, CultureInfo.InvariantCulture, DateTimeStyles.None, out var result) 
                 ? result 
                 : fallbackValue;
         }

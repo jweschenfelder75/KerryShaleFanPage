@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace KerryShaleFanPage.Context.Repositories
+namespace KerryShaleFanPage.Shared.Repositories
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {

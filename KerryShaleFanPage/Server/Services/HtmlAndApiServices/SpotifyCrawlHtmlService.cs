@@ -78,7 +78,10 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
         /// <inheritdoc cref="IGenericCrawlHtmlService{SpotifyEpisode}"/>
         public async Task<byte[]> GetImageAsByteArrayAsync(string url, CancellationToken cancellationToken = default)
         {
-            var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken);
+            // using var _httpClient = new HttpClient();
+            //_httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");  // Roadrunner is greeting! ;-)
+
+            var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
 
             return bytes;
         }
@@ -86,7 +89,10 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
         /// <inheritdoc cref="IGenericCrawlHtmlService{SpotifyEpisode}"/>
         public async Task<string> GetImageAsBase64StringAsync(string url, CancellationToken cancellationToken = default)
         {
-            var bytes = await GetImageAsByteArrayAsync(url, cancellationToken);
+            // using var _httpClient = new HttpClient();
+            //_httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");  // Roadrunner is greeting! ;-)
+
+            var bytes = await GetImageAsByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
 
             return $"image/jpeg;base64,{Convert.ToBase64String(bytes)}";
         }
