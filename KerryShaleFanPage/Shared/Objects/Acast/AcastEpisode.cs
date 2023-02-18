@@ -38,7 +38,7 @@ namespace KerryShaleFanPage.Shared.Objects.Acast
 
         public string? Description { get; set; }  // HTML encoded text
 
-        public string? Date { get; set; }  // Month (3 chars) and year (4 digits), e.g. Dec 2022
+        public string? Date { get; set; }  // e.g. 1/22/2023
 
         public string? Duration { get; set; }  // Minutes and seconds, e.g. 58 min 38 sec
 

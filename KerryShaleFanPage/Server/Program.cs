@@ -294,7 +294,14 @@ namespace KerryShaleFanPage
             };
             targetDB.InstallDdlCommands.Add(createDBCommand);
 
-            targetDB.Install(installationContext);
+            try
+            {
+                targetDB.Install(installationContext);
+            }
+            catch (Exception ex)
+            {
+                var exception = ex;  // TODO: Log exception!
+            }
 
             targetDB.InstallDdlCommands.Clear();
             sb.Clear();
@@ -320,8 +327,14 @@ namespace KerryShaleFanPage
 
             targetDB.InstallConnectionString = strConnectionString;
 
-            targetDB.Install(installationContext);
-
+            try
+            {
+                targetDB.Install(installationContext);
+            }
+            catch (Exception ex)
+            {
+                var exception = ex;  // TODO: Log exception!
+            }
             SimpleConfigurator.ConfigureForTargetLogging(targetDB);
         }
     }
