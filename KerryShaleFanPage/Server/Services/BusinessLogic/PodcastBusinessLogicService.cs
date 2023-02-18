@@ -57,12 +57,22 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             {
                 _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {_sleepPeriod.TotalMinutes} min).");
 
-                var latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceAsync(cancellationToken);
+                var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
+                if (latestPodcastEpisodeDto == null)
+                {
+                    // TODO: Information that there is obviously a problem fetching the latest episode!
+                }
+                else
+                {
+                    var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable!
+                    if (!success)
+                    {
+                        // TODO: Information that there is obviously a problem sending the notification!
+                    }
+                }
 
-                // var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);
-
+                // Other examples:
                 // var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
-
                 // latestPodcastEpisodeDto = FetchLatestPodcastEpisodeFromDatabase();
 
                 await Task.Delay((int)_sleepPeriod.TotalMilliseconds, cancellationToken);
@@ -76,77 +86,27 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// <returns></returns>
         private async Task<PodcastEpisodeDto?> StoreLatestPodcastEpisodeInDatabaseAsync(CancellationToken cancellationToken = default)
         {
-            var latestStoredPodcastEpisodeDto = FetchLatestPodcastEpisodeFromDatabase();
+            var latestStoredPodcastEpisodeDto = _repositoryService.GetLast();
+            var latestCrawledPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceAsync(cancellationToken);
+
+            if (latestCrawledPodcastEpisodeDto == null)
+            {
+                // TODO: Information that there is obviously a problem fetching the latest episode!
+                return null;
+            }
 
             if (latestStoredPodcastEpisodeDto == null)
             {
-                return await AddInitialLatestPodcastEpisodeToDatabaseAsync(cancellationToken);
+                return await _repositoryService.UpsertAsync(latestCrawledPodcastEpisodeDto, cancellationToken);
             }
 
-            return await AddLatestPodcastEpisodeToDatabaseAsync(latestStoredPodcastEpisodeDto, cancellationToken);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        private PodcastEpisodeDto? FetchLatestPodcastEpisodeFromDatabase()
-        {
-            return _repositoryService.GetLast();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        private async Task<PodcastEpisodeDto?> AddInitialLatestPodcastEpisodeToDatabaseAsync(CancellationToken cancellationToken = default)
-        {
-            var latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceAsync(cancellationToken);
-            if (latestPodcastEpisodeDto != null)
+            if (latestStoredPodcastEpisodeDto.Date <= latestCrawledPodcastEpisodeDto.Date 
+                || (latestStoredPodcastEpisodeDto.Title ?? string.Empty).Equals(latestCrawledPodcastEpisodeDto.Title ?? string.Empty, StringComparison.InvariantCultureIgnoreCase))
             {
-                if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
-                {
-                    // TODO: Information that the data is obviously wrong!
-                    return null;
-                }
-                return await _repositoryService.UpsertAsync(latestPodcastEpisodeDto, cancellationToken);
+                return null;
             }
-            else
-            {
-                // TODO: Information that there is obviously a problem fetching the latest episode! Backup 1 is called!
-                // 2nd try aka Backup 1: 
-                latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceBackup1Async(cancellationToken);
-                if (latestPodcastEpisodeDto != null)
-                {
-                    if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
-                    {
-                        // TODO: Information that the data is obviously wrong!
-                        return null;
-                    }
-                    return await _repositoryService.UpsertAsync(latestPodcastEpisodeDto, cancellationToken);
-                }
-                else
-                {
-                    // TODO: Information that there is obviously a problem fetching the latest episode! Backup 2 is called!
-                    // 3rd try aka Backup 2: 
-                    latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceBackup2Async(cancellationToken);
-                    if (latestPodcastEpisodeDto != null)
-                    {
-                        if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
-                        {
-                            // TODO: Information that the data is obviously wrong!
-                            return null;
-                        }
-                        return await _repositoryService.UpsertAsync(latestPodcastEpisodeDto, cancellationToken);
-                    }
-                    else
-                    {
-                        // TODO: Information that there is obviously a problem fetching the latest episode!
-                        return null;
-                    }
-                }
-            }
+
+            return await _repositoryService.UpsertAsync(latestCrawledPodcastEpisodeDto, cancellationToken);
         }
 
         /// <summary>
@@ -155,9 +115,9 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// <param name="dto"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        private async Task<PodcastEpisodeDto?> AddLatestPodcastEpisodeToDatabaseAsync(PodcastEpisodeDto dto, CancellationToken cancellationToken = default)
+        private async Task<PodcastEpisodeDto?> GetLatestEpisodeFromCrawlServiceAsync(CancellationToken cancellationToken = default)
         {
-            var latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceAsync(cancellationToken);
+            var latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceMainAsync(cancellationToken);
             if (latestPodcastEpisodeDto != null)
             {
                 if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
@@ -209,7 +169,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        private async Task<PodcastEpisodeDto?> GetLatestEpisodeFromCrawlServiceAsync(CancellationToken cancellationToken = default)
+        private async Task<PodcastEpisodeDto?> GetLatestEpisodeFromCrawlServiceMainAsync(CancellationToken cancellationToken = default)
         {
             var latestAcastEpisode = await _acastCrawlService.GetLatestEpisodeAsync(cancellationToken);  // Acast is new leading podcast source
             if (latestAcastEpisode != null)

@@ -29,7 +29,19 @@ namespace KerryShaleFanPage.Server.Services
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="stoppingToken"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public override async Task StartAsync(CancellationToken cancellationToken)
+        {
+            await base.StartAsync(cancellationToken);
+
+            _logger.LogInformation("Scoped Background Service is started.");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
         protected override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
@@ -62,9 +74,7 @@ namespace KerryShaleFanPage.Server.Services
             try
             {
                 using IServiceScope scope = _serviceProvider.CreateScope();
-
                 IPodcastBusinessLogicService podcastBusinessLogicService = scope.ServiceProvider.GetRequiredService<IPodcastBusinessLogicService>();
-
                 await podcastBusinessLogicService.DoWorkAsync(cancellationToken);
             }
             catch (OperationCanceledException ex) when (cancellationToken.IsCancellationRequested)
