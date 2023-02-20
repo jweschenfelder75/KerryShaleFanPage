@@ -16,5 +16,10 @@ namespace KerryShaleFanPage.Context.Entities
 
         [StringLength(255)]
         public string? DataType { get; set; }
+
+        public bool IsPassword { get; set; }
+
+        [StringLength(255)]
+        public string? Salt { get; set; }
     }
 }

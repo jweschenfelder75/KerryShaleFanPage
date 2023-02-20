@@ -21,6 +21,8 @@ namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Key = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     Value = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
+                    Salt = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
+                    IsPassword = table.Column<bool>(type: "tinyint", nullable: false),
                     DataType = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     Created = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     Modified = table.Column<DateTime>(type: "datetime(6)", nullable: true),

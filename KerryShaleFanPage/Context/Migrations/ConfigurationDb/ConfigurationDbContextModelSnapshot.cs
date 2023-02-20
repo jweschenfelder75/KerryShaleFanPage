@@ -51,6 +51,13 @@ namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
 
+                    b.Property<string>("Salt")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("IsPassword")
+                        .HasColumnType("tinyint");
+
                     b.HasKey("Id");
 
                     b.ToTable("ConfigurationEntries");
