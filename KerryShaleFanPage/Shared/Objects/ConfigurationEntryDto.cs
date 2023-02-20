@@ -5,7 +5,7 @@ using KerryShaleFanPage.Shared.Attributes;
 namespace KerryShaleFanPage.Shared.Objects
 {
     [Serializable, EncryptedData]
-    public class ConfigurationDto : BaseDto
+    public class ConfigurationEntryDto : BaseDto
     {
         [Key]
         public long Id { get; set; }
