@@ -29,6 +29,7 @@ using KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo;
 using KerryShaleFanPage.Server.Services.MailAndSmsServices;
 using KerryShaleFanPage.Server.Services.Repositories;
 using KerryShaleFanPage.Server.Services.Security;
+using KerryShaleFanPage.Shared.Configuration;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
@@ -97,6 +98,8 @@ namespace KerryShaleFanPage.Server
                 logging.AddNLog();
                 logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Warning);
             });
+
+            services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
 
             services.AddDbContext<ConfigurationDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
             services.AddDbContext<LogDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
 using KerryShaleFanPage.Server.Interfaces.Security;
 using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Services.Security;
+using KerryShaleFanPage.Shared.Configuration;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
@@ -22,7 +24,6 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
     public class PodcastBusinessLogicService : IPodcastBusinessLogicService
     {
         private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(15);  // Make configurable!
-        private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
         private readonly IMailAndSmsService _mailAndSmsService;
         private readonly IGenericRepositoryService<PodcastEpisodeDto> _repositoryService;
         private readonly IGenericCrawlHtmlService<AcastEpisode> _acastCrawlService;
@@ -32,6 +33,9 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         // private readonly ITwitterTweetApiService _twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
         // private readonly IGenericCrawlHtmlService<TwitterEpisode> _twitterCrawlService;  // TODO: Unfinished & untested.
         private readonly ISecurityService _securityService;
+        private readonly IOptions<AppSettings> _appSettings;
+
+        private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 
@@ -40,7 +44,8 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             IGenericRepositoryService<PodcastEpisodeDto> repositoryService, IGenericCrawlHtmlService<AcastEpisode> acastCrawlService,
             IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
             /* , ITwitterCrawlApiService twitterCrawlApiService, ITwitterTweetApiService twitterTweetApiService */
-            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */ , ISecurityService securityService)
+            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */ , ISecurityService securityService
+            , IOptions<AppSettings> appSettings)
         {
             _logger = logger;
             _mailAndSmsService = mailAndSmsService;
@@ -52,6 +57,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             // _twitterTweetApiService = twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
             // _twitterCrawlService = twitterCrawlService;  // TODO: Unfinished & untested.
             _securityService = securityService;
+            _appSettings = appSettings;
         }
 
         /// <inheritdoc cref="IPodcastBusinessLogicService" />
