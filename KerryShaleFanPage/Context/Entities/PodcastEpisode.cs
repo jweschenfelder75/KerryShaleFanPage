@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace KerryShaleFanPage.Shared.Objects
+namespace KerryShaleFanPage.Context.Entities
 {
     public class PodcastEpisode : BaseEntity
     {
@@ -12,7 +12,7 @@ namespace KerryShaleFanPage.Shared.Objects
         [StringLength(100)]
         public string? Title { get; set; }
 
-        [StringLength(1000)]
+        [StringLength(1024)]
         public string? Description { get; set; }
 
         [StringLength(255)]
@@ -20,7 +20,7 @@ namespace KerryShaleFanPage.Shared.Objects
 
         public byte[]? ImageData { get; set; }
 
-        [StringLength(5000)]
+        [StringLength(14821)]
         public string? ImageDataBase64 { get; set; }
 
         public DateTime? Date { get; set; }

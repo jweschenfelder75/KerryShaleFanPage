@@ -7,7 +7,9 @@ using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
 using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
+using KerryShaleFanPage.Server.Interfaces.Security;
 using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
+using KerryShaleFanPage.Server.Services.Security;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
@@ -29,6 +31,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         // private readonly ITwitterCrawlApiService _twitterCrawlApiService;  // TODO: Obsolete: We will not use Twitter API anymore! It was tested and it was ok.
         // private readonly ITwitterTweetApiService _twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
         // private readonly IGenericCrawlHtmlService<TwitterEpisode> _twitterCrawlService;  // TODO: Unfinished & untested.
+        private readonly ISecurityService _securityService;
 
         /// <summary>
         /// 
@@ -37,7 +40,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             IGenericRepositoryService<PodcastEpisodeDto> repositoryService, IGenericCrawlHtmlService<AcastEpisode> acastCrawlService,
             IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
             /* , ITwitterCrawlApiService twitterCrawlApiService, ITwitterTweetApiService twitterTweetApiService */
-            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */)
+            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */ , ISecurityService securityService)
         {
             _logger = logger;
             _mailAndSmsService = mailAndSmsService;
@@ -48,6 +51,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             // _twitterCrawlApiService = twitterCrawlApiService;  // TODO: Obsolete: We will not use Twitter API anymore! It was tested and it was ok.
             // _twitterTweetApiService = twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
             // _twitterCrawlService = twitterCrawlService;  // TODO: Unfinished & untested.
+            _securityService = securityService;
         }
 
         /// <inheritdoc cref="IPodcastBusinessLogicService" />
@@ -56,6 +60,9 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             while (!cancellationToken.IsCancellationRequested)
             {
                 _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {_sleepPeriod.TotalMinutes} min).");
+
+                var test = _securityService.EncryptData("Test");
+                test = _securityService.DecryptData(test);
 
                 var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
                 if (latestPodcastEpisodeDto == null)
@@ -100,7 +107,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 return await _repositoryService.UpsertAsync(latestCrawledPodcastEpisodeDto, cancellationToken);
             }
 
-            if (latestStoredPodcastEpisodeDto.Date <= latestCrawledPodcastEpisodeDto.Date 
+            if (latestStoredPodcastEpisodeDto.Date >= latestCrawledPodcastEpisodeDto.Date 
                 || (latestStoredPodcastEpisodeDto.Title ?? string.Empty).Equals(latestCrawledPodcastEpisodeDto.Title ?? string.Empty, StringComparison.InvariantCultureIgnoreCase))
             {
                 return null;
@@ -112,7 +119,6 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="dto"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         private async Task<PodcastEpisodeDto?> GetLatestEpisodeFromCrawlServiceAsync(CancellationToken cancellationToken = default)
@@ -125,43 +131,38 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                     // TODO: Information that the data is obviously wrong!
                     return null;
                 }
-                return await _repositoryService.UpsertAsync(latestPodcastEpisodeDto, cancellationToken);
+                return latestPodcastEpisodeDto;
             }
-            else
+
+            // TODO: Information that there is obviously a problem fetching the latest episode! Backup 1 is called!
+            // 2nd try aka Backup 1: 
+            latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceBackup1Async(cancellationToken);
+            if (latestPodcastEpisodeDto != null)
             {
-                // TODO: Information that there is obviously a problem fetching the latest episode! Backup 1 is called!
-                // 2nd try aka Backup 1: 
-                latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceBackup1Async(cancellationToken);
-                if (latestPodcastEpisodeDto != null)
+                if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
                 {
-                    if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
-                    {
-                        // TODO: Information that the data is obviously wrong!
-                        return null;
-                    }
-                    return await _repositoryService.UpsertAsync(latestPodcastEpisodeDto, cancellationToken);
+                    // TODO: Information that the data is obviously wrong!
+                    return null;
                 }
-                else
-                {
-                    // TODO: Information that there is obviously a problem fetching the latest episode! Backup 2 is called!
-                    // 3rd try aka Backup 2: 
-                    latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceBackup2Async(cancellationToken);
-                    if (latestPodcastEpisodeDto != null)
-                    {
-                        if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
-                        {
-                            // TODO: Information that the data is obviously wrong!
-                            return null;
-                        }
-                        return await _repositoryService.UpsertAsync(latestPodcastEpisodeDto, cancellationToken);
-                    }
-                    else
-                    {
-                        // TODO: Information that there is obviously a problem fetching the latest episode!
-                        return null;
-                    }
-                }
+                return latestPodcastEpisodeDto;
             }
+
+            // TODO: Information that there is obviously a problem fetching the latest episode! Backup 2 is called!
+            // 3rd try aka Backup 2: 
+            latestPodcastEpisodeDto = await GetLatestEpisodeFromCrawlServiceBackup2Async(cancellationToken);
+            if (latestPodcastEpisodeDto == null)
+            {
+                // TODO: Information that there is obviously a problem fetching the latest episode!
+                return null;
+            }
+
+            if (latestPodcastEpisodeDto.Date.HasValue && latestPodcastEpisodeDto.Date.Value.Year < DateTime.UtcNow.Year)
+            {
+                // TODO: Information that the data is obviously wrong!
+                return null;
+            }
+
+            return latestPodcastEpisodeDto;
         }
 
         /// <summary>
@@ -172,27 +173,27 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         private async Task<PodcastEpisodeDto?> GetLatestEpisodeFromCrawlServiceMainAsync(CancellationToken cancellationToken = default)
         {
             var latestAcastEpisode = await _acastCrawlService.GetLatestEpisodeAsync(cancellationToken);  // Acast is new leading podcast source
-            if (latestAcastEpisode != null)
+            if (latestAcastEpisode == null)
             {
-                var latestListenNotesImageData = await _acastCrawlService.GetImageAsByteArrayAsync(latestAcastEpisode.ImageUrl ?? string.Empty, cancellationToken);
-                var latestListenNotesImageBase64 = await _acastCrawlService.GetImageAsBase64StringAsync(latestAcastEpisode.ImageUrl ?? string.Empty, cancellationToken);
-
-                return new PodcastEpisodeDto()
-                {
-                    Id = latestAcastEpisode.Id,
-                    Title = latestAcastEpisode.Title,
-                    Description = latestAcastEpisode.Description,
-                    ImageUrl = latestAcastEpisode.ImageUrl,
-                    ImageData = latestListenNotesImageData,
-                    ImageDataBase64 = latestListenNotesImageBase64,
-                    Date = latestAcastEpisode.Date.ToDateTime("M/d/yyyy"),  // e.g. "1/22/2023"
-                    Duration = latestAcastEpisode.Duration,
-                    Checksum = latestAcastEpisode.Checksum,
-                    FetchedExpectedNextDate = null
-                };
+                return null;
             }
 
-            return null;
+            var latestAcastImageData = await _acastCrawlService.GetImageAsByteArrayAsync(latestAcastEpisode.ImageUrl ?? string.Empty, cancellationToken);
+            var latestAcastImageBase64 = await _acastCrawlService.GetImageAsBase64StringAsync(latestAcastEpisode.ImageUrl ?? string.Empty, cancellationToken);
+
+            return new PodcastEpisodeDto()
+            {
+                Id = latestAcastEpisode.Id,
+                Title = (latestAcastEpisode?.Title ?? string.Empty).Length > 100 ? latestAcastEpisode?.Title?[..100] : latestAcastEpisode?.Title,
+                Description = (latestAcastEpisode?.Description ?? string.Empty).Length > 1024 ? latestAcastEpisode?.Description?[..1024] : latestAcastEpisode?.Description,
+                ImageUrl = (latestAcastEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestAcastEpisode?.ImageUrl?[..255] : latestAcastEpisode?.ImageUrl,
+                ImageData = latestAcastImageData,
+                ImageDataBase64 = (latestAcastImageBase64 ?? string.Empty).Length > 14821 ? latestAcastImageBase64?[..14821] : latestAcastImageBase64,
+                Date = latestAcastEpisode?.Date.ToDateTime("M/d/yyyy"),  // e.g. "1/22/2023"
+                Duration = latestAcastEpisode?.Duration,
+                Checksum = latestAcastEpisode?.Checksum,
+                FetchedExpectedNextDate = null
+            };
         }
 
         /// <summary>
@@ -203,27 +204,27 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         private async Task<PodcastEpisodeDto?> GetLatestEpisodeFromCrawlServiceBackup1Async(CancellationToken cancellationToken = default)
         {
             var latestListenNotesEpisode = await _listenNotesCrawlService.GetLatestEpisodeAsync(cancellationToken);  // Backup 1, ListenNotes is obviously late
-            if (latestListenNotesEpisode != null)
+            if (latestListenNotesEpisode == null)
             {
-                var latestListenNotesImageData = await _listenNotesCrawlService.GetImageAsByteArrayAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
-                var latestListenNotesImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
-
-                return new PodcastEpisodeDto()
-                {
-                    Id = latestListenNotesEpisode.Id,
-                    Title = latestListenNotesEpisode.Title,
-                    Description = latestListenNotesEpisode.Description,
-                    ImageUrl = latestListenNotesEpisode.ImageUrl,
-                    ImageData = latestListenNotesImageData,
-                    ImageDataBase64 = latestListenNotesImageBase64,
-                    Date = latestListenNotesEpisode.Date.ToDateTime("MMM. dd, yyyy"),  // e.g. "Jan. 01, 2023"
-                    Duration = latestListenNotesEpisode.Duration,
-                    Checksum = latestListenNotesEpisode.Checksum,
-                    FetchedExpectedNextDate = null
-                };
+                return null;
             }
 
-            return null;
+            var latestListenNotesImageData = await _listenNotesCrawlService.GetImageAsByteArrayAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
+            var latestListenNotesImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
+
+            return new PodcastEpisodeDto()
+            {
+                Id = latestListenNotesEpisode.Id,
+                Title = (latestListenNotesEpisode?.Title ?? string.Empty).Length > 100 ? latestListenNotesEpisode?.Title?[..100] : latestListenNotesEpisode?.Title,
+                Description = (latestListenNotesEpisode?.Description ?? string.Empty).Length > 1024 ? latestListenNotesEpisode?.Description?[..1024] : latestListenNotesEpisode?.Description,
+                ImageUrl = (latestListenNotesEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestListenNotesEpisode?.ImageUrl?[..255] : latestListenNotesEpisode?.ImageUrl,
+                ImageData = latestListenNotesImageData,
+                ImageDataBase64 = (latestListenNotesImageBase64 ?? string.Empty).Length > 14821 ? latestListenNotesImageBase64?[..14821] : latestListenNotesImageBase64,
+                Date = latestListenNotesEpisode?.Date.ToDateTime("MMM. dd, yyyy"),  // e.g. "Jan. 01, 2023"
+                Duration = latestListenNotesEpisode?.Duration,
+                Checksum = latestListenNotesEpisode?.Checksum,
+                FetchedExpectedNextDate = null
+            };
         }
 
         /// <summary>
@@ -234,27 +235,28 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         private async Task<PodcastEpisodeDto?> GetLatestEpisodeFromCrawlServiceBackup2Async(CancellationToken cancellationToken = default)
         {
             var latestSpotifyEpisode = await _spotifyCrawlService.GetLatestEpisodeAsync(cancellationToken);  // Backup 2, Spotify is obvioulsy faster than ListenNotes
-            if (latestSpotifyEpisode != null)
+            if (latestSpotifyEpisode == null)
             {
-                var latestSpotifyImageData = await _spotifyCrawlService.GetImageAsByteArrayAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);  // Backup
-                var latestSpotifyImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);
-
-                return new PodcastEpisodeDto()
-                {
-                    Id = latestSpotifyEpisode.Id,
-                    Title = latestSpotifyEpisode.Title,
-                    Description = latestSpotifyEpisode.Description,
-                    ImageUrl = latestSpotifyEpisode.ImageUrl,
-                    ImageData = latestSpotifyImageData,
-                    ImageDataBase64 = latestSpotifyImageBase64,
-                    Date = latestSpotifyEpisode.Date.ToDateTime("MMM yy"),  // e.g. "Jan 23"
-                    Duration = latestSpotifyEpisode.Duration,
-                    Checksum= latestSpotifyEpisode.Checksum,
-                    FetchedExpectedNextDate = null
-                };
+                return null;
             }
 
-            return null;
+            var latestSpotifyImageData = await _spotifyCrawlService.GetImageAsByteArrayAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);  // Backup
+            var latestSpotifyImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);
+
+            return new PodcastEpisodeDto()
+            {
+                Id = latestSpotifyEpisode.Id,
+                Title = (latestSpotifyEpisode?.Title ?? string.Empty).Length > 100 ? latestSpotifyEpisode?.Title?[..100] : latestSpotifyEpisode?.Title,
+                Description = (latestSpotifyEpisode?.Description ?? string.Empty).Length > 1024 ? latestSpotifyEpisode?.Description?[..1024] : latestSpotifyEpisode?.Description,
+                ImageUrl = (latestSpotifyEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestSpotifyEpisode?.ImageUrl?[..255] : latestSpotifyEpisode?.ImageUrl,
+                ImageData = latestSpotifyImageData,
+                ImageDataBase64 = (latestSpotifyImageBase64 ?? string.Empty).Length > 14821 ? latestSpotifyImageBase64?[..14821] : latestSpotifyImageBase64,
+                Date = latestSpotifyEpisode?.Date.ToDateTime("MMM yy"),  // e.g. "Jan 23"
+                Duration = latestSpotifyEpisode?.Duration,
+                Checksum= latestSpotifyEpisode?.Checksum,
+                FetchedExpectedNextDate = null
+            };
+
             // Backup 3 (TODO: Rest of implementation missing!):
             // var twitterUsers = await _twitterCrawlApiService.GetUsersAsync(new List<string> { "isitrollingpod" }, cancellationToken);  // Returns the needed UserId, TODO: Currently not used, I do not think we need this! It was tested and it was ok.
             // var twitterUserTweets = await _twitterCrawlApiService.GetTweetsAsync("984758353787260928", cancellationToken);  // TODO: Currently not used, I do not think we need this! It was tested and it was ok.

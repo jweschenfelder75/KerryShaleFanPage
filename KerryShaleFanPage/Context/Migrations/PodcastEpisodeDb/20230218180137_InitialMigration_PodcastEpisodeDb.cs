@@ -20,10 +20,10 @@ namespace KerryShaleFanPage.Context.Migrations.PodcastEpisodeDb
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
-                    Description = table.Column<string>(type: "varchar(1000)", maxLength: 1000, nullable: true),
+                    Description = table.Column<string>(type: "varchar(1024)", maxLength: 1024, nullable: true),
                     ImageUrl = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     ImageData = table.Column<byte[]>(type: "longblob", nullable: true),
-                    ImageDataBase64 = table.Column<string>(type: "varchar(5000)", maxLength: 5000, nullable: true),
+                    ImageDataBase64 = table.Column<string>(type: "varchar(14821)", maxLength: 14821, nullable: true),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     Duration = table.Column<string>(type: "varchar(25)", maxLength: 25, nullable: true),
                     Checksum = table.Column<string>(type: "varchar(40)", maxLength: 40, nullable: true),

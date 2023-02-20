@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using KerryShaleFanPage.Shared.Objects;
+using KerryShaleFanPage.Context.Entities;
 
-namespace KerryShaleFanPage.Shared.Contexts
+namespace KerryShaleFanPage.Context.Contexts
 {
     public class LogDbContext : DbContext
     {

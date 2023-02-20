@@ -12,24 +12,15 @@ namespace KerryShaleFanPage.Shared.Objects.Acast
         // https://res.cloudinary.com/pippa/image/fetch/h_500,w_500,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/63d0e60dba852b00110a0a75.jpg 500w
         // https://res.cloudinary.com/pippa/image/fetch/h_750,w_750,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/63d0e60dba852b00110a0a75.jpg 750w
         // https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/63d0e60dba852b00110a0a75.jpg 1400w  <= This is what we want!
-        // https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b//63d0e60dba852b00110a0a75.jpg
 
         // Example2 ImageUrls:
-        // https://res.cloudinary.com/pippa/image/fetch/h_500,w_500,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/63d0e60dba852b00110a0a76.jpg 500w
-        // https://res.cloudinary.com/pippa/image/fetch/h_750,w_750,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/63d0e60dba852b00110a0a76.jpg 750w
-        // https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/63d0e60dba852b00110a0a76.jpg 1400w  <= This is what we want!
+        // https://res.cloudinary.com/pippa/image/fetch/h_500,w_500,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1674641828496-d98fea216ec4f67b4eb8bbdd44f5d9dd.jpeg 500w
+        // https://res.cloudinary.com/pippa/image/fetch/h_750,w_750,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1674641828496-d98fea216ec4f67b4eb8bbdd44f5d9dd.jpeg 750w
+        // https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1674641828496-d98fea216ec4f67b4eb8bbdd44f5d9dd.jpeg 1400w  <= This is what we want!
 
-        // Example: Href
-        // /63d0e60777d9ee0011a4f45b/episodes/63d0e60dba852b00110a0a75
-
-        // Example: ShowId
-        // 63d0e60777d9ee0011a4f45b
-
-        // Example: EpisodeId
-        // 63d0e60dba852b00110a0a75
-
-        private const string _EPISODES_SUBSTRING = "episodes";
-        private const string _IMAGE_URL_TEMPLATE = "https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/{ShowId}{EpisodeId}.jpg";
+        private const string _SMALL_IMAGE_SUBSTRING = "h_500,w_500,";  // 500w
+        private const string _MEDIUM_IMAGE_SUBSTRING = "h_750,w_750,";  // 750w
+        private const string _LARGE_IMAGE_SUBSTRING = "h_1400,w_1400,";  // 1400w  <= This is what we want!
 
         [Key]
         public long Id { get; set; }
@@ -40,7 +31,7 @@ namespace KerryShaleFanPage.Shared.Objects.Acast
 
         public string? Date { get; set; }  // e.g. 1/22/2023
 
-        public string? Duration { get; set; }  // Minutes and seconds, e.g. 58 min 38 sec
+        public string? Duration { get; set; }  // Not available on Acast yet
 
         public string? ImageBaseUrl { get; set; }
 
@@ -67,13 +58,9 @@ namespace KerryShaleFanPage.Shared.Objects.Acast
                 return string.Empty;
             }
 
-            var episodeId = ImageBaseUrl
-                .Replace($"/{EpisodeShowId}", string.Empty)
-                .Replace($"/{_EPISODES_SUBSTRING}", string.Empty);
-
-            return _IMAGE_URL_TEMPLATE
-                .Replace("{ShowId}", EpisodeShowId)
-                .Replace("{EpisodeId}", episodeId);
+            return ImageBaseUrl
+                .Replace(_SMALL_IMAGE_SUBSTRING, _LARGE_IMAGE_SUBSTRING)
+                .Replace(_MEDIUM_IMAGE_SUBSTRING, _LARGE_IMAGE_SUBSTRING);
         }
 
         /// <summary>
@@ -89,27 +76,21 @@ namespace KerryShaleFanPage.Shared.Objects.Acast
             }
             
             var titleParts = BaseTitle.Trim().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-            if (titleParts.Length == 12)  // 6 names, that should be extremely rare
+            return titleParts.Length switch
             {
-                return $"{titleParts[0]} {titleParts[1]} {titleParts[2]} {titleParts[3]} {titleParts[4]} {titleParts[5]}";
-            }
-            if (titleParts.Length == 10)  // 5 names, that should be very rare
-            {
-                return $"{titleParts[0]} {titleParts[1]} {titleParts[2]} {titleParts[3]} {titleParts[4]}";
-            }
-            if (titleParts.Length == 8)  // 4 names, e.g. John Michael of Doe
-            {
-                return $"{titleParts[0]} {titleParts[1]} {titleParts[2]} {titleParts[3]}";
-            }
-            if (titleParts.Length == 6)  // 3 names, e.g. John Michael Doe
-            {
-                return $"{titleParts[0]} {titleParts[1]} {titleParts[2]}";
-            }
-            if (titleParts.Length == 4)  // 2 names, e.g. John Doe
-            {
-                return $"{titleParts[0]} {titleParts[1]}";
-            }
-            return BaseTitle;
+                // 6 names, that should be extremely rare
+                12 => $"{titleParts[0]} {titleParts[1]} {titleParts[2]} {titleParts[3]} {titleParts[4]} {titleParts[5]}",
+                // 5 names, that should be very rare
+                10 => $"{titleParts[0]} {titleParts[1]} {titleParts[2]} {titleParts[3]} {titleParts[4]}",
+                // 4 names, e.g. John Michael of Doe
+                8 => $"{titleParts[0]} {titleParts[1]} {titleParts[2]} {titleParts[3]}",
+                // 3 names, e.g. John Michael Doe
+                6 => $"{titleParts[0]} {titleParts[1]} {titleParts[2]}",
+                // 2 names, e.g. John Doe
+                4 => $"{titleParts[0]} {titleParts[1]}",
+                // default
+                _ => BaseTitle
+            };
         }
 
         /// <summary>

@@ -27,7 +27,7 @@ namespace KerryShaleFanPage.Shared.Objects
 
         public byte[]? ImageData { get; set; }
 
-        [StringLength(5000)]
+        [StringLength(14821)]
         public string? ImageDataBase64 { get; set; }
 
         public DateTime? Date { get; set; }
@@ -55,7 +55,7 @@ namespace KerryShaleFanPage.Shared.Objects
             return string.Format("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}{14}{15}{16}{17}{18}{19}{20}{21}{22}{23}"
                 , "Date: ", Date?.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture), Environment.NewLine
                 , "Title: ", Title, Environment.NewLine
-                , "TweetText: ", $"New podcast episode is out: Kerry Shale and Lucas Hare interview \"{Title}\". The next episode will probably be published on {CalculatedExpectedNextDate.ToString("dd MMM yyyy", CultureInfo.InvariantCulture)}.", Environment.NewLine
+                , "TweetText: ", $"New podcast episode available: Kerry Shale and Lucas Hare interview {Title}. The next episode will probably be published on {CalculatedExpectedNextDate.ToString("dd MMM yyyy", CultureInfo.InvariantCulture)}. - Direct link: https://shows.acast.com/63d0e60777d9ee0011a4f45b - also available on many other podcast platforms incl. Apple. #KerryShale", Environment.NewLine
                 , "ImageUrl: ", ImageUrl, Environment.NewLine
                 , "Description: ", Description, Environment.NewLine
                 , "Duration: ", Duration, Environment.NewLine
@@ -74,7 +74,7 @@ namespace KerryShaleFanPage.Shared.Objects
             const int maxTries = 100;  // avoids an endless loop
             var count = 0;
 
-            while (expectedNextDate < today && count < maxTries)
+            while (expectedNextDate <= today && count < maxTries)
             {
                 expectedNextDate = expectedNextDate.AddDays(_EPISODES_TIME_PERIOD_IN_DAYS);
                 count++;

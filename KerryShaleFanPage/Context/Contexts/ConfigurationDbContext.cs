@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using KerryShaleFanPage.Shared.Objects;
-using Microsoft.Extensions.DependencyInjection;
+using KerryShaleFanPage.Context.Entities;
 
-namespace KerryShaleFanPage.Shared.Contexts
+namespace KerryShaleFanPage.Context.Contexts
 {
     public class ConfigurationDbContext : DbContext
     {

@@ -25,14 +25,14 @@ namespace KerryShaleFanPage.Shared.Security
         /// <param name="cert"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public byte[] EncryptDataSha2(X509Certificate2 cert, byte[] data)
+        public byte[] EncryptDataSha2(X509Certificate2? cert, byte[]? data)
         {
-            if (data == null)
+            if (cert == null || data == null)
             {
-                return new byte[0];
+                return Array.Empty<byte>();
             }
 
-            using RSA rsa = cert.GetRSAPublicKey();
+            using var rsa = cert.GetRSAPublicKey();
             return rsa.Encrypt(data, RSAEncryptionPadding.OaepSHA512);
         }
 
@@ -42,14 +42,14 @@ namespace KerryShaleFanPage.Shared.Security
         /// <param name="cert"></param>
         /// <param name="data"></param>
         /// <returns></returns>
-        public byte[] DecryptDataSha2(X509Certificate2 cert, byte[] data)
+        public byte[] DecryptDataSha2(X509Certificate2? cert, byte[]? data)
         {
-            if (data == null)
+            if (cert == null || data == null)
             {
-                return new byte[0];
+                return Array.Empty<byte>();
             }
 
-            using RSA rsa = cert.GetRSAPrivateKey();
+            using var rsa = cert.GetRSAPrivateKey();
             return rsa.Decrypt(data, RSAEncryptionPadding.OaepSHA512);
         }
 
@@ -74,14 +74,14 @@ namespace KerryShaleFanPage.Shared.Security
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="data"></param>
         /// <param name="salt"></param>
         /// <returns></returns>
-        public static byte[] HashDataSha2(string data, byte[] salt)
+        public static byte[] HashDataSha2(string? data, byte[]? salt)
         {
             if (string.IsNullOrEmpty(data) || salt == null)
             {
-                return new byte[0];
+                return Array.Empty<byte>();
             }
 
             return HashDataSha2(Encoding.UTF8.GetBytes(data), salt);
@@ -90,14 +90,14 @@ namespace KerryShaleFanPage.Shared.Security
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="passwordBytes"></param>
+        /// <param name="dataBytes"></param>
         /// <param name="salt"></param>
         /// <returns></returns>
-        public static byte[] HashDataSha2(byte[] dataBytes, byte[] salt)
+        public static byte[] HashDataSha2(byte[]? dataBytes, byte[]? salt)
         {
             if (dataBytes == null || salt == null)
             {
-                return new byte[0];
+                return Array.Empty<byte>();
             }
 
             var saltedValue = dataBytes.Concat(salt).ToArray();
@@ -110,7 +110,7 @@ namespace KerryShaleFanPage.Shared.Security
         /// <param name="password"></param>
         /// <param name="salt"></param>
         /// <returns></returns>
-        public bool ConfirmPassword(string password, byte[] salt)
+        public bool ConfirmPassword(string password, byte[]? salt)
         {
             if (string.IsNullOrEmpty(password) || salt == null)
             {
@@ -126,7 +126,7 @@ namespace KerryShaleFanPage.Shared.Security
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
-        public string ToBase64(byte[] bytes)
+        public string ToBase64(byte[]? bytes)
         {
             if (bytes == null)
             {
@@ -145,7 +145,7 @@ namespace KerryShaleFanPage.Shared.Security
         {
             if (string.IsNullOrEmpty(base64EncodedData))
             {
-                return new byte[0];
+                return Array.Empty<byte>();
             }
 
             return Convert.FromBase64String(base64EncodedData);
@@ -236,7 +236,7 @@ namespace KerryShaleFanPage.Shared.Security
         {
             if (string.IsNullOrEmpty(text))
             {
-                return new byte[0];
+                return Array.Empty<byte>();
             }
 
             return Encoding.UTF8.GetBytes(text);
@@ -247,7 +247,7 @@ namespace KerryShaleFanPage.Shared.Security
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
-        public string ToString(byte[] bytes)
+        public string ToString(byte[]? bytes)
         {
             if (bytes == null)
             {

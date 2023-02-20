@@ -43,7 +43,7 @@ namespace KerryShaleFanPage.Shared.Extensions
 
         public static string ComputeMd5(this string str)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             using (var md5 = MD5.Create())
             {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace KerryShaleFanPage.Shared.Objects
+namespace KerryShaleFanPage.Context.Entities
 {
     public class BaseEntity
     {

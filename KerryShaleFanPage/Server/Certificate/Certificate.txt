@@ -1,0 +1,16 @@
+﻿The certificate for encryption and decryption of data is not provided with this project for security reasons.
+To generate an own certificate, please follow these instructions:
+1) Download and install "OpenSSL" from here: https://slproweb.com/products/Win32OpenSSL.html (select the latest version which is not a light version).
+   Also see: https://www.ibm.com/docs/en/ts4500-tape-library?topic=openssl-installing
+2) Execute from Command line: "openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem".
+   Also see: https://www.ibm.com/docs/en/api-connect/2018.x?topic=overview-generating-self-signed-certificate-using-openssl 
+   You can provide the information as follow (you can leave some fields empty):
+   - Country Name (2 letter code) [AU]:DE
+   - State or Province Name (full name) [Some-State]:Berlin
+   - Locality Name (eg, city) []:Berlin
+   - Organization Name (eg, company) [Internet Widgits Pty Ltd]:kerryshalefanpg
+   - Organizational Unit Name (eg, section) []:
+   - Common Name (e.g. server FQDN or YOUR name) []:kerryshalefanpg
+   - Email Address []:<your e-mail address>
+3) Put both files in this project folder, next to this text file.
+4) If put directly in the C# project, ensure that the files are always copied in the output directory.

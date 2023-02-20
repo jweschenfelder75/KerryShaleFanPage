@@ -14,6 +14,9 @@ using NLog.Config;
 using NLog.Extensions.Logging;
 using NLog.Web;
 using NLog.Targets;
+using KerryShaleFanPage.Context.Contexts;
+using KerryShaleFanPage.Context.Entities;
+using KerryShaleFanPage.Context.Repositories;
 using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo;
@@ -27,7 +30,6 @@ using KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo;
 using KerryShaleFanPage.Server.Services.MailAndSmsServices;
 using KerryShaleFanPage.Server.Services.Repositories;
 using KerryShaleFanPage.Server.Services.Security;
-using KerryShaleFanPage.Shared.Contexts;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
@@ -37,7 +39,7 @@ using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
 using KerryShaleFanPage.Shared.Repositories;
 using KerryShaleFanPage.Shared.Security;
 
-namespace KerryShaleFanPage
+namespace KerryShaleFanPage.Server
 {
     public class Program
     {
@@ -165,14 +167,14 @@ namespace KerryShaleFanPage
             dbTarget.ConnectionString = strConnectionString;
 
             var installationContext = new InstallationContext();
-            DatabaseCommandInfo createDBCommand = new DatabaseCommandInfo()
+            var createDbCommand = new DatabaseCommandInfo()
             {
                 Text = "CREATE DATABASE IF NOT EXISTS kerryshalefanpg",
                 CommandType = CommandType.Text
             };
             dbTarget.InstallConnectionString = strInstallConnectionString;
             dbTarget.InstallDdlCommands.Clear();
-            dbTarget.InstallDdlCommands.Add(createDBCommand);
+            dbTarget.InstallDdlCommands.Add(createDbCommand);
 
             // Create the database if it does not exist
             try

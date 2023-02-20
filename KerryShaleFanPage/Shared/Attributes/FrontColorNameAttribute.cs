@@ -7,8 +7,6 @@ namespace KerryShaleFanPage.Shared.Attributes
     {
         public static readonly FrontColorNameAttribute Default = new FrontColorNameAttribute();
 
-        private string _name;
-
         public FrontColorNameAttribute()
             : this(string.Empty)
         {
@@ -16,22 +14,12 @@ namespace KerryShaleFanPage.Shared.Attributes
 
         public FrontColorNameAttribute(string name)
         {
-            _name = name;
+            NameValue = name;
         }
 
         public virtual string Name => NameValue;
 
-        protected string NameValue
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
+        protected string NameValue { get; set; }
 
         public override bool Equals(object obj)
         {

@@ -1,7 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
+using System;
+using System.IO;
+using System.Security.Cryptography.X509Certificates;
 using KerryShaleFanPage.Server.Interfaces.Security;
 using KerryShaleFanPage.Shared.Security;
-using System.Security.Cryptography.X509Certificates;
 
 namespace KerryShaleFanPage.Server.Services.Security
 {
@@ -10,13 +12,11 @@ namespace KerryShaleFanPage.Server.Services.Security
         private readonly ILogger<SecurityService> _logger;  // TODO: Implement logging!
         private readonly SecurityProvider _securityProvider;
 
-        private X509Certificate2 Certficate => GetCertificate();
+        public X509Certificate2? Certificate => GetCertificate();
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="securityProvider"></param>
         public SecurityService(ILogger<SecurityService> logger, SecurityProvider securityProvider) 
         {
             _logger = logger;
@@ -32,7 +32,7 @@ namespace KerryShaleFanPage.Server.Services.Security
             }
 
             var dataBytes = _securityProvider.ToByteArray(plainText);
-            var encryptedData = _securityProvider.EncryptDataSha2(Certficate, dataBytes);
+            var encryptedData = _securityProvider.EncryptDataSha2(Certificate, dataBytes);
             var encryptedDataBase64 = _securityProvider.ToBase64(encryptedData);
             return _securityProvider.ToHexString(encryptedDataBase64);
         }
@@ -47,13 +47,29 @@ namespace KerryShaleFanPage.Server.Services.Security
 
             var dataBytes = _securityProvider.FromHexString(encryptedText);
             var encryptedDataBase64 = _securityProvider.FromBase64(dataBytes);
-            var decryptedData = _securityProvider.DecryptDataSha2(Certficate, encryptedDataBase64);
+            var decryptedData = _securityProvider.DecryptDataSha2(Certificate, encryptedDataBase64);
             return _securityProvider.ToString(decryptedData);
         }
 
-        private X509Certificate2 GetCertificate()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private static X509Certificate2? GetCertificate()
         {
-            return Certficate;
+            var basePath = AppContext.BaseDirectory;
+            var certPemPath = Path.Combine(basePath, "Certificate/cert.pem");  // TODO: Make configurable!
+            var eccPemPath = Path.Combine(basePath, "Certificate/key.pem");  // TODO: Make configurable!
+            if (File.Exists(certPemPath))
+            {
+                var certPem = File.ReadAllText(certPemPath);
+                if (File.Exists(eccPemPath))
+                {
+                    var eccPem = File.ReadAllText(eccPemPath);
+                    return X509Certificate2.CreateFromPem(certPem, eccPem);
+                }
+            }
+            return null;
         }
     }
 }

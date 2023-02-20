@@ -19,7 +19,6 @@ namespace KerryShaleFanPage.Server.Services
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="serviceProvider"></param>
-        /// <param name="podcastBusinessLogicService"></param>
         public ScopedBackgroundService(ILogger<ScopedBackgroundService> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
@@ -66,15 +65,15 @@ namespace KerryShaleFanPage.Server.Services
         /// 
         /// See: https://learn.microsoft.com/en-us/dotnet/core/extensions/scoped-service
         /// </summary>
-        /// <param name="state"></param>
+        /// <param name="cancellationToken"></param>
         private async Task DoWorkAsync(CancellationToken cancellationToken = default)
         {
             _logger.LogInformation($"Scoped Background Service is working.");
 
             try
             {
-                using IServiceScope scope = _serviceProvider.CreateScope();
-                IPodcastBusinessLogicService podcastBusinessLogicService = scope.ServiceProvider.GetRequiredService<IPodcastBusinessLogicService>();
+                using var scope = _serviceProvider.CreateScope();
+                var podcastBusinessLogicService = scope.ServiceProvider.GetRequiredService<IPodcastBusinessLogicService>();
                 await podcastBusinessLogicService.DoWorkAsync(cancellationToken);
             }
             catch (OperationCanceledException ex) when (cancellationToken.IsCancellationRequested)
