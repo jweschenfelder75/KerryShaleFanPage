@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
 {
     [DbContext(typeof(ConfigurationDbContext))]
-    [Migration("20230218180126_InitialMigration_ConfigurationDb")]
+    [Migration("20230220175459_InitialMigration_ConfigurationDb")]
     partial class InitialMigration_ConfigurationDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
                 .HasAnnotation("ProductVersion", "6.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("KerryShaleFanPage.Shared.Objects.ConfigurationEntry", b =>
+            modelBuilder.Entity("KerryShaleFanPage.Context.Entities.ConfigurationEntry", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,6 +38,9 @@ namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
 
+                    b.Property<bool>("IsPassword")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Key")
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
@@ -49,16 +52,13 @@ namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Value")
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
-
                     b.Property<string>("Salt")
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
 
-                    b.Property<bool>("IsPassword")
-                        .HasColumnType("tinyint");
+                    b.Property<string>("Value")
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 

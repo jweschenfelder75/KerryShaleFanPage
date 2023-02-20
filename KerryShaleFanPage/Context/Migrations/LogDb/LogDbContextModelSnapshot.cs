@@ -19,7 +19,7 @@ namespace KerryShaleFanPage.Context.Migrations.LogDb
                 .HasAnnotation("ProductVersion", "6.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("KerryShaleFanPage.Shared.Objects.LogEntry", b =>
+            modelBuilder.Entity("KerryShaleFanPage.Context.Entities.LogEntry", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

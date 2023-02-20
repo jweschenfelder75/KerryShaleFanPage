@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KerryShaleFanPage.Context.Migrations.LogDb
 {
     [DbContext(typeof(LogDbContext))]
-    [Migration("20230218180108_InitialMigration_LogDb")]
+    [Migration("20230220175444_InitialMigration_LogDb")]
     partial class InitialMigration_LogDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace KerryShaleFanPage.Context.Migrations.LogDb
                 .HasAnnotation("ProductVersion", "6.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("KerryShaleFanPage.Shared.Objects.LogEntry", b =>
+            modelBuilder.Entity("KerryShaleFanPage.Context.Entities.LogEntry", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,9 +1,9 @@
 ﻿// See: https://learn.microsoft.com/de-de/ef/core/cli/powershell
 
-Add-Migration -Name "InitialMigration_LogDb" -Context KerryShaleFanPage.Shared.Contexts.LogDbContext -OutputDir Migrations/LogDb -Verbose
-Add-Migration -Name "InitialMigration_ConfigurationDb" -Context KerryShaleFanPage.Shared.Contexts.ConfigurationDbContext -OutputDir Migrations/ConfigurationDb -Verbose
-Add-Migration -Name "InitialMigration_PodcastEpisodeDb" -Context KerryShaleFanPage.Shared.Contexts.PodcastEpisodeDbContext -OutputDir Migrations/PodcastEpisodeDb -Verbose
+Add-Migration -Name "InitialMigration_LogDb" -Context KerryShaleFanPage.Context.Contexts.LogDbContext -OutputDir Migrations/LogDb -Verbose
+Add-Migration -Name "InitialMigration_ConfigurationDb" -Context KerryShaleFanPage.Context.Contexts.ConfigurationDbContext -OutputDir Migrations/ConfigurationDb -Verbose
+Add-Migration -Name "InitialMigration_PodcastEpisodeDb" -Context KerryShaleFanPage.Context.Contexts.PodcastEpisodeDbContext -OutputDir Migrations/PodcastEpisodeDb -Verbose
 
-Update-Database "InitialMigration_LogDb" -Context KerryShaleFanPage.Shared.Contexts.LogDbContext
-Update-Database "InitialMigration_ConfigurationDb" -Context KerryShaleFanPage.Shared.Contexts.ConfigurationDbContext
-Update-Database "InitialMigration_PodcastEpisodeDb" -Context KerryShaleFanPage.Shared.Contexts.PodcastEpisodeDbContext
+Update-Database "InitialMigration_LogDb" -Context KerryShaleFanPage.Context.Contexts.LogDbContext
+Update-Database "InitialMigration_ConfigurationDb" -Context KerryShaleFanPage.Context.Contexts.ConfigurationDbContext
+Update-Database "InitialMigration_PodcastEpisodeDb" -Context KerryShaleFanPage.Context.Contexts.PodcastEpisodeDbContext

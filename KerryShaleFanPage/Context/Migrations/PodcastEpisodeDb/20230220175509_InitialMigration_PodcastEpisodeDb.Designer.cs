@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KerryShaleFanPage.Context.Migrations.PodcastEpisodeDb
 {
     [DbContext(typeof(PodcastEpisodeDbContext))]
-    [Migration("20230218180137_InitialMigration_PodcastEpisodeDb")]
+    [Migration("20230220175509_InitialMigration_PodcastEpisodeDb")]
     partial class InitialMigration_PodcastEpisodeDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace KerryShaleFanPage.Context.Migrations.PodcastEpisodeDb
                 .HasAnnotation("ProductVersion", "6.0.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("KerryShaleFanPage.Shared.Objects.PodcastEpisode", b =>
+            modelBuilder.Entity("KerryShaleFanPage.Context.Entities.PodcastEpisode", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
