@@ -1,5 +1,8 @@
-﻿namespace KerryShaleFanPage.Shared.Configuration
+﻿using System;
+
+namespace KerryShaleFanPage.Shared.Configuration
 {
+    [Serializable]
     public class AppSettings
     {
         public GeneralWebService? GeneralWebService { get; set; }
@@ -19,17 +22,20 @@
     /// TODO: Put classes below in extra files.
     /// </summary>
 
+    [Serializable]
     public class ContactFormWebpage
     {
         public bool Enabled { get; set; }
     }
 
+    [Serializable]
     public class GeneralLogging
     {
         public bool DeleteLogsEnabled { get; set; }
         public int DeleteLogsAfterDays { get; set; }
     }
 
+    [Serializable]
     public class GeneralMaintainance
     {
         public bool Enabled { get; set; }
@@ -37,12 +43,14 @@
         public bool MessageScrollEnabled { get; set; }
     }
 
+    [Serializable]
     public class GeneralWebService
     {
         public bool Enabled { get; set; }
         public bool SwaggerEnabled { get; set; }
     }
 
+    [Serializable]
     public class IsitrollingpodAtAcast
     {
         public bool Backup { get; set; }
@@ -53,6 +61,7 @@
         public bool ImageDownloadUploadEnabled { get; set; }
     }
 
+    [Serializable]
     public class IsitrollingpodAtListenNotes
     {
         public bool Backup { get; set; }
@@ -63,6 +72,7 @@
         public bool ImageDownloadUploadEnabled { get; set; }
     }
 
+    [Serializable]
     public class IsitrollingpodAtSpotify
     {
         public bool Backup { get; set; }
@@ -73,6 +83,7 @@
         public bool ImageDownloadUploadEnabled { get; set; }
     }
 
+    [Serializable]
     public class IsitrollingpodAtTwitter
     {
         public bool Backup { get; set; }
@@ -83,6 +94,7 @@
         public bool ImageDownloadUploadEnabled { get; set; }
     }
 
+    [Serializable]
     public class LoggingWebpage
     {
         public bool Enabled { get; set; }
@@ -90,6 +102,7 @@
         public int MaximumLogEntriesCount { get; set; }
     }
 
+    [Serializable]
     public class MobileMaintainance
     {
         public bool Enabled { get; set; }
@@ -97,6 +110,7 @@
         public bool MessageScrollEnabled { get; set; }
     }
 
+    [Serializable]
     public class MobileWebService
     {
         public bool Enabled { get; set; }
