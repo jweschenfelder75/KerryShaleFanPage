@@ -105,7 +105,11 @@ namespace KerryShaleFanPage.Server
             services.AddScoped<SecurityProvider>();
             services.AddScoped<ISecurityService, SecurityService>();
             services.AddScoped<IMailAndSmsService, GmxMailAndSmsService>();
+            services.AddScoped<IGenericRepository<ConfigurationEntry>, ConfigurationRepository>();
+            services.AddScoped<IGenericRepository<LogEntry>, LogRepository>();
             services.AddScoped<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
+            services.AddScoped<IGenericRepositoryService<ConfigurationEntryDto>, ConfigurationRepositoryService>();
+            services.AddScoped<IGenericRepositoryService<LogEntryDto>, LogRepositoryService>();
             services.AddScoped<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
 
             // services.AddScoped<ITwitterCrawlApiService, TwitterCrawlApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
