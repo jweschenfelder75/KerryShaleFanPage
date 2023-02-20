@@ -85,7 +85,7 @@ namespace KerryShaleFanPage.Server
         /// </summary>
         /// <param name="services">ServiceCollection</param>
         /// <param name="configuration"></param>
-        private static void ConfigureServices(IServiceCollection services, ConfigurationManager configuration)
+        private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
