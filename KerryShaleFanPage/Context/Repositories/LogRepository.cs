@@ -26,7 +26,7 @@ namespace KerryShaleFanPage.Context.Repositories
                 return new List<LogEntry>();
             }
 
-            return _dbContext.LogEntries.ToList();
+            return _dbContext.LogEntries.OrderByDescending(entity => entity.TimeStamp).ToList();
         }
 
         /// <inheritdoc cref="IGenericRepository{LogEntry}" />
@@ -37,7 +37,7 @@ namespace KerryShaleFanPage.Context.Repositories
                 return null;
             }
 
-            return _dbContext.LogEntries.OrderByDescending(entity => entity.Modified).FirstOrDefault();
+            return _dbContext.LogEntries.OrderByDescending(entity => entity.TimeStamp).FirstOrDefault();
         }
 
         /// <inheritdoc cref="IGenericRepository{LogEntry}" />

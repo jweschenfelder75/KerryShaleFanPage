@@ -26,7 +26,7 @@ namespace KerryShaleFanPage.Context.Repositories
                 return new List<ConfigurationEntry>();
             }
 
-            return _dbContext.ConfigurationEntries.ToList();
+            return _dbContext.ConfigurationEntries.OrderByDescending(entity => entity.Modified).ToList();
         }
 
         /// <inheritdoc cref="IGenericRepository{ConfigurationEntry}" />

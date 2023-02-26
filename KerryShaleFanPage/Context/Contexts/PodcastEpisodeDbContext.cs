@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
 using KerryShaleFanPage.Context.Entities;
 
 namespace KerryShaleFanPage.Context.Contexts
@@ -10,7 +11,13 @@ namespace KerryShaleFanPage.Context.Contexts
         public PodcastEpisodeDbContext(DbContextOptions<PodcastEpisodeDbContext> options)
             : base(options)
         {
-            Database.Migrate();
+            try
+            {
+                Database.Migrate();
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         public PodcastEpisodeDbContext(string? connectionString)

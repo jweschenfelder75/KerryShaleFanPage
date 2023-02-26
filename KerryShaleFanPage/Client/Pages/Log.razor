@@ -1,0 +1,48 @@
+﻿@using KerryShaleFanPage.Shared.Objects
+@using System.Globalization
+@page "/log"
+
+<PageTitle>Logs</PageTitle>
+
+<h1>Logs</h1>
+
+@*<p>This component demonstrates fetching data from the server.</p>*@
+
+@if (_logEntries == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left"
+                Data="@_logEntries" TItem="LogEntryDto" ColumnWidth="300px" ShowPagingSummary="true" IsLoading=@_isLoading Sort="@ShowLoading" Page="@ShowLoading" Group="@ShowLoading" Filter="@ShowLoading" 
+                SelectionMode="DataGridSelectionMode.Single">
+        <Columns>
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="TimeStamp" Title="Time" Width="125px" >
+                <Template Context="item">
+                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.TimeStamp.ToUniversalTime().ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture)</RadzenText>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Center" Filterable="false" Frozen="true" Property="LogLevel" Title="Level" Width="75px" >
+                <Template Context="item">
+                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.LogLevel</RadzenText>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="Logger" Title="Logger" Width="300px" >
+                <Template Context="item">
+                        <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.Logger</RadzenText>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="Message" Title="Message" Width="300px" >
+                <Template Context="item">
+                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.Message</RadzenText>
+                </Template>
+            </RadzenDataGridColumn>
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="Exception" Title="Exception" Width="300px" >
+                <Template Context="item">
+                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.Exception</RadzenText>
+                </Template>
+            </RadzenDataGridColumn>
+        </Columns>
+    </RadzenDataGrid>
+}

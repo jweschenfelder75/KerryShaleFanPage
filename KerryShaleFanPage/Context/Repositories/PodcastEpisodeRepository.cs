@@ -26,7 +26,7 @@ namespace KerryShaleFanPage.Context.Repositories
                 return new List<PodcastEpisode>();
             }
 
-            return _dbContext.PodcastEpisodes.ToList();
+            return _dbContext.PodcastEpisodes.OrderByDescending(entity => entity.Date).ToList();
         }
 
         /// <inheritdoc cref="IGenericRepository{PodcastEpisode}" />

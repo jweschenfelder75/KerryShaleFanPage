@@ -14,13 +14,13 @@ namespace KerryShaleFanPage.Shared.Enums
         Error = 4,
 
         [Description("Warn"), BackColorName("Transparent"), FrontColorName("DarkOrange")]
-        Warning = 3,
+        Warn = 3,
 
         [Description("Debug"), BackColorName("Transparent"), FrontColorName("DarkGreen")]
         Debug = 2,
 
         [Description("Info"), BackColorName("Transparent"), FrontColorName("CornflowerBlue")]
-        Information = 1,
+        Info = 1,
 
         [Description("None"), BackColorName("Transparent"), FrontColorName("Black")]
         None = 0

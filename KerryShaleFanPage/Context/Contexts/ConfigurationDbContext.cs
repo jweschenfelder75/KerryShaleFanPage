@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using KerryShaleFanPage.Context.Entities;
 
 namespace KerryShaleFanPage.Context.Contexts
@@ -10,7 +11,13 @@ namespace KerryShaleFanPage.Context.Contexts
         public ConfigurationDbContext(DbContextOptions<ConfigurationDbContext> options)
             : base(options) 
         {
-            Database.Migrate();
+            try
+            {
+                Database.Migrate();
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         public ConfigurationDbContext(string? connectionString)

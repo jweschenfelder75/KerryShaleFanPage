@@ -2,6 +2,7 @@ using System;
 
 namespace KerryShaleFanPage.Shared.Objects
 {
+    [Serializable]
     public class WeatherForecastDto
     {
         public DateTime Date { get; set; }
