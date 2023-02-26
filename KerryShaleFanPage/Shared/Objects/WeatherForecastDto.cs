@@ -1,8 +1,8 @@
 using System;
 
-namespace KerryShaleFanPage.Shared
+namespace KerryShaleFanPage.Shared.Objects
 {
-    public class WeatherForecast
+    public class WeatherForecastDto
     {
         public DateTime Date { get; set; }
 
