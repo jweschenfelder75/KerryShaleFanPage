@@ -76,7 +76,7 @@ namespace KerryShaleFanPage.Client.Services
 
                 if (currentTry == _MAX_TRIES)
                 {
-                    Console.WriteLine("Hub connection closed, web server seems to be down, please contact a web administrator.");
+                    Console.WriteLine("Hub connection lost, web server seems to be down, please try a refresh or contact a web administrator.");
                     ServerStatusEvent?.Invoke(this, new ServerStatusEventArgs() { ServerStatus = ServerStatusEnum.Critical });
                 }
             };
@@ -97,7 +97,7 @@ namespace KerryShaleFanPage.Client.Services
 
             _hubConnection.Closed += (connectionId) =>
             {
-                Console.WriteLine("Hub connection closed, web server seems to be down, please contact a web administrator.");
+                Console.WriteLine("Hub connection closed, please try a refresh or contact a web administrator.");
                 ServerStatusEvent?.Invoke(this, new ServerStatusEventArgs() { ServerStatus = ServerStatusEnum.Critical });
                 return Task.CompletedTask;
             };
