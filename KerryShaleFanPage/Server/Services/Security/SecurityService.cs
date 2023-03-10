@@ -9,8 +9,9 @@ namespace KerryShaleFanPage.Server.Services.Security
 {
     public class SecurityService : ISecurityService
     {
-        private readonly ILogger<SecurityService> _logger;  // TODO: Implement logging!
         private readonly SecurityProvider _securityProvider;
+
+        private readonly ILogger<SecurityService> _logger;  // TODO: Implement logging!
 
         public X509Certificate2? Certificate => GetCertificate();
 

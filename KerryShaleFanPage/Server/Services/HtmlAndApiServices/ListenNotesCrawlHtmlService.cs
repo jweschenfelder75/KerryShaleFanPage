@@ -14,9 +14,9 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
 
         public string ShowTitle => @"Is It Rolling, Bob? Talking Dylan";  // TODO: Make configurable!
 
-        private readonly ILogger<ListenNotesCrawlHtmlService> _logger;  // TODO: Implement logging!
-
         private readonly HttpClient _httpClient = new HttpClient();
+
+        private readonly ILogger<ListenNotesCrawlHtmlService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 

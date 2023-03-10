@@ -11,6 +11,7 @@ namespace KerryShaleFanPage.Client.Shared
 
         protected override async Task OnInitializedAsync()
         {
+            await base.OnInitializedAsync();
         }
     }
 }

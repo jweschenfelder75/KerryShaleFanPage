@@ -7,7 +7,7 @@ using KerryShaleFanPage.Shared.Objects;
 namespace KerryShaleFanPage.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("webapi/[controller]")]
     public class LogController : ControllerBase
     {
         private readonly IGenericRepositoryService<LogEntryDto> _logRepositoryService;

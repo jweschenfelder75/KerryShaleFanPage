@@ -8,6 +8,7 @@ namespace KerryShaleFanPage.Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
+            await base.OnInitializedAsync();
         }
 
         protected void IncrementCount()

@@ -20,27 +20,47 @@ else
         <Columns>
             <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="TimeStamp" Title="Time" Width="125px" >
                 <Template Context="item">
-                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.TimeStamp.ToUniversalTime().ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture)</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="py-2">@item.TimeStamp.ToUniversalTime().ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture)</RadzenText>
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Center" Filterable="false" Frozen="true" Property="LogLevel" Title="Level" Width="75px" >
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Center" Filterable="false" Frozen="false" Property="LogLevel" Title="Level" Width="75px" >
                 <Template Context="item">
-                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.LogLevel</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="py-2">@item.LogLevel</RadzenText>
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="Logger" Title="Logger" Width="300px" >
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="false" Property="Logger" Title="Logger" Width="300px">
                 <Template Context="item">
-                        <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.Logger</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body2" class="py-2">@item.Logger</RadzenText>
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="Message" Title="Message" Width="300px" >
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="false" Property="Message" Title="Message" Width="300px">
                 <Template Context="item">
-                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.Message</RadzenText>
+                    <RadzenRow AlignItems="AlignItems.Stretch" Gap="5px">
+                        <RadzenColumn Size=10 class="text-truncate">
+                            <RadzenText TextStyle="TextStyle.Body2" class="py-2">@item.Message</RadzenText>
+                        </RadzenColumn>
+                        <RadzenColumn Size=2>
+                            @if (!string.IsNullOrEmpty(item.Message))
+                            {
+                                <RadzenButton Icon="open_in_new" Size="ButtonSize.ExtraSmall" class="m-1 float-end" Click=@(() => ShowDialog("Message", item.Message ?? string.Empty)) />
+                            }
+                        </RadzenColumn>
+                    </RadzenRow>
                 </Template>
             </RadzenDataGridColumn>
-            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="Exception" Title="Exception" Width="300px" >
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="false" Property="Exception" Title="Exception" Width="300px">
                 <Template Context="item">
-                    <RadzenText TextStyle="TextStyle.Body2" Style="white-space: normal;">@item.Exception</RadzenText>
+                    <RadzenRow AlignItems="AlignItems.Stretch" Gap="5px">
+                        <RadzenColumn Size=10 class="text-truncate">
+                            <RadzenText TextStyle="TextStyle.Body2" class="py-2">@item.Exception</RadzenText>
+                        </RadzenColumn>
+                        <RadzenColumn Size=2>
+                            @if (!string.IsNullOrEmpty(item.Exception))
+                            {
+                                <RadzenButton Icon="open_in_new" Size="ButtonSize.ExtraSmall" class="m-1 float-end" Click=@(() => ShowDialog("Exception", item.Exception ?? string.Empty)) />
+                            }
+                        </RadzenColumn>
+                    </RadzenRow>
                 </Template>
             </RadzenDataGridColumn>
         </Columns>

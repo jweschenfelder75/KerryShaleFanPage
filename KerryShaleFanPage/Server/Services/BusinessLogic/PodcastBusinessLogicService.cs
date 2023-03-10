@@ -32,8 +32,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         // private readonly ITwitterCrawlApiService _twitterCrawlApiService;  // TODO: Obsolete: We will not use Twitter API anymore! It was tested and it was ok.
         // private readonly ITwitterTweetApiService _twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
         // private readonly IGenericCrawlHtmlService<TwitterEpisode> _twitterCrawlService;  // TODO: Unfinished & untested.
-        private readonly ISecurityService _securityService;
-        private readonly IOptions<AppSettings> _appSettings;
+        private readonly ISecuredConfigurationService _securedConfigurationService;
 
         private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
 
@@ -44,8 +43,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             IGenericRepositoryService<PodcastEpisodeDto> repositoryService, IGenericCrawlHtmlService<AcastEpisode> acastCrawlService,
             IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
             /* , ITwitterCrawlApiService twitterCrawlApiService, ITwitterTweetApiService twitterTweetApiService */
-            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */ , ISecurityService securityService
-            , IOptions<AppSettings> appSettings)
+            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */, ISecuredConfigurationService securedConfigurationService)
         {
             _logger = logger;
             _mailAndSmsService = mailAndSmsService;
@@ -56,8 +54,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             // _twitterCrawlApiService = twitterCrawlApiService;  // TODO: Obsolete: We will not use Twitter API anymore! It was tested and it was ok.
             // _twitterTweetApiService = twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
             // _twitterCrawlService = twitterCrawlService;  // TODO: Unfinished & untested.
-            _securityService = securityService;
-            _appSettings = appSettings;
+            _securedConfigurationService = securedConfigurationService;
         }
 
         /// <inheritdoc cref="IPodcastBusinessLogicService" />
@@ -66,9 +63,6 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             while (!cancellationToken.IsCancellationRequested)
             {
                 _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {_sleepPeriod.TotalMinutes} min).");
-
-                var test = _securityService.EncryptData("Test");
-                test = _securityService.DecryptData(test);
 
                 var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
                 if (latestPodcastEpisodeDto == null)

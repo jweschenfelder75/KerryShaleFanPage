@@ -11,7 +11,7 @@ namespace KerryShaleFanPage.Context.Entities
         [StringLength(255)]
         public string? Key { get; set; }
 
-        [StringLength(255)]
+        [StringLength(1024)]
         public string? Value { get; set; }
 
         [StringLength(255)]

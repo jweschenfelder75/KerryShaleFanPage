@@ -20,7 +20,7 @@ namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Key = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
-                    Value = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
+                    Value = table.Column<string>(type: "varchar(1024)", maxLength: 1024, nullable: true),
                     DataType = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     IsPassword = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     Salt = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),

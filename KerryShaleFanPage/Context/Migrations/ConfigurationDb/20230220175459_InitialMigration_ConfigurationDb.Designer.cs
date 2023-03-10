@@ -57,8 +57,8 @@ namespace KerryShaleFanPage.Context.Migrations.ConfigurationDb
                         .HasColumnType("varchar(255)");
 
                     b.Property<string>("Value")
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasMaxLength(1024)
+                        .HasColumnType("varchar(1024)");
 
                     b.HasKey("Id");
 

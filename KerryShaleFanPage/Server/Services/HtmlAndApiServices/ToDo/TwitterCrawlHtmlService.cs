@@ -25,9 +25,9 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
 
         public string Keywords => "episode";  // TODO: Make configurable!
 
-        private readonly ILogger<TwitterCrawlHtmlService> _logger;  // TODO: Implement logging!
-
         private readonly HttpClient _httpClient = new HttpClient();
+
+        private readonly ILogger<TwitterCrawlHtmlService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 

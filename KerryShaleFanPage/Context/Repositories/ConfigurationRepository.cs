@@ -62,7 +62,7 @@ namespace KerryShaleFanPage.Context.Repositories
             await using var transaction = await _dbContext.Database.BeginTransactionAsync(cancellationToken);
             try
             {
-                var existing = GetById(entity.Id);
+                var existing = Find(entity);
                 if (existing == null)  // Insert
                 {
                     entity.Created = DateTime.Now;
@@ -71,29 +71,28 @@ namespace KerryShaleFanPage.Context.Repositories
                 }
                 else // Update
                 {
-                    existing.Key = entity.Key;
                     existing.Value = entity.Value;
                     existing.IsPassword = entity.IsPassword;
                     existing.Salt = entity.Salt;
-                    existing.Created = entity.Created;
-                    existing.CreatedBy = entity.CreatedBy;
+                    existing.Created = existing.Created;
+                    existing.CreatedBy = existing.CreatedBy;
                     existing.Modified = DateTime.Now;
                     existing.ModifiedBy = entity.ModifiedBy;
-                    _dbContext.ConfigurationEntries.Update(entity);
+                    _dbContext.ConfigurationEntries.Update(existing);
                 }
 
                 var success = (await _dbContext.SaveChangesAsync(cancellationToken)) > 0;
                 if (success)
                 {
                     await transaction.CommitAsync(cancellationToken);
-                    return GetById(entity.Id);
+                    entity = Find(entity) ?? new ConfigurationEntry();
                 }
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync(cancellationToken);
                 var exception = ex;  // TODO: Log exception!
             }
-            await transaction.RollbackAsync(cancellationToken);
             return entity;
         }
 
@@ -128,6 +127,29 @@ namespace KerryShaleFanPage.Context.Repositories
             }
             await transaction.RollbackAsync(cancellationToken);
             return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entry"></param>
+        /// <returns></returns>
+        private ConfigurationEntry? Find(ConfigurationEntry entry)
+        {
+            try
+            {
+                if (_dbContext.ConfigurationEntries == null || !_dbContext.ConfigurationEntries.Any())
+                {
+                    return null;
+                }
+
+                return _dbContext.ConfigurationEntries.FirstOrDefault(entity => entity.Key == entry.Key && entity.DataType == entry.DataType);
+            } 
+            catch (Exception ex)
+            {
+                var exception = ex;  // TODO: Log exception!
+            }
+            return null;
         }
     }
 }

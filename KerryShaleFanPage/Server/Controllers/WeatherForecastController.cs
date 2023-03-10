@@ -8,7 +8,7 @@ using KerryShaleFanPage.Shared.Objects;
 namespace KerryShaleFanPage.Server.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("webapi/[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

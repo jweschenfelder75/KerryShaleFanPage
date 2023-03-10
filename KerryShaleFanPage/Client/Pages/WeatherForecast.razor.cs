@@ -15,7 +15,8 @@ namespace KerryShaleFanPage.Client.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            forecasts = await Http.GetFromJsonAsync<WeatherForecastDto[]>("WeatherForecast");
+            await base.OnInitializedAsync();
+            forecasts = await Http.GetFromJsonAsync<WeatherForecastDto[]>("webapi/WeatherForecast");
         }
     }
 }

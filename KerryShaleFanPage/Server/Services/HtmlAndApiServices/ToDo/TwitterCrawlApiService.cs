@@ -26,9 +26,9 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
         private const string _AUTHORIZATION_KEY = "Authorization";
         private const string _CONTENT_TYPE = "application/json";
 
-        private readonly ILogger<TwitterCrawlApiService> _logger;  // TODO: Implement logging!
-
         private readonly HttpClient _httpClient = new HttpClient();
+
+        private readonly ILogger<TwitterCrawlApiService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 

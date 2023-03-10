@@ -13,10 +13,10 @@ namespace KerryShaleFanPage.Server.Services.Repositories
 {
     public class PodcastEpisodeRepositoryService : IGenericRepositoryService<PodcastEpisodeDto>
     {
-        private readonly ILogger<PodcastEpisodeRepositoryService> _logger;  // TODO: Implement logging!
         private readonly IGenericRepository<PodcastEpisode> _repository;
-
         private readonly Mapper _mapper;
+
+        private readonly ILogger<PodcastEpisodeRepositoryService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 
@@ -29,7 +29,7 @@ namespace KerryShaleFanPage.Server.Services.Repositories
                 cfg.CreateMap<PodcastEpisodeDto, PodcastEpisode>();
                 cfg.CreateMap<PodcastEpisode, PodcastEpisodeDto>();
             });
-            _mapper = new Mapper(config);  // Maps between Dto and Entity and the other way around
+            _mapper = new Mapper(config);  // Maps properties between Dto and Entity and the other way around
         }
 
         /// <inheritdoc cref="IGenericRepositoryService{PodcastEpisodeDto}" />

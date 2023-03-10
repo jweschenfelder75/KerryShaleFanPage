@@ -1,6 +1,6 @@
-﻿using KerryShaleFanPage.Shared.Attributes;
-using System;
+﻿using System;
 using System.ComponentModel;
+using KerryShaleFanPage.Shared.Attributes;
 
 namespace KerryShaleFanPage.Shared.Enums
 {

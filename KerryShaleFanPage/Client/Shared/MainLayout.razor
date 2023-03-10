@@ -4,9 +4,20 @@
     <div class="sidebar">
         <NavMenu />
     </div>
+    <RadzenNotification />
+    <RadzenDialog />
+    <RadzenTooltip />
 
     <main>
         <div class="top-row px-4">
+            <div class="position-relative mx-3 mt-1">
+                <div class="@_serverStatusBlinkingCssClass">
+                    <RadzenIcon Icon="warning" Visible="@_serverStatusAlertVisible" IconStyle="@_serverStatusIconStyle" />
+                </div>
+            </div>
+            <div class="position-relative mx-1 mt-3">
+                <CultureSelector />
+            </div>
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
         </div>
 

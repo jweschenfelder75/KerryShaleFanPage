@@ -1,10 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using KerryShaleFanPage.Shared.Attributes;
 
 namespace KerryShaleFanPage.Shared.Objects
 {
-    [Serializable, EncryptedData]
+    [Serializable]
     public class ConfigurationEntryDto : BaseDto
     {
         [Key]
@@ -13,10 +12,10 @@ namespace KerryShaleFanPage.Shared.Objects
         [StringLength(255)]
         public string? Key { get; set; }
 
-        [StringLength(255)]
+        [StringLength(1024)]
         public string? Value { get; set; }
 
         [StringLength(255)]
-        public string? OriginDataType { get; set; }
+        public string? DataType { get; set; }
     }
 }

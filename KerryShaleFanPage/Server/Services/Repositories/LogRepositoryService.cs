@@ -13,10 +13,10 @@ namespace KerryShaleFanPage.Server.Services.Repositories
 {
     public class LogRepositoryService : IGenericRepositoryService<LogEntryDto>
     {
-        private readonly ILogger<LogRepositoryService> _logger;  // TODO: Implement logging!
         private readonly IGenericRepository<LogEntry> _repository;
-
         private readonly Mapper _mapper;
+
+        private readonly ILogger<LogRepositoryService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 
@@ -29,7 +29,7 @@ namespace KerryShaleFanPage.Server.Services.Repositories
                 cfg.CreateMap<LogEntryDto, LogEntry>();
                 cfg.CreateMap<LogEntry, LogEntryDto>();
             });
-            _mapper = new Mapper(config);  // Maps between Dto and Entity and the other way around
+            _mapper = new Mapper(config);  // Maps properties between Dto and Entity and the other way around
         }
 
         /// <inheritdoc cref="IGenericRepositoryService{LogEntryDto}" />

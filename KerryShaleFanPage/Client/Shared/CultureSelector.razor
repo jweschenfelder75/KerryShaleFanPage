@@ -1,0 +1,11 @@
+﻿<p>
+    <label>
+        Select your locale:
+        <select @bind="_culture">
+            @foreach (var culture in _supportedCultures)
+            {
+                <option value="@culture">@culture.DisplayName</option>
+            }
+        </select>
+    </label>
+</p>

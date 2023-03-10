@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Text;
 using NLog;
@@ -16,6 +19,7 @@ using NLog.Targets;
 using KerryShaleFanPage.Context.Contexts;
 using KerryShaleFanPage.Context.Entities;
 using KerryShaleFanPage.Context.Repositories;
+using KerryShaleFanPage.Server.Hub;
 using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo;
@@ -91,6 +95,8 @@ namespace KerryShaleFanPage.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.AddSignalR();
+
             services.AddLogging(logging => 
             {
                 logging.ClearProviders();
@@ -107,6 +113,7 @@ namespace KerryShaleFanPage.Server
 
             services.AddScoped<SecurityProvider>();
             services.AddScoped<ISecurityService, SecurityService>();
+            services.AddScoped<ISecuredConfigurationService, SecuredConfigurationService>();
             services.AddScoped<IMailAndSmsService, GmxMailAndSmsService>();
             services.AddScoped<IGenericRepository<ConfigurationEntry>, ConfigurationRepository>();
             services.AddScoped<IGenericRepository<LogEntry>, LogRepository>();
@@ -150,11 +157,33 @@ namespace KerryShaleFanPage.Server
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 
+            // Begin I18N configuration
+            var supportedCultures = new List<CultureInfo>
+            {
+                new CultureInfo("en"),
+                new CultureInfo("de"),
+            };
+
+            var options = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            };
+
+            app.UseRequestLocalization(options);
+            // End I18N configuration
+
             app.UseRouting();
 
             app.MapRazorPages();
             app.MapControllers();
             app.MapFallbackToFile("index.html");
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapHub<SignalRHub>("/signalrhub");
+            });
 
             return app;
         }
