@@ -16,9 +16,9 @@ namespace KerryShaleFanPage.Client.Shared
         [Inject]
         protected SignalRClientService? SignalRClientService { get; set; }
 
-        private bool _serverStatusAlertVisible = true;
+        private bool _serverStatusAlertVisible = false;
 
-        private IconStyle _serverStatusIconStyle = IconStyle.Light;
+        private IconStyle _serverStatusIconStyle = IconStyle.Primary;
 
         private string _serverStatusBlinkingCssClass = string.Empty;
 
@@ -60,8 +60,8 @@ namespace KerryShaleFanPage.Client.Shared
                     }
                 default:
                     {
-                        _serverStatusAlertVisible = true;
-                        _serverStatusIconStyle = IconStyle.Light;
+                        _serverStatusAlertVisible = false;
+                        _serverStatusIconStyle = IconStyle.Primary;
                         _serverStatusBlinkingCssClass = string.Empty;
                         break;
                     }
