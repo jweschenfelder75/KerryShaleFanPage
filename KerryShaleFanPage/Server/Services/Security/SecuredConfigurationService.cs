@@ -8,10 +8,6 @@ using KerryShaleFanPage.Shared.Configuration;
 
 namespace KerryShaleFanPage.Server.Services.Security
 {
-    /// <summary>
-    /// Remarks: This class uses Reflection! Reflection is very gerneric and can do magical things, but it costs performance.
-    /// </summary>
-
     public class SecuredConfigurationService : ISecuredConfigurationService
     {
         private readonly ISecurityService _securityService;
@@ -67,7 +63,7 @@ namespace KerryShaleFanPage.Server.Services.Security
             var encryptedFilePath = Path.Combine(basePath, "Certificate/generalsettings.conf");  // TODO: Make configurable!
             var currentSettings = GetCurrentSettingsConfigurationFromFile();
             var serializedCurrentSettings = JsonConvert.SerializeObject(currentSettings);
-            return _securityService.EncryptDataAndFile(encryptedFilePath, serializedCurrentSettings, true);  // TODO: Make configurable!
+            return _securityService.EncryptDataAndFile(encryptedFilePath, serializedCurrentSettings, true);
         }
 
         /// <inheritdoc cref="ISecuredConfigurationService"/>
