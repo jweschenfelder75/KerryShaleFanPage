@@ -77,7 +77,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 //}
                 //else
                 //{
-                //    var success = _mailAndSmsService.SendSmsNotification(<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
+                //    var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
                 //    if (!success)
                 //    {
                 //        // TODO: Information that there is obviously a problem sending the notification!
