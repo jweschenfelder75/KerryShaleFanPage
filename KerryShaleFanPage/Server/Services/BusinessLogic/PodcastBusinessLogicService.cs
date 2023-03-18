@@ -24,7 +24,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
 {
     public class PodcastBusinessLogicService : IPodcastBusinessLogicService
     {
-        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(1);  // Make configurable!
+        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(15);  // Make configurable!
         private readonly IMailAndSmsService _mailAndSmsService;
         private readonly IGenericRepositoryService<PodcastEpisodeDto> _repositoryService;
         private readonly IGenericCrawlHtmlService<AcastEpisode> _acastCrawlService;

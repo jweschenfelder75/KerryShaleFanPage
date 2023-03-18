@@ -19,7 +19,7 @@ namespace KerryShaleFanPage.Shared.Configuration
     }
 
     /// <summary>
-    /// TODO: Put classes below in extra files.
+    /// TODO: Put classes below in extra files. Let ReSharper do that job.
     /// </summary>
 
     [Serializable]

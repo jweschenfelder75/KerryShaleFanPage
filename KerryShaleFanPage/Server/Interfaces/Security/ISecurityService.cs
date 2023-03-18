@@ -1,6 +1,4 @@
-﻿using KerryShaleFanPage.Shared.Security;
-
-namespace KerryShaleFanPage.Server.Interfaces.Security
+﻿namespace KerryShaleFanPage.Server.Interfaces.Security
 {
     public interface ISecurityService
     {

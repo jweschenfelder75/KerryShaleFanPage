@@ -67,6 +67,9 @@ namespace KerryShaleFanPage.Server
                 logger.Info("Start app");
                 var builder = WebApplication.CreateBuilder(args);
 
+                builder.Configuration.AddJsonFile("newssettings.json", optional: true, reloadOnChange: true);
+                builder.Configuration.AddJsonFile("gallerysettings.json", optional: true, reloadOnChange: true);
+
                 // Add services to the container.
                 ConfigureServices(builder.Services, builder.Configuration);
 
@@ -108,8 +111,10 @@ namespace KerryShaleFanPage.Server
             });
 
             services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
+            services.Configure<GeneralSettings>(configuration.GetSection("GeneralSettings"));
+            services.Configure<NewsSettings>(configuration.GetSection("NewsItems"));
+            services.Configure<GallerySettings>(configuration.GetSection("GalleryItems"));
 
-            services.AddDbContext<ConfigurationDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
             services.AddDbContext<LogDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
             services.AddDbContext<PodcastEpisodeDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
 
@@ -119,10 +124,8 @@ namespace KerryShaleFanPage.Server
             services.AddScoped<IMaintenanceNotificationService, MaintenanceNotificationService>();
             services.AddScoped<IMailAndSmsService, GmailMailAndSmsService>();
             services.AddScoped<IMailAndSmsService, GmxMailAndSmsService>();
-            services.AddScoped<IGenericRepository<ConfigurationEntry>, ConfigurationRepository>();
             services.AddScoped<IGenericRepository<LogEntry>, LogRepository>();
             services.AddScoped<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
-            services.AddScoped<IGenericRepositoryService<ConfigurationEntryDto>, ConfigurationRepositoryService>();
             services.AddScoped<IGenericRepositoryService<LogEntryDto>, LogRepositoryService>();
             services.AddScoped<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
 
