@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using KerryShaleFanPage.Server.Interfaces.Security;
-using KerryShaleFanPage.Shared.Configuration;
-using Newtonsoft.Json;
 using System;
 using System.IO;
+using Newtonsoft.Json;
+using KerryShaleFanPage.Server.Interfaces.Security;
+using KerryShaleFanPage.Shared.Configuration;
 
 namespace KerryShaleFanPage.Server.Services.Security
 {
