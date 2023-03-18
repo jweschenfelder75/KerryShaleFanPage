@@ -116,7 +116,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             if (latestStoredPodcastEpisodeDto.Date >= latestCrawledPodcastEpisodeDto.Date 
                 || (latestStoredPodcastEpisodeDto.Title ?? string.Empty).Equals(latestCrawledPodcastEpisodeDto.Title ?? string.Empty, StringComparison.InvariantCultureIgnoreCase))
             {
-                return latestCrawledPodcastEpisodeDto;
+                return null;
             }
 
             return await _repositoryService.UpsertAsync(latestCrawledPodcastEpisodeDto, cancellationToken);
