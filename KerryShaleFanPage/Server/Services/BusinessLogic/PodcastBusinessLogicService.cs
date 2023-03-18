@@ -70,19 +70,19 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
 
                 await _maintenanceNotificationService.NotifyAllConnectedClientsInCaseOfMaintenanceAsync(cancellationToken);
 
-                //var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
-                //if (latestPodcastEpisodeDto == null)
-                //{
-                //    // TODO: Information that there is obviously a problem fetching the latest episode!
-                //}
-                //else
-                //{
-                //    var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
-                //    if (!success)
-                //    {
-                //        // TODO: Information that there is obviously a problem sending the notification!
-                //    }
-                //}
+                var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
+                if (latestPodcastEpisodeDto == null)
+                {
+                    // TODO: Information that there is obviously a problem fetching the latest episode!
+                }
+                else
+                {
+                    var success = _mailAndSmsService.SendSmsNotification("weschi@gmx.com", "weschi@gmx.com", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
+                    if (!success)
+                    {
+                        // TODO: Information that there is obviously a problem sending the notification!
+                    }
+                }
 
                 // Other examples:
                 // var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
@@ -116,7 +116,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             if (latestStoredPodcastEpisodeDto.Date >= latestCrawledPodcastEpisodeDto.Date 
                 || (latestStoredPodcastEpisodeDto.Title ?? string.Empty).Equals(latestCrawledPodcastEpisodeDto.Title ?? string.Empty, StringComparison.InvariantCultureIgnoreCase))
             {
-                return null;
+                return latestCrawledPodcastEpisodeDto;
             }
 
             return await _repositoryService.UpsertAsync(latestCrawledPodcastEpisodeDto, cancellationToken);
