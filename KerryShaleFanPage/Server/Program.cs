@@ -117,6 +117,7 @@ namespace KerryShaleFanPage.Server
             services.AddScoped<ISecurityService, SecurityService>();
             services.AddScoped<ISecuredConfigurationService, SecuredConfigurationService>();
             services.AddScoped<IMaintenanceNotificationService, MaintenanceNotificationService>();
+            services.AddScoped<IMailAndSmsService, GmailMailAndSmsService>();
             services.AddScoped<IMailAndSmsService, GmxMailAndSmsService>();
             services.AddScoped<IGenericRepository<ConfigurationEntry>, ConfigurationRepository>();
             services.AddScoped<IGenericRepository<LogEntry>, LogRepository>();

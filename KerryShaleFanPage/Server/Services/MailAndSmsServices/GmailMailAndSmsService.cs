@@ -7,21 +7,21 @@ using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
 
 namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
 {
-    public class GmxMailAndSmsService : IMailAndSmsService
+    public class GmailMailAndSmsService : IMailAndSmsService
     {
         public string UserName => "";  // TODO: Make configurable and encrypt!
         public string UserPassword => "";  // TODO: Make configurable and encrypt!
 
         private const string _SMS_PREFIX = "[kerryshalefanpg-sms]";
-        private const string _HOSTNAME = "mail.gmx.com";
+        private const string _HOSTNAME = "smtp.gmail.com";
         private const int _PORT = 587;
 
-        private readonly ILogger<GmxMailAndSmsService> _logger;  // TODO: Implement logging!
+        private readonly ILogger<GmailMailAndSmsService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 
         /// </summary>
-        public GmxMailAndSmsService(ILogger<GmxMailAndSmsService> logger)
+        public GmailMailAndSmsService(ILogger<GmailMailAndSmsService> logger)
         {
             _logger = logger;
         }
