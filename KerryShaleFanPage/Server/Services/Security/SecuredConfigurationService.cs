@@ -20,7 +20,8 @@ namespace KerryShaleFanPage.Server.Services.Security
     public class SecuredConfigurationService : ISecuredConfigurationService
     {
         private readonly ISecurityService _securityService;
-        private readonly IOptions<AppSettings> _appSettings;
+        private readonly IOptions<AppSettings> _cachedAppSettings;
+        private readonly IOptionsMonitor<AppSettings> _currentAppSettings;
         private readonly IGenericRepositoryService<ConfigurationEntryDto> _configurationRepositoryService;
 
         private readonly ILogger<SecuredConfigurationService> _logger;  // TODO: Implement logging!
@@ -28,19 +29,32 @@ namespace KerryShaleFanPage.Server.Services.Security
         /// <summary>
         /// 
         /// </summary>
-        public SecuredConfigurationService(ILogger<SecuredConfigurationService> logger, ISecurityService securityService, IOptions<AppSettings> appSettings, 
-            IGenericRepositoryService<ConfigurationEntryDto> configurationRepositoryService) 
+        public SecuredConfigurationService(ILogger<SecuredConfigurationService> logger, ISecurityService securityService, IOptions<AppSettings> cachedAppSettings,
+            IOptionsMonitor<AppSettings> currentAppSettings, IGenericRepositoryService<ConfigurationEntryDto> configurationRepositoryService) 
         { 
             _logger = logger;
             _securityService = securityService;
-            _appSettings = appSettings;
+            _cachedAppSettings = cachedAppSettings;
+            _currentAppSettings = currentAppSettings;
             _configurationRepositoryService = configurationRepositoryService;
+        }
+
+        /// <inheritdoc cref="ISecuredConfigurationService"/>
+        public AppSettings GetCachedAppSettingsConfigurationFromFile()
+        {
+            return _cachedAppSettings.Value;
+        }
+
+        /// <inheritdoc cref="ISecuredConfigurationService"/>
+        public AppSettings GetCurrentAppSettingsConfigurationFromFile()
+        {
+            return _currentAppSettings.CurrentValue;
         }
 
         /// <inheritdoc cref="ISecuredConfigurationService"/>
         public AppSettings GetEncryptedConfigurationForAppSettingsFromAppSettings()
         {
-            var currentAppSettings = _appSettings.Value;
+            var currentAppSettings = GetCurrentAppSettingsConfigurationFromFile();
             var type = typeof(AppSettings);  // Reflection
             var properties = type.GetProperties();  // Reflection
             foreach (var property in properties)
@@ -112,7 +126,7 @@ namespace KerryShaleFanPage.Server.Services.Security
                 var mainKey = property.Name;
                 var mainType = property.PropertyType;
                 var mainTypeName = property.PropertyType.Name;
-                var mainValue = property.GetValue(_appSettings.Value);  // Reflection
+                var mainValue = property.GetValue(GetCurrentAppSettingsConfigurationFromFile());  // Reflection
 
                 var subProperties = mainType.GetProperties();  // Reflection
                 foreach (var subProperty in subProperties)
@@ -160,7 +174,7 @@ namespace KerryShaleFanPage.Server.Services.Security
         /// <inheritdoc cref="ISecuredConfigurationService"/>
         public AppSettings GetDecryptedConfigurationForAppSettingsFromAppSettings()
         {
-            var currentAppSettings = _appSettings.Value;
+            var currentAppSettings = GetCurrentAppSettingsConfigurationFromFile();
             var type = typeof(AppSettings);  // Reflection
             var properties = type.GetProperties();  // Reflection
             foreach (var property in properties)

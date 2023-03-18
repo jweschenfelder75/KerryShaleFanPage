@@ -15,7 +15,7 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
 
         public string ProfileName => @"Is It Rolling, Bob? Talking Dylan";  // TODO: Make configurable!
 
-        public string ApiKey => "";  // TODO: Make configurable and HIDE!
+        public string ApiKey => "";  // TODO: Make configurable and encrypt!
 
         public string FromDateAsStr => DateTime.Now.AddDays(-7).Date.ToString("yyyy-mm-dd");  // TODO: Make configurable!
 

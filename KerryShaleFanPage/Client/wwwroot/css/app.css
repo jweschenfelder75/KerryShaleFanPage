@@ -1,5 +1,24 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+:root {
+    --rz-primary: #4000FF;
+    --rz-primary-dark: #4000FF;
+    --rz-secondary: #4000FF;
+    --rz-secondary-dark: #4000FF;
+    --rz-header-color: #4000FF;
+    --rz-primary-lighter: #ECE6FF;
+    --rz-link-color: #3000CC;
+    --rz-text-caption-font-size: 0.85rem;
+    --rz-text-overline-font-size: 0.70rem;
+    --rz-panel-menu-font-size: #000000;
+    --rz-text-body1-color: #000000;
+    --rz-text-body2-color: #000000;
+    --rz-text-caption-color: #000000;
+    --rz-text-overline-color: #000000;
+    --rz-panel-menu-item-active-color: #3000CC;
+    --rz-footer-color: #151515;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -10,6 +29,30 @@ h1:focus {
 
 a, .btn-link {
     color: #0071c1;
+}
+
+li.menu-item-warning span {
+    color: #922b21;
+}
+
+li.menu-item-warning:hover span {
+    color: darkred;
+}
+
+li.menu-item-warning .active span {
+    color: initial;
+}
+
+li.menu-item-warning .rzi.rz-navigation-item-icon {
+    color: #922b21;
+}
+
+li.menu-item-warning:hover .rzi.rz-navigation-item-icon {
+    color: darkred;
+}
+
+li.menu-item-warning .active .rzi.rz-navigation-item-icon {
+    color: initial;
 }
 
 .btn-primary {
@@ -67,4 +110,8 @@ a, .btn-link {
     z-index: -100;
     position: absolute;
     top: 0;
+}
+
+.rz-link-button, .rz-link-button .rz-link-text, .rz-link-button .rz-badge, .rz-link-button img {
+    text-decoration: none !important;
 }

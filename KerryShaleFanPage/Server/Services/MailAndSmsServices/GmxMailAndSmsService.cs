@@ -9,8 +9,8 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
 {
     public class GmxMailAndSmsService : IMailAndSmsService
     {
-        public string UserName => "";  // TODO: Make configurable!
-        public string UserPassword => "";  // TODO: Make configurable!
+        public string UserName => "";  // TODO: Make configurable and encrypt!
+        public string UserPassword => "";  // TODO: Make configurable and encrypt!
 
         private const string _SMS_PREFIX = "[kerryshalefanpg-sms]";
         private const string _HOSTNAME = "mail.gmx.com";

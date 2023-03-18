@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
-using KerryShaleFanPage.Shared.Events;
 using System.Threading.Tasks;
 using System.Threading;
+using Newtonsoft.Json;
 using KerryShaleFanPage.Shared.Enums;
+using KerryShaleFanPage.Shared.Events;
 
 namespace KerryShaleFanPage.Client.Services
 {
@@ -15,6 +16,7 @@ namespace KerryShaleFanPage.Client.Services
         private const int _MAX_TRIES = 360;
 
         public event EventHandler<ServerStatusEventArgs>? ServerStatusEvent;
+        public event EventHandler<MaintenanceMessageEventArgs>? MaintenanceMessageEvent;
 
         public SignalRClientService(NavigationManager navigationManager)
         {
@@ -38,6 +40,8 @@ namespace KerryShaleFanPage.Client.Services
             {
                 Console.WriteLine($"Hub connection could not be established, {ex.Message}, please contact a web administrator.");
             }
+
+            _hubConnection.On<string>("ReceiveMaintenanceMessage", (message) => OnReceiveMaintenanceMessage(message));
 
             _hubConnection.Closed += async (error) =>
             {
@@ -101,6 +105,20 @@ namespace KerryShaleFanPage.Client.Services
                 ServerStatusEvent?.Invoke(this, new ServerStatusEventArgs() { ServerStatus = ServerStatusEnum.Critical });
                 return Task.CompletedTask;
             };
+        }
+
+        private void OnReceiveMaintenanceMessage(string? message)
+        {
+            if (string.IsNullOrWhiteSpace(message))
+            {
+                return;
+            }
+            var args = JsonConvert.DeserializeObject<MaintenanceMessageEventArgs>(message);
+            if (args == null)
+            {
+                return;
+            }
+            MaintenanceMessageEvent?.Invoke(this, new MaintenanceMessageEventArgs() { IsEnabled = args.IsEnabled, Message = args.Message });
         }
     }
 }

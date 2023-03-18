@@ -28,12 +28,12 @@ namespace KerryShaleFanPage.Client.Pages
             _logEntries = data?.ToList();
         }
 
-        private async Task ShowDialog(string title, string message)
+        private async Task ShowDialogAsync(string title, string message)
         {
             await DialogService.Alert(message, title, new AlertOptions() { OkButtonText = "OK", CssClass="w-100", Style="max-width: 50% !important;" });
         }
 
-        private async Task ShowLoading()
+        private async Task ShowLoadingAsync()
         {
             _isLoading = true;
 

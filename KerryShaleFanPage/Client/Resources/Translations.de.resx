@@ -117,10 +117,187 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Index.PageTitle" xml:space="preserve">
-    <value>Index | Kerry Shale Fan Page</value>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
   </data>
-  <data name="Index.Welcome" xml:space="preserve">
-    <value>Hallo, Welt!</value>
+  <data name="After that I had studied IT and finished my Master of Science in Applied Information Technology (2008-2014) successfully." xml:space="preserve">
+    <value>Danach hatte ich IT studiert und meinen Master of Science in Angewandter Informatik (2008-2014) erfolgreich abgeschlossen.</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>und</value>
+  </data>
+  <data name="Because I have thaught English myself in the main, my English may appear a bit messed up, I will rather stick to the American English." xml:space="preserve">
+    <value>Da ich mir Englisch hauptsächlich selbst beigebracht hatte, mag mein Englisch ein wenig verkorkst sein, ich halte mich hier lieber an das amerikanische Englisch.</value>
+  </data>
+  <data name="Birthdate:" xml:space="preserve">
+    <value>Geburtsdatum:</value>
+  </data>
+  <data name="Birthplace:" xml:space="preserve">
+    <value>Geburtsort:</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Kontakt</value>
+  </data>
+  <data name="Current projects (direct and indirect):" xml:space="preserve">
+    <value>Aktuelle Projekte:</value>
+  </data>
+  <data name="Design with" xml:space="preserve">
+    <value>Design mit</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Gallerie</value>
+  </data>
+  <data name="He had had a carefree childhood in Winnipeg, Manitoba [4]." xml:space="preserve">
+    <value>Er hatte eine unbeschwerte Kindheit in Winnipeg, Manitoba [4].</value>
+  </data>
+  <data name="Hi, I am Jana (English pronounciation: Yana, the name is often used in Poland and Germany), I am" xml:space="preserve">
+    <value>Hi, ich bin Jana, ich bin</value>
+  </data>
+  <data name="His agency's website (Sainou)" xml:space="preserve">
+    <value>Webseite seiner Agentur Sainou</value>
+  </data>
+  <data name="His father's family immigrated from Russia, but his father saw himself as a very fiercely Canadian [4]." xml:space="preserve">
+    <value>Die Familie seines Vaters wanderte aus Russland ein, sein Vater sah sich selbt jedoch als sehr heimatverbundenen Kanadier [4].</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="I am an asexual (like Granada's and Frogwares' Sherlock Holmes), I am married to my computer and nobody else." xml:space="preserve">
+    <value>Ich bin asexuell (wie Granada's und Frogwares' Sherlock Holmes), ich bin mit meinem Computer und sonst niemanden verheiratet.</value>
+  </data>
+  <data name="I am the child of narcissistic parents which has traumatized me a lot." xml:space="preserve">
+    <value>Ich bin das Kind von narzisstischen Eltern, es hat mich stark traumatisiert.</value>
+  </data>
+  <data name="I became a (financial) victim of another narcissist." xml:space="preserve">
+    <value>Ich wurde zum (finanziellen) Opfer von einem anderen Narzissten.</value>
+  </data>
+  <data name="I had worked in the IT department for a German TV production company named Grundy UFA for 10 years (1998-2008)." xml:space="preserve">
+    <value>Ich hatte 10 Jahre (1998-2008) lang in der IT Abteilung für ein Deutsches TV Produktionsunternehmen mit dem Namen Grundy UFA gearbeitet.</value>
+  </data>
+  <data name="I have met several actors and one actress in person, most of them are/were kind." xml:space="preserve">
+    <value>Ich habe einige Schauspieler und eine Schauspielerin persönlich getroffen, die meisten waren nett.</value>
+  </data>
+  <data name="I love to chat with people who I really like a lot." xml:space="preserve">
+    <value>Ich mag Leuten zu schreiben, die ich wirklich sehr mag.</value>
+  </data>
+  <data name="I often fall in a deep depression." xml:space="preserve">
+    <value>Ich verfalle oft in eine schwere Depression.</value>
+  </data>
+  <data name="I speak the German and English language." xml:space="preserve">
+    <value>Ich spreche die deutsche und englische Sprache.</value>
+  </data>
+  <data name="I will proofread my own texts from time to time." xml:space="preserve">
+    <value>Ich werde meine Texte selbst von Zeit zu Zeit Korrektur lesen.</value>
+  </data>
+  <data name="I write all English texts by myself." xml:space="preserve">
+    <value>Ich schreibe alle englischen Texte selbst.</value>
+  </data>
+  <data name="If further conversation via direct message should be necessary, I will make it possible." xml:space="preserve">
+    <value>Wenn weiterführende Unterhaltungen via Direktnachricht notwendig sein sollten, dann werde ich dies ermöglichen.</value>
+  </data>
+  <data name="If you have any requests or questions, please simply contact me by using the Contact form." xml:space="preserve">
+    <value>Wenn Sie Anfragen oder allgemeine Fragen hierzu haben, kontaktieren Sie mich bitte einfach via Kontaktformular.</value>
+  </data>
+  <data name="It is difficult for me to trust any person, I prefer to take care of everything by myself." xml:space="preserve">
+    <value>Es fällt mir schwer, anderen Menschen zu vertrauen, ich kümmere mich lieber um alles selbst.</value>
+  </data>
+  <data name="June 4, 1952 [2]" xml:space="preserve">
+    <value>4. Juni 1952 [2]</value>
+  </data>
+  <data name="Kerry Shale describes his father as a jokester, it had a great impact on him." xml:space="preserve">
+    <value>Kerry Shale beschreibt seinen Vater als Scherzkeks, dies hatte großen Einfluss auf ihn.</value>
+  </data>
+  <data name="Kerry Shale does not mention it, but it would mean that his parent's families were forced to immigrate to North America during the century of immigration (1820-1948) caused by several events like discrimination, World War I, World War II and the Holocaust in Europe [5]." xml:space="preserve">
+    <value>Kerry Shale erwähnt es selbst nicht, aber dies würde bedeuten, dass sich die Familien seiner Eltern gezwungen sahen, während des Jahrhunderts der Auswanderung (1820-1948) aufgrund von Ereignissen wie Diskriminierung, 1. Weltkrieg, 2. Weltkrieg und den Holocaust in Europa nach Nordamerika auszuwandern [5].</value>
+  </data>
+  <data name="Kerry Shale is a Canadian actor, voice over genius and writer, based in London (United Kingdom) since 1978 [1]." xml:space="preserve">
+    <value>Kerry Shale ist ein Kanadischer Schauspieler, Synchronsprecher und Autor, welcher seit 1978 in London (Vereinigtes Königreich) ansässig ist [1].</value>
+  </data>
+  <data name="Kerry Shale is married to Suzanne Shale since 1996 [3]." xml:space="preserve">
+    <value>Kerry Shale ist seit 1996 mit Suzanne Shale verheiratet [3].</value>
+  </data>
+  <data name="Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="Links:" xml:space="preserve">
+    <value>Links:</value>
+  </data>
+  <data name="Log" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="Official website" xml:space="preserve">
+    <value>Offizielle Webseite</value>
+  </data>
+  <data name="Official YouTube channel" xml:space="preserve">
+    <value>Offizieller YouTube Kanal</value>
+  </data>
+  <data name="Official YouTube Kanal (@kezza52)" xml:space="preserve">
+    <value>Offizieller YouTube Kanal (@kezza52)</value>
+  </data>
+  <data name="Only exception: You are a Nazi/racist/internet troll." xml:space="preserve">
+    <value>Einzige Ausnahme: Du bist Nazi/Rassist/Internettroll.</value>
+  </data>
+  <data name="Only third-party tools like Google's reCAPTCHA may collect information about the visitor, see Google links in the reCAPTCHA in the Contact form." xml:space="preserve">
+    <value>Lediglich Third-Party-Tools wie Google's reCAPTCHA sammeln möglicherweise Informationen über den Besucher, siehe Google Links im reCAPTCHA im Kontaktformular.</value>
+  </data>
+  <data name="Please do not hesitate to contact me if you find any grammar or spelling mistakes, I will correct them as soon as possible." xml:space="preserve">
+    <value>Bitte zögern Sie nicht, mich zu kontaktieren, wenn Sie irgendwelche Grammatik- oder Rechtschreibfehler in den englischen Texten finden, ich werde sie so schnell wie möglich korrigieren.</value>
+  </data>
+  <data name="Private life:" xml:space="preserve">
+    <value>Privatleben:</value>
+  </data>
+  <data name="Regarding to Kerry Shale, his mother was from a shtetl* in Poland, and his father was from Winnipeg in Manitoba where Kerry Shale was born." xml:space="preserve">
+    <value>Laut Kerry Shale war seine Mutter aus einem Shtetl* in Polen und sein Vater war aus Winnipeg in Manitoba, wo auch Kerry Shale geboren ist.</value>
+  </data>
+  <data name="Rules" xml:space="preserve">
+    <value>Regeln</value>
+  </data>
+  <data name="Since that I have been developing software for several companies which had (fortunately) nothing to do with TV, especially in the financial sector and for Bundesdruckerei." xml:space="preserve">
+    <value>Seitdem habe ich Software für einige Firmen entwickelt, welche (glücklicherweise) nichts mit TV zu tun hatten, insbesondere in der Finanzbranche und für die Bundesdruckerei.</value>
+  </data>
+  <data name="Sometimes it can be necessary to give me a slight hint when I 'spam' people with messages, when I am too euphoric, I will stop with it then." xml:space="preserve">
+    <value>Manchmal kann es notwendig sein, mir einen kurzen Hinweis zu geben, wenn ich Leute zu sehr 'zuspamme', wenn ich zu euphorisch bin, ich stelle es dann ab.</value>
+  </data>
+  <data name="Sources for Wikipedia (I gave up on editing Wikipedia):" xml:space="preserve">
+    <value>Quellen für Wikipedia (ich habe es aufgegeben, Wikipedia zu editieren):</value>
+  </data>
+  <data name="technology." xml:space="preserve">
+    <value>Technologie betrieben.</value>
+  </data>
+  <data name="The Sandman at Netflix" xml:space="preserve">
+    <value>The Sandman auf Netflix</value>
+  </data>
+  <data name="This fan page is some long-term experiment, I will operate as long as Kerry Shale or his agency does not complain to me about it." xml:space="preserve">
+    <value>Die Fanseite ist ein Langzeitexperiment, ich werde es so lange betreiben, wie Kerry Shale oder seine Agentur sich nicht bei mir darüber beschweren.</value>
+  </data>
+  <data name="This website is powered by" xml:space="preserve">
+    <value>Diese Webseite wird mit</value>
+  </data>
+  <data name="Voice Reels from his agency Yakety Yak" xml:space="preserve">
+    <value>Audio Reels seiner Agentur Yakety Yak</value>
+  </data>
+  <data name="Winnipeg, Manitoba, Canada [4]" xml:space="preserve">
+    <value>Winnipeg, Manitoba, Kanada [4]</value>
+  </data>
+  <data name="years old, a native German and a senior software developer." xml:space="preserve">
+    <value>Jahre alt, deutsche Muttersprachlerin und ein Senior Software Developer.</value>
+  </data>
+  <data name="[*shtetl -&gt; german: Städtle -&gt; small town]" xml:space="preserve">
+    <value>[*Shtetl -&gt; Deutsch: Städtle -&gt; Kleinstadt]</value>
+  </data>
+  <data name="[1] Sainou (his agency's website)" xml:space="preserve">
+    <value>[1] Sainou (Webseite seiner Agentur)</value>
+  </data>
+  <data name="[2] Birthday tweet by his agent" xml:space="preserve">
+    <value>[2] Geburtstagstweet von seinem Agenten</value>
+  </data>
+  <data name="[3] Kerry Shale Interview (he is married)" xml:space="preserve">
+    <value>[3] Kerry Shale Interview (er ist verheiratet)</value>
+  </data>
+  <data name="[4] Kerry Shale Interview (he was born)" xml:space="preserve">
+    <value>[4] Kerry Shale Interview (er wurde geboren)</value>
+  </data>
+  <data name="[5] A Century Of Immigration" xml:space="preserve">
+    <value>[5] A Century Of Immigration (Englisch)</value>
   </data>
 </root>

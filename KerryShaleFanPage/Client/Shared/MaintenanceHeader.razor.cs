@@ -1,0 +1,39 @@
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
+using System.Threading.Tasks;
+using KerryShaleFanPage.Client.Services;
+using KerryShaleFanPage.Shared.Events;
+
+namespace KerryShaleFanPage.Client.Shared
+{
+    public partial class MaintenanceHeader
+    {
+        [Inject]
+        protected IStringLocalizer<Resources.Translations> Translate { get; set; }
+
+        [Inject]
+        protected SignalRClientService? SignalRClientService { get; set; }
+
+        private string? _text;
+
+        private bool _isEnabled;
+
+        private bool _isVisible => (_isEnabled && !string.IsNullOrWhiteSpace(_text));
+
+        protected override async Task OnInitializedAsync()
+        {
+            await base.OnInitializedAsync();
+            if (SignalRClientService != null)
+            {
+                SignalRClientService.MaintenanceMessageEvent += MaintenanceMessageReceived;
+            }
+        }
+
+        private void MaintenanceMessageReceived(object? sender, MaintenanceMessageEventArgs e)
+        {
+            _isEnabled = e.IsEnabled;
+            _text = e.Message;
+            StateHasChanged();
+        }
+    }
+}

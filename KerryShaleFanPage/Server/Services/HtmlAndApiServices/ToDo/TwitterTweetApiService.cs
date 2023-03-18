@@ -20,8 +20,8 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
     [Obsolete("Obsolete: We will not use Twitter API anymore! Not finally implemented yet! Do not use!")]
     public class TwitterTweetApiService : ITwitterTweetApiService
     {
-        public string ConsumerKey => "";  // TODO: Make configurable!
-        public string ConsumerSecret => "";  // TODO: Make configurable!
+        public string ConsumerKey => "";  // TODO: Make configurable and encrypt!
+        public string ConsumerSecret => "";  // TODO: Make configurable and encrypt!
 
         private const string _AUTHORIZATION_KEY = "Authorization";
         private const string _CONTENT_TYPE = "application/json";

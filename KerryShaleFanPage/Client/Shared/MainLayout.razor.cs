@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
 using System.Threading.Tasks;
 using Radzen;
 using KerryShaleFanPage.Client.Services;
@@ -10,13 +11,18 @@ namespace KerryShaleFanPage.Client.Shared
     public partial class MainLayout : LayoutComponentBase
     {
         [Inject]
+        protected IStringLocalizer<Resources.Translations> Translate { get; set; }
+
+        [Inject]
         protected SignalRClientService? SignalRClientService { get; set; }
 
-        private bool _serverStatusAlertVisible = false;
+        private bool _serverStatusAlertVisible = true;
 
         private IconStyle _serverStatusIconStyle = IconStyle.Light;
 
         private string _serverStatusBlinkingCssClass = string.Empty;
+
+        private bool _sidebarExpanded = true;
 
         protected override async Task OnInitializedAsync()
         {
@@ -54,7 +60,7 @@ namespace KerryShaleFanPage.Client.Shared
                     }
                 default:
                     {
-                        _serverStatusAlertVisible = false;
+                        _serverStatusAlertVisible = true;
                         _serverStatusIconStyle = IconStyle.Light;
                         _serverStatusBlinkingCssClass = string.Empty;
                         break;

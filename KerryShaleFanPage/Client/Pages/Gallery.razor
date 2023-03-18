@@ -1,0 +1,24 @@
+﻿@page "/gallery"
+
+<PageTitle>@Translate["Gallery"] | Kerry Shale Fan Page</PageTitle>
+
+<h1>@Translate["Gallery"].</h1>
+
+<RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5); max-width: 1000px; max-height: 680px;">
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+        <RadzenText TextStyle="TextStyle.Caption" class="rz-color-primary">@_img</RadzenText>
+    </RadzenStack>
+    <RadzenCard class="rz-background-color-primary-lighter rz-shadow-0 rz-border-radius-0" style="margin: 1rem calc(-1 * var(--rz-card-padding));">
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+            <RadzenImage Path="@_img" Style="max-height: 525px;" />
+        </RadzenStack>
+    </RadzenCard>
+    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+        <RadzenColumn Size="6" class="align-items-start d-flex justify-content-start">
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_back" Text="Back" Click="@BackAsync" />
+        </RadzenColumn>
+        <RadzenColumn Size="6" class="align-items-end d-flex justify-content-end">
+            <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_forward" Text="Next" Click="@NextAsync" />
+        </RadzenColumn>
+    </RadzenStack>
+</RadzenCard>

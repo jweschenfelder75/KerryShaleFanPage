@@ -1,33 +1,15 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">KerryShaleFanPage</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿<RadzenSidebar @bind-Expanded="@_sidebarExpanded">
+    <RadzenPanelMenu>
+        <RadzenPanelMenuItem Text="@Translate["Home"]" Icon="home" Path="/" />
+        <RadzenPanelMenuItem Text="Kerry Shale" Icon="person" Path="/kerryshale" />
+        <RadzenPanelMenuItem Text="@Translate["Rules"]" Icon="assignment" Path="/rules" class="menu-item-warning" />
+        <RadzenPanelMenuItem Text="@Translate["Gallery"]" Icon="image" Path="/gallery" />
+        <RadzenPanelMenuItem Text="@Translate["Links"]" Icon="link" Path="/links" />
+        <RadzenPanelMenuItem Text="@Translate["About"]" Icon="info" Path="/about" />
+        <RadzenPanelMenuItem Text="@Translate["Contact"]" Icon="mail" Path="/contact" />
+        <RadzenPanelMenuItem Text="@Translate["Log"]" Icon="text_snippet" Path="/log" />
+    </RadzenPanelMenu>
+    <div class="rz-p-4">
+        <CultureSelector />
     </div>
-</div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weatherforecast">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="log">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Log
-            </NavLink>
-        </div>
-    </nav>
-</div>
+</RadzenSidebar>

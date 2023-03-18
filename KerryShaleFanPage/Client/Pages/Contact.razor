@@ -1,0 +1,87 @@
+﻿@using KerryShaleFanPage.Shared.Objects
+@page "/contact"
+
+<PageTitle>@Translate["Contact"] | Kerry Shale Fan Page</PageTitle>
+
+<h1>@Translate["Contact"].</h1>
+
+@if (_sendMailSuccessResponse)
+{
+    <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
+        <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
+            <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
+                <RadzenText TextStyle="TextStyle.Body2" Text="The e-mail was sent successfully!" />
+            </RadzenColumn>
+        </RadzenRow>
+    </RadzenCard>
+}
+else
+{
+    <RadzenTemplateForm TItem="ContactDataDto" Data="@_contact" Submit="@((args) => SubmitAsync(args))" InvalidSubmit="@InvalidSubmitAsync">
+        <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
+            <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
+                <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
+                    <RadzenLabel Text="Full name" />
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
+                    <RadzenTextBox class="w-100 d-block" Name="Name" MaxLength="500" @bind-Value="_contact.Name" Trim="true" />
+                    <RadzenRequiredValidator Component="Name" Text="Name is required" Popup="true" Style="position: absolute" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
+                <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
+                    <RadzenLabel Text="E-mail address" />
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
+                    <RadzenTextBox class="w-100 d-block" Name="EMail" MaxLength="500" @bind-Value="_contact.EMail" Trim="true" />
+                    <RadzenRequiredValidator Component="EMail" Text="E-mail is required" Popup="true" Style="position: absolute" />
+                    <RadzenEmailValidator Component="EMail" Text="Provide a valid email address" Popup="true" Style="position: absolute" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
+                <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
+                    <RadzenLabel Text="Category" />
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
+                    <RadzenDropDown class="w-100 d-block" Name="Category" @bind-Value="@_contact.Category" Data="@_categories" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
+                <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
+                    <RadzenLabel Text="Subject" />
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
+                    <RadzenTextBox class="w-100 d-block" Name="Subject" MaxLength="500" @bind-Value="_contact.Subject" Trim="true" />
+                    <RadzenRequiredValidator Component="Subject" Text="Subject is required" Popup="true" Style="position: absolute" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
+                <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
+                    <RadzenLabel Text="Message" />
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
+                    <RadzenTextArea class="w-100 d-block" Name="Message" MaxLength="3000" @bind-Value="_contact.Message" />
+                    <RadzenRequiredValidator Component="Message" Text="Message is required" Popup="true" Style="position: absolute" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
+                <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
+                    <RadzenLabel Text="&nbsp;" />
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeMD="6" SizeLG="7" SizeXL="7" SizeXX="7" class="align-items-center d-flex">
+                    <div id="google_recaptcha "></div>
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeMD="2" SizeLG="2" SizeXL="3" SizeXX="4" class="align-items-center d-flex">
+                    <RadzenButton ButtonType="ButtonType.Submit" Icon="send" Text="Send" />
+                </RadzenColumn>
+                <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-4 rz-my-0">
+                    @Translate["Disclaimer: This website is a non-profit project, it means that no profit will ever be made with this website, an exception may be external websites linked from this website."]
+                    @Translate["The website does not collect any personal information about the visitor of this website."]
+                    @Translate["Only third-party tools like Google's reCAPTCHA may collect information about the visitor, see Google links in the reCAPTCHA in the Contact form."]
+                    @Translate["This website is part of jweschenfelder.de (German)."]
+                    @Translate["The website jweschenfelder.de is hosted in another way than this website and may collect data about the visitor in opposite to this fan page."]
+                </RadzenText>
+            </RadzenRow>
+        </RadzenCard>
+    </RadzenTemplateForm>
+}

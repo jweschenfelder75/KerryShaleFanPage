@@ -24,6 +24,7 @@ using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices.ToDo;
 using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
+using KerryShaleFanPage.Server.Interfaces.Maintenance;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
 using KerryShaleFanPage.Server.Interfaces.Security;
 using KerryShaleFanPage.Server.Services;
@@ -31,6 +32,7 @@ using KerryShaleFanPage.Server.Services.BusinessLogic;
 using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo;
 using KerryShaleFanPage.Server.Services.MailAndSmsServices;
+using KerryShaleFanPage.Server.Services.Maintenance;
 using KerryShaleFanPage.Server.Services.Repositories;
 using KerryShaleFanPage.Server.Services.Security;
 using KerryShaleFanPage.Shared.Configuration;
@@ -52,7 +54,7 @@ namespace KerryShaleFanPage.Server
         public static void Main(string[] args)
         {
             var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
+                //.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true).Build();
             LogManager.Configuration = new NLogLoggingConfiguration(config.GetSection(_NLOG_SECTION_NAME));
             LogManager.ThrowExceptions = true;
@@ -114,6 +116,7 @@ namespace KerryShaleFanPage.Server
             services.AddScoped<SecurityProvider>();
             services.AddScoped<ISecurityService, SecurityService>();
             services.AddScoped<ISecuredConfigurationService, SecuredConfigurationService>();
+            services.AddScoped<IMaintenanceNotificationService, MaintenanceNotificationService>();
             services.AddScoped<IMailAndSmsService, GmxMailAndSmsService>();
             services.AddScoped<IGenericRepository<ConfigurationEntry>, ConfigurationRepository>();
             services.AddScoped<IGenericRepository<LogEntry>, LogRepository>();
@@ -194,8 +197,8 @@ namespace KerryShaleFanPage.Server
         /// </summary>
         private static void ConfigureDbTarget()
         {
-            var strInstallConnectionString = "server=127.0.0.1;database=sys;uid={username};pwd={password};";  // TODO: Make configurable!
-            var strConnectionString = "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};";  // TODO: Make configurable!
+            var strInstallConnectionString = "server=127.0.0.1;database=sys;uid={username};pwd={password};";  // TODO: Make configurable and encrypt!
+            var strConnectionString = "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};";  // TODO: Make configurable and encrypt!
 
             var config = LogManager.Configuration;
             var dbTarget = (DatabaseTarget)config.FindTargetByName("allDatabase");

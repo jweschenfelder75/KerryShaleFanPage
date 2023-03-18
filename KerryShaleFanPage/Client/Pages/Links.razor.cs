@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
 using System.Threading.Tasks;
 
-namespace KerryShaleFanPage.Client.Shared
+namespace KerryShaleFanPage.Client.Pages
 {
-    public partial class SurveyPrompt
+    public partial class Links
     {
-        // Demonstrates how a parent component can supply parameters
-        [Parameter]
-        public string? Title { get; set; }
+        [Inject]
+        protected IStringLocalizer<Resources.Translations> Translate { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

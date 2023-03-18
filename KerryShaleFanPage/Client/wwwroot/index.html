@@ -16,7 +16,7 @@
     <link href="icon-192.png" rel="apple-touch-icon" sizes="192x192" />
 </head>
 
-<body onload='particles(opacity=15, numParticles=10, sizeMultiplier=5, width=1, connections=true, connectionDensity=15, noBounceH=false, noBounceV=false, speed=50, avoidMouse=true, hover=true)'>
+<body onload='particles(opacity=7, numParticles=10, sizeMultiplier=5, width=1, connections=true, connectionDensity=15, noBounceH=false, noBounceV=false, speed=50, avoidMouse=true, hover=true)'>
     <div id="app">Loading...</div>
 
     <div id="blazor-error-ui">
@@ -29,8 +29,11 @@
 
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
-    <script src="js/ab-particles/ab-particles.min.js" integrity="sha384-HI+YXFmq6RX6R45hGuCOv6U/XhbS6swme7nnQVc8g6QfhucST79WEzlK6XMbanUp" crossorigin="anonymous" defer=""></script>
+    <script src="/js/ab-particles/ab-particles.min.js" integrity="sha384-HI+YXFmq6RX6R45hGuCOv6U/XhbS6swme7nnQVc8g6QfhucST79WEzlK6XMbanUp" crossorigin="anonymous" defer=""></script>
+    <script src="/js/window-size/getwindowsize.js" crossorigin="anonymous" defer=""></script>
     <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+    <script src="/js/google-recaptcha/google-recaptcha.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script> <!-- reCaptcha rendering script -->
 
     <script>
         window.blazorCulture = {

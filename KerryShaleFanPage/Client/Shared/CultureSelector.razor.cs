@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
-using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
@@ -9,7 +8,7 @@ namespace KerryShaleFanPage.Client.Shared
     public partial class CultureSelector
     {
         [Inject]
-        protected IJSRuntime? JS { get; set; }
+        protected IJSRuntime? JsRuntime { get; set; }
 
         [Inject]
         protected NavigationManager? Navigation { get; set; }
@@ -27,7 +26,7 @@ namespace KerryShaleFanPage.Client.Shared
             {
                 if (CultureInfo.CurrentCulture != value)
                 {
-                    var js = (IJSInProcessRuntime?)JS;
+                    var js = (IJSInProcessRuntime?)JsRuntime;
                     js?.InvokeVoid("blazorCulture.set", value.Name);
 
                     Navigation?.NavigateTo(Navigation.Uri, forceLoad: true);

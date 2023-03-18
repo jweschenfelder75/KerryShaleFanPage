@@ -2,11 +2,9 @@
 @using System.Globalization
 @page "/log"
 
-<PageTitle>Log</PageTitle>
+<PageTitle>Log | Kerry Shale Fan Page</PageTitle>
 
 <h1>Log</h1>
-
-@*<p>This component demonstrates fetching data from the server.</p>*@
 
 @if (_logEntries == null)
 {
@@ -15,7 +13,7 @@
 else
 {
     <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left"
-                Data="@_logEntries" TItem="LogEntryDto" ColumnWidth="300px" ShowPagingSummary="true" IsLoading=@_isLoading Sort="@ShowLoading" Page="@ShowLoading" Group="@ShowLoading" Filter="@ShowLoading" 
+                Data="@_logEntries" TItem="LogEntryDto" ColumnWidth="300px" ShowPagingSummary="true" IsLoading=@_isLoading Sort="@ShowLoadingAsync" Page="@ShowLoadingAsync" Group="@ShowLoadingAsync" Filter="@ShowLoadingAsync" 
                 SelectionMode="DataGridSelectionMode.Single">
         <Columns>
             <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="TimeStamp" Title="Time" Width="125px" >
@@ -42,7 +40,7 @@ else
                         <RadzenColumn Size=2>
                             @if (!string.IsNullOrEmpty(item.Message))
                             {
-                                <RadzenButton Icon="open_in_new" Size="ButtonSize.ExtraSmall" class="m-1 float-end" Click=@(() => ShowDialog("Message", item.Message ?? string.Empty)) />
+                                <RadzenButton Icon="open_in_new" Size="ButtonSize.ExtraSmall" class="m-1 float-end" Click=@(() => ShowDialogAsync("Message", item.Message ?? string.Empty)) />
                             }
                         </RadzenColumn>
                     </RadzenRow>
@@ -57,7 +55,7 @@ else
                         <RadzenColumn Size=2>
                             @if (!string.IsNullOrEmpty(item.Exception))
                             {
-                                <RadzenButton Icon="open_in_new" Size="ButtonSize.ExtraSmall" class="m-1 float-end" Click=@(() => ShowDialog("Exception", item.Exception ?? string.Empty)) />
+                                <RadzenButton Icon="open_in_new" Size="ButtonSize.ExtraSmall" class="m-1 float-end" Click=@(() => ShowDialogAsync("Exception", item.Exception ?? string.Empty)) />
                             }
                         </RadzenColumn>
                     </RadzenRow>

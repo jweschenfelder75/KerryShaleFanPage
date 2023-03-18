@@ -61,20 +61,568 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Index | Kerry Shale Fan Page ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [*shtetl -&gt; german: Städtle -&gt; small town] ähnelt.
         /// </summary>
-        public static string Index_PageTitle {
+        public static string @__shtetl____german__Städtle____small_town_ {
             get {
-                return ResourceManager.GetString("Index.PageTitle", resourceCulture);
+                return ResourceManager.GetString("[*shtetl -> german: Städtle -> small town]", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Hello, World! ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [1] Sainou (his agency&apos;s website) ähnelt.
         /// </summary>
-        public static string Index_Welcome {
+        public static string _1__Sainou__his_agency_s_website_ {
             get {
-                return ResourceManager.GetString("Index.Welcome", resourceCulture);
+                return ResourceManager.GetString("[1] Sainou (his agency\'s website)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [2] Birthday tweet by his agent ähnelt.
+        /// </summary>
+        public static string _2__Birthday_tweet_by_his_agent {
+            get {
+                return ResourceManager.GetString("[2] Birthday tweet by his agent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [3] Kerry Shale Interview (he is married) ähnelt.
+        /// </summary>
+        public static string _3__Kerry_Shale_Interview__he_is_married_ {
+            get {
+                return ResourceManager.GetString("[3] Kerry Shale Interview (he is married)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [4] Kerry Shale Interview (he was born) ähnelt.
+        /// </summary>
+        public static string _4__Kerry_Shale_Interview__he_was_born_ {
+            get {
+                return ResourceManager.GetString("[4] Kerry Shale Interview (he was born)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [5] A Century Of Immigration ähnelt.
+        /// </summary>
+        public static string _5__A_Century_Of_Immigration {
+            get {
+                return ResourceManager.GetString("[5] A Century Of Immigration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die About ähnelt.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die After that I had studied IT and finished my Master of Science in Applied Information Technology (2008-2014) successfully. ähnelt.
+        /// </summary>
+        public static string After_that_I_had_studied_IT_and_finished_my_Master_of_Science_in_Applied_Information_Technology__2008_2014__successfully_ {
+            get {
+                return ResourceManager.GetString("After that I had studied IT and finished my Master of Science in Applied Informat" +
+                        "ion Technology (2008-2014) successfully.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die and ähnelt.
+        /// </summary>
+        public static string and {
+            get {
+                return ResourceManager.GetString("and", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Because I have thaught English myself in the main, my English may appear a bit messed up, I will rather stick to the American English. ähnelt.
+        /// </summary>
+        public static string Because_I_have_thaught_English_myself_in_the_main__my_English_may_appear_a_bit_messed_up__I_will_rather_stick_to_the_American_English_ {
+            get {
+                return ResourceManager.GetString("Because I have thaught English myself in the main, my English may appear a bit me" +
+                        "ssed up, I will rather stick to the American English.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Birthdate: ähnelt.
+        /// </summary>
+        public static string Birthdate_ {
+            get {
+                return ResourceManager.GetString("Birthdate:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Birthplace: ähnelt.
+        /// </summary>
+        public static string Birthplace_ {
+            get {
+                return ResourceManager.GetString("Birthplace:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Contact ähnelt.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Current projects (direct and indirect): ähnelt.
+        /// </summary>
+        public static string Current_projects__direct_and_indirect__ {
+            get {
+                return ResourceManager.GetString("Current projects (direct and indirect):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Design with ähnelt.
+        /// </summary>
+        public static string Design_with {
+            get {
+                return ResourceManager.GetString("Design with", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Gallery ähnelt.
+        /// </summary>
+        public static string Gallery {
+            get {
+                return ResourceManager.GetString("Gallery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die He had had a carefree childhood in Winnipeg, Manitoba [4]. ähnelt.
+        /// </summary>
+        public static string He_had_had_a_carefree_childhood_in_Winnipeg__Manitoba__4__ {
+            get {
+                return ResourceManager.GetString("He had had a carefree childhood in Winnipeg, Manitoba [4].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hi, I am Jana (English pronounciation: Yana, the name is often used in Poland and Germany), I am ähnelt.
+        /// </summary>
+        public static string Hi__I_am_Jana__English_pronounciation__Yana__the_name_is_often_used_in_Poland_and_Germany___I_am {
+            get {
+                return ResourceManager.GetString("Hi, I am Jana (English pronounciation: Yana, the name is often used in Poland and" +
+                        " Germany), I am", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die His agency&apos;s website (Sainou) ähnelt.
+        /// </summary>
+        public static string His_agency_s_website__Sainou_ {
+            get {
+                return ResourceManager.GetString("His agency\'s website (Sainou)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die His father&apos;s family immigrated from Russia, but his father saw himself as a very fiercely Canadian [4]. ähnelt.
+        /// </summary>
+        public static string His_father_s_family_immigrated_from_Russia__but_his_father_saw_himself_as_a_very_fiercely_Canadian__4__ {
+            get {
+                return ResourceManager.GetString("His father\'s family immigrated from Russia, but his father saw himself as a very " +
+                        "fiercely Canadian [4].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Home ähnelt.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I am an asexual (like Granada&apos;s and Frogwares&apos; Sherlock Holmes), I am married to my computer and nobody else. ähnelt.
+        /// </summary>
+        public static string I_am_an_asexual__like_Granada_s_and_Frogwares__Sherlock_Holmes___I_am_married_to_my_computer_and_nobody_else_ {
+            get {
+                return ResourceManager.GetString("I am an asexual (like Granada\'s and Frogwares\' Sherlock Holmes), I am married to " +
+                        "my computer and nobody else.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I am the child of narcissistic parents which has traumatized me a lot. ähnelt.
+        /// </summary>
+        public static string I_am_the_child_of_narcissistic_parents_which_has_traumatized_me_a_lot_ {
+            get {
+                return ResourceManager.GetString("I am the child of narcissistic parents which has traumatized me a lot.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I became a (financial) victim of another narcissist. ähnelt.
+        /// </summary>
+        public static string I_became_a__financial__victim_of_another_narcissist_ {
+            get {
+                return ResourceManager.GetString("I became a (financial) victim of another narcissist.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I had worked in the IT department for a German TV production company named Grundy UFA for 10 years (1998-2008). ähnelt.
+        /// </summary>
+        public static string I_had_worked_in_the_IT_department_for_a_German_TV_production_company_named_Grundy_UFA_for_10_years__1998_2008__ {
+            get {
+                return ResourceManager.GetString("I had worked in the IT department for a German TV production company named Grundy" +
+                        " UFA for 10 years (1998-2008).", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I have met several actors and one actress in person, most of them are/were kind. ähnelt.
+        /// </summary>
+        public static string I_have_met_several_actors_and_one_actress_in_person__most_of_them_are_were_kind_ {
+            get {
+                return ResourceManager.GetString("I have met several actors and one actress in person, most of them are/were kind.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I love to chat with people who I really like a lot. ähnelt.
+        /// </summary>
+        public static string I_love_to_chat_with_people_who_I_really_like_a_lot_ {
+            get {
+                return ResourceManager.GetString("I love to chat with people who I really like a lot.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I often fall in a deep depression. ähnelt.
+        /// </summary>
+        public static string I_often_fall_in_a_deep_depression_ {
+            get {
+                return ResourceManager.GetString("I often fall in a deep depression.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I speak the German and English language. ähnelt.
+        /// </summary>
+        public static string I_speak_the_German_and_English_language_ {
+            get {
+                return ResourceManager.GetString("I speak the German and English language.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I will proofread my own texts from time to time. ähnelt.
+        /// </summary>
+        public static string I_will_proofread_my_own_texts_from_time_to_time_ {
+            get {
+                return ResourceManager.GetString("I will proofread my own texts from time to time.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I write all English texts by myself. ähnelt.
+        /// </summary>
+        public static string I_write_all_English_texts_by_myself_ {
+            get {
+                return ResourceManager.GetString("I write all English texts by myself.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If further conversation via direct message should be necessary, I will make it possible. ähnelt.
+        /// </summary>
+        public static string If_further_conversation_via_direct_message_should_be_necessary__I_will_make_it_possible_ {
+            get {
+                return ResourceManager.GetString("If further conversation via direct message should be necessary, I will make it po" +
+                        "ssible.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you have any requests or questions, please simply contact me by using the Contact form. ähnelt.
+        /// </summary>
+        public static string If_you_have_any_requests_or_questions__please_simply_contact_me_by_using_the_Contact_form_ {
+            get {
+                return ResourceManager.GetString("If you have any requests or questions, please simply contact me by using the Cont" +
+                        "act form.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It is difficult for me to trust any person, I prefer to take care of everything by myself. ähnelt.
+        /// </summary>
+        public static string It_is_difficult_for_me_to_trust_any_person__I_prefer_to_take_care_of_everything_by_myself_ {
+            get {
+                return ResourceManager.GetString("It is difficult for me to trust any person, I prefer to take care of everything b" +
+                        "y myself.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die June 4, 1952 [2] ähnelt.
+        /// </summary>
+        public static string June_4__1952__2_ {
+            get {
+                return ResourceManager.GetString("June 4, 1952 [2]", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale describes his father as a jokester, it had a great impact on him. ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_describes_his_father_as_a_jokester__it_had_a_great_impact_on_him_ {
+            get {
+                return ResourceManager.GetString("Kerry Shale describes his father as a jokester, it had a great impact on him.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale does not mention it, but it would mean that his parent&apos;s families were forced to immigrate to North America during the century of immigration (1820-1948) caused by several events like discrimination, World War I, World War II and the Holocaust in Europe [5]. ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_does_not_mention_it__but_it_would_mean_that_his_parent_s_families_were_forced_to_immigrate_to_North_America_during_the_century_of_immigration__1820_1948__caused_by_several_events_like_discrimination__World_War_I__World_War_II_and_the_Holocaust_in_Europe__5__ {
+            get {
+                return ResourceManager.GetString(@"Kerry Shale does not mention it, but it would mean that his parent's families were forced to immigrate to North America during the century of immigration (1820-1948) caused by several events like discrimination, World War I, World War II and the Holocaust in Europe [5].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale is a Canadian actor, voice over genius and writer, based in London (United Kingdom) since 1978 [1]. ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_is_a_Canadian_actor__voice_over_genius_and_writer__based_in_London__United_Kingdom__since_1978__1__ {
+            get {
+                return ResourceManager.GetString("Kerry Shale is a Canadian actor, voice over genius and writer, based in London (U" +
+                        "nited Kingdom) since 1978 [1].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale is married to Suzanne Shale since 1996 [3]. ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_is_married_to_Suzanne_Shale_since_1996__3__ {
+            get {
+                return ResourceManager.GetString("Kerry Shale is married to Suzanne Shale since 1996 [3].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Links ähnelt.
+        /// </summary>
+        public static string Links {
+            get {
+                return ResourceManager.GetString("Links", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Links: ähnelt.
+        /// </summary>
+        public static string Links_ {
+            get {
+                return ResourceManager.GetString("Links:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Log ähnelt.
+        /// </summary>
+        public static string Log {
+            get {
+                return ResourceManager.GetString("Log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Official website ähnelt.
+        /// </summary>
+        public static string Official_website {
+            get {
+                return ResourceManager.GetString("Official website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Official YouTube channel ähnelt.
+        /// </summary>
+        public static string Official_YouTube_channel {
+            get {
+                return ResourceManager.GetString("Official YouTube channel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Official YouTube Kanal (@kezza52) ähnelt.
+        /// </summary>
+        public static string Official_YouTube_Kanal___kezza52_ {
+            get {
+                return ResourceManager.GetString("Official YouTube Kanal (@kezza52)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Only exception: You are a Nazi/racist/internet troll. ähnelt.
+        /// </summary>
+        public static string Only_exception__You_are_a_Nazi_racist_internet_troll_ {
+            get {
+                return ResourceManager.GetString("Only exception: You are a Nazi/racist/internet troll.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Only third-party tools like Google&apos;s reCAPTCHA may collect information about the visitor, see Google links in the reCAPTCHA in the Contact form. ähnelt.
+        /// </summary>
+        public static string Only_third_party_tools_like_Google_s_reCAPTCHA_may_collect_information_about_the_visitor__see_Google_links_in_the_reCAPTCHA_in_the_Contact_form_ {
+            get {
+                return ResourceManager.GetString("Only third-party tools like Google\'s reCAPTCHA may collect information about the " +
+                        "visitor, see Google links in the reCAPTCHA in the Contact form.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please do not hesitate to contact me if you find any grammar or spelling mistakes, I will correct them as soon as possible. ähnelt.
+        /// </summary>
+        public static string Please_do_not_hesitate_to_contact_me_if_you_find_any_grammar_or_spelling_mistakes__I_will_correct_them_as_soon_as_possible_ {
+            get {
+                return ResourceManager.GetString("Please do not hesitate to contact me if you find any grammar or spelling mistakes" +
+                        ", I will correct them as soon as possible.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Private life: ähnelt.
+        /// </summary>
+        public static string Private_life_ {
+            get {
+                return ResourceManager.GetString("Private life:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Regarding to Kerry Shale, his mother was from a shtetl* in Poland, and his father was from Winnipeg in Manitoba where Kerry Shale was born. ähnelt.
+        /// </summary>
+        public static string Regarding_to_Kerry_Shale__his_mother_was_from_a_shtetl__in_Poland__and_his_father_was_from_Winnipeg_in_Manitoba_where_Kerry_Shale_was_born_ {
+            get {
+                return ResourceManager.GetString("Regarding to Kerry Shale, his mother was from a shtetl* in Poland, and his father" +
+                        " was from Winnipeg in Manitoba where Kerry Shale was born.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Rules ähnelt.
+        /// </summary>
+        public static string Rules {
+            get {
+                return ResourceManager.GetString("Rules", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Since that I have been developing software for several companies which had (fortunately) nothing to do with TV, especially in the financial sector and for Bundesdruckerei. ähnelt.
+        /// </summary>
+        public static string Since_that_I_have_been_developing_software_for_several_companies_which_had__fortunately__nothing_to_do_with_TV__especially_in_the_financial_sector_and_for_Bundesdruckerei_ {
+            get {
+                return ResourceManager.GetString("Since that I have been developing software for several companies which had (fortu" +
+                        "nately) nothing to do with TV, especially in the financial sector and for Bundes" +
+                        "druckerei.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sometimes it can be necessary to give me a slight hint when I &apos;spam&apos; people with messages, when I am too euphoric, I will stop with it then. ähnelt.
+        /// </summary>
+        public static string Sometimes_it_can_be_necessary_to_give_me_a_slight_hint_when_I__spam__people_with_messages__when_I_am_too_euphoric__I_will_stop_with_it_then_ {
+            get {
+                return ResourceManager.GetString("Sometimes it can be necessary to give me a slight hint when I \'spam\' people with " +
+                        "messages, when I am too euphoric, I will stop with it then.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sources for Wikipedia (I gave up on editing Wikipedia): ähnelt.
+        /// </summary>
+        public static string Sources_for_Wikipedia__I_gave_up_on_editing_Wikipedia__ {
+            get {
+                return ResourceManager.GetString("Sources for Wikipedia (I gave up on editing Wikipedia):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die technology. ähnelt.
+        /// </summary>
+        public static string technology_ {
+            get {
+                return ResourceManager.GetString("technology.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The Sandman at Netflix ähnelt.
+        /// </summary>
+        public static string The_Sandman_at_Netflix {
+            get {
+                return ResourceManager.GetString("The Sandman at Netflix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page is some long-term experiment, I will operate as long as Kerry Shale or his agency does not complain to me about it. ähnelt.
+        /// </summary>
+        public static string This_fan_page_is_some_long_term_experiment__I_will_operate_as_long_as_Kerry_Shale_or_his_agency_does_not_complain_to_me_about_it_ {
+            get {
+                return ResourceManager.GetString("This fan page is some long-term experiment, I will operate as long as Kerry Shale" +
+                        " or his agency does not complain to me about it.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This website is powered by ähnelt.
+        /// </summary>
+        public static string This_website_is_powered_by {
+            get {
+                return ResourceManager.GetString("This website is powered by", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Voice Reels from his agency Yakety Yak ähnelt.
+        /// </summary>
+        public static string Voice_Reels_from_his_agency_Yakety_Yak {
+            get {
+                return ResourceManager.GetString("Voice Reels from his agency Yakety Yak", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Winnipeg, Manitoba, Canada [4] ähnelt.
+        /// </summary>
+        public static string Winnipeg__Manitoba__Canada__4_ {
+            get {
+                return ResourceManager.GetString("Winnipeg, Manitoba, Canada [4]", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die years old, a native German and a senior software developer. ähnelt.
+        /// </summary>
+        public static string years_old__a_native_German_and_a_senior_software_developer_ {
+            get {
+                return ResourceManager.GetString("years old, a native German and a senior software developer.", resourceCulture);
             }
         }
     }

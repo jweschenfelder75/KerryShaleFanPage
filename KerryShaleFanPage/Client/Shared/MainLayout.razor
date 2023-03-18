@@ -1,28 +1,44 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-    <RadzenNotification />
-    <RadzenDialog />
-    <RadzenTooltip />
-
-    <main>
-        <div class="top-row px-4">
-            <div class="position-relative mx-3 mt-1">
-                <div class="@_serverStatusBlinkingCssClass">
-                    <RadzenIcon Icon="warning" Visible="@_serverStatusAlertVisible" IconStyle="@_serverStatusIconStyle" />
+    <RadzenLayout>
+        <RadzenNotification />
+        <RadzenDialog />
+        <RadzenTooltip />
+        <RadzenHeader>
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="10">
+                <RadzenSidebarToggle Click="@(() => _sidebarExpanded = !_sidebarExpanded)" />
+                <RadzenLabel Text="Kerry Shale Fan Page" Style="width: 230px; white-space: nowrap;" />
+                <div class="rz-float-end">
+                    <div class="@_serverStatusBlinkingCssClass">
+                        <RadzenIcon Icon="warning" Visible="@_serverStatusAlertVisible" IconStyle="@_serverStatusIconStyle" />
+                    </div>
                 </div>
+            </RadzenStack>
+        </RadzenHeader>
+        <NavMenu />
+        <RadzenBody>
+            <MaintenanceHeader />
+            <div class="rz-p-4">
+                @Body
             </div>
-            <div class="position-relative mx-1 mt-3">
-                <CultureSelector />
-            </div>
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+        </RadzenBody>
+        <RadzenFooter Style="padding: 5px; border-top: 1px solid var(--rz-primary-lighter)">
+            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Center" Gap="25">
+                <RadzenColumn Size="12" SizeXS="6" SizeSM="6" SizeMD="7" SizeLG="7" SizeXL="8" SizeXX="8">
+                    <div class="small rz-my-1">2023 - @Translate["This website is powered by"] <RadzenLink Path="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" Target="_blank" Text="Microsoft&reg; Blazor" /> <RadzenIcon Icon="open_in_new" Style="font-size: small;" /> @Translate["technology."] @Translate["Design with"] <RadzenLink Path="https://blazor.radzen.com/get-started" Target="_blank" Text="Radzen Blazor Components" /> <RadzenIcon Icon="open_in_new" Style="font-size: small;" />.</div>
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeXS="6" SizeSM="6" SizeMD="5" SizeLG="5" SizeXL="4" SizeXX="4">
+                    <RadzenLink title="Facebook Page" Path="https://www.facebook.com/kerryshalefanpg" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-facebook-64_white.png" /></RadzenBadge></RadzenLink>
+                    <RadzenLink title="Facebook Group" Path="https://www.facebook.com/groups/kerryshalefangrp" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-facebook-64_white.png" /></RadzenBadge></RadzenLink>
+                    <RadzenLink title="Instagram" Path="https://www.instagram.com/kerryshalefanpg" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-instagram-64_white.png" /></RadzenBadge></RadzenLink>
+                    <RadzenLink title="YouTube" Path="https://www.youtube.com/channel/UC_ywZlDWeX-TTO1Y2eALeRg" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-youtube-64_white.png" /></RadzenBadge></RadzenLink>
+                    <RadzenLink title="Mastodon" Path="@("https://universeodon.com/@kerryshalefanpage")" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-mastodon-64_white.png" /></RadzenBadge></RadzenLink>
+                    <RadzenLink title="Twitter" Path="https://twitter.com/kerryshalefanpg" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-twitter-64_white.png" /></RadzenBadge></RadzenLink>
+                    <RadzenLink title="GitHub" Path="https://github.com/jweschenfelder/KerryShaleFanPage/tree/develop" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-github-64_white.png" /></RadzenBadge></RadzenLink>
+                    <RadzenLink title="Coming Soon" Path="" Target="_blank" class="rz-link-button"><RadzenBadge BadgeStyle="BadgeStyle.Dark"><RadzenImage Style="width: 16px;" Path="img/icons/icons8-earlybirds-64_white.png" /></RadzenBadge></RadzenLink>
+                </RadzenColumn>
+            </RadzenStack>
+        </RadzenFooter>
+    </RadzenLayout>
 </div>

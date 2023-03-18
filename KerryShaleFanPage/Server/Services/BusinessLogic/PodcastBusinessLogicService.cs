@@ -18,12 +18,13 @@ using KerryShaleFanPage.Shared.Objects.Acast;
 using KerryShaleFanPage.Shared.Objects.ListenNotes;
 using KerryShaleFanPage.Shared.Objects.Spotify;
 using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
+using KerryShaleFanPage.Server.Interfaces.Maintenance;
 
 namespace KerryShaleFanPage.Server.Services.BusinessLogic
 {
     public class PodcastBusinessLogicService : IPodcastBusinessLogicService
     {
-        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(15);  // Make configurable!
+        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(1);  // Make configurable!
         private readonly IMailAndSmsService _mailAndSmsService;
         private readonly IGenericRepositoryService<PodcastEpisodeDto> _repositoryService;
         private readonly IGenericCrawlHtmlService<AcastEpisode> _acastCrawlService;
@@ -33,6 +34,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         // private readonly ITwitterTweetApiService _twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
         // private readonly IGenericCrawlHtmlService<TwitterEpisode> _twitterCrawlService;  // TODO: Unfinished & untested.
         private readonly ISecuredConfigurationService _securedConfigurationService;
+        private readonly IMaintenanceNotificationService _maintenanceNotificationService;
 
         private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
 
@@ -43,7 +45,8 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             IGenericRepositoryService<PodcastEpisodeDto> repositoryService, IGenericCrawlHtmlService<AcastEpisode> acastCrawlService,
             IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
             /* , ITwitterCrawlApiService twitterCrawlApiService, ITwitterTweetApiService twitterTweetApiService */
-            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */, ISecuredConfigurationService securedConfigurationService)
+            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */, ISecuredConfigurationService securedConfigurationService,
+            IMaintenanceNotificationService maintenanceNotificationService)
         {
             _logger = logger;
             _mailAndSmsService = mailAndSmsService;
@@ -55,6 +58,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             // _twitterTweetApiService = twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
             // _twitterCrawlService = twitterCrawlService;  // TODO: Unfinished & untested.
             _securedConfigurationService = securedConfigurationService;
+            _maintenanceNotificationService = maintenanceNotificationService;
         }
 
         /// <inheritdoc cref="IPodcastBusinessLogicService" />
@@ -64,19 +68,21 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             {
                 _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {_sleepPeriod.TotalMinutes} min).");
 
-                var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
-                if (latestPodcastEpisodeDto == null)
-                {
-                    // TODO: Information that there is obviously a problem fetching the latest episode!
-                }
-                else
-                {
-                    var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable!
-                    if (!success)
-                    {
-                        // TODO: Information that there is obviously a problem sending the notification!
-                    }
-                }
+                await _maintenanceNotificationService.NotifyAllConnectedClientsInCaseOfMaintenanceAsync(cancellationToken);
+
+                //var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
+                //if (latestPodcastEpisodeDto == null)
+                //{
+                //    // TODO: Information that there is obviously a problem fetching the latest episode!
+                //}
+                //else
+                //{
+                //    var success = _mailAndSmsService.SendSmsNotification(<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
+                //    if (!success)
+                //    {
+                //        // TODO: Information that there is obviously a problem sending the notification!
+                //    }
+                //}
 
                 // Other examples:
                 // var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);

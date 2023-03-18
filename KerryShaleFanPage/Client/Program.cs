@@ -28,6 +28,7 @@ namespace KerryShaleFanPage.Client
             builder.Services.AddScoped<DialogService>();
             builder.Services.AddScoped<TooltipService>();
 
+            builder.Services.AddScoped<BrowserService>();
             builder.Services.AddScoped<SignalRClientService>();
 
             var host = builder.Build();

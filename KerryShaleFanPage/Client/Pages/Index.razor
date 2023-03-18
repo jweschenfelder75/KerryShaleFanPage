@@ -1,9 +1,158 @@
 ﻿@page "/"
 
-<PageTitle>@Translate["Index.PageTitle"]</PageTitle>
+<PageTitle>@Translate["Welcome"] | Kerry Shale Fan Page</PageTitle>
 
-<h1>@Translate["Index.Welcome"]</h1>
+<h1>@Translate["Welcome"].</h1>
 
-<p>Welcome to your new app.</p>
+<p>&nbsp;</p>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<p>
+    <div class="marquee">
+        <ul class="marquee-content">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <!-- Mirrors the content above -->
+        <ul class="marquee-content" aria-hidden="true">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+</p>
+
+<p>&nbsp;</p>
+
+<div class="row h-100">
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xx-6 rz-col-xx-6 d-flex justify-content-center my-4">
+        <div class="flip-card">
+            <div class=@($"flip-card-inner {_cssClass[0]}") @onclick="(() => FlipCardAsync(0))">
+                <div class="flip-card-front">
+                    <div class="row justify-content-center">
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+                            <img src="/img/the-sandman.png" alt="The Sandman" />
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
+                            Watch The Sandman on Netflix<br />or visit The Sandman Wiki<br />
+                            CLICK ME!
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                            <br />Please select: <br /><br />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://www.netflix.com/de/title/81150303" target="blank"><img src="/img/The_Sandman_Netflix_1.jpg" alt="The Sandman at Netflix" /></a>&nbsp;
+                        </div>
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://sandman.fandom.com/wiki/Kerry_Shale" target="blank"><img src="/img/The_Sandman_Netflix_2.jpg" alt="The Sandman Wiki" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xx-6 rz-col-xx-6 d-flex justify-content-center my-4">
+        <div class="flip-card">
+            <div class=@($"flip-card-inner {_cssClass[1]}") @onclick="(() => FlipCardAsync(1))">
+                <div class="flip-card-front">
+                    <div class="row justify-content-center">
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+                            <img src="/img/frogwares.jpg" alt="Frogwares" />
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
+                            Play Sherlock Holmes<br />
+                            CLICK ME!
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                            <br />Please select: <br /><br />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://www.youtube.com/watch?v=v4UGHWbJ0I8" target="blank"><img src="/img/frogwares-tosh.jpg" alt="The Testament Of Sherlock Holmes" /></a>&nbsp;
+                        </div>
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://www.youtube.com/watch?v=gKC5TJ4O9YI" target="blank"><img src="/img/frogwares-cap.jpg" alt="Crimes & Punishments" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xx-6 rz-col-xx-6 d-flex justify-content-center my-4">
+        <div class="flip-card">
+            <div class=@($"flip-card-inner {_cssClass[2]}") @onclick="(() => FlipCardAsync(2))">
+                <div class="flip-card-front">
+                    <div class="row justify-content-center">
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+                            <img src="/img/KS-1.png" alt="Official Website" />
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
+                            Official website of Kerry Shale<br />and the website of his agency<br />
+                            CLICK ME!
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                            <br />Please select: <br /><br />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://www.kerryshale.com" target="blank"><img src="/img/KS-2.png" alt="Official Website" /></a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://www.sainou.com/individual/kerry-shale" target="blank"><img src="/img/sainou.png" alt="Agency Website" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 col-xx-6 rz-col-xx-6 d-flex justify-content-center my-4">
+        <div class="flip-card">
+            <div class=@($"flip-card-inner {_cssClass[3]}") @onclick="(() => FlipCardAsync(3))">
+                <div class="flip-card-front">
+                    <div class="row justify-content-center">
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+                            <img src="/img/reel.png" alt="Reel" />
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
+                            Film and Audio Reels by Kerry Shale<br />
+                            CLICK ME!
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                            <br />Please select: <br /><br />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://www.yaketyyak.co.uk/artists/kerry-shale" target="blank"><img src="/img/yaketyyak.png" alt="Yakety Yak" /></a>
+                        </div>
+                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                            <a href="https://www.imdb.com/name/nm0787715" target="blank"><img src="/img/imdb.jpg" alt="IMDb" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

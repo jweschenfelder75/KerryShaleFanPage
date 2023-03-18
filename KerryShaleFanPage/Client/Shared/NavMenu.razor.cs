@@ -1,21 +1,19 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
+using System.Threading.Tasks;
 
 namespace KerryShaleFanPage.Client.Shared
 {
     public partial class NavMenu
     {
-        private bool collapseNavMenu = true;
+        [Inject]
+        protected IStringLocalizer<Resources.Translations> Translate { get; set; }
 
-        private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+        private bool _sidebarExpanded = true;
 
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-        }
-
-        private void ToggleNavMenu()
-        {
-            collapseNavMenu = !collapseNavMenu;
         }
     }
 }
