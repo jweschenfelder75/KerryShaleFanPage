@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography;
@@ -9,6 +10,8 @@ namespace KerryShaleFanPage.Shared.Security
 {
     public class SecurityProvider
     {
+        private readonly byte[] _key = { 0x02, 0x03, 0x01, 0x03, 0x03, 0x07, 0x07, 0x08, 0x09, 0x09, 0x11, 0x11, 0x16, 0x17, 0x19, 0x16 };
+
         private readonly ILogger<SecurityProvider> _logger;  // TODO: Implement logging!
 
         /// <summary>
@@ -51,6 +54,80 @@ namespace KerryShaleFanPage.Shared.Security
 
             using var rsa = cert.GetRSAPrivateKey();
             return rsa.Decrypt(data, RSAEncryptionPadding.OaepSHA512);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="text"></param>
+        /// <param name="deleteExistingFile"></param>
+        /// <returns></returns>
+        public bool EncryptFile(string filePath, string plainText, bool deleteExistingFile = false)
+        {
+            try
+            {
+                if (deleteExistingFile && File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+
+                using FileStream myStream = new FileStream(filePath, FileMode.OpenOrCreate);
+                using Aes aes = Aes.Create();
+                aes.Key = _key;
+
+                byte[] iv = aes.IV;
+                myStream.Write(iv, 0, iv.Length);
+
+                using CryptoStream cryptStream = new CryptoStream(
+                    myStream,
+                    aes.CreateEncryptor(),
+                    CryptoStreamMode.Write);
+
+                using StreamWriter sWriter = new StreamWriter(cryptStream);
+                sWriter.WriteLine(plainText);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // TODO: Log exception!
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public string? DecryptFile(string filePath)
+        {
+            try
+            {
+                if (!File.Exists(filePath))
+                {
+                    return null;
+                }
+
+                using FileStream myStream = new FileStream(filePath, FileMode.Open);
+                using Aes aes = Aes.Create();
+
+                byte[] iv = new byte[aes.IV.Length];
+                myStream.Read(iv, 0, iv.Length);
+
+                using CryptoStream cryptStream = new CryptoStream(
+                   myStream,
+                   aes.CreateDecryptor(_key, iv),
+                   CryptoStreamMode.Read);
+
+                using StreamReader sReader = new StreamReader(cryptStream);
+                return sReader.ReadToEnd();
+            }
+            catch (Exception ex)
+            {
+                // TODO: Log exception!
+                return null;
+            }
         }
 
         /// <summary>

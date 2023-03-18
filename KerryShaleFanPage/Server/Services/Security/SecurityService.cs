@@ -52,6 +52,37 @@ namespace KerryShaleFanPage.Server.Services.Security
             return _securityProvider.ToString(decryptedData);
         }
 
+        /// <inheritdoc cref="ISecurityService"/>
+        public bool EncryptFile(string filePath, string plainText, bool deleteExistingFile = false)
+        {
+            return _securityProvider.EncryptFile(filePath, plainText, deleteExistingFile);
+        }
+
+        /// <inheritdoc cref="ISecurityService"/>
+        public string? DecryptFile(string filePath)
+        {
+            return _securityProvider.DecryptFile(filePath);
+        }
+
+        /// <inheritdoc cref="ISecurityService"/>
+        public bool EncryptDataAndFile(string filePath, string plainText, bool deleteExistingFile = false)
+        {
+            var encryptedData = EncryptData(plainText);
+            return _securityProvider.EncryptFile(filePath, encryptedData, deleteExistingFile);
+        }
+
+        /// <inheritdoc cref="ISecurityService"/>
+        public string DecryptFileAndData(string filePath)
+        {
+            var decryptedData = _securityProvider.DecryptFile(filePath);
+            if (decryptedData == null)
+            {
+                return string.Empty;
+            }
+
+            return DecryptData(decryptedData);
+        }
+
         /// <summary>
         /// 
         /// </summary>
