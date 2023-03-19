@@ -4,13 +4,13 @@ using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using KerryShaleFanPage.Client.Services;
 using KerryShaleFanPage.Shared.Objects;
-using System.Linq;
 
 namespace KerryShaleFanPage.Client.Pages
 {

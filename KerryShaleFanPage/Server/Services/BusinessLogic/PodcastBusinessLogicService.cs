@@ -77,7 +77,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 }
                 else
                 {
-                    var success = _mailAndSmsService.SendSmsNotification("weschi@gmx.com", "weschi@gmx.com", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
+                    var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
                     if (!success)
                     {
                         // TODO: Information that there is obviously a problem sending the notification!
@@ -194,7 +194,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 Description = (latestAcastEpisode?.Description ?? string.Empty).Length > 1024 ? latestAcastEpisode?.Description?[..1024] : latestAcastEpisode?.Description,
                 ImageUrl = (latestAcastEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestAcastEpisode?.ImageUrl?[..255] : latestAcastEpisode?.ImageUrl,
                 ImageData = latestAcastImageData,
-                ImageDataBase64 = (latestAcastImageBase64 ?? string.Empty).Length > 14821 ? latestAcastImageBase64?[..14821] : latestAcastImageBase64,
+                ImageDataBase64 = Convert.FromBase64String(latestAcastImageBase64),
                 Date = latestAcastEpisode?.Date.ToDateTime("M/d/yyyy"),  // e.g. "1/22/2023"
                 Duration = latestAcastEpisode?.Duration,
                 Checksum = latestAcastEpisode?.Checksum,
@@ -225,7 +225,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 Description = (latestListenNotesEpisode?.Description ?? string.Empty).Length > 1024 ? latestListenNotesEpisode?.Description?[..1024] : latestListenNotesEpisode?.Description,
                 ImageUrl = (latestListenNotesEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestListenNotesEpisode?.ImageUrl?[..255] : latestListenNotesEpisode?.ImageUrl,
                 ImageData = latestListenNotesImageData,
-                ImageDataBase64 = (latestListenNotesImageBase64 ?? string.Empty).Length > 14821 ? latestListenNotesImageBase64?[..14821] : latestListenNotesImageBase64,
+                ImageDataBase64 = Convert.FromBase64String(latestListenNotesImageBase64),
                 Date = latestListenNotesEpisode?.Date.ToDateTime("MMM. dd, yyyy"),  // e.g. "Jan. 01, 2023"
                 Duration = latestListenNotesEpisode?.Duration,
                 Checksum = latestListenNotesEpisode?.Checksum,
@@ -256,7 +256,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 Description = (latestSpotifyEpisode?.Description ?? string.Empty).Length > 1024 ? latestSpotifyEpisode?.Description?[..1024] : latestSpotifyEpisode?.Description,
                 ImageUrl = (latestSpotifyEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestSpotifyEpisode?.ImageUrl?[..255] : latestSpotifyEpisode?.ImageUrl,
                 ImageData = latestSpotifyImageData,
-                ImageDataBase64 = (latestSpotifyImageBase64 ?? string.Empty).Length > 14821 ? latestSpotifyImageBase64?[..14821] : latestSpotifyImageBase64,
+                ImageDataBase64 = Convert.FromBase64String(latestSpotifyImageBase64),
                 Date = latestSpotifyEpisode?.Date.ToDateTime("MMM yy"),  // e.g. "Jan 23"
                 Duration = latestSpotifyEpisode?.Duration,
                 Checksum= latestSpotifyEpisode?.Checksum,

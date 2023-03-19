@@ -23,7 +23,7 @@ namespace KerryShaleFanPage.Context.Migrations.PodcastEpisodeDb
                     Description = table.Column<string>(type: "varchar(1024)", maxLength: 1024, nullable: true),
                     ImageUrl = table.Column<string>(type: "varchar(255)", maxLength: 255, nullable: true),
                     ImageData = table.Column<byte[]>(type: "longblob", nullable: true),
-                    ImageDataBase64 = table.Column<string>(type: "varchar(14821)", maxLength: 14821, nullable: true),
+                    ImageDataBase64 = table.Column<byte[]>(type: "longblob", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     Duration = table.Column<string>(type: "varchar(25)", maxLength: 25, nullable: true),
                     Checksum = table.Column<string>(type: "varchar(40)", maxLength: 40, nullable: true),

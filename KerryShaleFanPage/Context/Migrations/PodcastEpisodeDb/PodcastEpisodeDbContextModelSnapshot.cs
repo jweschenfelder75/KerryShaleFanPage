@@ -56,9 +56,8 @@ namespace KerryShaleFanPage.Context.Migrations.PodcastEpisodeDb
                     b.Property<byte[]>("ImageData")
                         .HasColumnType("longblob");
 
-                    b.Property<string>("ImageDataBase64")
-                        .HasMaxLength(14821)
-                        .HasColumnType("varchar(14821)");
+                    b.Property<byte[]>("ImageDataBase64")
+                        .HasColumnType("longblob");
 
                     b.Property<string>("ImageUrl")
                         .HasMaxLength(255)

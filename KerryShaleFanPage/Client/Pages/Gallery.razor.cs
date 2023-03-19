@@ -1,6 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading;
 using System.Threading.Tasks;
+using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Client.Pages
 {
@@ -9,15 +16,26 @@ namespace KerryShaleFanPage.Client.Pages
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
 
+        [Inject]
+        protected HttpClient Http { get; set; }
+
+        private IList<GalleryItemDto>? _galleryItems;
+
         private const int _MAX_IMG = 5;
 
         private int _imgNumber = 0;
 
-        private string _img => $"/img/KS00{(_imgNumber + 1)}.png";
+        private readonly string _currentCulture = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+
+        private GalleryItemDto? _img => _galleryItems?.ElementAt(_imgNumber);
+
+        private string? _imgAlt => (_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? _img?.ImageAltDe : _img?.ImageAltEn;
 
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
+            var data = await Http.GetFromJsonAsync<GalleryItemDto[]>("webapi/Gallery");
+            _galleryItems = data?.ToList();
             await ImageGalleryAsync();
         }
 

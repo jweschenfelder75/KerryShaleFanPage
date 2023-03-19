@@ -1,4 +1,5 @@
-﻿@page "/"
+﻿@using System
+@page "/"
 
 <PageTitle>@Translate["Welcome"] | Kerry Shale Fan Page</PageTitle>
 
@@ -7,19 +8,24 @@
 <p>&nbsp;</p>
 
 <p>
-    <div class="marquee">
-        <ul class="marquee-content">
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
-        <!-- Mirrors the content above -->
-        <ul class="marquee-content" aria-hidden="true">
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
-    </div>
+    @if (_newsItems != null && _newsItems.Any())
+    {
+        <div class="marquee">
+            <ul class="marquee-content">
+                @foreach (var newsItem in _newsItems)
+                {
+                    <li>@((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn)</li>
+                }
+            </ul>
+            <!-- Mirrors the content above -->
+            <ul class="marquee-content" aria-hidden="true">
+                @foreach (var newsItem in _newsItems)
+                {
+                    <li>@((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn)</li>
+                }
+            </ul>
+        </div>
+    }
 </p>
 
 <p>&nbsp;</p>
@@ -34,15 +40,15 @@
                             <img src="/img/the-sandman.png" alt="The Sandman" />
                         </div>
                         <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            Watch The Sandman on Netflix<br />or visit The Sandman Wiki<br />
-                            CLICK ME!
+                            @Translate["Watch The Sandman on Netflix"]<br />@Translate["or visit The Sandman Wiki"]<br />
+                            @Translate["CLICK ME!"]
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
                     <div class="row justify-content-center">
                         <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
-                            <br />Please select: <br /><br />
+                            <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -66,15 +72,15 @@
                             <img src="/img/frogwares.jpg" alt="Frogwares" />
                         </div>
                         <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            Play Sherlock Holmes<br />
-                            CLICK ME!
+                            @Translate["Play Sherlock Holmes"]<br />
+                            @Translate["CLICK ME!"]
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
                     <div class="row justify-content-center">
                         <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
-                            <br />Please select: <br /><br />
+                            <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -100,15 +106,15 @@
                             <img src="/img/KS-1.png" alt="Official Website" />
                         </div>
                         <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            Official website of Kerry Shale<br />and the website of his agency<br />
-                            CLICK ME!
+                            @Translate["Official website of Kerry Shale"]<br />@Translate["and the website of his agency"]<br />
+                            @Translate["CLICK ME!"]
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
                     <div class="row justify-content-center">
                         <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
-                            <br />Please select: <br /><br />
+                            <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
                     <div class="row justify-content-center">
@@ -132,15 +138,15 @@
                             <img src="/img/reel.png" alt="Reel" />
                         </div>
                         <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            Film and Audio Reels by Kerry Shale<br />
-                            CLICK ME!
+                            @Translate["Film and Audio Reels by Kerry Shale"]<br />
+                            @Translate["CLICK ME!"]
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
                     <div class="row justify-content-center">
                         <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
-                            <br />Please select: <br /><br />
+                            <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
                     <div class="row justify-content-center">

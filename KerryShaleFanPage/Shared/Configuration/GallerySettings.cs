@@ -17,7 +17,8 @@ namespace KerryShaleFanPage.Shared.Configuration
     public class GalleryItem
     {
         public string? ImageSrc { get; set; }
-        public string? ImageAlt { get; set; }
+        public string? ImageAltEn { get; set; }
+        public string? ImageAltDe { get; set; }
         public string? ImageCredits { get; set; }
     }
 }

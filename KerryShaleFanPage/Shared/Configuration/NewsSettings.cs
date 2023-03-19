@@ -16,6 +16,7 @@ namespace KerryShaleFanPage.Shared.Configuration
     [Serializable]
     public class NewsItem
     {
-        public string? NewsHtml { get; set; }
+        public string? NewsHtmlEn { get; set; }
+        public string? NewsHtmlDe { get; set; }
     }
 }

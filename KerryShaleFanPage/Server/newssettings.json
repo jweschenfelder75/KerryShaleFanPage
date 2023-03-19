@@ -1,19 +1,26 @@
 {
-    "NewsItems": [
-        {
-            "NewsHtml": ""
-        },
-        {
-            "NewsHtml": ""
-        },
-        {
-            "NewsHtml": ""
-        },
-        {
-            "NewsHtml": ""
-        },
-        {
-            "NewsHtml": ""
-        }
-    ]
+    "NewsSettings": {
+        "NewsItems": [
+            {
+                "NewsHtmlEn": "Test 1 (EN) ...",
+                "NewsHtmlDe": "Test 1 (DE) ..."
+            },
+            {
+                "NewsHtmlEn": "Test 2 (EN) ...",
+                "NewsHtmlDe": "Test 2 (DE) ..."
+            },
+            {
+                "NewsHtmlEn": "Test 3 (EN) ...",
+                "NewsHtmlDe": "Test 3 (DE) ..."
+            },
+            {
+                "NewsHtmlEn": "Test 4 (EN) ...",
+                "NewsHtmlDe": "Test 4 (DE) ..."
+            },
+            {
+                "NewsHtmlEn": "Test 5 (EN) ...",
+                "NewsHtmlDe": "Test 5 (DE) ..."
+            }
+        ]
+    }
 }

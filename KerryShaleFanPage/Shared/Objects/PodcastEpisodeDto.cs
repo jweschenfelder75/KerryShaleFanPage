@@ -27,8 +27,7 @@ namespace KerryShaleFanPage.Shared.Objects
 
         public byte[]? ImageData { get; set; }
 
-        [StringLength(14821)]
-        public string? ImageDataBase64 { get; set; }
+        public byte[]? ImageDataBase64 { get; set; }
 
         public DateTime? Date { get; set; }
 

@@ -16,7 +16,21 @@
                 </div>
             </RadzenStack>
         </RadzenHeader>
-        <NavMenu />
+        <RadzenSidebar @bind-Expanded="@_sidebarExpanded">
+            <RadzenPanelMenu>
+                <RadzenPanelMenuItem Text="@Translate["Home"]" Icon="home" Path="/" />
+                <RadzenPanelMenuItem Text="Kerry Shale" Icon="person" Path="/kerryshale" />
+                <RadzenPanelMenuItem Text="@Translate["Rules"]" Icon="assignment" Path="/rules" class="menu-item-warning" />
+                <RadzenPanelMenuItem Text="@Translate["Gallery"]" Icon="image" Path="/gallery" />
+                <RadzenPanelMenuItem Text="@Translate["Links"]" Icon="link" Path="/links" />
+                <RadzenPanelMenuItem Text="@Translate["About"]" Icon="info" Path="/about" />
+                <RadzenPanelMenuItem Text="@Translate["Contact"]" Icon="mail" Path="/contact" />
+                <RadzenPanelMenuItem Text="@Translate["Log"]" Icon="text_snippet" Path="/log" />
+            </RadzenPanelMenu>
+            <div class="rz-p-4">
+                <CultureSelector />
+            </div>
+        </RadzenSidebar>
         <RadzenBody>
             <MaintenanceHeader />
             <div class="rz-p-4">

@@ -1,29 +1,36 @@
 {
-    "GalleryItems": [
-        {
-            "ImageSrc": "",
-            "ImageAlt": "",
-            "ImageCredits": ""
-        },
-        {
-            "ImageSrc": "",
-            "ImageAlt": "",
-            "ImageCredits": ""
-        },
-        {
-            "ImageSrc": "",
-            "ImageAlt": "",
-            "ImageCredits": ""
-        },
-        {
-            "ImageSrc": "",
-            "ImageAlt": "",
-            "ImageCredits": ""
-        },
-        {
-            "ImageSrc": "",
-            "ImageAlt": "",
-            "ImageCredits": ""
-        }
-    ]
+    "GallerySettings": {
+        "GalleryItems": [
+            {
+                "ImageSrc": "/img/KS001.png",
+                "ImageAltEn": "Kerry Shale (EN)",
+                "ImageAltDe": "Kerry Shale (DE)",
+                "ImageCredits": "Kerry Shale / Alan Howard"
+            },
+            {
+                "ImageSrc": "/img/KS002.png",
+                "ImageAltEn": "Kerry Shale (EN)",
+                "ImageAltDe": "Kerry Shale (DE)",
+                "ImageCredits": "Kerry Shale / Alan Howard"
+            },
+            {
+                "ImageSrc": "/img/KS003.png",
+                "ImageAltEn": "Kerry Shale (EN)",
+                "ImageAltDe": "Kerry Shale (DE)",
+                "ImageCredits": "Kerry Shale / Alan Howard"
+            },
+            {
+                "ImageSrc": "/img/KS004.png",
+                "ImageAltEn": "Kerry Shale (EN)",
+                "ImageAltDe": "Kerry Shale (DE)",
+                "ImageCredits": "Liam Daniel / Netflix"
+            },
+            {
+                "ImageSrc": "/img/KS005.png",
+                "ImageAltEn": "Kerry Shale (EN)",
+                "ImageAltDe": "Kerry Shale (DE)",
+                "ImageCredits": "Granada / ITV"
+            }
+        ]
+    }
 }

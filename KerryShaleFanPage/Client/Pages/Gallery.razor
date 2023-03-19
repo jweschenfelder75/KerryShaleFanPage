@@ -4,21 +4,45 @@
 
 <h1>@Translate["Gallery"].</h1>
 
-<RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5); max-width: 1000px; max-height: 680px;">
-    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
-        <RadzenText TextStyle="TextStyle.Caption" class="rz-color-primary">@_img</RadzenText>
-    </RadzenStack>
-    <RadzenCard class="rz-background-color-primary-lighter rz-shadow-0 rz-border-radius-0" style="margin: 1rem calc(-1 * var(--rz-card-padding));">
+@if (@_img != null)
+{
+    <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5); max-width: 1000px; max-height: 680px;">
         <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
-            <RadzenImage Path="@_img" Style="max-height: 525px;" />
+            <RadzenText TextStyle="TextStyle.Caption" class="rz-color-primary">@Translate["Credit"]: @_img?.ImageCredits</RadzenText>
+        </RadzenStack>
+        <RadzenCard class="rz-background-color-primary-lighter rz-shadow-0 rz-border-radius-0" style="margin: 1rem calc(-1 * var(--rz-card-padding));">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+                <RadzenImage title="@_imgAlt" alt="@_imgAlt" Path="@_img?.ImageSrc" Style="max-height: 525px;" />
+            </RadzenStack>
+        </RadzenCard>
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+            <RadzenColumn Size="6" class="align-items-start d-flex justify-content-start">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_back" Text="@Translate["Back"]" Click="@BackAsync" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" class="align-items-end d-flex justify-content-end">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_forward" Text="@Translate["Next"]" Click="@NextAsync" />
+            </RadzenColumn>
         </RadzenStack>
     </RadzenCard>
-    <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
-        <RadzenColumn Size="6" class="align-items-start d-flex justify-content-start">
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_back" Text="Back" Click="@BackAsync" />
-        </RadzenColumn>
-        <RadzenColumn Size="6" class="align-items-end d-flex justify-content-end">
-            <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_forward" Text="Next" Click="@NextAsync" />
-        </RadzenColumn>
-    </RadzenStack>
-</RadzenCard>
+}
+else 
+{
+    <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5); max-width: 1000px; max-height: 680px;">
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+            <RadzenText TextStyle="TextStyle.Caption" class="rz-color-primary">@Translate["Credit"]: @_img?.ImageCredits</RadzenText>
+        </RadzenStack>
+        <RadzenCard class="rz-background-color-primary-lighter rz-shadow-0 rz-border-radius-0" style="margin: 1rem calc(-1 * var(--rz-card-padding));">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+                <RadzenText Style="max-height: 525px;" >@Translate["No image available"]</RadzenText>
+            </RadzenStack>
+        </RadzenCard>
+        <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" JustifyContent="JustifyContent.Center">
+            <RadzenColumn Size="6" class="align-items-start d-flex justify-content-start">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_back" Text="@Translate["Back"]" Click="@BackAsync" />
+            </RadzenColumn>
+            <RadzenColumn Size="6" class="align-items-end d-flex justify-content-end">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" Icon="arrow_forward" Text="@Translate["Next"]" Click="@NextAsync" />
+            </RadzenColumn>
+        </RadzenStack>
+    </RadzenCard>
+}
