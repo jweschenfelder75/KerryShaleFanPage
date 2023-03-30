@@ -7,7 +7,7 @@ namespace KerryShaleFanPage.Shared.Enums
     [Serializable]
     public enum LogLevelEnum
     {
-        [Description("Critical"), BackColorName("DarkRed"), FrontColorName("White")]
+        [Description("Critical"), BackColorName("Transparent"), FrontColorName("DarkRed")]
         Critical = 5,
 
         [Description("Error"), BackColorName("Transparent"), FrontColorName("Red")]

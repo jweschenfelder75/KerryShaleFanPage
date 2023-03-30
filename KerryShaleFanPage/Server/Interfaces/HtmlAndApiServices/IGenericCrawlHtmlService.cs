@@ -18,7 +18,7 @@ namespace KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices
         /// <param name="url">Image url</param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public Task<byte[]> GetImageAsByteArrayAsync(string url, CancellationToken cancellationToken = default);
+        public Task<string> GetImageAsBase64Async(string url, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 

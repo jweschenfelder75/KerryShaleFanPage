@@ -24,8 +24,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
 {
     public class PodcastBusinessLogicService : IPodcastBusinessLogicService
     {
-        private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(15);  // Make configurable!
-        private readonly IMailAndSmsService _mailAndSmsService;
+        private readonly IGmxMailAndSmsService _mailAndSmsService;
         private readonly IGenericRepositoryService<PodcastEpisodeDto> _repositoryService;
         private readonly IGenericCrawlHtmlService<AcastEpisode> _acastCrawlService;
         private readonly IGenericCrawlHtmlService<ListenNotesEpisode> _listenNotesCrawlService;
@@ -34,19 +33,17 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         // private readonly ITwitterTweetApiService _twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
         // private readonly IGenericCrawlHtmlService<TwitterEpisode> _twitterCrawlService;  // TODO: Unfinished & untested.
         private readonly ISecuredConfigurationService _securedConfigurationService;
-        private readonly IMaintenanceNotificationService _maintenanceNotificationService;
 
         private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 
         /// </summary>
-        public PodcastBusinessLogicService(ILogger<PodcastBusinessLogicService> logger, IMailAndSmsService mailAndSmsService, 
+        public PodcastBusinessLogicService(ILogger<PodcastBusinessLogicService> logger, IGmxMailAndSmsService mailAndSmsService, 
             IGenericRepositoryService<PodcastEpisodeDto> repositoryService, IGenericCrawlHtmlService<AcastEpisode> acastCrawlService,
             IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
             /* , ITwitterCrawlApiService twitterCrawlApiService, ITwitterTweetApiService twitterTweetApiService */
-            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */, ISecuredConfigurationService securedConfigurationService,
-            IMaintenanceNotificationService maintenanceNotificationService)
+            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */, ISecuredConfigurationService securedConfigurationService)
         {
             _logger = logger;
             _mailAndSmsService = mailAndSmsService;
@@ -58,17 +55,18 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             // _twitterTweetApiService = twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
             // _twitterCrawlService = twitterCrawlService;  // TODO: Unfinished & untested.
             _securedConfigurationService = securedConfigurationService;
-            _maintenanceNotificationService = maintenanceNotificationService;
         }
 
-        /// <inheritdoc cref="IPodcastBusinessLogicService" />
+        /// <inheritdoc cref="IBusinessLogicService" />
         public async Task DoWorkAsync(CancellationToken cancellationToken = default)
         {
+            var nowDate = DateTime.UtcNow.Date;
+
             while (!cancellationToken.IsCancellationRequested)
             {
-                _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {_sleepPeriod.TotalMinutes} min).");
+                var sleepPeriod = GetSleepPeriod(nowDate);
 
-                await _maintenanceNotificationService.NotifyAllConnectedClientsInCaseOfMaintenanceAsync(cancellationToken);
+                _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {sleepPeriod.TotalMinutes} min).");
 
                 var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
                 if (latestPodcastEpisodeDto == null)
@@ -77,19 +75,34 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 }
                 else
                 {
-                    var success = _mailAndSmsService.SendSmsNotification("<MailAddress>", "<MailAddress>", "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);  // Make configurable and encrypt!
+                    var success = _mailAndSmsService.SendSmsNotification(string.Empty, string.Empty, "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);
                     if (!success)
                     {
                         // TODO: Information that there is obviously a problem sending the notification!
                     }
                 }
 
-                // Other examples:
-                // var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
-                // latestPodcastEpisodeDto = FetchLatestPodcastEpisodeFromDatabase();
-
-                await Task.Delay((int)_sleepPeriod.TotalMilliseconds, cancellationToken);
+                await Task.Delay((int)sleepPeriod.TotalMilliseconds, cancellationToken);
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nowDate"></param>
+        /// <returns></returns>
+        private TimeSpan GetSleepPeriod(DateTime nowDate)
+        {
+            var latestStoredPodcastEpisodeDto = _repositoryService.GetLast();
+            var expectedNextEpisodeDate = latestStoredPodcastEpisodeDto?.CalculatedExpectedNextDate.Date ?? nowDate;
+
+            var sleepPeriod = TimeSpan.FromMinutes(15);
+            if (nowDate <= expectedNextEpisodeDate.AddDays(-21)) sleepPeriod = TimeSpan.FromHours(12);
+            else if (nowDate <= expectedNextEpisodeDate.AddDays(-14)) sleepPeriod = TimeSpan.FromHours(6);
+            else if (nowDate <= expectedNextEpisodeDate.AddDays(-7)) sleepPeriod = TimeSpan.FromHours(2);
+            else if (nowDate <= expectedNextEpisodeDate.AddDays(-1)) sleepPeriod = TimeSpan.FromHours(1);
+            else if (nowDate == expectedNextEpisodeDate) sleepPeriod = TimeSpan.FromMinutes(15);
+            return sleepPeriod;
         }
 
         /// <summary>
@@ -184,7 +197,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 return null;
             }
 
-            var latestAcastImageData = await _acastCrawlService.GetImageAsByteArrayAsync(latestAcastEpisode.ImageUrl ?? string.Empty, cancellationToken);
+            var latestAcastImageData = await _acastCrawlService.GetImageAsBase64Async(latestAcastEpisode.ImageUrl ?? string.Empty, cancellationToken);
             var latestAcastImageBase64 = await _acastCrawlService.GetImageAsBase64StringAsync(latestAcastEpisode.ImageUrl ?? string.Empty, cancellationToken);
 
             return new PodcastEpisodeDto()
@@ -194,7 +207,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 Description = (latestAcastEpisode?.Description ?? string.Empty).Length > 1024 ? latestAcastEpisode?.Description?[..1024] : latestAcastEpisode?.Description,
                 ImageUrl = (latestAcastEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestAcastEpisode?.ImageUrl?[..255] : latestAcastEpisode?.ImageUrl,
                 ImageData = latestAcastImageData,
-                ImageDataBase64 = Convert.FromBase64String(latestAcastImageBase64),
+                ImageDataBase64 = latestAcastImageBase64,
                 Date = latestAcastEpisode?.Date.ToDateTime("M/d/yyyy"),  // e.g. "1/22/2023"
                 Duration = latestAcastEpisode?.Duration,
                 Checksum = latestAcastEpisode?.Checksum,
@@ -215,7 +228,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 return null;
             }
 
-            var latestListenNotesImageData = await _listenNotesCrawlService.GetImageAsByteArrayAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
+            var latestListenNotesImageData = await _listenNotesCrawlService.GetImageAsBase64Async(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
             var latestListenNotesImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestListenNotesEpisode.ImageUrl ?? string.Empty, cancellationToken);
 
             return new PodcastEpisodeDto()
@@ -225,7 +238,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 Description = (latestListenNotesEpisode?.Description ?? string.Empty).Length > 1024 ? latestListenNotesEpisode?.Description?[..1024] : latestListenNotesEpisode?.Description,
                 ImageUrl = (latestListenNotesEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestListenNotesEpisode?.ImageUrl?[..255] : latestListenNotesEpisode?.ImageUrl,
                 ImageData = latestListenNotesImageData,
-                ImageDataBase64 = Convert.FromBase64String(latestListenNotesImageBase64),
+                ImageDataBase64 = latestListenNotesImageBase64,
                 Date = latestListenNotesEpisode?.Date.ToDateTime("MMM. dd, yyyy"),  // e.g. "Jan. 01, 2023"
                 Duration = latestListenNotesEpisode?.Duration,
                 Checksum = latestListenNotesEpisode?.Checksum,
@@ -246,7 +259,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 return null;
             }
 
-            var latestSpotifyImageData = await _spotifyCrawlService.GetImageAsByteArrayAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);  // Backup
+            var latestSpotifyImageData = await _spotifyCrawlService.GetImageAsBase64Async(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);  // Backup
             var latestSpotifyImageBase64 = await _listenNotesCrawlService.GetImageAsBase64StringAsync(latestSpotifyEpisode.ImageUrl ?? string.Empty, cancellationToken);
 
             return new PodcastEpisodeDto()
@@ -256,7 +269,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 Description = (latestSpotifyEpisode?.Description ?? string.Empty).Length > 1024 ? latestSpotifyEpisode?.Description?[..1024] : latestSpotifyEpisode?.Description,
                 ImageUrl = (latestSpotifyEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestSpotifyEpisode?.ImageUrl?[..255] : latestSpotifyEpisode?.ImageUrl,
                 ImageData = latestSpotifyImageData,
-                ImageDataBase64 = Convert.FromBase64String(latestSpotifyImageBase64),
+                ImageDataBase64 = latestSpotifyImageBase64,
                 Date = latestSpotifyEpisode?.Date.ToDateTime("MMM yy"),  // e.g. "Jan 23"
                 Duration = latestSpotifyEpisode?.Duration,
                 Checksum= latestSpotifyEpisode?.Checksum,

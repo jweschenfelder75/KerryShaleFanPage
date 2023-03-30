@@ -93,19 +93,41 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices.ToDo
         }
 
         /// <inheritdoc cref="IGenericCrawlHtmlService{TweetEpisode}"/>
-        public async Task<byte[]> GetImageAsByteArrayAsync(string url, CancellationToken cancellationToken = default)
+        public async Task<string> GetImageAsBase64Async(string url, CancellationToken cancellationToken = default)
         {
-            var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken);
+            try
+            {
+                // using var _httpClient = new HttpClient();
+                //_httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");  // Roadrunner is greeting! ;-)
 
-            return bytes ?? Array.Empty<byte>();
+                var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
+
+                return Convert.ToBase64String(bytes);
+            }
+            catch (Exception ex)
+            {
+                var exception = ex;  // TODO: Log exception!
+                return string.Empty;
+            }
         }
 
         /// <inheritdoc cref="IGenericCrawlHtmlService{TweetEpisode}"/>
         public async Task<string> GetImageAsBase64StringAsync(string url, CancellationToken cancellationToken = default)
         {
-            var bytes = await GetImageAsByteArrayAsync(url, cancellationToken);
+            try
+            {
+                // using var _httpClient = new HttpClient();
+                //_httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");  // Roadrunner is greeting! ;-)
 
-            return $"image/jpeg;base64,{Convert.ToBase64String(bytes)}";
+                var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
+
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(bytes)}";
+            }
+            catch (Exception ex)
+            {
+                var exception = ex;  // TODO: Log exception!
+                return string.Empty;
+            }
         }
 
         /// <summary>

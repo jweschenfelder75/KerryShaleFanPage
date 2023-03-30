@@ -27,7 +27,7 @@ namespace KerryShaleFanPage.Context.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(_connectionString ?? "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};");  // TODO: Make configurable and encrypt!
+            optionsBuilder.UseMySQL(_connectionString ?? "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

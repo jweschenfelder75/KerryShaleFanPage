@@ -127,7 +127,7 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
         }
 
         /// <inheritdoc cref="IGenericCrawlHtmlService{AcastEpisode}"/>
-        public async Task<byte[]> GetImageAsByteArrayAsync(string url, CancellationToken cancellationToken = default)
+        public async Task<string> GetImageAsBase64Async(string url, CancellationToken cancellationToken = default)
         {
             try
             {
@@ -136,12 +136,12 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
 
                 var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
 
-                return bytes;
+                return Convert.ToBase64String(bytes);
             }
             catch (Exception ex)
             {
                 var exception = ex;  // TODO: Log exception!
-                return Array.Empty<byte>();
+                return string.Empty;
             }
         }
 
@@ -153,9 +153,9 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
                 // using var _httpClient = new HttpClient();
                 //_httpClient.DefaultRequestHeaders.UserAgent.ParseAdd("Mozilla/5.0 (compatible; AcmeInc/1.0)");  // Roadrunner is greeting! ;-)
 
-                var bytes = await GetImageAsByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
+                var bytes = await _httpClient.GetByteArrayAsync(url, cancellationToken).ConfigureAwait(false);
 
-                return $"image/jpeg;base64,{Convert.ToBase64String(bytes)}";
+                return $"data:image/jpeg;base64,{Convert.ToBase64String(bytes)}";
             }
             catch (Exception ex)
             {

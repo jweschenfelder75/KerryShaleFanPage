@@ -21,7 +21,7 @@ namespace KerryShaleFanPage.Client.Pages
 
         private IList<GalleryItemDto>? _galleryItems;
 
-        private const int _MAX_IMG = 5;
+        private int _maxImages = 0;
 
         private int _imgNumber = 0;
 
@@ -36,15 +36,16 @@ namespace KerryShaleFanPage.Client.Pages
             await base.OnInitializedAsync();
             var data = await Http.GetFromJsonAsync<GalleryItemDto[]>("webapi/Gallery");
             _galleryItems = data?.ToList();
+            _maxImages = _galleryItems?.Count() ?? 0;
             await ImageGalleryAsync();
         }
 
         private async Task ImageGalleryAsync()
         {
-            while (_imgNumber < _MAX_IMG) 
+            while (_imgNumber < _maxImages) 
             {
                 _imgNumber++;
-                if (_imgNumber == _MAX_IMG)
+                if (_imgNumber == _maxImages)
                 {
                     _imgNumber = 0;
                 }
@@ -57,7 +58,7 @@ namespace KerryShaleFanPage.Client.Pages
         {
             if (_imgNumber == 0)
             {
-                _imgNumber = (_MAX_IMG - 1);
+                _imgNumber = (_maxImages - 1);
             } 
             else
             {
@@ -69,7 +70,7 @@ namespace KerryShaleFanPage.Client.Pages
 
         private Task NextAsync()
         {
-            if (_imgNumber == (_MAX_IMG - 1))
+            if (_imgNumber == (_maxImages - 1))
             {
                 _imgNumber = 0;
             } 

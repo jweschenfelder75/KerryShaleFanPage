@@ -5,17 +5,17 @@ namespace KerryShaleFanPage.Shared.Configuration
     [Serializable]
     public class AppSettings
     {
-        public GeneralWebService? GeneralWebService { get; set; } = new GeneralWebService();
-        public MobileWebService? MobileWebService { get; set; } = new MobileWebService();
-        public GeneralMaintainance? GeneralMaintainance { get; set; } = new GeneralMaintainance();
-        public MobileMaintainance? MobileMaintainance { get; set; } = new MobileMaintainance();
-        public GeneralLogging? GeneralLogging { get; set; } = new GeneralLogging();
-        public LoggingWebpage? LoggingWebpage { get; set; } = new LoggingWebpage();
-        public ContactFormWebpage? ContactFormWebpage { get; set; } = new ContactFormWebpage();
-        public IsitrollingpodAtAcast? IsitrollingpodAtAcast { get; set; } = new IsitrollingpodAtAcast();
-        public IsitrollingpodAtListenNotes? IsitrollingpodAtListenNotes { get; set; } = new IsitrollingpodAtListenNotes();
-        public IsitrollingpodAtSpotify? IsitrollingpodAtSpotify { get; set; } = new IsitrollingpodAtSpotify();
-        public IsitrollingpodAtTwitter? IsitrollingpodAtTwitter { get; set; } = new IsitrollingpodAtTwitter();
+        public GeneralWebService GeneralWebService { get; set; } = new GeneralWebService();
+        public MobileWebService MobileWebService { get; set; } = new MobileWebService();
+        public GeneralMaintainance GeneralMaintainance { get; set; } = new GeneralMaintainance();
+        public MobileMaintainance MobileMaintainance { get; set; } = new MobileMaintainance();
+        public GeneralLogging GeneralLogging { get; set; } = new GeneralLogging();
+        public LoggingWebpage LoggingWebpage { get; set; } = new LoggingWebpage();
+        public ContactFormWebpage ContactFormWebpage { get; set; } = new ContactFormWebpage();
+        public IsitrollingpodAtAcast IsitrollingpodAtAcast { get; set; } = new IsitrollingpodAtAcast();
+        public IsitrollingpodAtListenNotes IsitrollingpodAtListenNotes { get; set; } = new IsitrollingpodAtListenNotes();
+        public IsitrollingpodAtSpotify IsitrollingpodAtSpotify { get; set; } = new IsitrollingpodAtSpotify();
+        public IsitrollingpodAtTwitter IsitrollingpodAtTwitter { get; set; } = new IsitrollingpodAtTwitter();
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ namespace KerryShaleFanPage.Shared.Configuration
     [Serializable]
     public class ContactFormWebpage
     {
-        public bool Enabled { get; set; }
+        public string? MailAddressesSemikolonSeparated { get; set; }
     }
 
     [Serializable]
@@ -97,8 +97,6 @@ namespace KerryShaleFanPage.Shared.Configuration
     [Serializable]
     public class LoggingWebpage
     {
-        public bool Enabled { get; set; }
-        public bool MaximumLogEntriesEnabled { get; set; }
         public int MaximumLogEntriesCount { get; set; }
     }
 

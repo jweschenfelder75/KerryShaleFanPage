@@ -8,18 +8,18 @@ using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
 
 namespace KerryShaleFanPage.Server.Services
 {
-    public class ScopedBackgroundService : BackgroundService
+    public class ScopedGeneralBackgroundService : BackgroundService
     {
         private readonly IServiceProvider _serviceProvider;
 
-        private readonly ILogger<ScopedBackgroundService> _logger;  // TODO: Implement logging!
+        private readonly ILogger<ScopedGeneralBackgroundService> _logger;  // TODO: Implement logging!
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="logger"></param>
         /// <param name="serviceProvider"></param>
-        public ScopedBackgroundService(ILogger<ScopedBackgroundService> logger, IServiceProvider serviceProvider)
+        public ScopedGeneralBackgroundService(ILogger<ScopedGeneralBackgroundService> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;
@@ -34,7 +34,7 @@ namespace KerryShaleFanPage.Server.Services
         {
             await base.StartAsync(cancellationToken);
 
-            _logger.LogInformation("Scoped Background Service is started.");
+            _logger.LogInformation("Scoped General Background Service is started.");
         }
 
         /// <summary>
@@ -44,9 +44,12 @@ namespace KerryShaleFanPage.Server.Services
         /// <returns></returns>
         protected override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"Scoped Background Service running.");
+            _logger.LogInformation($"Scoped General Background Service is running.");
 
-            await DoWorkAsync(cancellationToken);
+            await Task.Run(async () =>
+            {
+                await DoWorkAsync(cancellationToken);
+            }, cancellationToken);
         }
 
         /// <summary>
@@ -56,7 +59,7 @@ namespace KerryShaleFanPage.Server.Services
         /// <returns></returns>
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
-            _logger.LogInformation("Scoped Background Service is stopping.");
+            _logger.LogInformation("Scoped General Background Service is stopping.");
 
             await base.StopAsync(cancellationToken);
         }
@@ -68,13 +71,13 @@ namespace KerryShaleFanPage.Server.Services
         /// <param name="cancellationToken"></param>
         private async Task DoWorkAsync(CancellationToken cancellationToken = default)
         {
-            _logger.LogInformation($"Scoped Background Service is working.");
+            _logger.LogInformation($"Scoped General Background Service is working.");
 
             try
             {
                 using var scope = _serviceProvider.CreateScope();
-                var podcastBusinessLogicService = scope.ServiceProvider.GetRequiredService<IPodcastBusinessLogicService>();
-                await podcastBusinessLogicService.DoWorkAsync(cancellationToken);
+                var generalBusinessLogicService = scope.ServiceProvider.GetRequiredService<IGeneralBusinessLogicService>();
+                await generalBusinessLogicService.DoWorkAsync(cancellationToken);
             }
             catch (OperationCanceledException ex) when (cancellationToken.IsCancellationRequested)
             {

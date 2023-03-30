@@ -7,10 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Globalization;
 using System.IO;
-using System.Text;
 using NLog;
 using NLog.Config;
 using NLog.Extensions.Logging;
@@ -49,20 +47,17 @@ namespace KerryShaleFanPage.Server
 {
     public class Program
     {
-        private const string _NLOG_SECTION_NAME = "NLog";
-
         public static void Main(string[] args)
         {
             var config = new ConfigurationBuilder()
-                //.SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .Build();
-            LogManager.Configuration = new NLogLoggingConfiguration(config.GetSection(_NLOG_SECTION_NAME));
-            LogManager.ThrowExceptions = true;
-            LogManager.ThrowConfigExceptions = true;
-            ConfigureDbTarget();
+                            .SetBasePath(Directory.GetCurrentDirectory())
+                            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                            .AddEnvironmentVariables().Build();
 
-            var logger = NLogBuilder.ConfigureNLog(LogManager.Configuration).GetCurrentClassLogger();
+            var logger = LogManager.Setup()
+                       .LoadConfigurationFromSection(config)
+                       .GetCurrentClassLogger();
+
             try
             {
                 logger.Info("Start app");
@@ -75,6 +70,8 @@ namespace KerryShaleFanPage.Server
                 ConfigureServices(builder.Services, builder.Configuration);
 
                 var app = builder.Build();
+
+                ConfigureDbTarget(app);
 
                 // Configure app.
                 app = ConfigureApplication(app);
@@ -98,33 +95,34 @@ namespace KerryShaleFanPage.Server
         /// <param name="configuration"></param>
         private static void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddControllersWithViews();
-            services.AddRazorPages();
-
-            services.AddSignalR();
-
-            services.AddLogging(logging => 
+            services.AddLogging(logging =>
             {
                 logging.ClearProviders();
                 logging.AddConsole();
                 logging.AddNLog();
-                logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Warning);
+                logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Information);
             });
+
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+
+            services.AddSignalR();
 
             services.Configure<AppSettings>(configuration.GetSection("AppSettings"));
             services.Configure<GeneralSettings>(configuration.GetSection("GeneralSettings"));
             services.Configure<NewsSettings>(configuration.GetSection("NewsSettings"));
             services.Configure<GallerySettings>(configuration.GetSection("GallerySettings"));
 
-            services.AddDbContext<LogDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
-            services.AddDbContext<PodcastEpisodeDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
-
             services.AddScoped<SecurityProvider>();
             services.AddScoped<ISecurityService, SecurityService>();
             services.AddScoped<ISecuredConfigurationService, SecuredConfigurationService>();
             services.AddScoped<IMaintenanceNotificationService, MaintenanceNotificationService>();
-            services.AddScoped<IMailAndSmsService, GmailMailAndSmsService>();
-            services.AddScoped<IMailAndSmsService, GmxMailAndSmsService>();
+            services.AddScoped<IGmailMailAndSmsService, GmailMailAndSmsService>();
+            services.AddScoped<IGmxMailAndSmsService, GmxMailAndSmsService>();
+
+            services.AddDbContext<LogDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
+            services.AddDbContext<PodcastEpisodeDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
+
             services.AddScoped<IGenericService<NewsItemDto>, NewsService>();
             services.AddScoped<IGenericService<GalleryItemDto>, GalleryService>();
             services.AddScoped<IGenericRepository<LogEntry>, LogRepository>();
@@ -139,9 +137,11 @@ namespace KerryShaleFanPage.Server
             services.AddScoped<IGenericCrawlHtmlService<ListenNotesEpisode>, ListenNotesCrawlHtmlService>();
             services.AddScoped<IGenericCrawlHtmlService<SpotifyEpisode>, SpotifyCrawlHtmlService>();
 
+            services.AddScoped<IGeneralBusinessLogicService, GeneralBusinessLogicService>();
             services.AddScoped<IPodcastBusinessLogicService, PodcastBusinessLogicService>();
 
-            services.AddHostedService<ScopedBackgroundService>();
+            services.AddHostedService<ScopedGeneralBackgroundService>();
+            services.AddHostedService<ScopedPodcastBackgroundService>();
         }
 
         /// <summary>
@@ -199,71 +199,32 @@ namespace KerryShaleFanPage.Server
         }
 
         /// <summary>
-        /// TODO: Move code in another class!
+        /// TODO: Move code in another class? Or let it here, it looked already worse in the past. ;-)
         /// 
         /// </summary>
-        private static void ConfigureDbTarget()
+        private static void ConfigureDbTarget(WebApplication app)
         {
-            var strInstallConnectionString = "server=127.0.0.1;database=sys;uid={username};pwd={password};";  // TODO: Make configurable and encrypt!
-            var strConnectionString = "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};";  // TODO: Make configurable and encrypt!
-
-            var config = LogManager.Configuration;
-            var dbTarget = (DatabaseTarget)config.FindTargetByName("allDatabase");
-            dbTarget.ConnectionString = strConnectionString;
-
-            var installationContext = new InstallationContext();
-            var createDbCommand = new DatabaseCommandInfo()
-            {
-                Text = "CREATE DATABASE IF NOT EXISTS kerryshalefanpg",
-                CommandType = CommandType.Text
-            };
-            dbTarget.InstallConnectionString = strInstallConnectionString;
-            dbTarget.InstallDdlCommands.Clear();
-            dbTarget.InstallDdlCommands.Add(createDbCommand);
-
-            // Create the database if it does not exist
             try
             {
-                dbTarget.Install(installationContext);
+                using var scope = app.Services.CreateScope();
+                var configurationService = scope.ServiceProvider.GetRequiredService<ISecuredConfigurationService>();
+                var settings = configurationService.GetDecryptedConfigurationForSettingsFromEncryptedFile();
+
+                var strConnectionString = $"server=127.0.0.1;database=kerryshalefanpg;uid={settings.DbUsername};pwd={settings.DbPassword};";
+
+                var dbTarget = LogManager.Configuration.FindTargetByName<DatabaseTarget>("allDatabase");
+
+                if (dbTarget != null)
+                {
+                    dbTarget.ConnectionString = strConnectionString;
+
+                    LogManager.ReconfigExistingLoggers();
+                }
             }
             catch (Exception ex)
             {
-                var exception = ex;  // TODO: Log exception!
+                var exception = ex;
             }
-
-            var sb = new StringBuilder();
-            sb.AppendLine("CREATE TABLE IF NOT EXISTS logentries (");
-            sb.AppendLine("Id BIGINT NOT NULL AUTO_INCREMENT,");
-            sb.AppendLine("Created TIMESTAMP NULL,");
-            sb.AppendLine("CreatedBy NVARCHAR(50) NULL,");
-            sb.AppendLine("Modified TIMESTAMP NULL,");
-            sb.AppendLine("ModifiedBy NVARCHAR(50) NULL,");
-            sb.AppendLine("TimeStamp TIMESTAMP NULL,");
-            sb.AppendLine("LogLevel NVARCHAR(25) NULL,");
-            sb.AppendLine("Logger NVARCHAR(255) NULL,");
-            sb.AppendLine("Message NVARCHAR(1024) NULL,");
-            sb.AppendLine("Exception NVARCHAR(1024) NULL,");
-            sb.AppendLine("PRIMARY KEY (Id))");
-            var createTableCommand = new DatabaseCommandInfo()
-            {
-                Text = sb.ToString(),
-                CommandType = CommandType.Text
-            };
-            dbTarget.InstallConnectionString = strConnectionString;
-            dbTarget.InstallDdlCommands.Clear();
-            dbTarget.InstallDdlCommands.Add(createTableCommand);
-
-            // Create the table if it does not exist
-            try
-            {
-                dbTarget.Install(installationContext);
-            }
-            catch (Exception ex)
-            {
-                var exception = ex;  // TODO: Log exception!
-            }
-
-            LogManager.ReconfigExistingLoggers();
         }
     }
 }

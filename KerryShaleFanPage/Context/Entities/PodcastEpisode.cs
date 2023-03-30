@@ -18,10 +18,9 @@ namespace KerryShaleFanPage.Context.Entities
         [StringLength(255)]
         public string? ImageUrl { get; set; }
 
-        public byte[]? ImageData { get; set; }
+        public string? ImageData { get; set; }
 
-        [StringLength(14821)]
-        public byte[]? ImageDataBase64 { get; set; }
+        public string? ImageDataBase64 { get; set; }
 
         public DateTime? Date { get; set; }
 

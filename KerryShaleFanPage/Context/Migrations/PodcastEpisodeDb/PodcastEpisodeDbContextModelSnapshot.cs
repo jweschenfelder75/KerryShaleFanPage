@@ -53,11 +53,11 @@ namespace KerryShaleFanPage.Context.Migrations.PodcastEpisodeDb
                     b.Property<DateTime?>("FetchedExpectedNextDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<byte[]>("ImageData")
-                        .HasColumnType("longblob");
+                    b.Property<string>("ImageData")
+                        .HasColumnType("mediumtext");
 
-                    b.Property<byte[]>("ImageDataBase64")
-                        .HasColumnType("longblob");
+                    b.Property<string>("ImageDataBase64")
+                        .HasColumnType("mediumtext");
 
                     b.Property<string>("ImageUrl")
                         .HasMaxLength(255)

@@ -90,8 +90,8 @@ namespace KerryShaleFanPage.Server.Services.Security
         private static X509Certificate2? GetCertificate()
         {
             var basePath = AppContext.BaseDirectory;
-            var certPemPath = Path.Combine(basePath, "Certificate/cert.pem");  // TODO: Make configurable!
-            var eccPemPath = Path.Combine(basePath, "Certificate/key.pem");  // TODO: Make configurable!
+            var certPemPath = Path.Combine(basePath, "Certificate/cert.pem");
+            var eccPemPath = Path.Combine(basePath, "Certificate/key.pem");
             if (File.Exists(certPemPath))
             {
                 var certPem = File.ReadAllText(certPemPath);

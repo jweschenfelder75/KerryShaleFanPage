@@ -38,6 +38,7 @@
 
     .flip-card-front img {
         width: 200px;
+        display: flex;
     }
 
 .flip-card-back {
@@ -47,8 +48,9 @@
 }
 
     .flip-card-back img {
-        max-width: 200px;
+        width: 200px;
         max-height: 80px;
+        max-width: 90%;
     }
 
 .marquee {
@@ -67,7 +69,7 @@
     min-width: 100%;
     gap: var(--gap);
     margin: 0;
-    animation: scroll 25s linear infinite;
+    animation: scroll 60s linear infinite;
 }
 
     .marquee-content > * {

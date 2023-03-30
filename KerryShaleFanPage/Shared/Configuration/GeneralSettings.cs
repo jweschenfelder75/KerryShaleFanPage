@@ -6,8 +6,10 @@ namespace KerryShaleFanPage.Shared.Configuration
     public class GeneralSettings
     {
         public bool OverrideCurrentGeneralSettings { get; set; }
+        public bool OverrideCurrentGeneralSettingsFile { get; set; }
         public string? DbUsername { get; set; }
         public string? DbPassword { get; set; }
+        public string? GoogleRecaptchaSiteKey { get; set; }
         public EMailProviderConfiguration EMailProviderConfiguration { get; set; } = new EMailProviderConfiguration();
     }
 

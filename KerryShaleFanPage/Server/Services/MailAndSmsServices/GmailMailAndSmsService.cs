@@ -2,15 +2,18 @@
 using System;
 using System.Net;
 using System.Net.Mail;
-using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
+using KerryShaleFanPage.Server.Interfaces.Security;
+using KerryShaleFanPage.Shared.Configuration;
+using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
 {
-    public class GmailMailAndSmsService : IMailAndSmsService
+    public class GmailMailAndSmsService : IGmailMailAndSmsService
     {
-        public string UserName => "";  // TODO: Make configurable and encrypt!
-        public string UserPassword => "";  // TODO: Make configurable and encrypt!
+        private readonly ISecuredConfigurationService _securedConfigurationService;
+        private readonly GeneralSettings _settings;
+        private readonly AppSettings _appSettings;
 
         private const string _SMS_PREFIX = "[kerryshalefanpg-sms]";
         private const string _HOSTNAME = "smtp.gmail.com";
@@ -21,14 +24,27 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
         /// <summary>
         /// 
         /// </summary>
-        public GmailMailAndSmsService(ILogger<GmailMailAndSmsService> logger)
+        public GmailMailAndSmsService(ILogger<GmailMailAndSmsService> logger, ISecuredConfigurationService securedConfigurationService)
         {
             _logger = logger;
+            _securedConfigurationService = securedConfigurationService;
+            _settings = _securedConfigurationService.GetDecryptedConfigurationForSettingsFromEncryptedFile();
+            _appSettings = _securedConfigurationService.GetCurrentAppSettingsConfigurationFromFile();
         }
 
         /// <inheritdoc cref="IMailAndSmsService"/>
         public bool SendMailNotification(string from, string to, string subject, string? message, PodcastEpisodeDto? episode)
         {
+            if (string.IsNullOrWhiteSpace(from))
+            {
+                from = _settings.EMailProviderConfiguration.GMail.EMailUsername ?? string.Empty;
+            }
+
+            if (string.IsNullOrWhiteSpace(to))
+            {
+                to = _appSettings.ContactFormWebpage.MailAddressesSemikolonSeparated ?? string.Empty;
+            }
+
             using var client = new SmtpClient
             {
                 Timeout = 60000,
@@ -37,7 +53,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(UserName, UserPassword)
+                Credentials = new NetworkCredential(_settings.EMailProviderConfiguration.GMail.EMailUsername, _settings.EMailProviderConfiguration.GMail.EMailPassword)
             };
 
             var content = episode?.ToString() ?? string.Empty;
@@ -66,6 +82,16 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
         /// <inheritdoc cref="IMailAndSmsService"/>
         public bool SendMailNotification(string from, string to, string subject, string? message)
         {
+            if (string.IsNullOrWhiteSpace(from))
+            {
+                from = _settings.EMailProviderConfiguration.GMail.EMailUsername ?? string.Empty;
+            }
+
+            if (string.IsNullOrWhiteSpace(to))
+            {
+                to = _appSettings.ContactFormWebpage.MailAddressesSemikolonSeparated ?? string.Empty;
+            }
+
             using var client = new SmtpClient
             {
                 Timeout = 60000,
@@ -74,7 +100,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(UserName, UserPassword)
+                Credentials = new NetworkCredential(_settings.EMailProviderConfiguration.GMail.EMailUsername, _settings.EMailProviderConfiguration.GMail.EMailPassword)
             };
 
             using var mail = new MailMessage(from, to)
@@ -87,7 +113,6 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
             {
                 client.Send(mail);
                 return true;
-
             }
             catch (SmtpException ex)
             {

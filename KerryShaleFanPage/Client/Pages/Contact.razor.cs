@@ -30,7 +30,7 @@ namespace KerryShaleFanPage.Client.Pages
 
         private ContactDataDto _contact = new ContactDataDto();
 
-        private IList<string> _categories = new List<string>() { "Normal request", "I represent a company", "I represent Kerry Shale (e.g. agent)" };
+        private IList<string> _categories => GetCategories();
 
         private string _captchaResponse = string.Empty;
 
@@ -46,7 +46,7 @@ namespace KerryShaleFanPage.Client.Pages
         {
             if (firstRender)
             {
-                await JsRuntime.InvokeAsync<int>("googleRecaptcha", DotNetObjectReference.Create(this), "google_recaptcha ", "6Ldx5v0kAAAAABzCXkUqTXKRYSd1Wx3dwiUW-onm");
+                await JsRuntime.InvokeAsync<int>("googleRecaptcha", DotNetObjectReference.Create(this), "google_recaptcha ", "6Ldx5v0kAAAAABzCXkUqTXKRYSd1Wx3dwiUW-onm");  // TODO: Make configurable!
             }
             await base.OnAfterRenderAsync(firstRender);
         }
@@ -61,6 +61,15 @@ namespace KerryShaleFanPage.Client.Pages
         public void CallbackOnExpired(string response)
         {
             //...
+        }
+
+        private IList<string> GetCategories()
+        {
+            return new List<string>() { 
+                Translate["Normal request"], 
+                Translate["I represent a company"],
+                Translate["I represent Kerry Shale (e.g. agent)"] 
+            };
         }
 
         private async Task SubmitAsync(ContactDataDto args)
@@ -78,7 +87,8 @@ namespace KerryShaleFanPage.Client.Pages
                 StateHasChanged();
             } 
             catch (Exception ex) 
-            { 
+            {
+                var exception = ex;
             }
         }
 

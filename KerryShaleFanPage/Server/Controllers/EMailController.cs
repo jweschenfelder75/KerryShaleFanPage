@@ -11,11 +11,11 @@ namespace KerryShaleFanPage.Server.Controllers
     [Route("webapi/[controller]")]
     public class EMailController : ControllerBase
     {
-        private readonly IMailAndSmsService _mailAndSmsService;
+        private readonly IGmailMailAndSmsService _mailAndSmsService;
 
         private readonly ILogger<EMailController> _logger;
 
-        public EMailController(ILogger<EMailController> logger, IMailAndSmsService mailAndSmsService)
+        public EMailController(ILogger<EMailController> logger, IGmailMailAndSmsService mailAndSmsService)
         {
             _mailAndSmsService = mailAndSmsService;
             _logger = logger;
@@ -24,7 +24,7 @@ namespace KerryShaleFanPage.Server.Controllers
         [HttpPost]
         public bool Post([FromBody] ContactDataDto contactData)
         {
-            return _mailAndSmsService.SendMailNotification(contactData.EMail, "<MailAddress>", $"[kerryshalefanpage] {contactData.Subject}",  // TODO: Make configurable and encrypt!
+            return _mailAndSmsService.SendMailNotification(string.Empty, string.Empty, $"[kerryshalefanpage] {contactData.Subject}",
                 $"Name: {contactData.Name}{Environment.NewLine}E-mail: {contactData.EMail}{Environment.NewLine}Category: {contactData.Category}{Environment.NewLine}Subject: {contactData.Subject}{Environment.NewLine}Body: {contactData.Message}{Environment.NewLine}Timestamp: {DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture)}");
         }
     }

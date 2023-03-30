@@ -2,34 +2,130 @@
     "GallerySettings": {
         "GalleryItems": [
             {
-                "ImageSrc": "/img/KS001.png",
-                "ImageAltEn": "Kerry Shale (EN)",
-                "ImageAltDe": "Kerry Shale (DE)",
-                "ImageCredits": "Kerry Shale / Alan Howard"
+                "ImageSrc": "/img/gallery/KerryShale01.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by the great Kerry Shale himself (Photo taken by Alan Howard)"
             },
             {
-                "ImageSrc": "/img/KS002.png",
-                "ImageAltEn": "Kerry Shale (EN)",
-                "ImageAltDe": "Kerry Shale (DE)",
-                "ImageCredits": "Kerry Shale / Alan Howard"
+                "ImageSrc": "/img/gallery/KerryShale02.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by the great Kerry Shale himself (Photo taken by Alan Howard)"
             },
             {
-                "ImageSrc": "/img/KS003.png",
-                "ImageAltEn": "Kerry Shale (EN)",
-                "ImageAltDe": "Kerry Shale (DE)",
-                "ImageCredits": "Kerry Shale / Alan Howard"
+                "ImageSrc": "/img/gallery/KerryShale03.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by the great Kerry Shale himself (Photo taken by Alan Howard)"
             },
             {
-                "ImageSrc": "/img/KS004.png",
-                "ImageAltEn": "Kerry Shale (EN)",
-                "ImageAltDe": "Kerry Shale (DE)",
-                "ImageCredits": "Liam Daniel / Netflix"
+                "ImageSrc": "/img/gallery/KerryShale04.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by the great Kerry Shale himself, via Alchetron"
             },
             {
-                "ImageSrc": "/img/KS005.png",
-                "ImageAltEn": "Kerry Shale (EN)",
-                "ImageAltDe": "Kerry Shale (DE)",
-                "ImageCredits": "Granada / ITV"
+                "ImageSrc": "/img/gallery/KerryShale05.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by the great Kerry Shale himself (Photo taken by Alan Howard)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale06.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "Disappeared, Royal Court Theatre, by the great Kerry Shale himself"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale07.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "Universal Soldier: Regeneration (2009)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale08.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by Salem's Lot by Stephen King"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale09.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "ITV / Granada Television"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale10.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "Incognito (2015)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale11.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "Kerry Shale Original Vintage Press Photo (Burdett-Coutts Associates)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale12.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by the great Kerry Shale himself"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale13.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by the great Kerry Shale himself (Photo taken by Alan Howard)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale14.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by Liam Daniel / Netflix (2022)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale15.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "Yentl (1983)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale16.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "Photo provided by the great Kerry Shale himself (Photo taken by Alan Howard)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale17.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "Photo provided by the great Kerry Shale himself (Photo taken by Alan Howard)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale18.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "The Observer, London, The Guardian Archive (11 Apr 1993)"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale19.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "via Rotten Tomatoes"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale20.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by Mark Allan"
+            },
+            {
+                "ImageSrc": "/img/gallery/KerryShale21.jpg",
+                "ImageAltEn": "Kerry Shale",
+                "ImageAltDe": "Kerry Shale",
+                "ImageCredits": "by Roy Jones (1990)"
             }
         ]
     }

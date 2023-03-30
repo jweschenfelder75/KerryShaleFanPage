@@ -16,6 +16,8 @@
     --rz-text-caption-color: #000000;
     --rz-text-overline-color: #000000;
     --rz-panel-menu-item-active-color: #3000CC;
+    --rz-grid-header-font-color: #000000;
+    --rz-grid-header-font-weight: bold;
     --rz-footer-color: #151515;
 }
 

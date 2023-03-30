@@ -29,7 +29,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
 
         public IList<GalleryItemDto> GetAll()
         {
-            var result = _securedConfigurationService.GetCurrentGallerySettingsConfigurationFromFile();
+            var result = _securedConfigurationService.GetCachedGallerySettingsConfigurationFromFile();
 
             return (!result.GalleryItems.Any())
             ? new List<GalleryItemDto>()

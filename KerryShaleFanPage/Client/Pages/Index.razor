@@ -1,4 +1,5 @@
 ﻿@using System
+@using System.Globalization
 @page "/"
 
 <PageTitle>@Translate["Welcome"] | Kerry Shale Fan Page</PageTitle>
@@ -14,14 +15,30 @@
             <ul class="marquee-content">
                 @foreach (var newsItem in _newsItems)
                 {
-                    <li>@((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn)</li>
+                    <li>@((MarkupString)((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn))</li>
+                }
+                @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
+                {
+                    <li>@($"{Translate["Next podcast episode probably available on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.")</li>
+                }
+                else
+                {
+                    <li>@Translate["New podcast episode available, see below!"]</li>
                 }
             </ul>
             <!-- Mirrors the content above -->
             <ul class="marquee-content" aria-hidden="true">
                 @foreach (var newsItem in _newsItems)
                 {
-                    <li>@((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn)</li>
+                    <li>@((MarkupString)((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn))</li>
+                }
+                @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
+                {
+                    <li>@($"{Translate["Next podcast episode probably available on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.")</li>
+                } 
+                else
+                {
+                    <li>@Translate["New podcast episode available, see below!"]</li>
                 }
             </ul>
         </div>
@@ -35,27 +52,27 @@
         <div class="flip-card">
             <div class=@($"flip-card-inner {_cssClass[0]}") @onclick="(() => FlipCardAsync(0))">
                 <div class="flip-card-front">
-                    <div class="row justify-content-center">
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+                    <div class="row gx-0 justify-content-left">
+                        <div class="col-7 col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 col-xx-5 rz-col-xx-5 text-center">
                             <img src="/img/the-sandman.png" alt="The Sandman" />
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            @Translate["Watch The Sandman on Netflix"]<br />@Translate["or visit The Sandman Wiki"]<br />
-                            @Translate["CLICK ME!"]
+                        <div class="col-5 col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 col-xx-7 rz-col-xx-7 text-center vertical-align">
+                            <div class="d-none d-lg-block">@Translate["Watch The Sandman on Netflix"]<br />@Translate["or visit The Sandman Wiki"]<br /></div>
+                            <div>@Translate["CLICK ME!"]</div>
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-12 text-center vertical-align">
                             <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-6 text-center vertical-align">
                             <a href="https://www.netflix.com/de/title/81150303" target="blank"><img src="/img/The_Sandman_Netflix_1.jpg" alt="The Sandman at Netflix" /></a>&nbsp;
                         </div>
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                        <div class="col-6 text-center vertical-align">
                             <a href="https://sandman.fandom.com/wiki/Kerry_Shale" target="blank"><img src="/img/The_Sandman_Netflix_2.jpg" alt="The Sandman Wiki" /></a>
                         </div>
                     </div>
@@ -67,29 +84,57 @@
         <div class="flip-card">
             <div class=@($"flip-card-inner {_cssClass[1]}") @onclick="(() => FlipCardAsync(1))">
                 <div class="flip-card-front">
-                    <div class="row justify-content-center">
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
-                            <img src="/img/frogwares.jpg" alt="Frogwares" />
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-7 col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 col-xx-5 rz-col-xx-5 text-center">
+                            @if (_showLatestPodcastEpisode)
+                            {
+                                <img src="@_latestPodcastEpisodeImageBase64" alt="Latest podcast episode" />
+                            }
+                            else
+                            {
+                                <img src="/img/frogwares.jpg" alt="Frogwares" />
+                            }
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            @Translate["Play Sherlock Holmes"]<br />
-                            @Translate["CLICK ME!"]
+                        <div class="col-5 col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 col-xx-7 rz-col-xx-7 text-center vertical-align">
+                            <div class="d-none d-lg-block">
+                                @if (_showLatestPodcastEpisode)
+                                {
+                                    @Translate["Hear the latest podcast episode"]<br />@($"({Translate["Next episode probably available"]}")<br />@($"{@Translate["on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.)")<br />
+                                }
+                                else
+                                {
+                                    @Translate["Play Sherlock Holmes"]<br />
+                                }
+                            </div>
+                            <div>@Translate["CLICK ME!"]</div>
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-12 text-center vertical-align">
                             <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
-                            <a href="https://www.youtube.com/watch?v=v4UGHWbJ0I8" target="blank"><img src="/img/frogwares-tosh.jpg" alt="The Testament Of Sherlock Holmes" /></a>&nbsp;
-                        </div>
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
-                            <a href="https://www.youtube.com/watch?v=gKC5TJ4O9YI" target="blank"><img src="/img/frogwares-cap.jpg" alt="Crimes & Punishments" /></a>
-                        </div>
+                    <div class="row gx-0 justify-content-center">
+                        @if (_showLatestPodcastEpisode)
+                        {
+                            <div class="col-6 text-center vertical-align">
+                                <a href="https://podcasts.apple.com/gb/podcast/is-it-rolling-bob-talking-dylan/id1437321669" target="blank"><img src="/img/listen-on-apple-podcasts-1.png" alt="The Testament Of Sherlock Holmes" /></a>&nbsp;
+                            </div>
+                            <div class="col-6 text-center vertical-align">
+                                <a href="https://acast.com/public/shows/63d0e60777d9ee0011a4f45b" target="blank"><img src="/img/listen-on-acast.png" alt="Crimes & Punishments" /></a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-6 text-center vertical-align">
+                                <a href="https://www.youtube.com/watch?v=v4UGHWbJ0I8" target="blank"><img src="/img/frogwares-tosh.jpg" alt="The Testament Of Sherlock Holmes" /></a>&nbsp;
+                            </div>
+                            <div class="col-6 text-center vertical-align">
+                                <a href="https://www.youtube.com/watch?v=gKC5TJ4O9YI" target="blank"><img src="/img/frogwares-cap.jpg" alt="Crimes & Punishments" /></a>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -101,27 +146,27 @@
         <div class="flip-card">
             <div class=@($"flip-card-inner {_cssClass[2]}") @onclick="(() => FlipCardAsync(2))">
                 <div class="flip-card-front">
-                    <div class="row justify-content-center">
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-7 col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 col-xx-5 rz-col-xx-5 text-center">
                             <img src="/img/KS-1.png" alt="Official Website" />
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            @Translate["Official website of Kerry Shale"]<br />@Translate["and the website of his agency"]<br />
-                            @Translate["CLICK ME!"]
+                        <div class="col-5 col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 col-xx-7 rz-col-xx-7 text-center vertical-align">
+                            <div class="d-none d-lg-block">@Translate["Official website of Kerry Shale"]<br />@Translate["and the website of his agency"]<br /></div>
+                            <div>@Translate["CLICK ME!"]</div>
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-12 text-center vertical-align">
                             <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-6 text-center vertical-align">
                             <a href="https://www.kerryshale.com" target="blank"><img src="/img/KS-2.png" alt="Official Website" /></a>
                         </div>
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                        <div class="col-6 text-center vertical-align">
                             <a href="https://www.sainou.com/individual/kerry-shale" target="blank"><img src="/img/sainou.png" alt="Agency Website" /></a>
                         </div>
                     </div>
@@ -133,27 +178,27 @@
         <div class="flip-card">
             <div class=@($"flip-card-inner {_cssClass[3]}") @onclick="(() => FlipCardAsync(3))">
                 <div class="flip-card-front">
-                    <div class="row justify-content-center">
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-7 col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 col-xx-5 rz-col-xx-5 text-center">
                             <img src="/img/reel.png" alt="Reel" />
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 text-center vertical-align">
-                            @Translate["Film and Audio Reels by Kerry Shale"]<br />
-                            @Translate["CLICK ME!"]
+                        <div class="col-5 col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 col-xx-7 rz-col-xx-7 text-center vertical-align">
+                            <div class="d-none d-lg-block">@Translate["Film and Audio Reels by Kerry Shale"]<br /></div>
+                            <div>@Translate["CLICK ME!"]</div>
                         </div>
                     </div>
                 </div>
                 <div class="flip-card-back">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-12 col-xl-4 text-center vertical-align">
+                    <div class="row gx-0 justify-content-center ">
+                        <div class="col-12 text-center vertical-align">
                             <br />@Translate["Please select:"]<br /><br />
                         </div>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                    <div class="row gx-0 justify-content-center">
+                        <div class="col-6 text-center vertical-align">
                             <a href="https://www.yaketyyak.co.uk/artists/kerry-shale" target="blank"><img src="/img/yaketyyak.png" alt="Yakety Yak" /></a>
                         </div>
-                        <div class="col-12 col-sm-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 text-center vertical-align">
+                        <div class="col-6 text-center vertical-align">
                             <a href="https://www.imdb.com/name/nm0787715" target="blank"><img src="/img/imdb.jpg" alt="IMDb" /></a>
                         </div>
                     </div>
