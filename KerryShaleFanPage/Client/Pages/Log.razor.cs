@@ -101,7 +101,7 @@ namespace KerryShaleFanPage.Client.Pages
         {
             _utcNow = (CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower() == "de") 
                 ? DateTime.UtcNow.ToString("dd.MM.yyyy HH:mm")
-                : DateTime.UtcNow.ToString("yyyy/MM/dd HH:mm");
+                : DateTime.UtcNow.ToString("yyyy/MM/dd hh:mm tt");
 
             var data = await Http.GetFromJsonAsync<LogEntryDto[]>("webapi/Log");
             _logEntries = data?.ToList();
