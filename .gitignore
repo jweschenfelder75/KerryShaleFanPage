@@ -353,3 +353,4 @@ MigrationBackup/
 /KerryShaleFanPage/Server/internal-nlog.txt
 /KerryShaleFanPage/Server/Certificate/cert.pem
 /KerryShaleFanPage/Server/Certificate/key.pem
+/KerryShaleFanPage/Server/Security/generalsettings.conf
