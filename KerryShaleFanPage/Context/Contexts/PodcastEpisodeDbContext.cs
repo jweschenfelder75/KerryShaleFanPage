@@ -13,6 +13,7 @@ namespace KerryShaleFanPage.Context.Contexts
         {
             try
             {
+                _connectionString = Database.GetConnectionString();
                 Database.Migrate();
             }
             catch (Exception ex)
@@ -27,7 +28,10 @@ namespace KerryShaleFanPage.Context.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(_connectionString ?? "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseMySQL(_connectionString ?? "server=127.0.0.1;database=kerryshalefanpg;uid={username};pwd={password};");
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

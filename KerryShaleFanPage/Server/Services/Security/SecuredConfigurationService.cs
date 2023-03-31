@@ -93,7 +93,7 @@ namespace KerryShaleFanPage.Server.Services.Security
         /// <inheritdoc cref="ISecuredConfigurationService"/>
         public bool GetEncryptedConfigurationForEncryptedFileFromSettings()
         {
-            var basePath = AppContext.BaseDirectory;
+            var basePath = Directory.GetCurrentDirectory();
             var encryptedFilePath = Path.Combine(basePath, "Security/generalsettings.conf");
             var currentSettings = GetCurrentSettingsConfigurationFromFile();
             var serializedCurrentSettings = JsonConvert.SerializeObject(currentSettings);
@@ -103,7 +103,7 @@ namespace KerryShaleFanPage.Server.Services.Security
         /// <inheritdoc cref="ISecuredConfigurationService"/>
         public GeneralSettings GetDecryptedConfigurationForSettingsFromEncryptedFile()
         {
-            var basePath = AppContext.BaseDirectory;
+            var basePath = Directory.GetCurrentDirectory();
             var encryptedFilePath = Path.Combine(basePath, "Security/generalsettings.conf");
             var serializedCurrentSettings = _securityService.DecryptFile(encryptedFilePath);
             if (serializedCurrentSettings == null)

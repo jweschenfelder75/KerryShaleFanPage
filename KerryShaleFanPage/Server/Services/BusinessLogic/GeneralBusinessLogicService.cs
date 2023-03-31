@@ -13,7 +13,6 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
     public class GeneralBusinessLogicService : IGeneralBusinessLogicService
     {
         private readonly TimeSpan _sleepPeriod = TimeSpan.FromMinutes(15);
-        private readonly IGenericRepositoryService<PodcastEpisodeDto> _podcastRepositoryService;
         private readonly IGenericRepositoryService<LogEntryDto> _logRepositoryService;
         private readonly ISecuredConfigurationService _securedConfigurationService;
         private readonly IMaintenanceNotificationService _maintenanceNotificationService;
@@ -24,11 +23,10 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// 
         /// </summary>
         public GeneralBusinessLogicService(ILogger<GeneralBusinessLogicService> logger, 
-            IGenericRepositoryService<PodcastEpisodeDto> podcastRepositoryService, IGenericRepositoryService<LogEntryDto> logRepositoryService,
-            ISecuredConfigurationService securedConfigurationService, IMaintenanceNotificationService maintenanceNotificationService)
+            IGenericRepositoryService<LogEntryDto> logRepositoryService, ISecuredConfigurationService securedConfigurationService, 
+            IMaintenanceNotificationService maintenanceNotificationService)
         {
             _logger = logger;
-            _podcastRepositoryService = podcastRepositoryService;
             _logRepositoryService = logRepositoryService;
             _securedConfigurationService = securedConfigurationService;
             _maintenanceNotificationService = maintenanceNotificationService;

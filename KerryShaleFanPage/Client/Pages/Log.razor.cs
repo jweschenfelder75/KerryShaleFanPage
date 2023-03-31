@@ -5,11 +5,13 @@ using System;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Threading;
 using System.Threading.Tasks;
 using Radzen;
 using KerryShaleFanPage.Shared.Enums;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
+using System.Globalization;
 
 namespace KerryShaleFanPage.Client.Pages
 {
@@ -32,6 +34,10 @@ namespace KerryShaleFanPage.Client.Pages
 
         private IList<ChartDataItem>? _logChartSeries;
 
+        private Timer _timer;
+
+        private string _utcNow = DateTime.UtcNow.ToString();
+
         bool _isLoading = false;
 
         class ChartDataItem
@@ -51,13 +57,10 @@ namespace KerryShaleFanPage.Client.Pages
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            var data = await Http.GetFromJsonAsync<LogEntryDto[]>("webapi/Log");
-            _logEntries = data?.ToList();
-            _logChartSeries = _logEntries?
-                .GroupBy(e => new { e.LogLevel, MonthYear = new DateTime(e.TimeStamp.Year, e.TimeStamp.Month, 1) })
-                .OrderBy(e => e.Key.LogLevel).ThenBy(e => e.Key.MonthYear)
-                .Select(e => new ChartDataItem(e.Key.LogLevel, e.Key.MonthYear, e.Count()))
-                .ToList();
+
+            SetClockAndReloadLog(null);
+
+            _timer = new Timer(SetClockAndReloadLog, new AutoResetEvent(false), 60000, 60000);
         }
 
         private async Task ShowDialogAsync(string title, string message)
@@ -92,6 +95,23 @@ namespace KerryShaleFanPage.Client.Pages
         private string GetBackColor(LogLevelEnum logLevel)
         {
             return logLevel.GetBackColorAttributeFrom(typeof(LogLevelEnum)) ?? string.Empty;
+        }
+
+        private async void SetClockAndReloadLog(object? stateInfo)
+        {
+            _utcNow = (CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower() == "de") 
+                ? DateTime.UtcNow.ToString("dd.MM.yyyy HH:mm")
+                : DateTime.UtcNow.ToString("yyyy/MM/dd HH:mm");
+
+            var data = await Http.GetFromJsonAsync<LogEntryDto[]>("webapi/Log");
+            _logEntries = data?.ToList();
+            _logChartSeries = _logEntries?
+                .GroupBy(e => new { e.LogLevel, MonthYear = new DateTime(e.TimeStamp.Year, e.TimeStamp.Month, 1) })
+                .OrderBy(e => e.Key.LogLevel).ThenBy(e => e.Key.MonthYear)
+                .Select(e => new ChartDataItem(e.Key.LogLevel, e.Key.MonthYear, e.Count()))
+                .ToList();
+
+            StateHasChanged();
         }
     }
 }

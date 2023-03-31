@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using NLog;
-using NLog.Config;
 using NLog.Extensions.Logging;
 using NLog.Web;
 using NLog.Targets;
@@ -34,7 +33,6 @@ using KerryShaleFanPage.Server.Services.Maintenance;
 using KerryShaleFanPage.Server.Services.Repositories;
 using KerryShaleFanPage.Server.Services.Security;
 using KerryShaleFanPage.Shared.Configuration;
-using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
 using KerryShaleFanPage.Shared.Objects.ListenNotes;
@@ -120,8 +118,16 @@ namespace KerryShaleFanPage.Server
             services.AddScoped<IGmailMailAndSmsService, GmailMailAndSmsService>();
             services.AddScoped<IGmxMailAndSmsService, GmxMailAndSmsService>();
 
-            services.AddDbContext<LogDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
-            services.AddDbContext<PodcastEpisodeDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Storage")));
+            services.AddDbContext<LogDbContext>((services, options) => 
+            {
+                string connectionString = GetValidConnectionString(services);
+                options.UseMySQL(connectionString); 
+            });
+            services.AddDbContext<PodcastEpisodeDbContext>((services, options) =>
+            {
+                string connectionString = GetValidConnectionString(services);
+                options.UseMySQL(connectionString);
+            });
 
             services.AddScoped<IGenericService<NewsItemDto>, NewsService>();
             services.AddScoped<IGenericService<GalleryItemDto>, GalleryService>();
@@ -206,11 +212,7 @@ namespace KerryShaleFanPage.Server
         {
             try
             {
-                using var scope = app.Services.CreateScope();
-                var configurationService = scope.ServiceProvider.GetRequiredService<ISecuredConfigurationService>();
-                var settings = configurationService.GetDecryptedConfigurationForSettingsFromEncryptedFile();
-
-                var strConnectionString = $"server=127.0.0.1;database=kerryshalefanpg;uid={settings.DbUsername};pwd={settings.DbPassword};";
+                var strConnectionString = GetValidConnectionString(app.Services);
 
                 var dbTarget = LogManager.Configuration.FindTargetByName<DatabaseTarget>("allDatabase");
 
@@ -225,6 +227,15 @@ namespace KerryShaleFanPage.Server
             {
                 var exception = ex;
             }
+        }
+
+        private static string GetValidConnectionString(IServiceProvider services)
+        {
+            using var scope = services.CreateScope();
+            var configurationService = scope.ServiceProvider.GetRequiredService<ISecuredConfigurationService>();
+            var settings = configurationService.GetDecryptedConfigurationForSettingsFromEncryptedFile();
+
+            return $"server=127.0.0.1;database=kerryshalefanpg;uid={settings.DbUsername};pwd={settings.DbPassword};";
         }
     }
 }

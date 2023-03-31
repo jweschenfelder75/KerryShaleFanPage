@@ -9,16 +9,11 @@ using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
 using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
 using KerryShaleFanPage.Server.Interfaces.Security;
-using KerryShaleFanPage.Server.Services.HtmlAndApiServices;
-using KerryShaleFanPage.Server.Services.Security;
-using KerryShaleFanPage.Shared.Configuration;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
 using KerryShaleFanPage.Shared.Objects.ListenNotes;
 using KerryShaleFanPage.Shared.Objects.Spotify;
-using KerryShaleFanPage.Shared.Objects.ToDo.Twitter;
-using KerryShaleFanPage.Server.Interfaces.Maintenance;
 
 namespace KerryShaleFanPage.Server.Services.BusinessLogic
 {
@@ -29,10 +24,6 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         private readonly IGenericCrawlHtmlService<AcastEpisode> _acastCrawlService;
         private readonly IGenericCrawlHtmlService<ListenNotesEpisode> _listenNotesCrawlService;
         private readonly IGenericCrawlHtmlService<SpotifyEpisode> _spotifyCrawlService;
-        // private readonly ITwitterCrawlApiService _twitterCrawlApiService;  // TODO: Obsolete: We will not use Twitter API anymore! It was tested and it was ok.
-        // private readonly ITwitterTweetApiService _twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
-        // private readonly IGenericCrawlHtmlService<TwitterEpisode> _twitterCrawlService;  // TODO: Unfinished & untested.
-        private readonly ISecuredConfigurationService _securedConfigurationService;
 
         private readonly ILogger<PodcastBusinessLogicService> _logger;  // TODO: Implement logging!
 
@@ -41,9 +32,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
         /// </summary>
         public PodcastBusinessLogicService(ILogger<PodcastBusinessLogicService> logger, IGmxMailAndSmsService mailAndSmsService, 
             IGenericRepositoryService<PodcastEpisodeDto> repositoryService, IGenericCrawlHtmlService<AcastEpisode> acastCrawlService,
-            IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService
-            /* , ITwitterCrawlApiService twitterCrawlApiService, ITwitterTweetApiService twitterTweetApiService */
-            /* , IGenericCrawlHtmlService<TwitterEpisode> twitterCrawlService */, ISecuredConfigurationService securedConfigurationService)
+            IGenericCrawlHtmlService<ListenNotesEpisode> listenNotesCrawlService, IGenericCrawlHtmlService<SpotifyEpisode> spotifyCrawlService)
         {
             _logger = logger;
             _mailAndSmsService = mailAndSmsService;
@@ -51,10 +40,6 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             _acastCrawlService= acastCrawlService;
             _listenNotesCrawlService = listenNotesCrawlService;
             _spotifyCrawlService = spotifyCrawlService;
-            // _twitterCrawlApiService = twitterCrawlApiService;  // TODO: Obsolete: We will not use Twitter API anymore! It was tested and it was ok.
-            // _twitterTweetApiService = twitterTweetApiService;  // TODO: Obsolete: We will not use Twitter API anymore! Unfinished & untested.
-            // _twitterCrawlService = twitterCrawlService;  // TODO: Unfinished & untested.
-            _securedConfigurationService = securedConfigurationService;
         }
 
         /// <inheritdoc cref="IBusinessLogicService" />
@@ -275,10 +260,6 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 Checksum= latestSpotifyEpisode?.Checksum,
                 FetchedExpectedNextDate = null
             };
-
-            // Backup 3 (TODO: Rest of implementation missing!):
-            // var twitterUsers = await _twitterCrawlApiService.GetUsersAsync(new List<string> { "isitrollingpod" }, cancellationToken);  // Returns the needed UserId, TODO: Currently not used, I do not think we need this! It was tested and it was ok.
-            // var twitterUserTweets = await _twitterCrawlApiService.GetTweetsAsync("984758353787260928", cancellationToken);  // TODO: Currently not used, I do not think we need this! It was tested and it was ok.
         }
     }
 }

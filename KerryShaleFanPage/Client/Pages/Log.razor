@@ -5,7 +5,7 @@
 
 <PageTitle>Log | Kerry Shale Fan Page</PageTitle>
 
-<h1>Log</h1>
+<h1>Log.</h1>
 
 @if (_logEntries == null)
 {
@@ -13,11 +13,15 @@
 }
 else
 {
+    <p>&nbsp;</p>
+
+    <p>@Translate["Current UTC time:"] @_utcNow</p>
+
     <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" GridLines="DataGridGridLines.Both"
                 Data="@_logEntries" TItem="LogEntryDto" ShowPagingSummary="true" IsLoading=@_isLoading Sort="@ShowLoadingAsync" Page="@ShowLoadingAsync" Group="@ShowLoadingAsync" Filter="@ShowLoadingAsync" 
                 SelectionMode="DataGridSelectionMode.Single" PageSizeOptions="@_pageSizeOptions" PageSizeText="@Translate["records per page"]" PagingSummaryFormat="@_pagingSummaryFormat" >
         <Columns>
-            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="TimeStamp" Title="@Translate["TimeStamp"]" Width="180px" MinWidth="180px">
+            <RadzenDataGridColumn TItem="LogEntryDto" TextAlign="TextAlign.Left" Filterable="false" Frozen="true" Property="TimeStamp" Title="@Translate["Timestamp (UTC)"]" Width="180px" MinWidth="180px">
                 <Template Context="item">
                     <RadzenText TextStyle="TextStyle.Body2" class="py-2">@item.TimeStamp.ToUniversalTime()</RadzenText>
                 </Template>
