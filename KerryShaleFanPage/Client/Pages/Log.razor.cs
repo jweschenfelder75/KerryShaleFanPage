@@ -37,6 +37,8 @@ namespace KerryShaleFanPage.Client.Pages
 
         private string _utcNow = DateTime.UtcNow.ToString();
 
+        private Timer _timer;
+
         bool _isLoading = false;
 
         class ChartDataItem
@@ -59,7 +61,7 @@ namespace KerryShaleFanPage.Client.Pages
 
             SetClockAndReloadLog(null);
 
-            var timer = new Timer(SetClockAndReloadLog, new AutoResetEvent(false), 60000, 60000);
+            _timer = new Timer(SetClockAndReloadLog, new AutoResetEvent(false), 60000, 60000);
         }
 
         private async Task ShowDialogAsync(string title, string message)
