@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace KerryShaleFanPage.Client.Pages
@@ -9,6 +10,8 @@ namespace KerryShaleFanPage.Client.Pages
     {
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
+
+        private readonly string _currentCulture = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
 
         protected override async Task OnInitializedAsync()
         {

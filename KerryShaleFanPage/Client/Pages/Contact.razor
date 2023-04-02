@@ -10,7 +10,7 @@
     <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
         <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
             <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
-                <RadzenText TextStyle="TextStyle.Body2" Text="The e-mail was sent successfully!" />
+                <RadzenText TextStyle="TextStyle.Body2" Text="@Translate["The e-mail was sent successfully!"]" />
             </RadzenColumn>
         </RadzenRow>
     </RadzenCard>
@@ -21,26 +21,26 @@ else
         <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
             <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
                 <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
-                    <RadzenLabel Text="Full name" />
+                    <RadzenLabel Text="@Translate["Full name"]" />
                 </RadzenColumn>
                 <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
                     <RadzenTextBox class="w-100 d-block" Name="Name" MaxLength="500" @bind-Value="_contact.Name" Trim="true" />
-                    <RadzenRequiredValidator Component="Name" Text="Name is required" Popup="true" Style="position: absolute" />
+                    <RadzenRequiredValidator Component="Name" Text="@Translate["Name is required"]" Popup="true" Style="position: absolute" />
                 </RadzenColumn>
             </RadzenRow>
             <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
                 <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
-                    <RadzenLabel Text="E-mail address" />
+                    <RadzenLabel Text="@Translate["E-mail address"]" />
                 </RadzenColumn>
                 <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
                     <RadzenTextBox class="w-100 d-block" Name="EMail" MaxLength="500" @bind-Value="_contact.EMail" Trim="true" />
-                    <RadzenRequiredValidator Component="EMail" Text="E-mail is required" Popup="true" Style="position: absolute" />
-                    <RadzenEmailValidator Component="EMail" Text="Provide a valid email address" Popup="true" Style="position: absolute" />
+                    <RadzenRequiredValidator Component="EMail" Text="@Translate["E-mail address is required"]" Popup="true" Style="position: absolute" />
+                    <RadzenEmailValidator Component="EMail" Text="@Translate["Provide a valid e-mail address"]" Popup="true" Style="position: absolute" />
                 </RadzenColumn>
             </RadzenRow>
             <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
                 <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
-                    <RadzenLabel Text="Category" />
+                    <RadzenLabel Text="@Translate["Category"]" />
                 </RadzenColumn>
                 <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
                     <RadzenDropDown class="w-100 d-block" Name="Category" @bind-Value="@_contact.Category" Data="@_categories" />
@@ -48,20 +48,20 @@ else
             </RadzenRow>
             <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
                 <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
-                    <RadzenLabel Text="Subject" />
+                    <RadzenLabel Text="@Translate["Subject"]" />
                 </RadzenColumn>
                 <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
                     <RadzenTextBox class="w-100 d-block" Name="Subject" MaxLength="500" @bind-Value="_contact.Subject" Trim="true" />
-                    <RadzenRequiredValidator Component="Subject" Text="Subject is required" Popup="true" Style="position: absolute" />
+                    <RadzenRequiredValidator Component="Subject" Text="@Translate["Subject is required"]" Popup="true" Style="position: absolute" />
                 </RadzenColumn>
             </RadzenRow>
             <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
                 <RadzenColumn Size="12" SizeMD="4" SizeLG="3" SizeXL="2" SizeXX="1" class="align-items-center d-flex">
-                    <RadzenLabel Text="Message" />
+                    <RadzenLabel Text="@Translate["Message"]" />
                 </RadzenColumn>
                 <RadzenColumn Size="12" SizeMD="8" SizeLG="9" SizeXL="10" SizeXX="11" class="align-items-center d-flex">
                     <RadzenTextArea class="w-100 d-block" Name="Message" MaxLength="3000" @bind-Value="_contact.Message" />
-                    <RadzenRequiredValidator Component="Message" Text="Message is required" Popup="true" Style="position: absolute" />
+                    <RadzenRequiredValidator Component="Message" Text="@Translate["Message is required"]" Popup="true" Style="position: absolute" />
                 </RadzenColumn>
             </RadzenRow>
             <RadzenRow JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Normal" class="rz-p-4">
@@ -72,7 +72,7 @@ else
                     <div id="google_recaptcha "></div>
                 </RadzenColumn>
                 <RadzenColumn Size="12" SizeMD="2" SizeLG="2" SizeXL="3" SizeXX="4" class="align-items-center d-flex">
-                    <RadzenButton ButtonType="ButtonType.Submit" Icon="send" Text="Send" />
+                    <RadzenButton ButtonType="ButtonType.Submit" Icon="send" Text="@Translate["Send"]" />
                 </RadzenColumn>
                 <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-4 rz-my-0">
                     @Translate["Disclaimer: This website is a non-profit project, it means that no profit will ever be made with this website, an exception may be external websites linked from this website."]

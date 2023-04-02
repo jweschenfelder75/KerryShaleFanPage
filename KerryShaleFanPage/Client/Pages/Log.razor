@@ -15,7 +15,7 @@ else
 {
     <p>&nbsp;</p>
 
-    <p>@Translate["Current UTC time:"] @_utcNow</p>
+    <p>@Translate["Current UTC time"]: @_utcNow</p>
 
     <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" AllowAlternatingRows="false" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" GridLines="DataGridGridLines.Both"
                 Data="@_logEntries" TItem="LogEntryDto" ShowPagingSummary="true" IsLoading=@_isLoading Sort="@ShowLoadingAsync" Page="@ShowLoadingAsync" Group="@ShowLoadingAsync" Filter="@ShowLoadingAsync" 

@@ -35,7 +35,7 @@
                 @Translate["Some funny stories when I had worked for the film business:"]
             </RadzenText>
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
-                @Translate["- One day I should install a computer in one building of the Babelsberg studios and had to walk to the server room."]
+                - @Translate["One day I should install a computer in one building of the Babelsberg studios and had to walk to the server room."]
                 @Translate["While walking to the server room, someone from the custome department called me back."]
                 @Translate["I was wondering about it, but I was that kind and walked back to her."]
                 @Translate["Then she asked me if I do not want to change my clothes."]
@@ -43,7 +43,7 @@
                 @Translate["We found out then that she had confused me with an actress or extra for the series, we had to laugh then and I continued my walk to the server room."]
             </RadzenText>
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
-                @Translate["- At another day, I had again installed a computer in the same building of the Babelsberg studios, and when I left the building, two teenagers (maybe 11 or 12 years old) were waiting in front of the building."]
+                - @Translate["At another day, I had again installed a computer in the same building of the Babelsberg studios, and when I left the building, two teenagers (maybe 11 or 12 years old) were waiting in front of the building."]
                 @Translate["They stared at me and so I looked back at them."]
                 @Translate["Then they asked me if I would be a star and if I can give them an autograph."]
                 @Translate["It was the sweetest situation I have witnessed in my life so far."]
@@ -53,7 +53,7 @@
                 @Translate["It was the first time someone thought I would be a star, it was also the last time that someone ever thought I would be a star."]
             </RadzenText>
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
-                @Translate["- And now the best part: When everyone was on company holiday, I should move some computers."]
+                - @Translate["And now the best part: When everyone was on company holiday, I should move some computers."]
                 @Translate["While doing that, I forgot to disconnect the power cable of one monitor."]
                 @Translate["The power cable was still connected to the monitor and the power socket."]
                 @Translate["And now it starts: I tried to carry the monitor away, but the connection to the power socket was that strong that I stopped unvoluntarily and tilted forward."]
@@ -74,9 +74,9 @@
                 @Translate["years meanwhile, since I was 21 years old."]
                 @Translate["The actor Robert Clary from Hogan's Heroes caused me to have a deeper look into Jewish habits."]
                 @Translate["I saw a video series of him once which showed where he had visited the former concentration camp where he was imprisoned once."]
-                @Translate["He started to cry when he was in one of the Holocaust trains which was still parked there, it broke my heart."]
+                @Translate["He started to cry when he was standing in one of the Holocaust trains again which was still parked there, it broke my heart."]
                 @Translate["Too sad that the video series is not available on YouTube anymore, it had such an important message for the world."]
-                @Translate["During my study we had a class called \"intercultural communication\" where I had visited an Evangelic Church, a Synagogue and a Mosque."]
+                @Translate["During my study we had a class called intercultural communication where I had visited an Evangelic Church, a Synagogue and a Mosque."]
                 @Translate["All of them were interesting and I also liked it when the Evangelic Church made jokes about the Catholic Church which my Catholic classmates did not find that funny."]
                 @Translate["I even saw a Holy Torah directly in front of me."]
                 @Translate["We were not allowed to touch the Holy Torah, we had to use a silver stick which had a small hand with a pointing finger at its tip."]
@@ -88,19 +88,23 @@
                 @Translate["I learnt much later that Brent Spiner and Kerry Shale also have Jewish roots."]
                 @Translate["I only noticed it when they started to talk about it, when I was already a fan of them (otherwise you would not search for it)."]
                 @Translate["I find it fantastic that they are that open and I wish that everyone could be so open-minded."]
-                @Translate["I had learnt some Yiddish words from Brent Spiner and now also the first Yiddish word from Kerry Shale."]
+                @Translate["I had learnt some Yiddish words from Brent Spiner and now also the first Yiddish words from Kerry Shale."]
                 @Translate["I did not know about the shtetl (Yiddish, from German: Städtle, English: small town) until Kerry Shale had mentioned it."]
                 @Translate["When googling about it, I found out that all shtetl were destroyed by German Nazis between 1939 and 1945."]
                 @Translate["Well, it would surprise me if we Germans would have done something good in that context."]
-                @Translate["Kerry Shale said that his father saw himself as a very fiercly Canadian."]
+                @Translate["Kerry Shale said that his father saw himself as a very fiercely Canadian."]
                 @Translate["I can imagine that well, you only need to look at the Jewish History in Europe between 1800 and 1945, then you will know why."]
                 @Translate["I found this video interesting about such shtetl he had mentioned:"]
-                <RadzenLink Path="https://www.youtube.com/watch?v=JUzXk5poX78" Target="_blank" Text="@Translate["What Life in the Shtetl Was Like"]" /> <RadzenIcon Icon="open_in_new" Style="font-size: small;" />.
+                <RadzenLink Path="@Translate["Shtetl-YouTube-Link"]" Target="_blank" Text="@Translate["What Life in the Shtetl Was Like"]" /> <RadzenIcon Icon="open_in_new" Style="font-size: small;" />.
                 @Translate["It is also interesting that Kerry Shale and Brent Spiner have something in common when it is about the immigration to North America, see:"] 
                 <RadzenLink Path="https://www.imdb.com/name/nm0000653/bio" Target="_blank" Text="@Translate["Brent Spiner Biography"]" /> <RadzenIcon Icon="open_in_new" Style="font-size: small;" />.
             </RadzenText>
-            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">@Translate["[Some remark on Hogan's Heroes: In Germany, the Nazi greeting is forbidden and was replaced by 'Heil Kräuter!' (which means 'Healing Herbs!') which makes the series much funnier for the German audience IMHO.]"]
-            </RadzenText>
+            @if (_currentCulture.Equals("en", StringComparison.InvariantCultureIgnoreCase)) 
+            {
+                <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                    @Translate["[Some remark on Hogan's Heroes: In Germany, the Nazi greeting is forbidden and was replaced by 'Heil Kräuter!' (which means 'Healing Herbs!') which makes the series much funnier for the German audience IMHO.]"]
+                </RadzenText>
+            }
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-4 rz-my-0">
                 @Translate["A small excursion (you will learn that history at the Jewish Museum in Berlin as well):"]
                 @Translate["The discrimination against the Jewish people has a very long history, it started already when Moses saw G-d the first time, since the Ten Commandments."]
@@ -114,8 +118,10 @@
                 @Translate["But it did not help, the discrimination against the Jewish people increased, they were not allowed to use the same locations like e.g. all other Germans did."]
                 @Translate["It became that bad with time that many Jewish people started to leave Europe, they immigrated to North America in the main."]
                 @Translate["The discrimination against the Jewish people found its sad height in the Holocaust, the genocide of the European Jewish people."]
-                @Translate["You wonder why there are so many Jewish people in financial business and film business? That is the result of the discrimination against the Jewish people, because they were not allowed to have another job for centuries."]
-                @Translate["And blaming them for working in those two businesses now is -to be honest- the biggest bullshit ever! Right, some are very successful in that business, and we should be happy about it."]
+                @Translate["You wonder why there are so many Jewish people in financial business and film business?"]
+                @Translate["That is the result of the discrimination against the Jewish people, because they were not allowed to have another job for centuries."]
+                @Translate["And blaming them for working in those two businesses now is -to be honest- the biggest bullshit ever!"]
+                @Translate["Right, some are very successful in that business, and we should be happy about it."]
                 @Translate["Everyone is free to work in the financial business or film business."]
                 @Translate["There is no need to be jealous."]
                 @Translate["I think that more than 3000 years of the persecution should be enough, it needs to stop now."]
@@ -137,8 +143,8 @@
                 @Translate["If a Jewish person is doing jokes about Jewish things, it will be another thing - Jewish people are the only ones who are allowed to do that."]
             </RadzenText>
             <RadzenStack Orientation="Orientation.Vertical" JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-my-4">
-                <RadzenImage Path="/img/heinrich-heine-quote.png" Style="width: 540px; max-width: 100%;" />
-                <RadzenImage Path="/img/edmund-burke-quote.jpg" Style="width: 540px; max-width: 100%;" />
+                <RadzenImage Path="@Translate["/img/heinrich-heine-quote.png"]" Style="width: 540px; max-width: 100%;" />
+                <RadzenImage Path="@Translate["/img/edmund-burke-quote.jpg" ]" Style="width: 540px; max-width: 100%;" />
             </RadzenStack>
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-4 rz-my-0">
                 @Translate["Disclaimer: This website is a non-profit project, it means that no profit will ever be made with this website, an exception may be external websites linked from this website."]

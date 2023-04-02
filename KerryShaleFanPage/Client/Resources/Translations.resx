@@ -300,4 +300,460 @@
   <data name="[5] A Century Of Immigration" xml:space="preserve">
     <value>[5] A Century Of Immigration</value>
   </data>
+  <data name="Page {0} of {1} ({2} records)" xml:space="preserve">
+    <value>Page {0} of {1} ({2} records)</value>
+  </data>
+  <data name="records per page" xml:space="preserve">
+    <value>records per page</value>
+  </data>
+  <data name="Timestamp (UTC)" xml:space="preserve">
+    <value>Timestamp (UTC)</value>
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Logger" xml:space="preserve">
+    <value>Logger</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Exception" xml:space="preserve">
+    <value>Exception</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="Critical count" xml:space="preserve">
+    <value>Critical count</value>
+  </data>
+  <data name="Error count" xml:space="preserve">
+    <value>Error count</value>
+  </data>
+  <data name="Warning count" xml:space="preserve">
+    <value>Warning count</value>
+  </data>
+  <data name="Info count" xml:space="preserve">
+    <value>Info count</value>
+  </data>
+  <data name="Debug count" xml:space="preserve">
+    <value>Debug count</value>
+  </data>
+  <data name="None count" xml:space="preserve">
+    <value>None count</value>
+  </data>
+  <data name="Loading..." xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Video Reel at IMDb" xml:space="preserve">
+    <value>Video Reel at IMDb</value>
+  </data>
+  <data name="Some funny stories when I had worked for the film business:" xml:space="preserve">
+    <value>Some funny stories when I had worked for the film business:</value>
+  </data>
+  <data name="One day I should install a computer in one building of the Babelsberg studios and had to walk to the server room." xml:space="preserve">
+    <value>One day I should install a computer in one building of the Babelsberg studios and had to walk to the server room.</value>
+  </data>
+  <data name="While walking to the server room, someone from the custome department called me back." xml:space="preserve">
+    <value>While walking to the server room, someone from the custome department called me back.</value>
+  </data>
+  <data name="I was wondering about it, but I was that kind and walked back to her." xml:space="preserve">
+    <value>I was wondering about it, but I was that kind and walked back to her.</value>
+  </data>
+  <data name="Then she asked me if I do not want to change my clothes." xml:space="preserve">
+    <value>Then she asked me if I do not want to change my clothes.</value>
+  </data>
+  <data name="I asked her what is wrong with my current clothes." xml:space="preserve">
+    <value>I asked her what is wrong with my current clothes.</value>
+  </data>
+  <data name="We found out then that she had confused me with an actress or extra for the series, we had to laugh then and I continued my walk to the server room." xml:space="preserve">
+    <value>We found out then that she had confused me with an actress or extra for the series, we had to laugh then and I continued my walk to the server room.</value>
+  </data>
+  <data name="At another day, I had again installed a computer in the same building of the Babelsberg studios, and when I left the building, two teenagers (maybe 11 or 12 years old) were waiting in front of the building." xml:space="preserve">
+    <value>At another day, I had again installed a computer in the same building of the Babelsberg studios, and when I left the building, two teenagers (maybe 11 or 12 years old) were waiting in front of the building.</value>
+  </data>
+  <data name="They stared at me and so I looked back at them." xml:space="preserve">
+    <value>They stared at me and so I looked back at them.</value>
+  </data>
+  <data name="Then they asked me if I would be a star and if I can give them an autograph." xml:space="preserve">
+    <value>Then they asked me if I would be a star and if I can give them an autograph.</value>
+  </data>
+  <data name="It was the sweetest situation I have witnessed in my life so far." xml:space="preserve">
+    <value>It was the sweetest situation I have witnessed in my life so far.</value>
+  </data>
+  <data name="I told them that I cannot give them an autograph and that I would only sign the papers of the parcel service (if they bring us new computers)." xml:space="preserve">
+    <value>I told them that I cannot give them an autograph and that I would only sign the papers of the parcel service (if they bring us new computers).</value>
+  </data>
+  <data name="I then explained them that I am not a star and that they will have to continue to wait." xml:space="preserve">
+    <value>I then explained them that I am not a star and that they will have to continue to wait.</value>
+  </data>
+  <data name="Unfortunately, I could not let them in the bulding, but it was really sweet." xml:space="preserve">
+    <value>Unfortunately, I could not let them in the bulding, but it was really sweet.</value>
+  </data>
+  <data name="It was the first time someone thought I would be a star, it was also the last time that someone ever thought I would be a star." xml:space="preserve">
+    <value>It was the first time someone thought I would be a star, it was also the last time that someone ever thought I would be a star.</value>
+  </data>
+  <data name="And now the best part: When everyone was on company holiday, I should move some computers." xml:space="preserve">
+    <value>And now the best part: When everyone was on company holiday, I should move some computers.</value>
+  </data>
+  <data name="While doing that, I forgot to disconnect the power cable of one monitor." xml:space="preserve">
+    <value>While doing that, I forgot to disconnect the power cable of one monitor.</value>
+  </data>
+  <data name="The power cable was still connected to the monitor and the power socket." xml:space="preserve">
+    <value>The power cable was still connected to the monitor and the power socket.</value>
+  </data>
+  <data name="And now it starts: I tried to carry the monitor away, but the connection to the power socket was that strong that I stopped unvoluntarily and tilted forward." xml:space="preserve">
+    <value>And now it starts: I tried to carry the monitor away, but the connection to the power socket was that strong that I stopped unvoluntarily and tilted forward.</value>
+  </data>
+  <data name="I was supposed to fall, but the monitor connected to the power socket kept me from falling." xml:space="preserve">
+    <value>I was supposed to fall, but the monitor connected to the power socket kept me from falling.</value>
+  </data>
+  <data name="I stood in a ca. 30 degrees angle and did not know if I was allowed to move a bit." xml:space="preserve">
+    <value>I stood in a ca. 30 degrees angle and did not know if I was allowed to move a bit.</value>
+  </data>
+  <data name="I was not holding the monitor anymore, the monitor was holding me now." xml:space="preserve">
+    <value>I was not holding the monitor anymore, the monitor was holding me now.</value>
+  </data>
+  <data name="I stood there like that for several minutes and waited for help." xml:space="preserve">
+    <value>I stood there like that for several minutes and waited for help.</value>
+  </data>
+  <data name="But since the everyone was on company holiday, I was alone." xml:space="preserve">
+    <value>But since the everyone was on company holiday, I was alone.</value>
+  </data>
+  <data name="I decided then to move one foot forwards slowly." xml:space="preserve">
+    <value>I decided then to move one foot forwards slowly.</value>
+  </data>
+  <data name="But that was too much for the power cable then." xml:space="preserve">
+    <value>But that was too much for the power cable then.</value>
+  </data>
+  <data name="The power cable disconnected itself from the power socket and I fell with the monitor." xml:space="preserve">
+    <value>The power cable disconnected itself from the power socket and I fell with the monitor.</value>
+  </data>
+  <data name="The monitor was damaged a bit, it was used in our helpdesk room later." xml:space="preserve">
+    <value>The monitor was damaged a bit, it was used in our helpdesk room later.</value>
+  </data>
+  <data name="I can only imagine how that must have looked." xml:space="preserve">
+    <value>I can only imagine how that must have looked.</value>
+  </data>
+  <data name="I am a big Brent Spiner, Kerry Shale, Hogan's Heroes, Granada Holmes, Frogwares' Sherlock Holmes, ERA and Enya fan." xml:space="preserve">
+    <value>I am a big Brent Spiner, Kerry Shale, Hogan's Heroes, Granada Holmes, Frogwares' Sherlock Holmes, ERA and Enya fan.</value>
+  </data>
+  <data name="I am a fan of Hogan's Heros since" xml:space="preserve">
+    <value>I am a fan of Hogan's Heros since</value>
+  </data>
+  <data name="years meanwhile, since I was 21 years old." xml:space="preserve">
+    <value>years meanwhile, since I was 21 years old.</value>
+  </data>
+  <data name="The actor Robert Clary from Hogan's Heroes caused me to have a deeper look into Jewish habits." xml:space="preserve">
+    <value>The actor Robert Clary from Hogan's Heroes caused me to have a deeper look into Jewish habits.</value>
+  </data>
+  <data name="I saw a video series of him once which showed where he had visited the former concentration camp where he was imprisoned once." xml:space="preserve">
+    <value>I saw a video series of him once which showed where he had visited the former concentration camp where he was imprisoned once.</value>
+  </data>
+  <data name="He started to cry when he was standing in one of the Holocaust trains again which was still parked there, it broke my heart." xml:space="preserve">
+    <value>He started to cry when he was standing in one of the Holocaust trains again which was still parked there, it broke my heart.</value>
+  </data>
+  <data name="Too sad that the video series is not available on YouTube anymore, it had such an important message for the world." xml:space="preserve">
+    <value>Too sad that the video series is not available on YouTube anymore, it had such an important message for the world.</value>
+  </data>
+  <data name="During my study we had a class called intercultural communication where I had visited an Evangelic Church, a Synagogue and a Mosque." xml:space="preserve">
+    <value>During my study we had a class called "intercultural communication" where I had visited an Evangelic Church, a Synagogue and a Mosque.</value>
+  </data>
+  <data name="All of them were interesting and I also liked it when the Evangelic Church made jokes about the Catholic Church which my Catholic classmates did not find that funny." xml:space="preserve">
+    <value>All of them were interesting and I also liked it when the Evangelic Church made jokes about the Catholic Church which my Catholic classmates did not find that funny.</value>
+  </data>
+  <data name="I even saw a Holy Torah directly in front of me." xml:space="preserve">
+    <value>I even saw a Holy Torah directly in front of me.</value>
+  </data>
+  <data name="We were not allowed to touch the Holy Torah, we had to use a silver stick which had a small hand with a pointing finger at its tip." xml:space="preserve">
+    <value>We were not allowed to touch the Holy Torah, we had to use a silver stick which had a small hand with a pointing finger at its tip.</value>
+  </data>
+  <data name="After that I had joined 3 Jewish prayers in the Chabad Synagogue in Berlin, you need to turn around during the prayer." xml:space="preserve">
+    <value>After that I had joined 3 Jewish prayers in the Chabad Synagogue in Berlin, you need to turn around during the prayer.</value>
+  </data>
+  <data name="I had worked for the Centrum Judaicum / New Synagogue in Berlin for some months voluntarily and helped to restore the data of victims of the Holocaust." xml:space="preserve">
+    <value>I had worked for the Centrum Judaicum / New Synagogue in Berlin for some months voluntarily and helped to restore the data of victims of the Holocaust.</value>
+  </data>
+  <data name="I have to admit that I had even played with the thought to become a member of the Jewish community, but I stopped with the idea when I learnt that it would not be that easy as joining the Evangelic Church where you can simply buy your membership." xml:space="preserve">
+    <value>I have to admit that I had even played with the thought to become a member of the Jewish community, but I stopped with the idea when I learnt that it would not be that easy as joining the Evangelic Church where you can simply buy your membership.</value>
+  </data>
+  <data name="Later I came away from that idea when I witnessed some Facebook wars between religious groups." xml:space="preserve">
+    <value>Later I came away from that idea when I witnessed some Facebook wars between religious groups.</value>
+  </data>
+  <data name="Since that I am happy that I am an atheist, a very proud atheist, but I still feel close to the Jewish community - it seems to be the one with the most sane people if you ask me, followed by people who are part of the Evangelic Church community." xml:space="preserve">
+    <value>Since that I am happy that I am an atheist, a very proud atheist, but I still feel close to the Jewish community - it seems to be the one with the most sane people if you ask me, followed by people who are part of the Evangelic Church community.</value>
+  </data>
+  <data name="I learnt much later that Brent Spiner and Kerry Shale also have Jewish roots." xml:space="preserve">
+    <value>I learnt much later that Brent Spiner and Kerry Shale also have Jewish roots.</value>
+  </data>
+  <data name="I only noticed it when they started to talk about it, when I was already a fan of them (otherwise you would not search for it)." xml:space="preserve">
+    <value>I only noticed it when they started to talk about it, when I was already a fan of them (otherwise you would not search for it).</value>
+  </data>
+  <data name="I find it fantastic that they are that open and I wish that everyone could be so open-minded." xml:space="preserve">
+    <value>I find it fantastic that they are that open and I wish that everyone could be so open-minded.</value>
+  </data>
+  <data name="I had learnt some Yiddish words from Brent Spiner and now also the first Yiddish words from Kerry Shale." xml:space="preserve">
+    <value>I had learnt some Yiddish words from Brent Spiner and now also the first Yiddish words from Kerry Shale.</value>
+  </data>
+  <data name="I did not know about the shtetl (Yiddish, from German: Städtle, English: small town) until Kerry Shale had mentioned it." xml:space="preserve">
+    <value>I did not know about the shtetl (Yiddish, from German: Städtle, English: small town) until Kerry Shale had mentioned it.</value>
+  </data>
+  <data name="When googling about it, I found out that all shtetl were destroyed by German Nazis between 1939 and 1945." xml:space="preserve">
+    <value>When googling about it, I found out that all shtetl were destroyed by German Nazis between 1939 and 1945.</value>
+  </data>
+  <data name="Well, it would surprise me if we Germans would have done something good in that context." xml:space="preserve">
+    <value>Well, it would surprise me if we Germans would have done something good in that context.</value>
+  </data>
+  <data name="Kerry Shale said that his father saw himself as a very fiercely Canadian." xml:space="preserve">
+    <value>Kerry Shale said that his father saw himself as a very fiercely Canadian.</value>
+  </data>
+  <data name="I can imagine that well, you only need to look at the Jewish History in Europe between 1800 and 1945, then you will know why." xml:space="preserve">
+    <value>I can imagine that well, you only need to look at the Jewish History in Europe between 1800 and 1945, then you will know why.</value>
+  </data>
+  <data name="I found this video interesting about such shtetl he had mentioned:" xml:space="preserve">
+    <value>I found this video interesting about such shtetl he had mentioned:</value>
+  </data>
+  <data name="Shtetl-YouTube-Link" xml:space="preserve">
+    <value>https://www.youtube.com/watch?v=JUzXk5poX78</value>
+  </data>
+  <data name="What Life in the Shtetl Was Like" xml:space="preserve">
+    <value>What Life in the Shtetl Was Like</value>
+  </data>
+  <data name="It is also interesting that Kerry Shale and Brent Spiner have something in common when it is about the immigration to North America, see:" xml:space="preserve">
+    <value>It is also interesting that Kerry Shale and Brent Spiner have something in common when it is about the immigration to North America, see:</value>
+  </data>
+  <data name="Brent Spiner Biography" xml:space="preserve">
+    <value>Brent Spiner Biography</value>
+  </data>
+  <data name="A small excursion (you will learn that history at the Jewish Museum in Berlin as well):" xml:space="preserve">
+    <value>A small excursion (you will learn that history at the Jewish Museum in Berlin as well):</value>
+  </data>
+  <data name="The discrimination against the Jewish people has a very long history, it started already when Moses saw G-d the first time, since the Ten Commandments." xml:space="preserve">
+    <value>The discrimination against the Jewish people has a very long history, it started already when Moses saw G-d the first time, since the Ten Commandments.</value>
+  </data>
+  <data name="In the Middle Ages, the Jewish people had to wear a yellow ring which already reminds the yellow star they had to wear in Nazi Germany." xml:space="preserve">
+    <value>In the Middle Ages, the Jewish people had to wear a yellow ring which already reminds the yellow star they had to wear in Nazi Germany.</value>
+  </data>
+  <data name="Jewish people were made responsible for the Black Death." xml:space="preserve">
+    <value>Jewish people were made responsible for the Black Death.</value>
+  </data>
+  <data name="Jewish people were only allowed to do specific jobs for many centuries." xml:space="preserve">
+    <value>Jewish people were only allowed to do specific jobs for many centuries.</value>
+  </data>
+  <data name="Jewish people were not even allowed to enter specific cities or were put in so-called ghettos later." xml:space="preserve">
+    <value>Jewish people were not even allowed to enter specific cities or were put in so-called ghettos later.</value>
+  </data>
+  <data name="Then there were also pogroms where Jewish people got killed." xml:space="preserve">
+    <value>Then there were also pogroms where Jewish people got killed.</value>
+  </data>
+  <data name="Around 1800, the discrimination against the Jewish people became that bad that many of the Jewish people even converted to the Christian religion and even changed their whole identity." xml:space="preserve">
+    <value>Around 1800, the discrimination against the Jewish people became that bad that many of the Jewish people even converted to the Christian religion and even changed their whole identity.</value>
+  </data>
+  <data name="A very famous example is Heinrich Heine (German poet)." xml:space="preserve">
+    <value>A very famous example is Heinrich Heine (German poet).</value>
+  </data>
+  <data name="But it did not help, the discrimination against the Jewish people increased, they were not allowed to use the same locations like e.g. all other Germans did." xml:space="preserve">
+    <value>But it did not help, the discrimination against the Jewish people increased, they were not allowed to use the same locations like e.g. all other Germans did.</value>
+  </data>
+  <data name="It became that bad with time that many Jewish people started to leave Europe, they immigrated to North America in the main." xml:space="preserve">
+    <value>It became that bad with time that many Jewish people started to leave Europe, they immigrated to North America in the main.</value>
+  </data>
+  <data name="The discrimination against the Jewish people found its sad height in the Holocaust, the genocide of the European Jewish people." xml:space="preserve">
+    <value>The discrimination against the Jewish people found its sad height in the Holocaust, the genocide of the European Jewish people.</value>
+  </data>
+  <data name="You wonder why there are so many Jewish people in financial business and film business?" xml:space="preserve">
+    <value>You wonder why there are so many Jewish people in financial business and film business?</value>
+  </data>
+  <data name="That is the result of the discrimination against the Jewish people, because they were not allowed to have another job for centuries." xml:space="preserve">
+    <value>That is the result of the discrimination against the Jewish people, because they were not allowed to have another job for centuries.</value>
+  </data>
+  <data name="And blaming them for working in those two businesses now is -to be honest- the biggest bullshit ever!" xml:space="preserve">
+    <value>And blaming them for working in those two businesses now is -to be honest- the biggest bullshit ever!</value>
+  </data>
+  <data name="Right, some are very successful in that business, and we should be happy about it." xml:space="preserve">
+    <value>Right, some are very successful in that business, and we should be happy about it.</value>
+  </data>
+  <data name="Everyone is free to work in the financial business or film business." xml:space="preserve">
+    <value>Everyone is free to work in the financial business or film business.</value>
+  </data>
+  <data name="There is no need to be jealous." xml:space="preserve">
+    <value>There is no need to be jealous.</value>
+  </data>
+  <data name="I think that more than 3000 years of the persecution should be enough, it needs to stop now." xml:space="preserve">
+    <value>I think that more than 3000 years of the persecution should be enough, it needs to stop now.</value>
+  </data>
+  <data name="The Holocaust left very deep scars which are still visible today." xml:space="preserve">
+    <value>The Holocaust left very deep scars which are still visible today.</value>
+  </data>
+  <data name="The Holocaust cannot be undone, and there is no excuse for it, and we must do everything that such a history does not repeat." xml:space="preserve">
+    <value>The Holocaust cannot be undone, and there is no excuse for it, and we must do everything that such a history does not repeat.</value>
+  </data>
+  <data name="By the way, it takes an enormous effort to create one Holy Torah, every Holy Torah is handcrafted." xml:space="preserve">
+    <value>By the way, it takes an enormous effort to create one Holy Torah, every Holy Torah is handcrafted.</value>
+  </data>
+  <data name="When Nazis had destroyed the Synagogues, the Torahs inside those Synagogues were desecrated." xml:space="preserve">
+    <value>When Nazis had destroyed the Synagogues, the Torahs inside those Synagogues were desecrated.</value>
+  </data>
+  <data name="Each of those Torahs was buried in an own grave." xml:space="preserve">
+    <value>Each of those Torahs was buried in an own grave.</value>
+  </data>
+  <data name="Even today, every Torah which has completed its service is buried in an own grave." xml:space="preserve">
+    <value>Even today, every Torah which has completed its service is buried in an own grave.</value>
+  </data>
+  <data name="This video had a big impact on me:" xml:space="preserve">
+    <value>This video had a big impact on me:</value>
+  </data>
+  <data name="Children in the Warsaw Ghetto" xml:space="preserve">
+    <value>Children in the Warsaw Ghetto</value>
+  </data>
+  <data name="Here is another video from" xml:space="preserve">
+    <value>Here is another video from</value>
+  </data>
+  <data name="So, please, if you deal with me..." xml:space="preserve">
+    <value>So, please, if you deal with me...</value>
+  </data>
+  <data name="Please know that I do get a real bad skin rush if I see any anti-Jewish (aka antisemitic) comments somewhere." xml:space="preserve">
+    <value>Please know that I do get a real bad skin rush if I see any anti-Jewish (aka antisemitic) comments somewhere.</value>
+  </data>
+  <data name="And if you do not want to be stoned by me, please stay away from me with anti-Jewish comments or jokes, hate speech, racism and homophobia." xml:space="preserve">
+    <value>And if you do not want to be stoned by me, please stay away from me with anti-Jewish comments or jokes, hate speech, racism and homophobia.</value>
+  </data>
+  <data name="If a Jewish person is doing jokes about Jewish things, it will be another thing - Jewish people are the only ones who are allowed to do that." xml:space="preserve">
+    <value>If a Jewish person is doing jokes about Jewish things, it will be another thing - Jewish people are the only ones who are allowed to do that.</value>
+  </data>
+  <data name="/img/heinrich-heine-quote.png" xml:space="preserve">
+    <value>/img/heinrich-heine-quote.png</value>
+  </data>
+  <data name="/img/edmund-burke-quote.jpg" xml:space="preserve">
+    <value>/img/edmund-burke-quote.jpg</value>
+  </data>
+  <data name="Disclaimer: This website is a non-profit project, it means that no profit will ever be made with this website, an exception may be external websites linked from this website." xml:space="preserve">
+    <value>Disclaimer: This website is a non-profit project, it means that no profit will ever be made with this website, an exception may be external websites linked from this website.</value>
+  </data>
+  <data name="The website does not collect any personal information about the visitor of this website." xml:space="preserve">
+    <value>The website does not collect any personal information about the visitor of this website.</value>
+  </data>
+  <data name="This website is part of jweschenfelder.de (German)." xml:space="preserve">
+    <value>This website is part of jweschenfelder.de (German).</value>
+  </data>
+  <data name="The website jweschenfelder.de is hosted in another way than this website and may collect data about the visitor in opposite to this fan page." xml:space="preserve">
+    <value>The website jweschenfelder.de is hosted in another way than this website and may collect data about the visitor in opposite to this fan page.</value>
+  </data>
+  <data name="On this website, I provide a more in-depth overview regarding to Kerry Shale's private life because it occurs to me that it does get too little credit elsewhere." xml:space="preserve">
+    <value>On this website, I provide a more in-depth overview regarding to Kerry Shale's private life because it occurs to me that it does get too little credit elsewhere.</value>
+  </data>
+  <data name="In opposite to that, his work is described in every detail on other websites." xml:space="preserve">
+    <value>In opposite to that, his work is described in every detail on other websites.</value>
+  </data>
+  <data name="Next podcast episode probably available on" xml:space="preserve">
+    <value>Next podcast episode probably available on</value>
+  </data>
+  <data name="New podcast episode available, see below!" xml:space="preserve">
+    <value>New podcast episode available, see below!</value>
+  </data>
+  <data name="Watch The Sandman on" xml:space="preserve">
+    <value>Watch The Sandman on</value>
+  </data>
+  <data name="Netflix or visit the" xml:space="preserve">
+    <value>Netflix or visit the</value>
+  </data>
+  <data name="The Sandman Wiki" xml:space="preserve">
+    <value>The Sandman Wiki</value>
+  </data>
+  <data name="CLICK ME!" xml:space="preserve">
+    <value>CLICK ME!</value>
+  </data>
+  <data name="Please select:" xml:space="preserve">
+    <value>Please select:</value>
+  </data>
+  <data name="Hear the latest podcast episode" xml:space="preserve">
+    <value>Hear the latest podcast episode</value>
+  </data>
+  <data name="Next episode probably available" xml:space="preserve">
+    <value>Next episode probably available</value>
+  </data>
+  <data name="on" xml:space="preserve">
+    <value>on</value>
+  </data>
+  <data name="Play Sherlock Holmes" xml:space="preserve">
+    <value>Play Sherlock Holmes</value>
+  </data>
+  <data name="Official website of Kerry Shale" xml:space="preserve">
+    <value>Official website of Kerry Shale</value>
+  </data>
+  <data name="and the website of his agency" xml:space="preserve">
+    <value>and the website of his agency</value>
+  </data>
+  <data name="Film and Audio Reels by Kerry Shale" xml:space="preserve">
+    <value>Film and Audio Reels by Kerry Shale</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Current UTC time" xml:space="preserve">
+    <value>Current UTC time</value>
+  </data>
+  <data name="E-mail address" xml:space="preserve">
+    <value>E-mail address</value>
+  </data>
+  <data name="E-mail address is required" xml:space="preserve">
+    <value>E-mail address is required</value>
+  </data>
+  <data name="Full name" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="I may add Wikipedia here later if it has solved its internal issues and if they start being professional (keywords: revert/ban abuse)." xml:space="preserve">
+    <value>I may add Wikipedia here later if it has solved its internal issues and if they start being professional (keywords: revert/ban abuse).</value>
+  </data>
+  <data name="I represent a company" xml:space="preserve">
+    <value>I represent a company</value>
+  </data>
+  <data name="I represent Kerry Shale (e.g. agent)" xml:space="preserve">
+    <value>I represent Kerry Shale (e.g. agent)</value>
+  </data>
+  <data name="Message is required" xml:space="preserve">
+    <value>Message is required</value>
+  </data>
+  <data name="Name is required" xml:space="preserve">
+    <value>Name is required</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="No image available" xml:space="preserve">
+    <value>No image available</value>
+  </data>
+  <data name="Normal request" xml:space="preserve">
+    <value>Normal request</value>
+  </data>
+  <data name="Overview fan pages and fan groups directly connected to this page:" xml:space="preserve">
+    <value>Overview fan pages and fan groups directly connected to this page:</value>
+  </data>
+  <data name="Provide a valid e-mail address" xml:space="preserve">
+    <value>Provide a valid e-mail address</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Subject is required" xml:space="preserve">
+    <value>Subject is required</value>
+  </data>
+  <data name="The e-mail was sent successfully!" xml:space="preserve">
+    <value>The e-mail was sent successfully!</value>
+  </data>
+  <data name="Web services quality" xml:space="preserve">
+    <value>Web services quality</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
 </root>

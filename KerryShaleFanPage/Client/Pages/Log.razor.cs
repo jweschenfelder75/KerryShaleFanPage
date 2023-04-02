@@ -11,7 +11,6 @@ using Radzen;
 using KerryShaleFanPage.Shared.Enums;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
-using System.Globalization;
 
 namespace KerryShaleFanPage.Client.Pages
 {
@@ -34,7 +33,7 @@ namespace KerryShaleFanPage.Client.Pages
 
         private IList<ChartDataItem>? _logChartSeries;
 
-        private Timer _timer;
+        private readonly string _currentCulture = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
 
         private string _utcNow = DateTime.UtcNow.ToString();
 
@@ -60,7 +59,7 @@ namespace KerryShaleFanPage.Client.Pages
 
             SetClockAndReloadLog(null);
 
-            _timer = new Timer(SetClockAndReloadLog, new AutoResetEvent(false), 60000, 60000);
+            var timer = new Timer(SetClockAndReloadLog, new AutoResetEvent(false), 60000, 60000);
         }
 
         private async Task ShowDialogAsync(string title, string message)
@@ -99,7 +98,7 @@ namespace KerryShaleFanPage.Client.Pages
 
         private async void SetClockAndReloadLog(object? stateInfo)
         {
-            _utcNow = (CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToLower() == "de") 
+            _utcNow = (_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) 
                 ? DateTime.UtcNow.ToString("d.M.yyyy H:mm")
                 : DateTime.UtcNow.ToString("M/d/yyyy h:mm tt");
 
