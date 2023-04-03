@@ -1,4 +1,4 @@
-{
+﻿{
     "NewsSettings": {
         "NewsItems": [
             {
@@ -16,6 +16,10 @@
             {
                 "NewsHtmlEn": "'Yentl' actor writes new spin on Jewish classic for BBC Radio 4, more <a href=\"https://www.thejc.com/life-and-culture/all/yentl-actor-writes-new-spin-on-jewish-classic-for-radio-4-2ogx8QNieQFLVt0IOlWYJi\" target=\"_blank\" style=\"color: white;\">here</a>.",
                 "NewsHtmlDe": "'Yentl'-Schauspieler schreibt neue Interpretation des Jüdischen Klassikers für BBC Radio 4, mehr <a href=\"https://www.thejc.com/life-and-culture/all/yentl-actor-writes-new-spin-on-jewish-classic-for-radio-4-2ogx8QNieQFLVt0IOlWYJi\" target=\"_blank\" style=\"color: white;\">hier</a> (in Englisch)."
+            },
+            {
+                "NewsHtmlEn": "Rare TV heads back to Alaska - The Aleutian Islands - coming later this year, more <a href=\"https://www.thejc.com/life-and-culture/all/yentl-actor-writes-new-spin-on-jewish-classic-for-radio-4-2ogx8QNieQFLVt0IOlWYJi\" target=\"_blank\" style=\"color: white;\">here</a>.",
+                "NewsHtmlDe": "Rare TV zurück in Alaska - The Aleutian Islands - Ausstrahlung später in diesem Jahr, mehr <a href=\"https://www.thejc.com/life-and-culture/all/yentl-actor-writes-new-spin-on-jewish-classic-for-radio-4-2ogx8QNieQFLVt0IOlWYJi\" target=\"_blank\" style=\"color: white;\">hier</a> (in Englisch)."
             }
         ]
     }
