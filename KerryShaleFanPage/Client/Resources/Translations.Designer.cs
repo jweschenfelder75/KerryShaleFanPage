@@ -468,10 +468,10 @@ namespace KerryShaleFanPage.Client.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die During my study we had a class called &quot;intercultural communication&quot; where I had visited an Evangelic Church, a Synagogue and a Mosque. ähnelt.
         /// </summary>
-        public static string During_my_study_we_had_a_class_called_intercultural_communication_where_I_had_visited_an_Evangelic_Church__a_Synagogue_and_a_Mosque_ {
+        public static string During_my_study_we_had_a_class_called___intercultural_communication___where_I_had_visited_an_Evangelic_Church__a_Synagogue_and_a_Mosque_ {
             get {
-                return ResourceManager.GetString("During my study we had a class called intercultural communication where I had vis" +
-                        "ited an Evangelic Church, a Synagogue and a Mosque.", resourceCulture);
+                return ResourceManager.GetString("During my study we had a class called \'\'intercultural communication\'\' where I had" +
+                        " visited an Evangelic Church, a Synagogue and a Mosque.", resourceCulture);
             }
         }
         
