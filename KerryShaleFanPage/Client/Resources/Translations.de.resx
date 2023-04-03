@@ -139,7 +139,7 @@
     <value>Kontakt</value>
   </data>
   <data name="Current projects (direct and indirect):" xml:space="preserve">
-    <value>Aktuelle Projekte:</value>
+    <value>Aktuelle Projekte (direkt und indirekt):</value>
   </data>
   <data name="Design with" xml:space="preserve">
     <value>Design mit</value>
@@ -755,5 +755,14 @@
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Willkommen</value>
+  </data>
+  <data name="(updates every minute)" xml:space="preserve">
+    <value>(aktualisiert jede Minute)</value>
+  </data>
+  <data name="Instagram Fan Page (NEW!)" xml:space="preserve">
+    <value>Instagram Fan Page (NEU!)</value>
+  </data>
+  <data name="YouTube channel (NEW!)" xml:space="preserve">
+    <value>YouTube channel (NEU!)</value>
   </data>
 </root>

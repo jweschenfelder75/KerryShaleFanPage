@@ -133,6 +133,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die (updates every minute) ähnelt.
+        /// </summary>
+        public static string _updates_every_minute_ {
+            get {
+                return ResourceManager.GetString("(updates every minute)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die A small excursion (you will learn that history at the Jewish Museum in Berlin as well): ähnelt.
         /// </summary>
         public static string A_small_excursion__you_will_learn_that_history_at_the_Jewish_Museum_in_Berlin_as_well__ {
@@ -1039,6 +1048,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Info_count {
             get {
                 return ResourceManager.GetString("Info count", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Instagram Fan Page (NEW!) ähnelt.
+        /// </summary>
+        public static string Instagram_Fan_Page__NEW__ {
+            get {
+                return ResourceManager.GetString("Instagram Fan Page (NEW!)", resourceCulture);
             }
         }
         
@@ -2058,6 +2076,15 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("You wonder why there are so many Jewish people in financial business and film bus" +
                         "iness?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die YouTube Kanal (NEW!) ähnelt.
+        /// </summary>
+        public static string YouTube_channel__NEW__ {
+            get {
+                return ResourceManager.GetString("YouTube channel (NEW!)", resourceCulture);
             }
         }
     }

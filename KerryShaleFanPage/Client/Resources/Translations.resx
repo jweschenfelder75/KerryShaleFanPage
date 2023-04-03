@@ -756,4 +756,13 @@
   <data name="Welcome" xml:space="preserve">
     <value>Welcome</value>
   </data>
+  <data name="(updates every minute)" xml:space="preserve">
+    <value>(updates every minute)</value>
+  </data>
+  <data name="Instagram Fan Page (NEW!)" xml:space="preserve">
+    <value>Instagram Fan Page (NEW!)</value>
+  </data>
+  <data name="YouTube channel (NEW!)" xml:space="preserve">
+    <value>YouTube Kanal (NEW!)</value>
+  </data>
 </root>

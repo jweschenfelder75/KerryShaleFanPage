@@ -56,14 +56,19 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
                 if (latestPodcastEpisodeDto == null)
                 {
-                    // TODO: Information that there is obviously a problem fetching the latest episode!
+                    _logger.LogInformation("No new podcast episode found (yet).");
                 }
                 else
                 {
+                    _logger.LogInformation($"New episode fetched successfully: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
                     var success = _mailAndSmsService.SendSmsNotification(string.Empty, string.Empty, "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);
-                    if (!success)
+                    if (success)
                     {
-                        // TODO: Information that there is obviously a problem sending the notification!
+                        _logger.LogInformation($"Notification for new podcast episode sent successfully: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
+                    }
+                    else
+                    {
+                        _logger.LogError($"Notification for new podcast episode could not be sent: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
                     }
                 }
 

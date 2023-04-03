@@ -101,8 +101,8 @@ namespace KerryShaleFanPage.Client.Pages
         private async void SetClockAndReloadLog(object? stateInfo)
         {
             _utcNow = (_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) 
-                ? DateTime.UtcNow.ToString("d.M.yyyy H:mm")
-                : DateTime.UtcNow.ToString("M/d/yyyy h:mm tt");
+                ? DateTime.UtcNow.ToString("dd.MM.yyyy HH:mm")
+                : DateTime.UtcNow.ToString("MM/dd/yyyy hh:mm tt");
 
             var data = await Http.GetFromJsonAsync<LogEntryDto[]>("webapi/Log");
             _logEntries = data?.ToList();

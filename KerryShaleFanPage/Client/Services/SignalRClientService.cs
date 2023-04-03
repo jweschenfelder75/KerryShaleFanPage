@@ -101,7 +101,7 @@ namespace KerryShaleFanPage.Client.Services
 
             _hubConnection.Closed += (connectionId) =>
             {
-                Console.WriteLine("Hub connection closed, please try a refresh or contact a web administrator.");
+                Console.WriteLine("Hub connection closed, please wait until all tries to reestablish the Hub connection have failed or contact a web administrator.");
                 ServerStatusEvent?.Invoke(this, new ServerStatusEventArgs() { ServerStatus = ServerStatusEnum.Critical });
                 return Task.CompletedTask;
             };
