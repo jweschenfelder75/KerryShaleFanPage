@@ -133,6 +133,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die @isitrollingpod on Twitter: ähnelt.
+        /// </summary>
+        public static string _isitrollingpod_on_Twitter_ {
+            get {
+                return ResourceManager.GetString("@isitrollingpod on Twitter:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die (updates every minute) ähnelt.
         /// </summary>
         public static string _updates_every_minute_ {
@@ -170,6 +179,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Actors usually have a very good memory (they need it for their daily job) and they will remember you. ähnelt.
+        /// </summary>
+        public static string Actors_usually_have_a_very_good_memory__they_need_it_for_their_daily_job__and_they_will_remember_you_ {
+            get {
+                return ResourceManager.GetString("Actors usually have a very good memory (they need it for their daily job) and the" +
+                        "y will remember you.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die After that I had joined 3 Jewish prayers in the Chabad Synagogue in Berlin, you need to turn around during the prayer. ähnelt.
         /// </summary>
         public static string After_that_I_had_joined_3_Jewish_prayers_in_the_Chabad_Synagogue_in_Berlin__you_need_to_turn_around_during_the_prayer_ {
@@ -197,6 +216,16 @@ namespace KerryShaleFanPage.Client.Resources {
                 return ResourceManager.GetString("All of them were interesting and I also liked it when the Evangelic Church made j" +
                         "okes about the Catholic Church which my Catholic classmates did not find that fu" +
                         "nny.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Although Kerry Shale seems to be tech-savvy (he has also someone who helps him on that matter), he prefers paper. ähnelt.
+        /// </summary>
+        public static string Although_Kerry_Shale_seems_to_be_tech_savvy__he_has_also_someone_who_helps_him_on_that_matter___he_prefers_paper_ {
+            get {
+                return ResourceManager.GetString("Although Kerry Shale seems to be tech-savvy (he has also someone who helps him on" +
+                        " that matter), he prefers paper.", resourceCulture);
             }
         }
         
@@ -230,6 +259,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die And nobody has the intention to disappoint any fans. ähnelt.
+        /// </summary>
+        public static string And_nobody_has_the_intention_to_disappoint_any_fans_ {
+            get {
+                return ResourceManager.GetString("And nobody has the intention to disappoint any fans.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die And now it starts: I tried to carry the monitor away, but the connection to the power socket was that strong that I stopped unvoluntarily and tilted forward. ähnelt.
         /// </summary>
         public static string And_now_it_starts__I_tried_to_carry_the_monitor_away__but_the_connection_to_the_power_socket_was_that_strong_that_I_stopped_unvoluntarily_and_tilted_forward_ {
@@ -259,6 +297,24 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die And yes, his wife has also an online profile which she uses for her work. ähnelt.
+        /// </summary>
+        public static string And_yes__his_wife_has_also_an_online_profile_which_she_uses_for_her_work_ {
+            get {
+                return ResourceManager.GetString("And yes, his wife has also an online profile which she uses for her work.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die And you know, spammers may get blocked. ähnelt.
+        /// </summary>
+        public static string And_you_know__spammers_may_get_blocked_ {
+            get {
+                return ResourceManager.GetString("And you know, spammers may get blocked.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Around 1800, the discrimination against the Jewish people became that bad that many of the Jewish people even converted to the Christian religion and even changed their whole identity. ähnelt.
         /// </summary>
         public static string Around_1800__the_discrimination_against_the_Jewish_people_became_that_bad_that_many_of_the_Jewish_people_even_converted_to_the_Christian_religion_and_even_changed_their_whole_identity_ {
@@ -281,6 +337,26 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die At some point they will list you as a psychopath, put you on their personal blacklist, and you should ask yourself if you really want that. ähnelt.
+        /// </summary>
+        public static string At_some_point_they_will_list_you_as_a_psychopath__put_you_on_their_personal_blacklist__and_you_should_ask_yourself_if_you_really_want_that_ {
+            get {
+                return ResourceManager.GetString("At some point they will list you as a psychopath, put you on their personal black" +
+                        "list, and you should ask yourself if you really want that.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die At the bottom of this page you can read how you can contact Kerry Shale in the official way. ähnelt.
+        /// </summary>
+        public static string At_the_bottom_of_this_page_you_can_read_how_you_can_contact_Kerry_Shale_in_the_official_way_ {
+            get {
+                return ResourceManager.GetString("At the bottom of this page you can read how you can contact Kerry Shale in the of" +
+                        "ficial way.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Back ähnelt.
         /// </summary>
         public static string Back {
@@ -296,6 +372,35 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("Because I have thaught English myself in the main, my English may appear a bit me" +
                         "ssed up, I will rather stick to the American English.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Before you have only the slight idea to follow them, you should know the following rules beforehand before you become a highly disappointed fan later. ähnelt.
+        /// </summary>
+        public static string Before_you_have_only_the_slight_idea_to_follow_them__you_should_know_the_following_rules_beforehand_before_you_become_a_highly_disappointed_fan_later_ {
+            get {
+                return ResourceManager.GetString("Before you have only the slight idea to follow them, you should know the followin" +
+                        "g rules beforehand before you become a highly disappointed fan later.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Before you send him a letter, please verify that Sainou&apos;s postal address mentioned at ähnelt.
+        /// </summary>
+        public static string Before_you_send_him_a_letter__please_verify_that_Sainou_s_postal_address_mentioned_at {
+            get {
+                return ResourceManager.GetString("Before you send him a letter, please verify that Sainou\'s postal address mentione" +
+                        "d at", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Better follow that podcast on Apple, Spotify, Audible, etc instead. ähnelt.
+        /// </summary>
+        public static string Better_follow_that_podcast_on_Apple__Spotify__Audible__etc_instead_ {
+            get {
+                return ResourceManager.GetString("Better follow that podcast on Apple, Spotify, Audible, etc instead.", resourceCulture);
             }
         }
         
@@ -323,6 +428,16 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Brent_Spiner_Biography {
             get {
                 return ResourceManager.GetString("Brent Spiner Biography", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die But comments/messages about Kerry Shale should be avoided, except the post/tweet is explicitly about Kerry Shale. ähnelt.
+        /// </summary>
+        public static string But_comments_messages_about_Kerry_Shale_should_be_avoided__except_the_post_tweet_is_explicitly_about_Kerry_Shale_ {
+            get {
+                return ResourceManager.GetString("But comments/messages about Kerry Shale should be avoided, except the post/tweet " +
+                        "is explicitly about Kerry Shale.", resourceCulture);
             }
         }
         
@@ -466,6 +581,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Do not -under no circumstances- try to work around it, unless you want to be on Kerry Shale&apos;s or someone else&apos;s enemies list. ähnelt.
+        /// </summary>
+        public static string Do_not__under_no_circumstances__try_to_work_around_it__unless_you_want_to_be_on_Kerry_Shale_s_or_someone_else_s_enemies_list_ {
+            get {
+                return ResourceManager.GetString("Do not -under no circumstances- try to work around it, unless you want to be on K" +
+                        "erry Shale\'s or someone else\'s enemies list.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die During my study we had a class called &quot;intercultural communication&quot; where I had visited an Evangelic Church, a Synagogue and a Mosque. ähnelt.
         /// </summary>
         public static string During_my_study_we_had_a_class_called___intercultural_communication___where_I_had_visited_an_Evangelic_Church__a_Synagogue_and_a_Mosque_ {
@@ -499,6 +624,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Each_of_those_Torahs_was_buried_in_an_own_grave_ {
             get {
                 return ResourceManager.GetString("Each of those Torahs was buried in an own grave.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Enjoy! ähnelt.
+        /// </summary>
+        public static string Enjoy_ {
+            get {
+                return ResourceManager.GetString("Enjoy!", resourceCulture);
             }
         }
         
@@ -540,11 +674,38 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Fan comments are usually no problem at all, you can spam the fan page all day. ähnelt.
+        /// </summary>
+        public static string Fan_comments_are_usually_no_problem_at_all__you_can_spam_the_fan_page_all_day_ {
+            get {
+                return ResourceManager.GetString("Fan comments are usually no problem at all, you can spam the fan page all day.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die FanBiz ähnelt.
+        /// </summary>
+        public static string FanBiz {
+            get {
+                return ResourceManager.GetString("FanBiz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Film and Audio Reels by Kerry Shale ähnelt.
         /// </summary>
         public static string Film_and_Audio_Reels_by_Kerry_Shale {
             get {
                 return ResourceManager.GetString("Film and Audio Reels by Kerry Shale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die For information on postage prices to receive a letter from UK click ähnelt.
+        /// </summary>
+        public static string For_information_on_postage_prices_to_receive_a_letter_from_UK_click {
+            get {
+                return ResourceManager.GetString("For information on postage prices to receive a letter from UK click", resourceCulture);
             }
         }
         
@@ -567,11 +728,56 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die GREEN FLAGS (chances getting blocked are less than 5%): ähnelt.
+        /// </summary>
+        public static string GREEN_FLAGS__chances_getting_blocked_are_less_than_5___ {
+            get {
+                return ResourceManager.GetString("GREEN FLAGS (chances getting blocked are less than 5%):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die GREEN FLAGS (chances getting blocked are nearly 0%): ähnelt.
+        /// </summary>
+        public static string GREEN_FLAGS__chances_getting_blocked_are_nearly_0___ {
+            get {
+                return ResourceManager.GetString("GREEN FLAGS (chances getting blocked are nearly 0%):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die He can press the block button very fast. ähnelt.
+        /// </summary>
+        public static string He_can_press_the_block_button_very_fast_ {
+            get {
+                return ResourceManager.GetString("He can press the block button very fast.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die He had had a carefree childhood in Winnipeg, Manitoba [4]. ähnelt.
         /// </summary>
         public static string He_had_had_a_carefree_childhood_in_Winnipeg__Manitoba__4__ {
             get {
                 return ResourceManager.GetString("He had had a carefree childhood in Winnipeg, Manitoba [4].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die He has very strict content moderation activated on YouTube. ähnelt.
+        /// </summary>
+        public static string He_has_very_strict_content_moderation_activated_on_YouTube_ {
+            get {
+                return ResourceManager.GetString("He has very strict content moderation activated on YouTube.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die He is also an actor and he has invested a lot of time and energy in the podcast. ähnelt.
+        /// </summary>
+        public static string He_is_also_an_actor_and_he_has_invested_a_lot_of_time_and_energy_in_the_podcast_ {
+            get {
+                return ResourceManager.GetString("He is also an actor and he has invested a lot of time and energy in the podcast.", resourceCulture);
             }
         }
         
@@ -591,6 +797,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Hear_the_latest_podcast_episode {
             get {
                 return ResourceManager.GetString("Hear the latest podcast episode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die here ähnelt.
+        /// </summary>
+        public static string here {
+            get {
+                return ResourceManager.GetString("here", resourceCulture);
             }
         }
         
@@ -633,11 +848,29 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die His wife&apos;s profile: ähnelt.
+        /// </summary>
+        public static string His_wife_s_profile_ {
+            get {
+                return ResourceManager.GetString("His wife\'s profile:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Home ähnelt.
         /// </summary>
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die How to get in touch with Kerry Shale? ähnelt.
+        /// </summary>
+        public static string How_to_get_in_touch_with_Kerry_Shale_ {
+            get {
+                return ResourceManager.GetString("How to get in touch with Kerry Shale?", resourceCulture);
             }
         }
         
@@ -928,6 +1161,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die I think he simply did not find the time to care for it anymore because he is very busy. ähnelt.
+        /// </summary>
+        public static string I_think_he_simply_did_not_find_the_time_to_care_for_it_anymore_because_he_is_very_busy_ {
+            get {
+                return ResourceManager.GetString("I think he simply did not find the time to care for it anymore because he is very" +
+                        " busy.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die I think that more than 3000 years of the persecution should be enough, it needs to stop now. ähnelt.
         /// </summary>
         public static string I_think_that_more_than_3000_years_of_the_persecution_should_be_enough__it_needs_to_stop_now_ {
@@ -1014,12 +1257,80 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If it is obvious that you are a Kerry Shale fan, you will be blocked. ähnelt.
+        /// </summary>
+        public static string If_it_is_obvious_that_you_are_a_Kerry_Shale_fan__you_will_be_blocked_ {
+            get {
+                return ResourceManager.GetString("If it is obvious that you are a Kerry Shale fan, you will be blocked.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you do not live in UK, you can purchase your British stamps ähnelt.
+        /// </summary>
+        public static string If_you_do_not_live_in_UK__you_can_purchase_your_British_stamps {
+            get {
+                return ResourceManager.GetString("If you do not live in UK, you can purchase your British stamps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you got blocked, you should be strong enough to accept it, it is not Kerry Shale&apos;s or anyone&apos;s else fault, you were warned hereby. ähnelt.
+        /// </summary>
+        public static string If_you_got_blocked__you_should_be_strong_enough_to_accept_it__it_is_not_Kerry_Shale_s_or_anyone_s_else_fault__you_were_warned_hereby_ {
+            get {
+                return ResourceManager.GetString("If you got blocked, you should be strong enough to accept it, it is not Kerry Sha" +
+                        "le\'s or anyone\'s else fault, you were warned hereby.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die If you have any requests or questions, please simply contact me by using the Contact form. ähnelt.
         /// </summary>
         public static string If_you_have_any_requests_or_questions__please_simply_contact_me_by_using_the_Contact_form_ {
             get {
                 return ResourceManager.GetString("If you have any requests or questions, please simply contact me by using the Cont" +
                         "act form.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you have the urgent need to follow the podcast on Twitter, it will be the best if you disguise as a Bob Dylan fan, no joke. ähnelt.
+        /// </summary>
+        public static string If_you_have_the_urgent_need_to_follow_the_podcast_on_Twitter__it_will_be_the_best_if_you_disguise_as_a_Bob_Dylan_fan__no_joke_ {
+            get {
+                return ResourceManager.GetString("If you have the urgent need to follow the podcast on Twitter, it will be the best" +
+                        " if you disguise as a Bob Dylan fan, no joke.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you just want to mail a letter with the address above, and do not want anything back, then you can stop reading! ähnelt.
+        /// </summary>
+        public static string If_you_just_want_to_mail_a_letter_with_the_address_above__and_do_not_want_anything_back__then_you_can_stop_reading_ {
+            get {
+                return ResourceManager.GetString("If you just want to mail a letter with the address above, and do not want anythin" +
+                        "g back, then you can stop reading!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you leave a comment there, there may be a small chance that your comment disappears only seconds after you have written the comment. ähnelt.
+        /// </summary>
+        public static string If_you_leave_a_comment_there__there_may_be_a_small_chance_that_your_comment_disappears_only_seconds_after_you_have_written_the_comment_ {
+            get {
+                return ResourceManager.GetString("If you leave a comment there, there may be a small chance that your comment disap" +
+                        "pears only seconds after you have written the comment.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you live in UK send a properly stamped and self addressed envelope (minimum size 8.5&quot; x 4&quot;) with your request letter and a photo. ähnelt.
+        /// </summary>
+        public static string If_you_live_in_UK_send_a_properly_stamped_and_self_addressed_envelope__minimum_size_8_5___x_4____with_your_request_letter_and_a_photo_ {
+            get {
+                return ResourceManager.GetString("If you live in UK send a properly stamped and self addressed envelope (minimum si" +
+                        "ze 8.5\'\' x 4\'\') with your request letter and a photo.", resourceCulture);
             }
         }
         
@@ -1061,6 +1372,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die is the same as mentioned on Kerry Shale&apos;s ähnelt.
+        /// </summary>
+        public static string is_the_same_as_mentioned_on_Kerry_Shale_s {
+            get {
+                return ResourceManager.GetString("is the same as mentioned on Kerry Shale\'s", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die It became that bad with time that many Jewish people started to leave Europe, they immigrated to North America in the main. ähnelt.
         /// </summary>
         public static string It_became_that_bad_with_time_that_many_Jewish_people_started_to_leave_Europe__they_immigrated_to_North_America_in_the_main_ {
@@ -1087,6 +1407,44 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("It is difficult for me to trust any person, I prefer to take care of everything b" +
                         "y myself.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It is not known yet that they have ever blocked a Kerry Shale fan, I do not think they will block fans. ähnelt.
+        /// </summary>
+        public static string It_is_not_known_yet_that_they_have_ever_blocked_a_Kerry_Shale_fan__I_do_not_think_they_will_block_fans_ {
+            get {
+                return ResourceManager.GetString("It is not known yet that they have ever blocked a Kerry Shale fan, I do not think" +
+                        " they will block fans.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It is operated/run by another co-host of that podcast. ähnelt.
+        /// </summary>
+        public static string It_is_operated_run_by_another_co_host_of_that_podcast_ {
+            get {
+                return ResourceManager.GetString("It is operated/run by another co-host of that podcast.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It is strongly suggested NOT not to comment/message her. ähnelt.
+        /// </summary>
+        public static string It_is_strongly_suggested_NOT_not_to_comment_message_her_ {
+            get {
+                return ResourceManager.GetString("It is strongly suggested NOT not to comment/message her.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It is strongly suggested NOT to follow/comment/message that profile as a Kerry Shale fan. ähnelt.
+        /// </summary>
+        public static string It_is_strongly_suggested_NOT_to_follow_comment_message_that_profile_as_a_Kerry_Shale_fan_ {
+            get {
+                return ResourceManager.GetString("It is strongly suggested NOT to follow/comment/message that profile as a Kerry Sh" +
+                        "ale fan.", resourceCulture);
             }
         }
         
@@ -1165,6 +1523,34 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale Fan Page: ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_Fan_Page_ {
+            get {
+                return ResourceManager.GetString("Kerry Shale Fan Page:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale had a Twitter profile from 2013 to 2018, but gave it up. ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_had_a_Twitter_profile_from_2013_to_2018__but_gave_it_up_ {
+            get {
+                return ResourceManager.GetString("Kerry Shale had a Twitter profile from 2013 to 2018, but gave it up.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale has left an &apos;Easter Egg&apos; there, an empty comment, if you have have found it: ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_has_left_an__Easter_Egg__there__an_empty_comment__if_you_have_have_found_it_ {
+            get {
+                return ResourceManager.GetString("Kerry Shale has left an \'Easter Egg\' there, an empty comment, if you have have fo" +
+                        "und it:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale is a Canadian actor, voice over genius and writer, based in London (United Kingdom) since 1978 [1]. ähnelt.
         /// </summary>
         public static string Kerry_Shale_is_a_Canadian_actor__voice_over_genius_and_writer__based_in_London__United_Kingdom__since_1978__1__ {
@@ -1175,11 +1561,38 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale is married. ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_is_married_ {
+            get {
+                return ResourceManager.GetString("Kerry Shale is married.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale is married to Suzanne Shale since 1996 [3]. ähnelt.
         /// </summary>
         public static string Kerry_Shale_is_married_to_Suzanne_Shale_since_1996__3__ {
             get {
                 return ResourceManager.GetString("Kerry Shale is married to Suzanne Shale since 1996 [3].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale&apos;s private job search profile: ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_s_private_job_search_profile_ {
+            get {
+                return ResourceManager.GetString("Kerry Shale\'s private job search profile:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale&apos;s YouTube channel: ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_s_YouTube_channel_ {
+            get {
+                return ResourceManager.GetString("Kerry Shale\'s YouTube channel:", resourceCulture);
             }
         }
         
@@ -1217,15 +1630,6 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Links {
             get {
                 return ResourceManager.GetString("Links", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Links: ähnelt.
-        /// </summary>
-        public static string Links_ {
-            get {
-                return ResourceManager.GetString("Links:", resourceCulture);
             }
         }
         
@@ -1271,6 +1675,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Message_is_required {
             get {
                 return ResourceManager.GetString("Message is required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die More tries may be considered as spam. ähnelt.
+        /// </summary>
+        public static string More_tries_may_be_considered_as_spam_ {
+            get {
+                return ResourceManager.GetString("More tries may be considered as spam.", resourceCulture);
             }
         }
         
@@ -1356,15 +1769,6 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Official website ähnelt.
-        /// </summary>
-        public static string Official_website {
-            get {
-                return ResourceManager.GetString("Official website", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Official website of Kerry Shale ähnelt.
         /// </summary>
         public static string Official_website_of_Kerry_Shale {
@@ -1397,6 +1801,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string on {
             get {
                 return ResourceManager.GetString("on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die On average, there is going to be a 3+ month wait for a response. ähnelt.
+        /// </summary>
+        public static string On_average__there_is_going_to_be_a_3__month_wait_for_a_response_ {
+            get {
+                return ResourceManager.GetString("On average, there is going to be a 3+ month wait for a response.", resourceCulture);
             }
         }
         
@@ -1468,6 +1881,25 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please also follow the instructions there: ähnelt.
+        /// </summary>
+        public static string Please_also_follow_the_instructions_there_ {
+            get {
+                return ResourceManager.GetString("Please also follow the instructions there:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please be aware that it is only a fan page operated by a fan, it is not the real Kerry Shale. ähnelt.
+        /// </summary>
+        public static string Please_be_aware_that_it_is_only_a_fan_page_operated_by_a_fan__it_is_not_the_real_Kerry_Shale_ {
+            get {
+                return ResourceManager.GetString("Please be aware that it is only a fan page operated by a fan, it is not the real " +
+                        "Kerry Shale.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please do not hesitate to contact me if you find any grammar or spelling mistakes, I will correct them as soon as possible. ähnelt.
         /// </summary>
         public static string Please_do_not_hesitate_to_contact_me_if_you_find_any_grammar_or_spelling_mistakes__I_will_correct_them_as_soon_as_possible_ {
@@ -1524,12 +1956,48 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die RED FLAGS (chances getting blocked are about 100%): ähnelt.
+        /// </summary>
+        public static string RED_FLAGS__chances_getting_blocked_are_about_100___ {
+            get {
+                return ResourceManager.GetString("RED FLAGS (chances getting blocked are about 100%):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Regarding to Kerry Shale, his mother was from a shtetl* in Poland, and his father was from Winnipeg in Manitoba where Kerry Shale was born. ähnelt.
         /// </summary>
         public static string Regarding_to_Kerry_Shale__his_mother_was_from_a_shtetl__in_Poland__and_his_father_was_from_Winnipeg_in_Manitoba_where_Kerry_Shale_was_born_ {
             get {
                 return ResourceManager.GetString("Regarding to Kerry Shale, his mother was from a shtetl* in Poland, and his father" +
                         " was from Winnipeg in Manitoba where Kerry Shale was born.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Responses or likes are equal zero. ähnelt.
+        /// </summary>
+        public static string Responses_or_likes_are_equal_zero_ {
+            get {
+                return ResourceManager.GetString("Responses or likes are equal zero.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Responses or likes are rare. ähnelt.
+        /// </summary>
+        public static string Responses_or_likes_are_rare_ {
+            get {
+                return ResourceManager.GetString("Responses or likes are rare.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Responses or likes are very rare. ähnelt.
+        /// </summary>
+        public static string Responses_or_likes_are_very_rare_ {
+            get {
+                return ResourceManager.GetString("Responses or likes are very rare.", resourceCulture);
             }
         }
         
@@ -1553,11 +2021,56 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sainou: ähnelt.
+        /// </summary>
+        public static string Sainou_ {
+            get {
+                return ResourceManager.GetString("Sainou:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Sainou is Kerry Shale&apos;s official acting agency. ähnelt.
+        /// </summary>
+        public static string Sainou_is_Kerry_Shale_s_official_acting_agency_ {
+            get {
+                return ResourceManager.GetString("Sainou is Kerry Shale\'s official acting agency.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Send ähnelt.
         /// </summary>
         public static string Send {
             get {
                 return ResourceManager.GetString("Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Send your letter and wait. ähnelt.
+        /// </summary>
+        public static string Send_your_letter_and_wait_ {
+            get {
+                return ResourceManager.GetString("Send your letter and wait.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die She has zero interest to be in contact with a Kerry Shale fan there either. ähnelt.
+        /// </summary>
+        public static string She_has_zero_interest_to_be_in_contact_with_a_Kerry_Shale_fan_there_either_ {
+            get {
+                return ResourceManager.GetString("She has zero interest to be in contact with a Kerry Shale fan there either.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die She may block you. ähnelt.
+        /// </summary>
+        public static string She_may_block_you_ {
+            get {
+                return ResourceManager.GetString("She may block you.", resourceCulture);
             }
         }
         
@@ -1608,6 +2121,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Some_funny_stories_when_I_had_worked_for_the_film_business_ {
             get {
                 return ResourceManager.GetString("Some funny stories when I had worked for the film business:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Some of them are even mentioned on his official website. ähnelt.
+        /// </summary>
+        public static string Some_of_them_are_even_mentioned_on_his_official_website_ {
+            get {
+                return ResourceManager.GetString("Some of them are even mentioned on his official website.", resourceCulture);
             }
         }
         
@@ -1667,6 +2189,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die tells you how you can get in contact with him in the best possible way. ähnelt.
+        /// </summary>
+        public static string tells_you_how_you_can_get_in_contact_with_him_in_the_best_possible_way_ {
+            get {
+                return ResourceManager.GetString("tells you how you can get in contact with him in the best possible way.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die That is the result of the discrimination against the Jewish people, because they were not allowed to have another job for centuries. ähnelt.
         /// </summary>
         public static string That_is_the_result_of_the_discrimination_against_the_Jewish_people__because_they_were_not_allowed_to_have_another_job_for_centuries_ {
@@ -1716,6 +2247,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The fan page will read comments/messages from fans and will respond to everyone in some way, either via comment or via like or via retweet. ähnelt.
+        /// </summary>
+        public static string The_fan_page_will_read_comments_messages_from_fans_and_will_respond_to_everyone_in_some_way__either_via_comment_or_via_like_or_via_retweet_ {
+            get {
+                return ResourceManager.GetString("The fan page will read comments/messages from fans and will respond to everyone i" +
+                        "n some way, either via comment or via like or via retweet.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The Holocaust cannot be undone, and there is no excuse for it, and we must do everything that such a history does not repeat. ähnelt.
         /// </summary>
         public static string The_Holocaust_cannot_be_undone__and_there_is_no_excuse_for_it__and_we_must_do_everything_that_such_a_history_does_not_repeat_ {
@@ -1735,11 +2276,40 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The Kerry Shale fan page is and was created for Kerry Shale and for his fans. ähnelt.
+        /// </summary>
+        public static string The_Kerry_Shale_fan_page_is_and_was_created_for_Kerry_Shale_and_for_his_fans_ {
+            get {
+                return ResourceManager.GetString("The Kerry Shale fan page is and was created for Kerry Shale and for his fans.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The monitor was damaged a bit, it was used in our helpdesk room later. ähnelt.
         /// </summary>
         public static string The_monitor_was_damaged_a_bit__it_was_used_in_our_helpdesk_room_later_ {
             get {
                 return ResourceManager.GetString("The monitor was damaged a bit, it was used in our helpdesk room later.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The name of the profile suggests it already: That profile was created in a very sensitive context. ähnelt.
+        /// </summary>
+        public static string The_name_of_the_profile_suggests_it_already__That_profile_was_created_in_a_very_sensitive_context_ {
+            get {
+                return ResourceManager.GetString("The name of the profile suggests it already: That profile was created in a very s" +
+                        "ensitive context.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The podcast &quot;Is It Rolling, Bob? Talking Dylan&quot; on Twitter (@isitrollingpod): Please be aware that this is not a Kerry Shale fan page. ähnelt.
+        /// </summary>
+        public static string The_podcast___Is_It_Rolling__Bob__Talking_Dylan___on_Twitter___isitrollingpod___Please_be_aware_that_this_is_not_a_Kerry_Shale_fan_page_ {
+            get {
+                return ResourceManager.GetString("The podcast \'\'Is It Rolling, Bob? Talking Dylan\'\' on Twitter (@isitrollingpod): P" +
+                        "lease be aware that this is not a Kerry Shale fan page.", resourceCulture);
             }
         }
         
@@ -1763,6 +2333,43 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The production staff of The Sandman: ähnelt.
+        /// </summary>
+        public static string The_production_staff_of_The_Sandman_ {
+            get {
+                return ResourceManager.GetString("The production staff of The Sandman:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The reason you get blocked away there should be very clear. ähnelt.
+        /// </summary>
+        public static string The_reason_you_get_blocked_away_there_should_be_very_clear_ {
+            get {
+                return ResourceManager.GetString("The reason you get blocked away there should be very clear.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The reason you get blocked away there should be very clear, but she appears more stable/adult than @isitrollingpod (see above), she can handle it far better. ähnelt.
+        /// </summary>
+        public static string The_reason_you_get_blocked_away_there_should_be_very_clear__but_she_appears_more_stable_adult_than__isitrollingpod__see_above___she_can_handle_it_far_better_ {
+            get {
+                return ResourceManager.GetString("The reason you get blocked away there should be very clear, but she appears more " +
+                        "stable/adult than @isitrollingpod (see above), she can handle it far better.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The Sandman (Netflix): ähnelt.
+        /// </summary>
+        public static string The_Sandman__Netflix__ {
+            get {
+                return ResourceManager.GetString("The Sandman (Netflix):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The Sandman at Netflix ähnelt.
         /// </summary>
         public static string The_Sandman_at_Netflix {
@@ -1777,6 +2384,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string The_Sandman_Wiki {
             get {
                 return ResourceManager.GetString("The Sandman Wiki", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The website ähnelt.
+        /// </summary>
+        public static string The_website {
+            get {
+                return ResourceManager.GetString("The website", resourceCulture);
             }
         }
         
@@ -1828,11 +2444,30 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There are some online profiles related to Kerry Shale which you may discover with time. ähnelt.
+        /// </summary>
+        public static string There_are_some_online_profiles_related_to_Kerry_Shale_which_you_may_discover_with_time_ {
+            get {
+                return ResourceManager.GetString("There are some online profiles related to Kerry Shale which you may discover with" +
+                        " time.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die There is no need to be jealous. ähnelt.
         /// </summary>
         public static string There_is_no_need_to_be_jealous_ {
             get {
                 return ResourceManager.GetString("There is no need to be jealous.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die They are very well aware of the Kerry Shale fans. ähnelt.
+        /// </summary>
+        public static string They_are_very_well_aware_of_the_Kerry_Shale_fans_ {
+            get {
+                return ResourceManager.GetString("They are very well aware of the Kerry Shale fans.", resourceCulture);
             }
         }
         
@@ -1852,6 +2487,17 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("This fan page is some long-term experiment, I will operate as long as Kerry Shale" +
                         " or his agency does not complain to me about it.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page will currently not advertise the Twitter profile @isitrollingpod because it has no intention to lure Kerry Shale fans in block tirades/rants and to see unlucky Kerry Shale fans afterwards. ähnelt.
+        /// </summary>
+        public static string This_fan_page_will_currently_not_advertise_the_Twitter_profile__isitrollingpod_because_it_has_no_intention_to_lure_Kerry_Shale_fans_in_block_tirades_rants_and_to_see_unlucky_Kerry_Shale_fans_afterwards_ {
+            get {
+                return ResourceManager.GetString("This fan page will currently not advertise the Twitter profile @isitrollingpod be" +
+                        "cause it has no intention to lure Kerry Shale fans in block tirades/rants and to" +
+                        " see unlucky Kerry Shale fans afterwards.", resourceCulture);
             }
         }
         
@@ -1883,6 +2529,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Those rules are not set up by myself. ähnelt.
+        /// </summary>
+        public static string Those_rules_are_not_set_up_by_myself_ {
+            get {
+                return ResourceManager.GetString("Those rules are not set up by myself.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Timestamp (UTC) ähnelt.
         /// </summary>
         public static string Timestamp__UTC_ {
@@ -1907,6 +2562,16 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Unfortunately__I_could_not_let_them_in_the_bulding__but_it_was_really_sweet_ {
             get {
                 return ResourceManager.GetString("Unfortunately, I could not let them in the bulding, but it was really sweet.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Until 500 followers, the fan page will follow back every new follower, unless you are a racist/Nazi. ähnelt.
+        /// </summary>
+        public static string Until_500_followers__the_fan_page_will_follow_back_every_new_follower__unless_you_are_a_racist_Nazi_ {
+            get {
+                return ResourceManager.GetString("Until 500 followers, the fan page will follow back every new follower, unless you" +
+                        " are a racist/Nazi.", resourceCulture);
             }
         }
         
@@ -2052,6 +2717,24 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yakety Yak: ähnelt.
+        /// </summary>
+        public static string Yakety_Yak_ {
+            get {
+                return ResourceManager.GetString("Yakety Yak:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yakety Yak is Kerry Shale&apos;s official voiceover agency. ähnelt.
+        /// </summary>
+        public static string Yakety_Yak_is_Kerry_Shale_s_official_voiceover_agency_ {
+            get {
+                return ResourceManager.GetString("Yakety Yak is Kerry Shale\'s official voiceover agency.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die years meanwhile, since I was 21 years old. ähnelt.
         /// </summary>
         public static string years_meanwhile__since_I_was_21_years_old_ {
@@ -2066,6 +2749,81 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string years_old__a_native_German_and_a_senior_software_developer_ {
             get {
                 return ResourceManager.GetString("years old, a native German and a senior software developer.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die YELLOW FLAGS (chances getting blocked are about 50%): ähnelt.
+        /// </summary>
+        public static string YELLOW_FLAGS__chances_getting_blocked_are_about_50___ {
+            get {
+                return ResourceManager.GetString("YELLOW FLAGS (chances getting blocked are about 50%):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Yes, he has an online profile which he uses for his work. ähnelt.
+        /// </summary>
+        public static string Yes__he_has_an_online_profile_which_he_uses_for_his_work_ {
+            get {
+                return ResourceManager.GetString("Yes, he has an online profile which he uses for his work.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can follow their online profiles, like and retweet them, many of them are sociable/kind. ähnelt.
+        /// </summary>
+        public static string You_can_follow_their_online_profiles__like_and_retweet_them__many_of_them_are_sociable_kind_ {
+            get {
+                return ResourceManager.GetString("You can follow their online profiles, like and retweet them, many of them are soc" +
+                        "iable/kind.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can follow their online profiles, like and retweet them, they will simply ignore you in most cases. ähnelt.
+        /// </summary>
+        public static string You_can_follow_their_online_profiles__like_and_retweet_them__they_will_simply_ignore_you_in_most_cases_ {
+            get {
+                return ResourceManager.GetString("You can follow their online profiles, like and retweet them, they will simply ign" +
+                        "ore you in most cases.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can include a piece of cardboard to keep the photo from bending in shipping and also add &quot;Do Not Bend&quot; on the envelopes. ähnelt.
+        /// </summary>
+        public static string You_can_include_a_piece_of_cardboard_to_keep_the_photo_from_bending_in_shipping_and_also_add___Do_Not_Bend___on_the_envelopes_ {
+            get {
+                return ResourceManager.GetString("You can include a piece of cardboard to keep the photo from bending in shipping a" +
+                        "nd also add \'\'Do Not Bend\'\' on the envelopes.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can try it a second time, but this should be the very last try. ähnelt.
+        /// </summary>
+        public static string You_can_try_it_a_second_time__but_this_should_be_the_very_last_try_ {
+            get {
+                return ResourceManager.GetString("You can try it a second time, but this should be the very last try.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You can write everything you want as long as it is not hate-speech or trolling. ähnelt.
+        /// </summary>
+        public static string You_can_write_everything_you_want_as_long_as_it_is_not_hate_speech_or_trolling_ {
+            get {
+                return ResourceManager.GetString("You can write everything you want as long as it is not hate-speech or trolling.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die You will not be able to talk about that in public anyway. ähnelt.
+        /// </summary>
+        public static string You_will_not_be_able_to_talk_about_that_in_public_anyway_ {
+            get {
+                return ResourceManager.GetString("You will not be able to talk about that in public anyway.", resourceCulture);
             }
         }
         
