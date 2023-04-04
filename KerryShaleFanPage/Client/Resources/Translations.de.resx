@@ -945,7 +945,7 @@
   <data name="Until 500 followers, the fan page will follow back every new follower, unless you are a racist/Nazi." xml:space="preserve">
     <value>Bei bis zu 500 Followern wird die Fanseite jedem neuen Follower zurückfolgen, außer es ist ein Rassist/Nazi.</value>
   </data>
-  <data name="Follow=follow, unfollow=unfollow." xml:space="preserve">
+  <data name="Follow_follow_vs_unfollow_unfollow." xml:space="preserve">
     <value>Folgen=Folgen, Entfolgen=Entfolgen.</value>
   </data>
   <data name="The fan page will read comments/messages from fans and will respond to everyone in some way, either via comment or via like or via retweet." xml:space="preserve">
@@ -997,7 +997,7 @@
     <value>Wenn Du nur einen Brief an oben angegebene Adresse senden möchtest und nichts zurück erwartest, kannst Du hier mit dem Lesen aufhören!</value>
   </data>
   <data name="If you live in UK send a properly stamped and self addressed envelope (minimum size 8.5'' x 4'') with your request letter and a photo." xml:space="preserve">
-    <value>Wenn Du in Großbritannien lebst, sende einen selbst-adressierten Birefumschlag (minimale Größe 8.5" x 4", ca. 21cm x 10cm) mit ausreichender Frankierung mit Deiner Anfrage und einem Photo.</value>
+    <value>Wenn Du in Großbritannien lebst, sende einen selbst-adressierten Briefumschlag (minimale Größe 8.5" x 4", ca. 21cm x 10cm) mit ausreichender Frankierung mit Deiner Anfrage und einem Photo.</value>
   </data>
   <data name="You can include a piece of cardboard to keep the photo from bending in shipping and also add ''Do Not Bend'' on the envelopes." xml:space="preserve">
     <value>Du kannst in den Briefumschlag Pappe einlegen, um das Knicken des Photos während des Briefversandes zu vermeiden, und Du kannst zudem "Do Not Bend/Nicht knicken" auf die Briefumschläge schreiben.</value>

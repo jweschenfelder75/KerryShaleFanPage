@@ -701,6 +701,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Follow=follow, unfollow=unfollow. ähnelt.
+        /// </summary>
+        public static string Follow_follow_vs_unfollow_unfollow_ {
+            get {
+                return ResourceManager.GetString("Follow_follow_vs_unfollow_unfollow.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die For information on postage prices to receive a letter from UK click ähnelt.
         /// </summary>
         public static string For_information_on_postage_prices_to_receive_a_letter_from_UK_click {
