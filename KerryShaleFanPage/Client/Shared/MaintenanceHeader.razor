@@ -1,4 +1,13 @@
 ﻿@if (_isVisible)
 {
-    <div class="maintenance">@_text</div>
+    <div class="maintenance">
+        @if (_isMessageScrollEnabled)
+        {
+            <marquee>@_text</marquee>
+        }
+        else
+        {
+            <span>@_text</span>
+        }
+    </div>
 }

@@ -118,7 +118,13 @@ namespace KerryShaleFanPage.Client.Services
             {
                 return;
             }
-            MaintenanceMessageEvent?.Invoke(this, new MaintenanceMessageEventArgs() { IsEnabled = args.IsEnabled, Message = args.Message });
+
+            MaintenanceMessageEvent?.Invoke(this, new MaintenanceMessageEventArgs() 
+                { 
+                    IsEnabled = args.IsEnabled, 
+                    IsMessageScrollEnabled = args.IsMessageScrollEnabled, // TODO: Get configuration!
+                    Message = args.Message 
+                });
         }
     }
 }

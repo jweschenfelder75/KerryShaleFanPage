@@ -1017,4 +1017,10 @@
   <data name="For information on postage prices to receive a letter from UK click" xml:space="preserve">
     <value>Für Informationen zu Versandpreisen für den Empfang von Briefen aus Großbritannien klickst Du</value>
   </data>
+  <data name="Last website changes:" xml:space="preserve">
+    <value>Letzte Webseitenänderungen (in Englisch):</value>
+  </data>
+  <data name="Website history" xml:space="preserve">
+    <value>Webseitenhistorie</value>
+  </data>
 </root>

@@ -18,6 +18,8 @@ namespace KerryShaleFanPage.Client.Shared
 
         private bool _isEnabled;
 
+        private bool _isMessageScrollEnabled;
+
         private bool _isVisible => (_isEnabled && !string.IsNullOrWhiteSpace(_text));
 
         protected override async Task OnInitializedAsync()
@@ -32,6 +34,7 @@ namespace KerryShaleFanPage.Client.Shared
         private void MaintenanceMessageReceived(object? sender, MaintenanceMessageEventArgs e)
         {
             _isEnabled = e.IsEnabled;
+            _isMessageScrollEnabled = e.IsMessageScrollEnabled;
             _text = e.Message;
             StateHasChanged();
         }

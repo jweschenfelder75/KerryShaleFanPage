@@ -1615,6 +1615,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Last website changes: ähnelt.
+        /// </summary>
+        public static string Last_website_changes_ {
+            get {
+                return ResourceManager.GetString("Last website changes:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Later I came away from that idea when I witnessed some Facebook wars between religious groups. ähnelt.
         /// </summary>
         public static string Later_I_came_away_from_that_idea_when_I_witnessed_some_Facebook_wars_between_religious_groups_ {
@@ -2646,6 +2655,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Web_services_quality {
             get {
                 return ResourceManager.GetString("Web services quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Website history ähnelt.
+        /// </summary>
+        public static string Website_history {
+            get {
+                return ResourceManager.GetString("Website history", resourceCulture);
             }
         }
         
