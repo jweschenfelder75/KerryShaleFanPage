@@ -15,7 +15,7 @@
             <ul class="marquee-content">
                 @foreach (var newsItem in _newsItems)
                 {
-                    <li>@((MarkupString)((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn))</li>
+                    <li>@((MarkupString)(((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn) ?? string.Empty))</li>
                 }
                 @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
                 {
@@ -30,7 +30,7 @@
             <ul class="marquee-content" aria-hidden="true">
                 @foreach (var newsItem in _newsItems)
                 {
-                    <li>@((MarkupString)((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn))</li>
+                    <li>@((MarkupString)(((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn) ?? string.Empty))</li>
                 }
                 @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
                 {
