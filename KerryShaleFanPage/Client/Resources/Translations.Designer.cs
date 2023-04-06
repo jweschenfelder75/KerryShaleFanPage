@@ -1742,20 +1742,20 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Next episode probably available ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Next episode available ähnelt.
         /// </summary>
-        public static string Next_episode_probably_available {
+        public static string Next_episode_available {
             get {
-                return ResourceManager.GetString("Next episode probably available", resourceCulture);
+                return ResourceManager.GetString("Next episode available", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Next podcast episode probably available on ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Next podcast episode available on ähnelt.
         /// </summary>
-        public static string Next_podcast_episode_probably_available_on {
+        public static string Next_podcast_episode_available_on {
             get {
-                return ResourceManager.GetString("Next podcast episode probably available on", resourceCulture);
+                return ResourceManager.GetString("Next podcast episode available on", resourceCulture);
             }
         }
         

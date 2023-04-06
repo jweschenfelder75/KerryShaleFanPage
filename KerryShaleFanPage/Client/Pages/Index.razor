@@ -19,7 +19,7 @@
                 }
                 @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
                 {
-                    <li>@($"{Translate["Next podcast episode probably available on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.")</li>
+                    <li>@($"{Translate["Next podcast episode available on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.")</li>
                 }
                 else
                 {
@@ -34,7 +34,7 @@
                 }
                 @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
                 {
-                    <li>@($"{Translate["Next podcast episode probably available on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.")</li>
+                    <li>@($"{Translate["Next podcast episode available on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.")</li>
                 } 
                 else
                 {
@@ -99,7 +99,7 @@
                             <div class="d-none d-lg-block">
                                 @if (_showLatestPodcastEpisode)
                                 {
-                                    @Translate["Hear the latest podcast episode"]<br />@($"({Translate["Next episode probably available"]}")<br />@($"{@Translate["on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.)")<br />
+                                    @Translate["Hear the latest podcast episode"]<br />@($"({Translate["Next episode available"]}")<br />@($"{@Translate["on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.)")<br />
                                 }
                                 else
                                 {

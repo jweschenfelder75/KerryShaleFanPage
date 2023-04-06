@@ -648,7 +648,7 @@
   <data name="Hear the latest podcast episode" xml:space="preserve">
     <value>Höre die neueste Podcast Episode</value>
   </data>
-  <data name="Next episode probably available" xml:space="preserve">
+  <data name="Next episode available" xml:space="preserve">
     <value>Nächste Podcast Episode verfügbar</value>
   </data>
   <data name="on" xml:space="preserve">
@@ -669,7 +669,7 @@
   <data name="It is also interesting that Kerry Shale and Brent Spiner have something in common when it is about the immigration to North America, see:" xml:space="preserve">
     <value>Es ist auch interessant, dass Kerry Shale und Brent Spiner bezüglich der Auswanderung nach Nordamerika etwas gemeinsam haben, siehe:</value>
   </data>
-  <data name="Next podcast episode probably available on" xml:space="preserve">
+  <data name="Next podcast episode available on" xml:space="preserve">
     <value>Nächste Podcast Episode verfügbar am</value>
   </data>
   <data name="New podcast episode available, see below!" xml:space="preserve">
