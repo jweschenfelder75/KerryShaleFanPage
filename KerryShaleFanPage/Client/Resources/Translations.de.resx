@@ -1023,4 +1023,133 @@
   <data name="Website history" xml:space="preserve">
     <value>Webseitenhistorie</value>
   </data>
+  <data name="More information" xml:space="preserve">
+    <value>Mehr Informationen</value>
+  </data>
+  <data name="About this webite:" xml:space="preserve">
+    <value>Über diese Webseite:</value>
+  </data>
+  <data name="This website is operated as a Microsoft Blazor WebAssembly App." xml:space="preserve">
+    <value>Diese Webseite wird als eine Microsoft Blazor WebAssembly App betrieben.</value>
+  </data>
+  <data name="It is a web app which is executed on the client's side, and which is loaded from a web server." xml:space="preserve">
+    <value>Es ist eine Web App, welche auf Clientseite ausgeführt wird und von einem Webserver geladen wird.</value>
+  </data>
+  <data name="Microsoft Blazor WebAssembly is optimized for Google Chrome Engine." xml:space="preserve">
+    <value>Microsoft Blazor WebAssembly ist für die Google Chrome Engine optimiert.</value>
+  </data>
+  <data name="It means that you are able to install the web app alternatively as a desktop app via Google Chrome and also via Microsoft Edge (which is based on Google's Chrome Engine)." xml:space="preserve">
+    <value>Es bedeutet, dass man die Web App alternativ als Desktop App via Google Chrome und auch via Microsoft Edge (welches auf Google's Chrome Engine basiert) installieren kann.</value>
+  </data>
+  <data name="WebAssemblies work in web browsers in another way than usual HTML web pages." xml:space="preserve">
+    <value>WebAssemblies funktionieren im Webbrowser anders als herkömmliche HTML Webseiten.</value>
+  </data>
+  <data name="Instead of interpreting it as HTML and JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in the web browser which can make the execution faster." xml:space="preserve">
+    <value>Statt es als HTML and JavaScript im Webbrower zu interpretieren, wird es als portierbarer binärer Code aka ByteCode im Webbrowser ausgeführt, was die Ausführung beschleunigen kann.</value>
+  </data>
+  <data name="Beside of that, Blazor WebAssembly allows it that the web app will continue to work (offline) even if the web server is down at that very moment." xml:space="preserve">
+    <value>Daneben erlaubt Blazor WebAssembly, dass die Web App weiter funktionieren wird (offline), auch wenn zu dem Zeitpunkt der Webserver nicht erreichbar ist.</value>
+  </data>
+  <data name="How to tell if the web server is up and if the web app works online:" xml:space="preserve">
+    <value>Wie man erkennen kann, dass der Webserver erreichbar ist und die Web App online ist:</value>
+  </data>
+  <data name="If you do not see any icon in the upper right corner, the web app is connected to the web server and everything will be fine." xml:space="preserve">
+    <value>Wenn man kein Symbol in der oberen rechten Ecke sieht, dann ist die Web App mit dem Webserver verbunden und alles ist in Ordnung.</value>
+  </data>
+  <data name="The web app works online." xml:space="preserve">
+    <value>Die Web App arbeitet online.</value>
+  </data>
+  <data name="No action is required by the end-user." xml:space="preserve">
+    <value>Vom Endanwender ist keine Aktion erforderlich.</value>
+  </data>
+  <data name="How to tell if the web server is down and if the web app works offline:" xml:space="preserve">
+    <value>Wie man erkennen kann, dass der Webserver nicht erreichbar ist und die Web App offline ist:</value>
+  </data>
+  <data name="The orange sync icon blinks if the web app tries to reestablish the connection to the web server." xml:space="preserve">
+    <value>Das orange Sync-Symbol blinkt, wenn die Web App versucht, die Verbindung zum Webserver wieder herzustellen.</value>
+  </data>
+  <data name="The web app works offline now." xml:space="preserve">
+    <value>Die Web App arbeitet jetzt offline.</value>
+  </data>
+  <data name="During that time, the web app will try to restore the connection to the web server automatically." xml:space="preserve">
+    <value>Während dieser Zeit wird die Web App versuchen, die Verbindung zum Webserver automatisch wieder herzustellen.</value>
+  </data>
+  <data name="It will try to reestablish the connection to the web server after 0 seconds, then after 10 seconds, and then after 30 seconds." xml:space="preserve">
+    <value>Sie wird versuchen, die Verbindung zum Webserver nach 0 Sekunden, dann nach 10 Sekunden und dann nach 30 Sekunden wieder herzustellen.</value>
+  </data>
+  <data name="An example is shown in this GIF:" xml:space="preserve">
+    <value>Ein Beispiel wird in diesem GIF gezeigt:</value>
+  </data>
+  <data name="The web app shows the red warning icon if the connection to the web server was closed." xml:space="preserve">
+    <value>Die Web App zeigt ein rotes Warn-Symbol, wenn die Verbindung zum Webserver geschlossen/unterbrochen wurde.</value>
+  </data>
+  <data name="The red warning icon stops blinking after 1 hour and will be shown permanently if the web app could not reestablish the connection to the web server after the connection to the web server was closed." xml:space="preserve">
+    <value>Das rote Warn-Symbol wird nach 1 Stunden aufhören, zu blinken, und wird permanent angezeigt werden, wenn die Web App die Verbindung zum Webserver nicht wieder herstellen konnte, nachdem die Verbindung zum Webserver geschlossen wurde.</value>
+  </data>
+  <data name="If the web app could not reestablish the connection to the web server within of 1 hour, the web app will then finally give up and assume that the web server is dead." xml:space="preserve">
+    <value>Wenn die Web App die Verbindung zum Webserver nicht innerhalb 1 Stunde wieder herstellen konnte, dann wird die Web App endgültig aufgeben und davon ausgehen, dass der Webserver tot ist.</value>
+  </data>
+  <data name="Please contact the website administrator then." xml:space="preserve">
+    <value>Bitte informieren Sie dann den Webseiten-Administrator.</value>
+  </data>
+  <data name="An example is shown in this picture:" xml:space="preserve">
+    <value>Ein Beispiel wird in diesem Bild gezeigt:</value>
+  </data>
+  <data name="If you open the Developer Debugging Tools of the web browser by pressing the F12 button, you will notice those console messages while the web app is trying to reestablish the connection to the web server:" xml:space="preserve">
+    <value>Wenn man die Developer Debugging Tools vom Webbrowser durch das Drücken von F12 öffnet, wird man folgende Konsole-Nachrichten sehen, während die Web App versucht, die Verbindung zum Webserver wieder herzustellen:</value>
+  </data>
+  <data name="General information:" xml:space="preserve">
+    <value>Generelle Information:</value>
+  </data>
+  <data name="There are currently two scoped web services active:" xml:space="preserve">
+    <value>Momentan sind zwei Scoped Webservices aktiv:</value>
+  </data>
+  <data name="The GeneralBusinessLogicService is executed in an interval of 15 minutes." xml:space="preserve">
+    <value>Der GeneralBusinessLogicService wird in einem Intervall von 15 Minuten ausgeführt.</value>
+  </data>
+  <data name="The GeneralBusinessLogicService will read and update the current web app settings (including news and gallery), it will send out maintenance notifications (if applicable) and it will delete old log entries regularily after some days." xml:space="preserve">
+    <value>Der GeneralBusinessLogicService wird die aktuellen Web App-Einstellungen auslesen (inklusive News und Gallerie), wird Wartungsmeldungen aussenden (wenn anwendbar) und wird Logeinträge regelmäßig nach eingen Tagen löschen.</value>
+  </data>
+  <data name="The PodcastBusinessLogicService is executed in an interval based on the date when the next podcast is awaited." xml:space="preserve">
+    <value>Der PodcastBusinessLogicService wird in einem Interval basieren auf dem Datum, wann die nächste Podcast-Episode veröffentlicht wird, ausgeführt.</value>
+  </data>
+  <data name="The PodcastBusinessLogicService will crawl for new podcast episodes, will store them in a database and will also send out notifications if there is a new podcast episode available." xml:space="preserve">
+    <value>Der PodcastBusinessLogicService wird nach neuen Podcast-Episoden crawlen, diese in einer Datenbank speichern und wird zudem Benachrichtigungen aussenden, wenn eine neue Podcast-Episode verfügbar ist.</value>
+  </data>
+  <data name="Web services information" xml:space="preserve">
+    <value>Webservices Information</value>
+  </data>
+  <data name="Quoting Kerry Shale and his official website:" xml:space="preserve">
+    <value>Zitate von Kerry Shale und dessen offizieller Webseite:</value>
+  </data>
+  <data name="''''A voice so smooth he could sell prophylactics to the Pope'' - The Guardian''" xml:space="preserve">
+    <value>""Eine Stimme, die so sanft ist, dass er dem Papst Verhütungsmittel verkaufen könnte." - The Guardian"</value>
+  </data>
+  <data name="''Hugely versatile, with an extraordinary range of accents and styles.''" xml:space="preserve">
+    <value>"Enorm vielseitig mit einer extraordinären Palette von Akzenten, Dialekten und Stilen."</value>
+  </data>
+  <data name="''Kerry Shale has worked at The National Theatre, The Almeida, Hampstead, The Donmar Warehouse, Riverside Studios, The Gate and The Royal Court." xml:space="preserve">
+    <value>"Kerry Shale hat am The National Theatre, The Almeida, Hampstead, The Donmar Warehouse, Riverside Studios, The Gate und The Royal Court gearbeitet.</value>
+  </data>
+  <data name="In Edinburgh, he wrote and performed six solo shows at The Traverse, The Assembly Rooms and The Pleasance." xml:space="preserve">
+    <value>In Edinburgh schrieb und spielte er sechs Solo-Shows am The Traverse, The Assembly Rooms und The Pleasance.</value>
+  </data>
+  <data name="West End work includes The Normal Heart and Frost/Nixon.''" xml:space="preserve">
+    <value>Die West End Arbeit enthält The Normal Heart und Frost/Nixon."</value>
+  </data>
+  <data name="''The Evening Standard calls Kerry Shale 'The best-known American voice on Radio 4'." xml:space="preserve">
+    <value>"(London) Evening Standard bezeichnet Kerry Shale als 'Die am meisten bekannte Amerikanische Stimme auf Radio 4'.</value>
+  </data>
+  <data name="He has played more characters in a single video game than any other actor (it is in the Guinness Book of Records).''" xml:space="preserve">
+    <value>Er hat mehr Charaktere in einem einzigen Videospiel gespielt als irgendein anderer Schauspieler (es ist im Guinness-Buch der Rekorde)."</value>
+  </data>
+  <data name="Awards:" xml:space="preserve">
+    <value>Auszeichnungen:</value>
+  </data>
+  <data name="The red warning icon blinks if the web app tries to reestablish the connection to the web server after the connection to the web server was closed." xml:space="preserve">
+    <value>Das rote Warn-Symbol blinkt, wenn die Web App versucht, die Verbindung zum Webserver wieder herzustellen, nachdem die Verbindung zum Webserver geschlossen wurde.</value>
+  </data>
+  <data name="The web app shows the orange sync icon if the connection to the web server was lost." xml:space="preserve">
+    <value>Die Web App zeigt das orange Sync-Symbol, wenn die Verbindung zum Webserver abgebrochen ist.</value>
+  </data>
 </root>

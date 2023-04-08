@@ -18,6 +18,8 @@ namespace KerryShaleFanPage.Client.Shared
 
         private bool _serverStatusAlertVisible = false;
 
+        private string _serverStatusIcon = "sync";
+
         private IconStyle _serverStatusIconStyle = IconStyle.Primary;
 
         private string _serverStatusBlinkingCssClass = string.Empty;
@@ -40,6 +42,7 @@ namespace KerryShaleFanPage.Client.Shared
                 case ServerStatusEnum.Critical:
                     {
                         _serverStatusAlertVisible = true;
+                        _serverStatusIcon = "warning";
                         _serverStatusIconStyle = IconStyle.Danger;
                         _serverStatusBlinkingCssClass = string.Empty;
                         break;
@@ -47,6 +50,7 @@ namespace KerryShaleFanPage.Client.Shared
                 case ServerStatusEnum.Error:
                     {
                         _serverStatusAlertVisible = true;
+                        _serverStatusIcon = "warning";
                         _serverStatusIconStyle = IconStyle.Danger;
                         _serverStatusBlinkingCssClass = "blink";
                         break;
@@ -54,6 +58,7 @@ namespace KerryShaleFanPage.Client.Shared
                 case ServerStatusEnum.Warning:
                     {
                         _serverStatusAlertVisible = true;
+                        _serverStatusIcon = "sync";
                         _serverStatusIconStyle = IconStyle.Warning;
                         _serverStatusBlinkingCssClass = "blink";
                         break;
@@ -61,6 +66,7 @@ namespace KerryShaleFanPage.Client.Shared
                 default:
                     {
                         _serverStatusAlertVisible = false;
+                        _serverStatusIcon = "sync";
                         _serverStatusIconStyle = IconStyle.Primary;
                         _serverStatusBlinkingCssClass = string.Empty;
                         break;

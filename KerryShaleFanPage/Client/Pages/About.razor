@@ -7,6 +7,101 @@
 <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Normal" class="rz-p-4">
         <RadzenColumn Size="12">
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-0 rz-mb-0">@Translate["About this webite:"]</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                @Translate["This website is operated as a Microsoft Blazor WebAssembly App."]
+                @Translate["It is a web app which is executed on the client's side, and which is loaded from a web server."]
+                @Translate["Microsoft Blazor WebAssembly is optimized for Google Chrome Engine."]
+                @Translate["It means that you are able to install the web app alternatively as a desktop app via Google Chrome and also via Microsoft Edge (which is based on Google's Chrome Engine)."]
+            </RadzenText>
+            <RadzenStack Orientation="Orientation.Vertical" JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-my-4">
+                <RadzenImage Path="@Translate["/img/blazor-app-install.jpg"]" Style="width: 1000px; max-width: 100%;" />
+            </RadzenStack>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                @Translate["WebAssemblies work in web browsers in another way than usual HTML web pages."]
+                @Translate["Instead of interpreting it as HTML and JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in the web browser which can make the execution faster."]
+                @Translate["Beside of that, Blazor WebAssembly allows it that the web app will continue to work (offline) even if the web server is down at that very moment."]
+            </RadzenText>
+            <RadzenRow JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-4">
+                <RadzenColumn Size="12" SizeXS="12" SizeSM="12" SizeMD="12" SizeLG="6" SizeXL="6" SizeXX="6" class="text-center">
+                    <RadzenImage Path="/img/blazor_targets.png" Style="width: 600px; max-width: 100%;" />
+                </RadzenColumn>
+                <RadzenColumn Size="12" SizeXS="12" SizeSM="12" SizeMD="12" SizeLG="6" SizeXL="6" SizeXX="6" class="text-center">
+                    <RadzenImage Path="/img/Blazor-WebAssembly.jpg" Style="width: 500px; max-width: 100%;" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenRow JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-4">
+                <RadzenColumn Size="12" class="text-center">
+                    <RadzenImage Path="/img/WebAssembly_compile.png" Style="width: 800px; max-width: 100%;" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-10 rz-mb-0">@Translate["How to tell if the web server is up and if the web app works online:"]</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                - @Translate["If you do not see any icon in the upper right corner, the web app is connected to the web server and everything will be fine."]
+                @Translate["The web app works online."]
+                @Translate["No action is required by the end-user."]
+            </RadzenText>
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-10 rz-mb-0">@Translate["How to tell if the web server is down and if the web app works offline:"]</RadzenText>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                - @Translate["The web app shows the orange sync icon if the connection to the web server was lost."]
+            </RadzenText>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                - @Translate["The orange sync icon blinks if the web app tries to reestablish the connection to the web server."]
+                @Translate["The web app works offline now."]
+                @Translate["During that time, the web app will try to restore the connection to the web server automatically."]
+                @Translate["It will try to reestablish the connection to the web server after 0 seconds, then after 10 seconds, and then after 30 seconds."]
+                @Translate["No action is required by the end-user."]
+                @Translate["An example is shown in this GIF:"]
+            </RadzenText>
+            <RadzenRow JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-1">
+                <RadzenColumn Size="12" class="text-center">
+                    <RadzenImage Path="/img/sync_1.gif" Style="width: 200px; max-width: 100%;" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                - @Translate["The web app shows the red warning icon if the connection to the web server was closed."]
+            </RadzenText>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                - @Translate["The red warning icon blinks if the web app tries to reestablish the connection to the web server after the connection to the web server was closed."]
+                @Translate["The web app works offline now."]
+                @Translate["During that time, the web app will try to restore the connection to the web server automatically."]
+                @Translate["It will try to reestablish the connection to the web server every 30 seconds for 1 hour."]
+                @Translate["No action is required by the end-user."]
+                @Translate["An example is shown in this GIF:"]
+            </RadzenText>
+            <RadzenRow JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-1">
+                <RadzenColumn Size="12" class="text-center">
+                    <RadzenImage Path="/img/sync_2.gif" Style="width: 200px; max-width: 100%;" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                - @Translate["The red warning icon stops blinking after 1 hour and will be shown permanently if the web app could not reestablish the connection to the web server after the connection to the web server was closed."]
+                @Translate["The web app works offline now."]
+                @Translate["If the web app could not reestablish the connection to the web server within of 1 hour, the web app will then finally give up and assume that the web server is dead."]
+                @Translate["Please contact the website administrator then."]
+                @Translate["An example is shown in this picture:"]
+            </RadzenText>
+            <RadzenRow JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-1">
+                <RadzenColumn Size="12" class="text-center">
+                    <RadzenImage Path="/img/sync_3.jpg" Style="width: 200px; max-width: 100%;" />
+                </RadzenColumn>
+            </RadzenRow>
+            <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                - @Translate["If you open the Developer Debugging Tools of the web browser by pressing the F12 button, you will notice those console messages while the web app is trying to reestablish the connection to the web server:"]
+            </RadzenText>
+            <RadzenRow JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-1">
+                <RadzenColumn Size="12" class="text-center">
+                    <iframe width="560" height="225" src="https://www.youtube.com/embed/AiGl4r-BpHY" title="YouTube video player" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </RadzenColumn>
+            </RadzenRow>
+        </RadzenColumn>
+    </RadzenStack>
+</RadzenCard>
+
+<RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Normal" class="rz-p-4">
+        <RadzenColumn Size="12">
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-0 rz-mb-0">@Translate["General information:"]</RadzenText>
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
                 @Translate["Hi, I am Jana (English pronounciation: Yana, the name is often used in Poland and Germany), I am"] @(GetCurrentAge())
                 @Translate["years old, a native German and a senior software developer."]

@@ -61,11 +61,49 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &quot;&quot;A voice so smooth he could sell prophylactics to the Pope&quot; - The Guardian&quot; ähnelt.
+        /// </summary>
+        public static string ____A_voice_so_smooth_he_could_sell_prophylactics_to_the_Pope_____The_Guardian__ {
+            get {
+                return ResourceManager.GetString("\'\'\'\'A voice so smooth he could sell prophylactics to the Pope\'\' - The Guardian\'\'", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &quot;Hugely versatile, with an extraordinary range of accents and styles.&quot; ähnelt.
+        /// </summary>
+        public static string @__Hugely_versatile__with_an_extraordinary_range_of_accents_and_styles___ {
+            get {
+                return ResourceManager.GetString("\'\'Hugely versatile, with an extraordinary range of accents and styles.\'\'", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &quot;Kerry Shale has worked at The National Theatre, The Almeida, Hampstead, The Donmar Warehouse, Riverside Studios, The Gate and The Royal Court. ähnelt.
+        /// </summary>
+        public static string @__Kerry_Shale_has_worked_at_The_National_Theatre__The_Almeida__Hampstead__The_Donmar_Warehouse__Riverside_Studios__The_Gate_and_The_Royal_Court_ {
+            get {
+                return ResourceManager.GetString("\'\'Kerry Shale has worked at The National Theatre, The Almeida, Hampstead, The Don" +
+                        "mar Warehouse, Riverside Studios, The Gate and The Royal Court.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die [*shtetl -&gt; german: Städtle -&gt; small town] ähnelt.
         /// </summary>
         public static string @__shtetl____german__Städtle____small_town_ {
             get {
                 return ResourceManager.GetString("[*shtetl -> german: Städtle -> small town]", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &quot;The Evening Standard calls Kerry Shale &apos;The best-known American voice on Radio 4&apos;. ähnelt.
+        /// </summary>
+        public static string @__The_Evening_Standard_calls_Kerry_Shale__The_best_known_American_voice_on_Radio_4__ {
+            get {
+                return ResourceManager.GetString("\'\'The Evening Standard calls Kerry Shale \'The best-known American voice on Radio " +
+                        "4\'.", resourceCulture);
             }
         }
         
@@ -179,6 +217,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die About this webite: ähnelt.
+        /// </summary>
+        public static string About_this_webite_ {
+            get {
+                return ResourceManager.GetString("About this webite:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Actors usually have a very good memory (they need it for their daily job) and they will remember you. ähnelt.
         /// </summary>
         public static string Actors_usually_have_a_very_good_memory__they_need_it_for_their_daily_job__and_they_will_remember_you_ {
@@ -226,6 +273,24 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("Although Kerry Shale seems to be tech-savvy (he has also someone who helps him on" +
                         " that matter), he prefers paper.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die An example is shown in this GIF: ähnelt.
+        /// </summary>
+        public static string An_example_is_shown_in_this_GIF_ {
+            get {
+                return ResourceManager.GetString("An example is shown in this GIF:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die An example is shown in this picture: ähnelt.
+        /// </summary>
+        public static string An_example_is_shown_in_this_picture_ {
+            get {
+                return ResourceManager.GetString("An example is shown in this picture:", resourceCulture);
             }
         }
         
@@ -357,6 +422,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Awards: ähnelt.
+        /// </summary>
+        public static string Awards_ {
+            get {
+                return ResourceManager.GetString("Awards:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Back ähnelt.
         /// </summary>
         public static string Back {
@@ -392,6 +466,16 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("Before you send him a letter, please verify that Sainou\'s postal address mentione" +
                         "d at", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Beside of that, Blazor WebAssembly allows it that the web app will continue to work (offline) even if the web server is down at that very moment. ähnelt.
+        /// </summary>
+        public static string Beside_of_that__Blazor_WebAssembly_allows_it_that_the_web_app_will_continue_to_work__offline__even_if_the_web_server_is_down_at_that_very_moment_ {
+            get {
+                return ResourceManager.GetString("Beside of that, Blazor WebAssembly allows it that the web app will continue to wo" +
+                        "rk (offline) even if the web server is down at that very moment.", resourceCulture);
             }
         }
         
@@ -601,6 +685,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die During that time, the web app will try to restore the connection to the web server automatically. ähnelt.
+        /// </summary>
+        public static string During_that_time__the_web_app_will_try_to_restore_the_connection_to_the_web_server_automatically_ {
+            get {
+                return ResourceManager.GetString("During that time, the web app will try to restore the connection to the web serve" +
+                        "r automatically.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die E-mail address ähnelt.
         /// </summary>
         public static string E_mail_address {
@@ -737,6 +831,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die General information: ähnelt.
+        /// </summary>
+        public static string General_information_ {
+            get {
+                return ResourceManager.GetString("General information:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die GREEN FLAGS (chances getting blocked are less than 5%): ähnelt.
         /// </summary>
         public static string GREEN_FLAGS__chances_getting_blocked_are_less_than_5___ {
@@ -769,6 +872,16 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string He_had_had_a_carefree_childhood_in_Winnipeg__Manitoba__4__ {
             get {
                 return ResourceManager.GetString("He had had a carefree childhood in Winnipeg, Manitoba [4].", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die He has played more characters in a single video game than any other actor (it is in the Guinness Book of Records).&quot; ähnelt.
+        /// </summary>
+        public static string He_has_played_more_characters_in_a_single_video_game_than_any_other_actor__it_is_in_the_Guinness_Book_of_Records____ {
+            get {
+                return ResourceManager.GetString("He has played more characters in a single video game than any other actor (it is " +
+                        "in the Guinness Book of Records).\'\'", resourceCulture);
             }
         }
         
@@ -880,6 +993,24 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string How_to_get_in_touch_with_Kerry_Shale_ {
             get {
                 return ResourceManager.GetString("How to get in touch with Kerry Shale?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die How to tell if the web server is down and if the web app works offline: ähnelt.
+        /// </summary>
+        public static string How_to_tell_if_the_web_server_is_down_and_if_the_web_app_works_offline_ {
+            get {
+                return ResourceManager.GetString("How to tell if the web server is down and if the web app works offline:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die How to tell if the web server is up and if the web app works online: ähnelt.
+        /// </summary>
+        public static string How_to_tell_if_the_web_server_is_up_and_if_the_web_app_works_online_ {
+            get {
+                return ResourceManager.GetString("How to tell if the web server is up and if the web app works online:", resourceCulture);
             }
         }
         
@@ -1275,11 +1406,32 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If the web app could not reestablish the connection to the web server within of 1 hour, the web app will then finally give up and assume that the web server is dead. ähnelt.
+        /// </summary>
+        public static string If_the_web_app_could_not_reestablish_the_connection_to_the_web_server_within_of_1_hour__the_web_app_will_then_finally_give_up_and_assume_that_the_web_server_is_dead_ {
+            get {
+                return ResourceManager.GetString("If the web app could not reestablish the connection to the web server within of 1" +
+                        " hour, the web app will then finally give up and assume that the web server is d" +
+                        "ead.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die If you do not live in UK, you can purchase your British stamps ähnelt.
         /// </summary>
         public static string If_you_do_not_live_in_UK__you_can_purchase_your_British_stamps {
             get {
                 return ResourceManager.GetString("If you do not live in UK, you can purchase your British stamps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you do not see any icon in the upper right corner, the web app is connected to the web server and everything will be fine. ähnelt.
+        /// </summary>
+        public static string If_you_do_not_see_any_icon_in_the_upper_right_corner__the_web_app_is_connected_to_the_web_server_and_everything_will_be_fine_ {
+            get {
+                return ResourceManager.GetString("If you do not see any icon in the upper right corner, the web app is connected to" +
+                        " the web server and everything will be fine.", resourceCulture);
             }
         }
         
@@ -1344,6 +1496,27 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you open the Developer Debugging Tools of the web browser by pressing the F12 button, you will notice those console messages while the web app is trying to reestablish the connection to the web server: ähnelt.
+        /// </summary>
+        public static string If_you_open_the_Developer_Debugging_Tools_of_the_web_browser_by_pressing_the_F12_button__you_will_notice_those_console_messages_while_the_web_app_is_trying_to_reestablish_the_connection_to_the_web_server_ {
+            get {
+                return ResourceManager.GetString("If you open the Developer Debugging Tools of the web browser by pressing the F12 " +
+                        "button, you will notice those console messages while the web app is trying to re" +
+                        "establish the connection to the web server:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die In Edinburgh, he wrote and performed six solo shows at The Traverse, The Assembly Rooms and The Pleasance. ähnelt.
+        /// </summary>
+        public static string In_Edinburgh__he_wrote_and_performed_six_solo_shows_at_The_Traverse__The_Assembly_Rooms_and_The_Pleasance_ {
+            get {
+                return ResourceManager.GetString("In Edinburgh, he wrote and performed six solo shows at The Traverse, The Assembly" +
+                        " Rooms and The Pleasance.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die In opposite to that, his work is described in every detail on other websites. ähnelt.
         /// </summary>
         public static string In_opposite_to_that__his_work_is_described_in_every_detail_on_other_websites_ {
@@ -1381,6 +1554,17 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Instead of interpreting it as HTML and JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in the web browser which can make the execution faster. ähnelt.
+        /// </summary>
+        public static string Instead_of_interpreting_it_as_HTML_and_JavaScript_in_the_web_browser__it_is_executed_as_portable_binary_code_aka_ByteCode_in_the_web_browser_which_can_make_the_execution_faster_ {
+            get {
+                return ResourceManager.GetString("Instead of interpreting it as HTML and JavaScript in the web browser, it is execu" +
+                        "ted as portable binary-code aka ByteCode in the web browser which can make the e" +
+                        "xecution faster.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die is the same as mentioned on Kerry Shale&apos;s ähnelt.
         /// </summary>
         public static string is_the_same_as_mentioned_on_Kerry_Shale_s {
@@ -1396,6 +1580,16 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("It became that bad with time that many Jewish people started to leave Europe, the" +
                         "y immigrated to North America in the main.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It is a web app which is executed on the client&apos;s side, and which is loaded from a web server. ähnelt.
+        /// </summary>
+        public static string It_is_a_web_app_which_is_executed_on_the_client_s_side__and_which_is_loaded_from_a_web_server_ {
+            get {
+                return ResourceManager.GetString("It is a web app which is executed on the client\'s side, and which is loaded from " +
+                        "a web server.", resourceCulture);
             }
         }
         
@@ -1458,6 +1652,17 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It means that you are able to install the web app alternatively as a desktop app via Google Chrome and also via Microsoft Edge (which is based on Google&apos;s Chrome Engine). ähnelt.
+        /// </summary>
+        public static string It_means_that_you_are_able_to_install_the_web_app_alternatively_as_a_desktop_app_via_Google_Chrome_and_also_via_Microsoft_Edge__which_is_based_on_Google_s_Chrome_Engine__ {
+            get {
+                return ResourceManager.GetString("It means that you are able to install the web app alternatively as a desktop app " +
+                        "via Google Chrome and also via Microsoft Edge (which is based on Google\'s Chrome" +
+                        " Engine).", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die It was the first time someone thought I would be a star, it was also the last time that someone ever thought I would be a star. ähnelt.
         /// </summary>
         public static string It_was_the_first_time_someone_thought_I_would_be_a_star__it_was_also_the_last_time_that_someone_ever_thought_I_would_be_a_star_ {
@@ -1473,6 +1678,16 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string It_was_the_sweetest_situation_I_have_witnessed_in_my_life_so_far_ {
             get {
                 return ResourceManager.GetString("It was the sweetest situation I have witnessed in my life so far.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die It will try to reestablish the connection to the web server after 0 seconds, then after 10 seconds, and then after 30 seconds. ähnelt.
+        /// </summary>
+        public static string It_will_try_to_reestablish_the_connection_to_the_web_server_after_0_seconds__then_after_10_seconds__and_then_after_30_seconds_ {
+            get {
+                return ResourceManager.GetString("It will try to reestablish the connection to the web server after 0 seconds, then" +
+                        " after 10 seconds, and then after 30 seconds.", resourceCulture);
             }
         }
         
@@ -1697,6 +1912,24 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Microsoft Blazor WebAssembly is optimized for Google Chrome Engine. ähnelt.
+        /// </summary>
+        public static string Microsoft_Blazor_WebAssembly_is_optimized_for_Google_Chrome_Engine_ {
+            get {
+                return ResourceManager.GetString("Microsoft Blazor WebAssembly is optimized for Google Chrome Engine.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die More information ähnelt.
+        /// </summary>
+        public static string More_information {
+            get {
+                return ResourceManager.GetString("More information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die More tries may be considered as spam. ähnelt.
         /// </summary>
         public static string More_tries_may_be_considered_as_spam_ {
@@ -1756,6 +1989,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Next_podcast_episode_available_on {
             get {
                 return ResourceManager.GetString("Next podcast episode available on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No action is required by the end-user. ähnelt.
+        /// </summary>
+        public static string No_action_is_required_by_the_end_user_ {
+            get {
+                return ResourceManager.GetString("No action is required by the end-user.", resourceCulture);
             }
         }
         
@@ -1918,6 +2160,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please contact the website administrator then. ähnelt.
+        /// </summary>
+        public static string Please_contact_the_website_administrator_then_ {
+            get {
+                return ResourceManager.GetString("Please contact the website administrator then.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Please do not hesitate to contact me if you find any grammar or spelling mistakes, I will correct them as soon as possible. ähnelt.
         /// </summary>
         public static string Please_do_not_hesitate_to_contact_me_if_you_find_any_grammar_or_spelling_mistakes__I_will_correct_them_as_soon_as_possible_ {
@@ -1961,6 +2212,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Provide_a_valid_e_mail_address {
             get {
                 return ResourceManager.GetString("Provide a valid e-mail address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Quoting Kerry Shale and his official website: ähnelt.
+        /// </summary>
+        public static string Quoting_Kerry_Shale_and_his_official_website_ {
+            get {
+                return ResourceManager.GetString("Quoting Kerry Shale and his official website:", resourceCulture);
             }
         }
         
@@ -2275,6 +2535,26 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The GeneralBusinessLogicService is executed in an interval of 15 minutes. ähnelt.
+        /// </summary>
+        public static string The_GeneralBusinessLogicService_is_executed_in_an_interval_of_15_minutes_ {
+            get {
+                return ResourceManager.GetString("The GeneralBusinessLogicService is executed in an interval of 15 minutes.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The GeneralBusinessLogicService will read and update the current web app settings (including news and gallery), it will send out maintenance notifications (if applicable) and it will delete old log entries regularily after some days. ähnelt.
+        /// </summary>
+        public static string The_GeneralBusinessLogicService_will_read_and_update_the_current_web_app_settings__including_news_and_gallery___it_will_send_out_maintenance_notifications__if_applicable__and_it_will_delete_old_log_entries_regularily_after_some_days_ {
+            get {
+                return ResourceManager.GetString("The GeneralBusinessLogicService will read and update the current web app settings" +
+                        " (including news and gallery), it will send out maintenance notifications (if ap" +
+                        "plicable) and it will delete old log entries regularily after some days.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The Holocaust cannot be undone, and there is no excuse for it, and we must do everything that such a history does not repeat. ähnelt.
         /// </summary>
         public static string The_Holocaust_cannot_be_undone__and_there_is_no_excuse_for_it__and_we_must_do_everything_that_such_a_history_does_not_repeat_ {
@@ -2322,12 +2602,43 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The orange sync icon blinks if the web app tries to reestablish the connection to the web server. ähnelt.
+        /// </summary>
+        public static string The_orange_sync_icon_blinks_if_the_web_app_tries_to_reestablish_the_connection_to_the_web_server_ {
+            get {
+                return ResourceManager.GetString("The orange sync icon blinks if the web app tries to reestablish the connection to" +
+                        " the web server.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The podcast &quot;Is It Rolling, Bob? Talking Dylan&quot; on Twitter (@isitrollingpod): Please be aware that this is not a Kerry Shale fan page. ähnelt.
         /// </summary>
         public static string The_podcast___Is_It_Rolling__Bob__Talking_Dylan___on_Twitter___isitrollingpod___Please_be_aware_that_this_is_not_a_Kerry_Shale_fan_page_ {
             get {
                 return ResourceManager.GetString("The podcast \'\'Is It Rolling, Bob? Talking Dylan\'\' on Twitter (@isitrollingpod): P" +
                         "lease be aware that this is not a Kerry Shale fan page.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The PodcastBusinessLogicService is executed in an interval based on the date when the next podcast is awaited. ähnelt.
+        /// </summary>
+        public static string The_PodcastBusinessLogicService_is_executed_in_an_interval_based_on_the_date_when_the_next_podcast_is_awaited_ {
+            get {
+                return ResourceManager.GetString("The PodcastBusinessLogicService is executed in an interval based on the date when" +
+                        " the next podcast is awaited.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The PodcastBusinessLogicService will crawl for new podcast episodes, will store them in a database and will also send out notifications if there is a new podcast episode available. ähnelt.
+        /// </summary>
+        public static string The_PodcastBusinessLogicService_will_crawl_for_new_podcast_episodes__will_store_them_in_a_database_and_will_also_send_out_notifications_if_there_is_a_new_podcast_episode_available_ {
+            get {
+                return ResourceManager.GetString("The PodcastBusinessLogicService will crawl for new podcast episodes, will store t" +
+                        "hem in a database and will also send out notifications if there is a new podcast" +
+                        " episode available.", resourceCulture);
             }
         }
         
@@ -2379,6 +2690,27 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The red warning icon blinks if the web app tries to reestablish the connection to the web server after the connection to the web server was closed. ähnelt.
+        /// </summary>
+        public static string The_red_warning_icon_blinks_if_the_web_app_tries_to_reestablish_the_connection_to_the_web_server_after_the_connection_to_the_web_server_was_closed_ {
+            get {
+                return ResourceManager.GetString("The red warning icon blinks if the web app tries to reestablish the connection to" +
+                        " the web server after the connection to the web server was closed.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The red warning icon stops blinking after 1 hour and will be shown permanently if the web app could not reestablish the connection to the web server after the connection to the web server was closed. ähnelt.
+        /// </summary>
+        public static string The_red_warning_icon_stops_blinking_after_1_hour_and_will_be_shown_permanently_if_the_web_app_could_not_reestablish_the_connection_to_the_web_server_after_the_connection_to_the_web_server_was_closed_ {
+            get {
+                return ResourceManager.GetString("The red warning icon stops blinking after 1 hour and will be shown permanently if" +
+                        " the web app could not reestablish the connection to the web server after the co" +
+                        "nnection to the web server was closed.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The Sandman (Netflix): ähnelt.
         /// </summary>
         public static string The_Sandman__Netflix__ {
@@ -2402,6 +2734,44 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string The_Sandman_Wiki {
             get {
                 return ResourceManager.GetString("The Sandman Wiki", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The web app shows the orange sync icon if the connection to the web server was lost. ähnelt.
+        /// </summary>
+        public static string The_web_app_shows_the_orange_sync_icon_if_the_connection_to_the_web_server_was_lost_ {
+            get {
+                return ResourceManager.GetString("The web app shows the orange sync icon if the connection to the web server was lo" +
+                        "st.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The web app shows the red warning icon if the connection to the web server was closed. ähnelt.
+        /// </summary>
+        public static string The_web_app_shows_the_red_warning_icon_if_the_connection_to_the_web_server_was_closed_ {
+            get {
+                return ResourceManager.GetString("The web app shows the red warning icon if the connection to the web server was cl" +
+                        "osed.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The web app works offline now. ähnelt.
+        /// </summary>
+        public static string The_web_app_works_offline_now_ {
+            get {
+                return ResourceManager.GetString("The web app works offline now.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The web app works online. ähnelt.
+        /// </summary>
+        public static string The_web_app_works_online_ {
+            get {
+                return ResourceManager.GetString("The web app works online.", resourceCulture);
             }
         }
         
@@ -2458,6 +2828,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Then_they_asked_me_if_I_would_be_a_star_and_if_I_can_give_them_an_autograph_ {
             get {
                 return ResourceManager.GetString("Then they asked me if I would be a star and if I can give them an autograph.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There are currently two scoped web services active: ähnelt.
+        /// </summary>
+        public static string There_are_currently_two_scoped_web_services_active_ {
+            get {
+                return ResourceManager.GetString("There are currently two scoped web services active:", resourceCulture);
             }
         }
         
@@ -2525,6 +2904,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string This_video_had_a_big_impact_on_me_ {
             get {
                 return ResourceManager.GetString("This video had a big impact on me:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This website is operated as a Microsoft Blazor WebAssembly App. ähnelt.
+        /// </summary>
+        public static string This_website_is_operated_as_a_Microsoft_Blazor_WebAssembly_App_ {
+            get {
+                return ResourceManager.GetString("This website is operated as a Microsoft Blazor WebAssembly App.", resourceCulture);
             }
         }
         
@@ -2650,11 +3038,29 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Web services information ähnelt.
+        /// </summary>
+        public static string Web_services_information {
+            get {
+                return ResourceManager.GetString("Web services information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Web services quality ähnelt.
         /// </summary>
         public static string Web_services_quality {
             get {
                 return ResourceManager.GetString("Web services quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die WebAssemblies work in web browsers in another way than usual HTML web pages. ähnelt.
+        /// </summary>
+        public static string WebAssemblies_work_in_web_browsers_in_another_way_than_usual_HTML_web_pages_ {
+            get {
+                return ResourceManager.GetString("WebAssemblies work in web browsers in another way than usual HTML web pages.", resourceCulture);
             }
         }
         
@@ -2683,6 +3089,15 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("Well, it would surprise me if we Germans would have done something good in that c" +
                         "ontext.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die West End work includes The Normal Heart and Frost/Nixon.&quot; ähnelt.
+        /// </summary>
+        public static string West_End_work_includes_The_Normal_Heart_and_Frost_Nixon___ {
+            get {
+                return ResourceManager.GetString("West End work includes The Normal Heart and Frost/Nixon.\'\'", resourceCulture);
             }
         }
         

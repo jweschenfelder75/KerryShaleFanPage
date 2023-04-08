@@ -123,12 +123,40 @@ else
 
     <p>&nbsp;</p>
 
+    <h2>@Translate["Web services information"].</h2>
+
+    <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
+        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Normal" class="rz-p-4">
+            <RadzenColumn Size="12">
+                <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-0 rz-mb-0">@Translate["There are currently two scoped web services active:"]</RadzenText>
+                <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                    - GeneralBusinessLogicService:
+                    @Translate["The GeneralBusinessLogicService is executed in an interval of 15 minutes."]
+                    @Translate["The GeneralBusinessLogicService will read and update the current web app settings (including news and gallery), it will send out maintenance notifications (if applicable) and it will delete old log entries regularily after some days."]
+                </RadzenText>
+                <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
+                    - PodcastBusinessLogicService:
+                    @Translate["The PodcastBusinessLogicService is executed in an interval based on the date when the next podcast is awaited."]
+                    @Translate["The PodcastBusinessLogicService will crawl for new podcast episodes, will store them in a database and will also send out notifications if there is a new podcast episode available."]
+                </RadzenText>
+            </RadzenColumn>
+        </RadzenStack>
+    </RadzenCard>
+
+    <p>&nbsp;</p>
+
     <h2>@Translate["Website history"].</h2>
 
     <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
         <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Normal" Gap="1rem" class="rz-p-4">
             <RadzenColumn Size="12">
                 <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-0 rz-mb-0">@Translate["Last website changes:"]</RadzenText>
+                <RadzenText TextStyle="TextStyle.Caption" class="rz-display-flex rz-mt-2 rz-mb-0">
+                    - (2023/04/07): Added more general information/content.
+                </RadzenText>
+                <RadzenText TextStyle="TextStyle.Caption" class="rz-display-flex rz-mt-2 rz-mb-0">
+                    - (2023/04/07): Added more translations for the new content.
+                </RadzenText>
                 <RadzenText TextStyle="TextStyle.Caption" class="rz-display-flex rz-mt-2 rz-mb-0">
                     - (2023/04/05): Blazor app prepared so that it can alternatively run as a Windows service (App hosted in Kestrel instead of IIS).
                 </RadzenText>
