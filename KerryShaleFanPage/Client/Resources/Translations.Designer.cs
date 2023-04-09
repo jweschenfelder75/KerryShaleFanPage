@@ -217,11 +217,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die About this webite: ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die About this website: ähnelt.
         /// </summary>
-        public static string About_this_webite_ {
+        public static string About_this_website_ {
             get {
-                return ResourceManager.GetString("About this webite:", resourceCulture);
+                return ResourceManager.GetString("About this website:", resourceCulture);
             }
         }
         
@@ -809,6 +809,16 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string For_information_on_postage_prices_to_receive_a_letter_from_UK_click {
             get {
                 return ResourceManager.GetString("For information on postage prices to receive a letter from UK click", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die For the end-user, a WebAssembly web app looks like a normal website in the web browser, both use HTML as markup language. ähnelt.
+        /// </summary>
+        public static string For_the_end_user__a_WebAssembly_web_app_looks_like_a_normal_website_in_the_web_browser__both_use_HTML_as_markup_language_ {
+            get {
+                return ResourceManager.GetString("For the end-user, a WebAssembly web app looks like a normal website in the web br" +
+                        "owser, both use HTML as markup language.", resourceCulture);
             }
         }
         
@@ -1554,13 +1564,13 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Instead of interpreting it as HTML and JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in the web browser which can make the execution faster. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Instead of executing JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in a virtual machine in the web browser which can make the execution faster. ähnelt.
         /// </summary>
-        public static string Instead_of_interpreting_it_as_HTML_and_JavaScript_in_the_web_browser__it_is_executed_as_portable_binary_code_aka_ByteCode_in_the_web_browser_which_can_make_the_execution_faster_ {
+        public static string Instead_of_executing_JavaScript_in_the_web_browser__it_is_executed_as_portable_binary_code_aka_ByteCode_in_a_virtual_machine_in_the_web_browser_which_can_make_the_execution_faster_ {
             get {
-                return ResourceManager.GetString("Instead of interpreting it as HTML and JavaScript in the web browser, it is execu" +
-                        "ted as portable binary-code aka ByteCode in the web browser which can make the e" +
-                        "xecution faster.", resourceCulture);
+                return ResourceManager.GetString("Instead of executing JavaScript in the web browser, it is executed as portable bi" +
+                        "nary-code aka ByteCode in a virtual machine in the web browser which can make th" +
+                        "e execution faster.", resourceCulture);
             }
         }
         

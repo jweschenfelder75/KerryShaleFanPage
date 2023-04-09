@@ -7,20 +7,22 @@
 <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
     <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Normal" class="rz-p-4">
         <RadzenColumn Size="12">
-            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-0 rz-mb-0">@Translate["About this webite:"]</RadzenText>
+            <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-0 rz-mb-0">@Translate["About this website:"]</RadzenText>
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
                 @Translate["This website is operated as a Microsoft Blazor WebAssembly App."]
                 @Translate["It is a web app which is executed on the client's side, and which is loaded from a web server."]
                 @Translate["Microsoft Blazor WebAssembly is optimized for Google Chrome Engine."]
                 @Translate["It means that you are able to install the web app alternatively as a desktop app via Google Chrome and also via Microsoft Edge (which is based on Google's Chrome Engine)."]
+                @Translate["But installing the web app as a desktop app will only work via Google Chrome or via Microsoft Edge, no other web browser supports that yet."]
             </RadzenText>
             <RadzenStack Orientation="Orientation.Vertical" JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-my-4">
                 <RadzenImage Path="@Translate["/img/blazor-app-install.jpg"]" Style="width: 1000px; max-width: 100%;" />
             </RadzenStack>
             <RadzenText TextStyle="TextStyle.Body2" class="rz-mt-0 rz-my-0">
                 @Translate["WebAssemblies work in web browsers in another way than usual HTML web pages."]
-                @Translate["Instead of interpreting it as HTML and JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in the web browser which can make the execution faster."]
+                @Translate["Instead of executing JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in a virtual machine in the web browser which can make the execution faster."]
                 @Translate["Beside of that, Blazor WebAssembly allows it that the web app will continue to work (offline) even if the web server is down at that very moment."]
+                @Translate["For the end-user, a WebAssembly web app looks like a normal website in the web browser, both use HTML as markup language."]
             </RadzenText>
             <RadzenRow JustifyContent="JustifyContent.Normal" AlignItems="AlignItems.Center" Gap="1rem" class="rz-p-4">
                 <RadzenColumn Size="12" SizeXS="12" SizeSM="12" SizeMD="12" SizeLG="6" SizeXL="6" SizeXX="6" class="text-center">

@@ -1026,8 +1026,8 @@
   <data name="More information" xml:space="preserve">
     <value>More information</value>
   </data>
-  <data name="About this webite:" xml:space="preserve">
-    <value>About this webite:</value>
+  <data name="About this website:" xml:space="preserve">
+    <value>About this website:</value>
   </data>
   <data name="This website is operated as a Microsoft Blazor WebAssembly App." xml:space="preserve">
     <value>This website is operated as a Microsoft Blazor WebAssembly App.</value>
@@ -1044,8 +1044,8 @@
   <data name="WebAssemblies work in web browsers in another way than usual HTML web pages." xml:space="preserve">
     <value>WebAssemblies work in web browsers in another way than usual HTML web pages.</value>
   </data>
-  <data name="Instead of interpreting it as HTML and JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in the web browser which can make the execution faster." xml:space="preserve">
-    <value>Instead of interpreting it as HTML and JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in the web browser which can make the execution faster.</value>
+  <data name="Instead of executing JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in a virtual machine in the web browser which can make the execution faster." xml:space="preserve">
+    <value>Instead of executing JavaScript in the web browser, it is executed as portable binary-code aka ByteCode in a virtual machine in the web browser which can make the execution faster.</value>
   </data>
   <data name="Beside of that, Blazor WebAssembly allows it that the web app will continue to work (offline) even if the web server is down at that very moment." xml:space="preserve">
     <value>Beside of that, Blazor WebAssembly allows it that the web app will continue to work (offline) even if the web server is down at that very moment.</value>
@@ -1151,5 +1151,8 @@
   </data>
   <data name="The web app shows the orange sync icon if the connection to the web server was lost." xml:space="preserve">
     <value>The web app shows the orange sync icon if the connection to the web server was lost.</value>
+  </data>
+  <data name="For the end-user, a WebAssembly web app looks like a normal website in the web browser, both use HTML as markup language." xml:space="preserve">
+    <value>For the end-user, a WebAssembly web app looks like a normal website in the web browser, both use HTML as markup language.</value>
   </data>
 </root>
