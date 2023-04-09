@@ -53,24 +53,24 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
 
                 _logger.LogInformation($"Podcast Business Logic Service was called (execution every: {sleepPeriod.TotalMinutes} min).");
 
-                //var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
-                //if (latestPodcastEpisodeDto == null)
-                //{
-                //    _logger.LogInformation("No new podcast episode found (yet).");
-                //}
-                //else
-                //{
-                //    _logger.LogInformation($"New episode fetched successfully: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
-                //    var success = _mailAndSmsService.SendSmsNotification(string.Empty, string.Empty, "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);
-                //    if (success)
-                //    {
-                //        _logger.LogInformation($"Notification for new podcast episode sent successfully: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
-                //    }
-                //    else
-                //    {
-                //        _logger.LogError($"Notification for new podcast episode could not be sent: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
-                //    }
-                //}
+                var latestPodcastEpisodeDto = await StoreLatestPodcastEpisodeInDatabaseAsync(cancellationToken);
+                if (latestPodcastEpisodeDto == null)
+                {
+                    _logger.LogInformation("No new podcast episode found (yet).");
+                }
+                else
+                {
+                    _logger.LogInformation($"New episode fetched successfully: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
+                    var success = _mailAndSmsService.SendSmsNotification(string.Empty, string.Empty, "New podcast episode is out!", string.Empty, latestPodcastEpisodeDto);
+                    if (success)
+                    {
+                        _logger.LogInformation($"Notification for new podcast episode sent successfully: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
+                    }
+                    else
+                    {
+                        _logger.LogError($"Notification for new podcast episode could not be sent: {latestPodcastEpisodeDto.Title} ({latestPodcastEpisodeDto.Date})");
+                    }
+                }
 
                 await Task.Delay((int)sleepPeriod.TotalMilliseconds, cancellationToken);
             }
