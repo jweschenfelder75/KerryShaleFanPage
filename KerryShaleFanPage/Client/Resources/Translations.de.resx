@@ -1095,8 +1095,8 @@
   <data name="An example is shown in this picture:" xml:space="preserve">
     <value>Ein Beispiel wird in diesem Bild gezeigt:</value>
   </data>
-  <data name="If you open the Developer Debugging Tools of the web browser by pressing the F12 button, you will notice those console messages while the web app is trying to reestablish the connection to the web server:" xml:space="preserve">
-    <value>Wenn man die Developer Debugging Tools vom Webbrowser durch das Drücken von F12 öffnet, wird man folgende Konsole-Nachrichten sehen, während die Web App versucht, die Verbindung zum Webserver wieder herzustellen:</value>
+  <data name="If you open the Developer Debugging Tools of the web browser by pressing the F12 button, you will notice those console messages while the web app is trying to reestablish the connection to the web server." xml:space="preserve">
+    <value>Wenn man die Developer Debugging Tools vom Webbrowser durch das Drücken von F12 öffnet, wird man folgende Konsole-Nachrichten sehen, während die Web App versucht, die Verbindung zum Webserver wieder herzustellen.</value>
   </data>
   <data name="General information:" xml:space="preserve">
     <value>Generelle Information:</value>

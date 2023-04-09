@@ -1496,13 +1496,13 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die If you open the Developer Debugging Tools of the web browser by pressing the F12 button, you will notice those console messages while the web app is trying to reestablish the connection to the web server: ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die If you open the Developer Debugging Tools of the web browser by pressing the F12 button, you will notice those console messages while the web app is trying to reestablish the connection to the web server. ähnelt.
         /// </summary>
         public static string If_you_open_the_Developer_Debugging_Tools_of_the_web_browser_by_pressing_the_F12_button__you_will_notice_those_console_messages_while_the_web_app_is_trying_to_reestablish_the_connection_to_the_web_server_ {
             get {
                 return ResourceManager.GetString("If you open the Developer Debugging Tools of the web browser by pressing the F12 " +
                         "button, you will notice those console messages while the web app is trying to re" +
-                        "establish the connection to the web server:", resourceCulture);
+                        "establish the connection to the web server.", resourceCulture);
             }
         }
         
