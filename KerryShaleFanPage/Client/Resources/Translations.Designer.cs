@@ -2982,12 +2982,12 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Until 500 followers, the fan page will follow back every new follower, unless you are a racist/Nazi. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Until 500 followers, the fan page will follow back every new follower, unless you are a racist/Nazi/internet troll/bot. ähnelt.
         /// </summary>
-        public static string Until_500_followers__the_fan_page_will_follow_back_every_new_follower__unless_you_are_a_racist_Nazi_ {
+        public static string Until_500_followers__the_fan_page_will_follow_back_every_new_follower__unless_you_are_a_racist_Nazi_internet_troll_bot_ {
             get {
                 return ResourceManager.GetString("Until 500 followers, the fan page will follow back every new follower, unless you" +
-                        " are a racist/Nazi.", resourceCulture);
+                        " are a racist/Nazi/internet troll/bot.", resourceCulture);
             }
         }
         

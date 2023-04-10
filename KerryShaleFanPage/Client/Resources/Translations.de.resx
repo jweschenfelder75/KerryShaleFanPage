@@ -832,7 +832,7 @@
     <value>Folge dem Podcast stattdessen besser auf Apple, Spotify, Audible, etc.</value>
   </data>
   <data name="This fan page will currently not advertise the Twitter profile @isitrollingpod because it has no intention to lure Kerry Shale fans in block tirades/rants and to see unlucky Kerry Shale fans afterwards." xml:space="preserve">
-    <value>Die Fanseite wird aktuell nicht das Twitter-Profil @isitrollingpod bewerben, da es nicht die Absicht hat, Kerry Shale Fans in Block-Tiraden und -Anfälle zu locken und anschließend unglückliche Kerry Shale Fans zu sehen.</value>
+    <value>Die Fanseite wird aktuell das Twitter-Profil @isitrollingpod nicht bewerben, da es nicht die Absicht hat, Kerry Shale Fans in Block-Tiraden und -Anfälle zu locken und anschließend unglückliche Kerry Shale Fans zu sehen.</value>
   </data>
   <data name="YELLOW FLAGS (chances getting blocked are about 50%):" xml:space="preserve">
     <value>YELLOW FLAGS (Chancen sind bei 50%, geblockt zu werden):</value>
@@ -942,8 +942,8 @@
   <data name="You can write everything you want as long as it is not hate-speech or trolling." xml:space="preserve">
     <value>Du kannst alles schreiben, solange es keine Hassreden sind und es kein Herumtrollen ist.</value>
   </data>
-  <data name="Until 500 followers, the fan page will follow back every new follower, unless you are a racist/Nazi." xml:space="preserve">
-    <value>Bei bis zu 500 Followern wird die Fanseite jedem neuen Follower zurückfolgen, außer es ist ein Rassist/Nazi.</value>
+  <data name="Until 500 followers, the fan page will follow back every new follower, unless you are a racist/Nazi/internet troll/bot." xml:space="preserve">
+    <value>Bei bis zu 500 Followern wird die Fanseite jedem neuen Follower zurückfolgen, außer es ist ein Rassist/Nazi/Internettroll/Bot.</value>
   </data>
   <data name="Follow_follow_vs_unfollow_unfollow." xml:space="preserve">
     <value>Folgen=Folgen, Entfolgen=Entfolgen.</value>
