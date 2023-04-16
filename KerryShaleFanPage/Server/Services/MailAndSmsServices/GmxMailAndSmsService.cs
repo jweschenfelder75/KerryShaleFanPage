@@ -99,7 +99,7 @@ namespace KerryShaleFanPage.Server.Services.MailAndSmsServices
                 EnableSsl = true,
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(_settings.EMailProviderConfiguration.GMail.EMailUsername, _settings.EMailProviderConfiguration.GMail.EMailPassword)
+                Credentials = new NetworkCredential(_settings.EMailProviderConfiguration.Gmx.EMailUsername, _settings.EMailProviderConfiguration.Gmx.EMailPassword)
             };
 
             using var mail = new MailMessage(from, to)
