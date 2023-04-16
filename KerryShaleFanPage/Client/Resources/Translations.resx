@@ -645,8 +645,8 @@
   <data name="Next podcast episode available on" xml:space="preserve">
     <value>Next podcast episode available on</value>
   </data>
-  <data name="New podcast episode available, see below!" xml:space="preserve">
-    <value>New podcast episode available, see below!</value>
+  <data name="New podcast episode expected today!" xml:space="preserve">
+    <value>New podcast episode expected today!</value>
   </data>
   <data name="Watch The Sandman on" xml:space="preserve">
     <value>Watch The Sandman on</value>

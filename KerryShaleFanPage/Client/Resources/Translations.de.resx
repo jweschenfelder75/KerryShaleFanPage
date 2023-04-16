@@ -672,8 +672,8 @@
   <data name="Next podcast episode available on" xml:space="preserve">
     <value>Nächste Podcast Episode verfügbar am</value>
   </data>
-  <data name="New podcast episode available, see below!" xml:space="preserve">
-    <value>Neue Podcast Episode verfügbar, siehe unten!</value>
+  <data name="New podcast episode expected today!" xml:space="preserve">
+    <value>Neue Podcast Episode wird heute erwartet!</value>
   </data>
   <data name="What Life in the Shtetl Was Like" xml:space="preserve">
     <value>SHTETL - Originalaufnahmen aus einer vergangenen Welt</value>

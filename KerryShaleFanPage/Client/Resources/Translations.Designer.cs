@@ -1967,11 +1967,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die New podcast episode available, see below! ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die New podcast episode expected today! ähnelt.
         /// </summary>
-        public static string New_podcast_episode_available__see_below_ {
+        public static string New_podcast_episode_expected_today_ {
             get {
-                return ResourceManager.GetString("New podcast episode available, see below!", resourceCulture);
+                return ResourceManager.GetString("New podcast episode expected today!", resourceCulture);
             }
         }
         
