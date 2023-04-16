@@ -68,12 +68,12 @@ namespace KerryShaleFanPage.Shared.Objects
         /// <returns></returns>
         private DateTime CalculateExpectedNextDate()
         {
-            var today = DateTime.Now.Date;
+            var episodeDate = Date ?? DateTime.Now.Date;
             var expectedNextDate = _initialReferenceDate;
             const int maxTries = 100;  // avoids an endless loop
             var count = 0;
 
-            while (expectedNextDate <= today && count < maxTries)
+            while (expectedNextDate <= episodeDate && count < maxTries)
             {
                 expectedNextDate = expectedNextDate.AddDays(_EPISODES_TIME_PERIOD_IN_DAYS);
                 count++;
