@@ -99,7 +99,7 @@
                             <div class="d-none d-lg-block">
                                 @if (_showLatestPodcastEpisode)
                                 {
-                                    @Translate["Hear the latest podcast episode"]<br />@($"({Translate["Next episode available"]}")<br />@($"{@Translate["on"]} {@_latestPodcastEpisode.CalculatedExpectedNextDate.ToShortDateString()}.)")<br />
+                                    @Translate["Hear the latest podcast episode"]<br />@($"({Translate["Next episode available"]}")<br />@($"{@Translate["on"]} {@_latestPodcastEpisode?.CalculatedExpectedNextDate.ToShortDateString()}.)")<br />
                                 }
                                 else
                                 {
@@ -123,7 +123,7 @@
                                 <a href="https://podcasts.apple.com/gb/podcast/is-it-rolling-bob-talking-dylan/id1437321669" target="blank"><img src="/img/listen-on-apple-podcasts-1.png" alt="The Testament Of Sherlock Holmes" /></a>&nbsp;
                             </div>
                             <div class="col-6 text-center vertical-align">
-                                <a href="https://acast.com/public/shows/63d0e60777d9ee0011a4f45b" target="blank"><img src="/img/listen-on-acast.png" alt="Crimes & Punishments" /></a>
+                                <a href="https://shows.acast.com/63d0e60777d9ee0011a4f45b" target="blank"><img src="/img/listen-on-acast.png" alt="Crimes & Punishments" /></a>
                             </div>
                         }
                         else
