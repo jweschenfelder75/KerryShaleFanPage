@@ -314,6 +314,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die and his IMDb page ähnelt.
+        /// </summary>
+        public static string and_his_IMDb_page {
+            get {
+                return ResourceManager.GetString("and his IMDb page", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die And if you do not want to be stoned by me, please stay away from me with anti-Jewish comments or jokes, hate speech, racism and homophobia. ähnelt.
         /// </summary>
         public static string And_if_you_do_not_want_to_be_stoned_by_me__please_stay_away_from_me_with_anti_Jewish_comments_or_jokes__hate_speech__racism_and_homophobia_ {
@@ -349,15 +358,6 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("And now the best part: When everyone was on company holiday, I should move some c" +
                         "omputers.", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die and the website of his agency ähnelt.
-        /// </summary>
-        public static string and_the_website_of_his_agency {
-            get {
-                return ResourceManager.GetString("and the website of his agency", resourceCulture);
             }
         }
         
@@ -782,15 +782,6 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string FanBiz {
             get {
                 return ResourceManager.GetString("FanBiz", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Film and Audio Reels by Kerry Shale ähnelt.
-        /// </summary>
-        public static string Film_and_Audio_Reels_by_Kerry_Shale {
-            get {
-                return ResourceManager.GetString("Film and Audio Reels by Kerry Shale", resourceCulture);
             }
         }
         
@@ -3080,6 +3071,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Website_history {
             get {
                 return ResourceManager.GetString("Website history", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Websites of his agencies ähnelt.
+        /// </summary>
+        public static string Websites_of_his_agencies {
+            get {
+                return ResourceManager.GetString("Websites of his agencies", resourceCulture);
             }
         }
         
