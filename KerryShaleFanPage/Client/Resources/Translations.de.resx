@@ -1111,7 +1111,7 @@
     <value>Der GeneralBusinessLogicService wird die aktuellen Web App-Einstellungen auslesen (inklusive News und Gallerie), wird Wartungsmeldungen aussenden (wenn anwendbar) und wird Logeinträge regelmäßig nach eingen Tagen löschen.</value>
   </data>
   <data name="The PodcastBusinessLogicService is executed in an interval based on the date when the next podcast is awaited." xml:space="preserve">
-    <value>Der PodcastBusinessLogicService wird in einem Interval basieren auf dem Datum, wann die nächste Podcast-Episode veröffentlicht wird, ausgeführt.</value>
+    <value>Der PodcastBusinessLogicService wird in einem Interval basierend auf dem Datum, wann die nächste Podcast-Episode veröffentlicht wird, ausgeführt.</value>
   </data>
   <data name="The PodcastBusinessLogicService will crawl for new podcast episodes, will store them in a database and will also send out notifications if there is a new podcast episode available." xml:space="preserve">
     <value>Der PodcastBusinessLogicService wird nach neuen Podcast-Episoden crawlen, diese in einer Datenbank speichern und wird zudem Benachrichtigungen aussenden, wenn eine neue Podcast-Episode verfügbar ist.</value>
