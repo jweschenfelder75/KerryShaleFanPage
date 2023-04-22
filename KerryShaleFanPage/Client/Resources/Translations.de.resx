@@ -1155,4 +1155,7 @@
   <data name="For the end-user, a WebAssembly web app looks like a normal website in the web browser, both use HTML as markup language." xml:space="preserve">
     <value>Für den Endanwender sieht eine WebAssembly Web App wie eine normale Webseite im Webbrowser aus, beide nutzen HTML als Auszeichnungssprache.</value>
   </data>
+  <data name="He tells about himself that he is a Bob Dylan 'authority', he is also a big fan of Bob Dylan." xml:space="preserve">
+    <value>Er sagt über sich selbst aus, dass er eine Bob Dylan 'Authorität' ist, er ist auch ein sehr großer Fan von Bob Dylan.</value>
+  </data>
 </root>

@@ -915,6 +915,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die He tells about himself that he is a Bob Dylan &apos;authority&apos;, he is also a big fan of Bob Dylan. ähnelt.
+        /// </summary>
+        public static string He_tells_about_himself_that_he_is_a_Bob_Dylan__authority___he_is_also_a_big_fan_of_Bob_Dylan_ {
+            get {
+                return ResourceManager.GetString("He tells about himself that he is a Bob Dylan \'authority\', he is also a big fan o" +
+                        "f Bob Dylan.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Hear the latest podcast episode ähnelt.
         /// </summary>
         public static string Hear_the_latest_podcast_episode {
