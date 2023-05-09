@@ -526,6 +526,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die But installing the web app as a desktop app will only work via Google Chrome or via Microsoft Edge, no other web browser supports that yet. ähnelt.
+        /// </summary>
+        public static string But_installing_the_web_app_as_a_desktop_app_will_only_work_via_Google_Chrome_or_via_Microsoft_Edge__no_other_web_browser_supports_that_yet_ {
+            get {
+                return ResourceManager.GetString("But installing the web app as a desktop app will only work via Google Chrome or v" +
+                        "ia Microsoft Edge, no other web browser supports that yet.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die But it did not help, the discrimination against the Jewish people increased, they were not allowed to use the same locations like e.g. all other Germans did. ähnelt.
         /// </summary>
         public static string But_it_did_not_help__the_discrimination_against_the_Jewish_people_increased__they_were_not_allowed_to_use_the_same_locations_like_e_g__all_other_Germans_did_ {
@@ -2727,6 +2737,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string The_Sandman__Netflix__ {
             get {
                 return ResourceManager.GetString("The Sandman (Netflix):", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The Sandman at Audible ähnelt.
+        /// </summary>
+        public static string The_Sandman_at_Audible {
+            get {
+                return ResourceManager.GetString("The Sandman at Audible", resourceCulture);
             }
         }
         

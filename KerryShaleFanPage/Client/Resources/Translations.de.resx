@@ -1158,4 +1158,10 @@
   <data name="He tells about himself that he is a Bob Dylan 'authority', he is also a big fan of Bob Dylan." xml:space="preserve">
     <value>Er sagt über sich selbst aus, dass er eine Bob Dylan 'Authorität' ist, er ist auch ein sehr großer Fan von Bob Dylan.</value>
   </data>
+  <data name="But installing the web app as a desktop app will only work via Google Chrome or via Microsoft Edge, no other web browser supports that yet." xml:space="preserve">
+    <value>Aber das Installieren der Web App als Desktop App wird nur via Google Chrome oder via Microsoft Edge funktionieren, kein anderer Webbrowser unterstützt dies bisher.</value>
+  </data>
+  <data name="The Sandman at Audible" xml:space="preserve">
+    <value>The Sandman auf Audible</value>
+  </data>
 </root>
