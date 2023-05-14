@@ -76,29 +76,33 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
                     var imageSrcTagClasses = imageSrcTag.Attr("class");
                     if (!string.IsNullOrWhiteSpace(imageSrcTagClasses))
                     {
-                        var lastClassName = imageSrcTagClasses.Split(" ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).LastOrDefault();
-                        if (!string.IsNullOrWhiteSpace(lastClassName))
+                        var lastClassNames = imageSrcTagClasses.Split(" ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+                        if (lastClassNames.Length > 2)
                         {
-                            var cssPosStart = doc.Head.Html.IndexOf($"\n.{lastClassName}{{background-position:center;", StringComparison.InvariantCultureIgnoreCase);
-                            if (cssPosStart > 0)
+                            var lastClassName = lastClassNames[2];
+                            if (!string.IsNullOrWhiteSpace(lastClassName))
                             {
-                                var cssPosEnd = doc.Head.Html.IndexOf("/*!sc*/\n", cssPosStart, StringComparison.InvariantCultureIgnoreCase);
-                                if (cssPosEnd > cssPosStart && doc.Head.Html.Length >= cssPosEnd)
+                                var cssPosStart = doc.Head.Html.IndexOf($"\n.{lastClassName}{{background-position:center;", StringComparison.InvariantCultureIgnoreCase);
+                                if (cssPosStart > 0)
                                 {
-                                    var relevantCssPart = doc.Head.Html[cssPosStart..cssPosEnd];
-                                    if (!string.IsNullOrWhiteSpace(relevantCssPart))
+                                    var cssPosEnd = doc.Head.Html.IndexOf("/*!sc*/\n", cssPosStart, StringComparison.InvariantCultureIgnoreCase);
+                                    if (cssPosEnd > cssPosStart && doc.Head.Html.Length >= cssPosEnd)
                                     {
-                                        const string imageSrcCssTag = "background-image:url(";
-                                        var imgPosStart = relevantCssPart.IndexOf(imageSrcCssTag, StringComparison.InvariantCultureIgnoreCase) + imageSrcCssTag.Length;
-                                        if (imgPosStart > 0)
+                                        var relevantCssPart = doc.Head.Html[cssPosStart..cssPosEnd];
+                                        if (!string.IsNullOrWhiteSpace(relevantCssPart))
                                         {
-                                            var imgPosEnd = relevantCssPart.IndexOf(");width:100%;", imgPosStart, StringComparison.InvariantCultureIgnoreCase);
-                                            if (imgPosEnd > imgPosStart && relevantCssPart.Length >= imgPosEnd)
+                                            const string imageSrcCssTag = "background-image:url(";
+                                            var imgPosStart = relevantCssPart.IndexOf(imageSrcCssTag, StringComparison.InvariantCultureIgnoreCase) + imageSrcCssTag.Length;
+                                            if (imgPosStart > 0)
                                             {
-                                                var relevantImgPart = relevantCssPart[imgPosStart..imgPosEnd];
-                                                if (!string.IsNullOrWhiteSpace(relevantImgPart))
+                                                var imgPosEnd = relevantCssPart.IndexOf(");width:100%;", imgPosStart, StringComparison.InvariantCultureIgnoreCase);
+                                                if (imgPosEnd > imgPosStart && relevantCssPart.Length >= imgPosEnd)
                                                 {
-                                                    imageSrc = relevantImgPart;
+                                                    var relevantImgPart = relevantCssPart[imgPosStart..imgPosEnd];
+                                                    if (!string.IsNullOrWhiteSpace(relevantImgPart))
+                                                    {
+                                                        imageSrc = relevantImgPart;
+                                                    }
                                                 }
                                             }
                                         }

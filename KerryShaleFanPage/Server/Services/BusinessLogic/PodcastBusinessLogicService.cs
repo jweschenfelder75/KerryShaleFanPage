@@ -198,7 +198,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
                 ImageUrl = (latestAcastEpisode?.ImageUrl ?? string.Empty).Length > 255 ? latestAcastEpisode?.ImageUrl?[..255] : latestAcastEpisode?.ImageUrl,
                 ImageData = latestAcastImageData,
                 ImageDataBase64 = latestAcastImageBase64,
-                Date = latestAcastEpisode?.Date.ToDateTime("M/d/yyyy"),  // e.g. "1/22/2023"
+                Date = latestAcastEpisode?.Date.ToDateTime("dddd, MMMM dd, yyyy"),  // e.g. "Sunday, May 14, 2023"
                 Duration = latestAcastEpisode?.Duration,
                 Checksum = latestAcastEpisode?.Checksum,
                 FetchedExpectedNextDate = null
