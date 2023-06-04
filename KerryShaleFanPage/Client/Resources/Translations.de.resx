@@ -351,7 +351,7 @@
   <data name="One day I should install a computer in one building of the Babelsberg studios and had to walk to the server room." xml:space="preserve">
     <value>Eines Tages sollte ich einen Computer in einem Gebäude der Babelsberg Studios installieren und musste dazu zum Serverraum gehen.</value>
   </data>
-  <data name="While walking to the server room, someone from the custome department called me back." xml:space="preserve">
+  <data name="While walking to the server room, someone from the costume department called me back." xml:space="preserve">
     <value>Auf dem Weg zum Serverraum rief mich jemand aus der Kostümabteilung zurück.</value>
   </data>
   <data name="I was wondering about it, but I was that kind and walked back to her." xml:space="preserve">
@@ -414,7 +414,7 @@
   <data name="I stood there like that for several minutes and waited for help." xml:space="preserve">
     <value>Ich stand so da für einige Minuten und wartete auf Hilfe.</value>
   </data>
-  <data name="But since the everyone was on company holiday, I was alone." xml:space="preserve">
+  <data name="But since everyone was on company holiday, I was alone." xml:space="preserve">
     <value>Da aber jeder in den Betriebsferien war, war ich alleine.</value>
   </data>
   <data name="I decided then to move one foot forwards slowly." xml:space="preserve">
@@ -760,7 +760,7 @@
     <value>Instagram Fan Page (NEU!)</value>
   </data>
   <data name="YouTube channel (NEW!)" xml:space="preserve">
-    <value>YouTube channel (NEU!)</value>
+    <value>YouTube Kanal (NEU!)</value>
   </data>
   <data name="Those rules are not set up by myself." xml:space="preserve">
     <value>Diese Regeln wurden nicht von mir definiert.</value>
@@ -1163,5 +1163,44 @@
   </data>
   <data name="The Sandman at Audible" xml:space="preserve">
     <value>The Sandman auf Audible</value>
+  </data>
+  <data name="Please note that his date of birth on IMDb is wrong." xml:space="preserve">
+    <value>Bitte nehmen Sie zur Kenntnis, dass sein Geburtsdatum auf IMDb falsch ist.</value>
+  </data>
+  <data name="Wikipedia is right here, after very intense research I came to the same conclusion like Wikipedia." xml:space="preserve">
+    <value>Wikipedia hat hier recht, nach sehr intensiver Recherche kam ich zum selben Ergebnis wie Wikipedia.</value>
+  </data>
+  <data name="Black -&gt; gray" xml:space="preserve">
+    <value>Schwarz -&gt; grau</value>
+  </data>
+  <data name="Brown" xml:space="preserve">
+    <value>Braun</value>
+  </data>
+  <data name="Eye color:" xml:space="preserve">
+    <value>Augenfarbe:</value>
+  </data>
+  <data name="Hair color:" xml:space="preserve">
+    <value>Haarfarbe:</value>
+  </data>
+  <data name="Kerry Shale on Wikipedia" xml:space="preserve">
+    <value>Kerry Shale auf Wikipedia</value>
+  </data>
+  <data name="Memberships:" xml:space="preserve">
+    <value>Mitgliedschaften:</value>
+  </data>
+  <data name="Height:" xml:space="preserve">
+    <value>Größe:</value>
+  </data>
+  <data name="Location:" xml:space="preserve">
+    <value>Wohnort:</value>
+  </data>
+  <data name="Official Kerry Shale Spotlight profile" xml:space="preserve">
+    <value>Offizielles Kerry Shale Spotlight Profil</value>
+  </data>
+  <data name="Weight:" xml:space="preserve">
+    <value>Gewicht:</value>
+  </data>
+  <data name="[6] Official Kerry Shale Spotlight profile" xml:space="preserve">
+    <value>[6] Offizielles Kerry Shale Spotlight Profil</value>
   </data>
 </root>

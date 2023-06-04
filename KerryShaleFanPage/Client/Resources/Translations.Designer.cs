@@ -153,6 +153,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [6] Official Kerry Shale Spotlight profile ähnelt.
+        /// </summary>
+        public static string _6__Official_Kerry_Shale_Spotlight_profile {
+            get {
+                return ResourceManager.GetString("[6] Official Kerry Shale Spotlight profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die /img/edmund-burke-quote.jpg ähnelt.
         /// </summary>
         public static string _img_edmund_burke_quote_jpg {
@@ -507,11 +516,29 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Black -&gt; gray ähnelt.
+        /// </summary>
+        public static string Black____gray {
+            get {
+                return ResourceManager.GetString("Black -> gray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Brent Spiner Biography ähnelt.
         /// </summary>
         public static string Brent_Spiner_Biography {
             get {
                 return ResourceManager.GetString("Brent Spiner Biography", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Brown ähnelt.
+        /// </summary>
+        public static string Brown {
+            get {
+                return ResourceManager.GetString("Brown", resourceCulture);
             }
         }
         
@@ -546,11 +573,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die But since the everyone was on company holiday, I was alone. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die But since everyone was on company holiday, I was alone. ähnelt.
         /// </summary>
-        public static string But_since_the_everyone_was_on_company_holiday__I_was_alone_ {
+        public static string But_since_everyone_was_on_company_holiday__I_was_alone_ {
             get {
-                return ResourceManager.GetString("But since the everyone was on company holiday, I was alone.", resourceCulture);
+                return ResourceManager.GetString("But since everyone was on company holiday, I was alone.", resourceCulture);
             }
         }
         
@@ -778,6 +805,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Eye color: ähnelt.
+        /// </summary>
+        public static string Eye_color_ {
+            get {
+                return ResourceManager.GetString("Eye color:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Fan comments are usually no problem at all, you can spam the fan page all day. ähnelt.
         /// </summary>
         public static string Fan_comments_are_usually_no_problem_at_all__you_can_spam_the_fan_page_all_day_ {
@@ -869,6 +905,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Hair color: ähnelt.
+        /// </summary>
+        public static string Hair_color_ {
+            get {
+                return ResourceManager.GetString("Hair color:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die He can press the block button very fast. ähnelt.
         /// </summary>
         public static string He_can_press_the_block_button_very_fast_ {
@@ -940,6 +985,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Hear_the_latest_podcast_episode {
             get {
                 return ResourceManager.GetString("Hear the latest podcast episode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Height: ähnelt.
+        /// </summary>
+        public static string Height_ {
+            get {
+                return ResourceManager.GetString("Height:", resourceCulture);
             }
         }
         
@@ -1824,6 +1878,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale on Wikipedia ähnelt.
+        /// </summary>
+        public static string Kerry_Shale_on_Wikipedia {
+            get {
+                return ResourceManager.GetString("Kerry Shale on Wikipedia", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale&apos;s private job search profile: ähnelt.
         /// </summary>
         public static string Kerry_Shale_s_private_job_search_profile_ {
@@ -1897,6 +1960,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Location: ähnelt.
+        /// </summary>
+        public static string Location_ {
+            get {
+                return ResourceManager.GetString("Location:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Log ähnelt.
         /// </summary>
         public static string Log {
@@ -1911,6 +1983,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Logger {
             get {
                 return ResourceManager.GetString("Logger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Memberships: ähnelt.
+        /// </summary>
+        public static string Memberships_ {
+            get {
+                return ResourceManager.GetString("Memberships:", resourceCulture);
             }
         }
         
@@ -2046,6 +2127,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Normal_request {
             get {
                 return ResourceManager.GetString("Normal request", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Official Kerry Shale Spotlight profile ähnelt.
+        /// </summary>
+        public static string Official_Kerry_Shale_Spotlight_profile {
+            get {
+                return ResourceManager.GetString("Official Kerry Shale Spotlight profile", resourceCulture);
             }
         }
         
@@ -2206,6 +2296,15 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("Please know that I do get a real bad skin rush if I see any anti-Jewish (aka anti" +
                         "semitic) comments somewhere.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please note that the date of birth on IMDb is wrong. ähnelt.
+        /// </summary>
+        public static string Please_note_that_the_date_of_birth_on_IMDb_is_wrong_ {
+            get {
+                return ResourceManager.GetString("Please note that the date of birth on IMDb is wrong.", resourceCulture);
             }
         }
         
@@ -3113,6 +3212,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Weight: ähnelt.
+        /// </summary>
+        public static string Weight_ {
+            get {
+                return ResourceManager.GetString("Weight:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Welcome ähnelt.
         /// </summary>
         public static string Welcome {
@@ -3179,12 +3287,22 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die While walking to the server room, someone from the custome department called me back. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die While walking to the server room, someone from the costume department called me back. ähnelt.
         /// </summary>
-        public static string While_walking_to_the_server_room__someone_from_the_custome_department_called_me_back_ {
+        public static string While_walking_to_the_server_room__someone_from_the_costume_department_called_me_back_ {
             get {
-                return ResourceManager.GetString("While walking to the server room, someone from the custome department called me b" +
+                return ResourceManager.GetString("While walking to the server room, someone from the costume department called me b" +
                         "ack.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Wikipedia is right here, after very intense research I came to the same conclusion like Wikipedia. ähnelt.
+        /// </summary>
+        public static string Wikipedia_is_right_here__after_very_intense_research_I_came_to_the_same_conclusion_like_Wikipedia_ {
+            get {
+                return ResourceManager.GetString("Wikipedia is right here, after very intense research I came to the same conclusio" +
+                        "n like Wikipedia.", resourceCulture);
             }
         }
         
@@ -3319,7 +3437,7 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die YouTube Kanal (NEW!) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die YouTube channel (NEW!) ähnelt.
         /// </summary>
         public static string YouTube_channel__NEW__ {
             get {

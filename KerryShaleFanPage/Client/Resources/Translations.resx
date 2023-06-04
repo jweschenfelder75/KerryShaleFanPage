@@ -351,8 +351,8 @@
   <data name="One day I should install a computer in one building of the Babelsberg studios and had to walk to the server room." xml:space="preserve">
     <value>One day I should install a computer in one building of the Babelsberg studios and had to walk to the server room.</value>
   </data>
-  <data name="While walking to the server room, someone from the custome department called me back." xml:space="preserve">
-    <value>While walking to the server room, someone from the custome department called me back.</value>
+  <data name="While walking to the server room, someone from the costume department called me back." xml:space="preserve">
+    <value>While walking to the server room, someone from the costume department called me back.</value>
   </data>
   <data name="I was wondering about it, but I was that kind and walked back to her." xml:space="preserve">
     <value>I was wondering about it, but I was that kind and walked back to her.</value>
@@ -414,8 +414,8 @@
   <data name="I stood there like that for several minutes and waited for help." xml:space="preserve">
     <value>I stood there like that for several minutes and waited for help.</value>
   </data>
-  <data name="But since the everyone was on company holiday, I was alone." xml:space="preserve">
-    <value>But since the everyone was on company holiday, I was alone.</value>
+  <data name="But since everyone was on company holiday, I was alone." xml:space="preserve">
+    <value>But since everyone was on company holiday, I was alone.</value>
   </data>
   <data name="I decided then to move one foot forwards slowly." xml:space="preserve">
     <value>I decided then to move one foot forwards slowly.</value>
@@ -760,7 +760,7 @@
     <value>Instagram Fan Page (NEW!)</value>
   </data>
   <data name="YouTube channel (NEW!)" xml:space="preserve">
-    <value>YouTube Kanal (NEW!)</value>
+    <value>YouTube channel (NEW!)</value>
   </data>
   <data name="Those rules are not set up by myself." xml:space="preserve">
     <value>Those rules are not set up by myself.</value>
@@ -1163,5 +1163,44 @@
   </data>
   <data name="The Sandman at Audible" xml:space="preserve">
     <value>The Sandman at Audible</value>
+  </data>
+  <data name="Please note that the date of birth on IMDb is wrong." xml:space="preserve">
+    <value>Please note that the date of birth on IMDb is wrong.</value>
+  </data>
+  <data name="Wikipedia is right here, after very intense research I came to the same conclusion like Wikipedia." xml:space="preserve">
+    <value>Wikipedia is right here, after very intense research I came to the same conclusion like Wikipedia.</value>
+  </data>
+  <data name="Black -&gt; gray" xml:space="preserve">
+    <value>Black -&gt; gray</value>
+  </data>
+  <data name="Brown" xml:space="preserve">
+    <value>Brown</value>
+  </data>
+  <data name="Eye color:" xml:space="preserve">
+    <value>Eye color:</value>
+  </data>
+  <data name="Hair color:" xml:space="preserve">
+    <value>Hair color:</value>
+  </data>
+  <data name="Kerry Shale on Wikipedia" xml:space="preserve">
+    <value>Kerry Shale on Wikipedia</value>
+  </data>
+  <data name="Memberships:" xml:space="preserve">
+    <value>Memberships:</value>
+  </data>
+  <data name="Height:" xml:space="preserve">
+    <value>Height:</value>
+  </data>
+  <data name="Location:" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="Official Kerry Shale Spotlight profile" xml:space="preserve">
+    <value>Official Kerry Shale Spotlight profile</value>
+  </data>
+  <data name="Weight:" xml:space="preserve">
+    <value>Weight:</value>
+  </data>
+  <data name="[6] Official Kerry Shale Spotlight profile" xml:space="preserve">
+    <value>[6] Official Kerry Shale Spotlight profile</value>
   </data>
 </root>
