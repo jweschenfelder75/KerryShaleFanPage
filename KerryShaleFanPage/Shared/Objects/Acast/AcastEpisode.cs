@@ -18,7 +18,12 @@ namespace KerryShaleFanPage.Shared.Objects.Acast
         // https://res.cloudinary.com/pippa/image/fetch/h_750,w_750,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1674641828496-d98fea216ec4f67b4eb8bbdd44f5d9dd.jpeg 750w
         // https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1674641828496-d98fea216ec4f67b4eb8bbdd44f5d9dd.jpeg 1400w  <= This is what we want!
 
-        private const string _SMALL_IMAGE_SUBSTRING = "h_500,w_500,";  // 500w
+        // Example3 ImageUrls:
+        // https://res.cloudinary.com/pippa/image/fetch/h_250,w_250,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1684185792870-5222473dd3daed9d8575057515963e84.jpeg 250w
+        // https://res.cloudinary.com/pippa/image/fetch/h_750,w_750,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1684185792870-5222473dd3daed9d8575057515963e84.jpeg 750w
+        // https://res.cloudinary.com/pippa/image/fetch/h_1400,w_1400,f_auto/https://assets.pippa.io/shows/63d0e60777d9ee0011a4f45b/1684185792870-5222473dd3daed9d8575057515963e84.jpeg 1400w  <= This is what we want!
+
+        private const string _SMALL_IMAGE_SUBSTRING = "h_250,w_250,";  // 250w
         private const string _MEDIUM_IMAGE_SUBSTRING = "h_750,w_750,";  // 750w
         private const string _LARGE_IMAGE_SUBSTRING = "h_1400,w_1400,";  // 1400w  <= This is what we want!
 

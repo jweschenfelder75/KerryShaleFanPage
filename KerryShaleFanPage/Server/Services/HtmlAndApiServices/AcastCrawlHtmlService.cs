@@ -45,72 +45,36 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
                 {
                     return null;
                 }
-                var latestEpisodeTag = doc.Select("div[class^=\"ant-row EpisodesGrid__FirstEpisode\"]");
+                var latestEpisodeTag = doc.Select("div[class^=\"ant-spin-container\"]");
                 if (latestEpisodeTag == null)
                 {
                     return null;
                 }
-                var latestEpisodeSubTag = latestEpisodeTag.Select("span[class^=CardEpisode__Tag]");
-                if (latestEpisodeSubTag == null || latestEpisodeSubTag is { HasText: false } || (!latestEpisodeSubTag.Text.Equals("Latest Episode", StringComparison.InvariantCultureIgnoreCase)))
+                var latestEpisodeSubTag = latestEpisodeTag.Select("li[class^=ant-list-item]")[0];
+                if (latestEpisodeSubTag == null || latestEpisodeSubTag is { HasText: false })
                 {
                     return null;
                 }
-                var episodeDateTag = latestEpisodeTag.Select("span[class^=CardEpisode__DatePublishFeat]");
-                if (episodeDateTag is { HasText: true })
-                {
-                    episodeDate = episodeDateTag.Text;
-                }
-                var episodeTitleTag = latestEpisodeTag.Select("h2");
+                var episodeTitleTag = latestEpisodeTag.Select("h4[class^=Typography__SubTitle]")[0];
                 if (episodeTitleTag is { HasText: true })
                 {
-                    episodeTitle = episodeTitleTag.Text;
+                    episodeTitle = episodeTitleTag.Text.Substring(4).Trim();
                 }
-                var episodeDescriptionTag = latestEpisodeTag.Select("div[class^=CardEpisode__FeatCardSummary]");
+                episodeDate = DateTime.UtcNow.ToShortDateString();
+                var episodeLengthTag = latestEpisodeTag.Select("span[class^=EpisodeMobileListItem__Duration]")[0];
+                if (episodeLengthTag is { HasText: true })
+                {
+                    episodeLength = episodeLengthTag.Text;
+                }
+                var episodeDescriptionTag = latestEpisodeTag.Select("div[class^=EpisodeMobileListItem__FeatCardSummary]")[0];
                 if (episodeDescriptionTag is { HasText: true })
                 {
                     episodeDescription = episodeDescriptionTag.Text;
                 }
-                var imageSrcTag = latestEpisodeTag.Select("div[class^=CardEpisode__Image]");
-                if (imageSrcTag != null)
+                var imageSrcTag = latestEpisodeTag.Select("img")[0];
+                if (imageSrcTag != null && imageSrcTag.HasAttr("src"))
                 {
-                    var imageSrcTagClasses = imageSrcTag.Attr("class");
-                    if (!string.IsNullOrWhiteSpace(imageSrcTagClasses))
-                    {
-                        var lastClassNames = imageSrcTagClasses.Split(" ", StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-                        if (lastClassNames.Length > 2)
-                        {
-                            var lastClassName = lastClassNames[2];
-                            if (!string.IsNullOrWhiteSpace(lastClassName))
-                            {
-                                var cssPosStart = doc.Head.Html.IndexOf($"\n.{lastClassName}{{background-position:center;", StringComparison.InvariantCultureIgnoreCase);
-                                if (cssPosStart > 0)
-                                {
-                                    var cssPosEnd = doc.Head.Html.IndexOf("/*!sc*/\n", cssPosStart, StringComparison.InvariantCultureIgnoreCase);
-                                    if (cssPosEnd > cssPosStart && doc.Head.Html.Length >= cssPosEnd)
-                                    {
-                                        var relevantCssPart = doc.Head.Html[cssPosStart..cssPosEnd];
-                                        if (!string.IsNullOrWhiteSpace(relevantCssPart))
-                                        {
-                                            const string imageSrcCssTag = "background-image:url(";
-                                            var imgPosStart = relevantCssPart.IndexOf(imageSrcCssTag, StringComparison.InvariantCultureIgnoreCase) + imageSrcCssTag.Length;
-                                            if (imgPosStart > 0)
-                                            {
-                                                var imgPosEnd = relevantCssPart.IndexOf(");width:100%;", imgPosStart, StringComparison.InvariantCultureIgnoreCase);
-                                                if (imgPosEnd > imgPosStart && relevantCssPart.Length >= imgPosEnd)
-                                                {
-                                                    var relevantImgPart = relevantCssPart[imgPosStart..imgPosEnd];
-                                                    if (!string.IsNullOrWhiteSpace(relevantImgPart))
-                                                    {
-                                                        imageSrc = relevantImgPart;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    imageSrc = imageSrcTag.Attr("src");
                 }
 
                 return new AcastEpisode()
