@@ -1738,12 +1738,12 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die It was the first time someone thought I would be a star, it was also the last time that someone ever thought I would be a star. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die It was the first time that someone thought I would be a star, it was also the last time that someone ever thought I would be a star. ähnelt.
         /// </summary>
-        public static string It_was_the_first_time_someone_thought_I_would_be_a_star__it_was_also_the_last_time_that_someone_ever_thought_I_would_be_a_star_ {
+        public static string It_was_the_first_time_that_someone_thought_I_would_be_a_star__it_was_also_the_last_time_that_someone_ever_thought_I_would_be_a_star_ {
             get {
-                return ResourceManager.GetString("It was the first time someone thought I would be a star, it was also the last tim" +
-                        "e that someone ever thought I would be a star.", resourceCulture);
+                return ResourceManager.GetString("It was the first time that someone thought I would be a star, it was also the las" +
+                        "t time that someone ever thought I would be a star.", resourceCulture);
             }
         }
         
@@ -3007,12 +3007,12 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page is some long-term experiment, I will operate as long as Kerry Shale or his agency does not complain to me about it. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page is a permanent project, I will operate as long as Kerry Shale or his agency does not complain to me about it. ähnelt.
         /// </summary>
-        public static string This_fan_page_is_some_long_term_experiment__I_will_operate_as_long_as_Kerry_Shale_or_his_agency_does_not_complain_to_me_about_it_ {
+        public static string This_fan_page_is_a_permanent_project__I_will_operate_as_long_as_Kerry_Shale_or_his_agency_does_not_complain_to_me_about_it_ {
             get {
-                return ResourceManager.GetString("This fan page is some long-term experiment, I will operate as long as Kerry Shale" +
-                        " or his agency does not complain to me about it.", resourceCulture);
+                return ResourceManager.GetString("This fan page is a permanent project, I will operate as long as Kerry Shale or hi" +
+                        "s agency does not complain to me about it.", resourceCulture);
             }
         }
         
@@ -3092,11 +3092,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Unfortunately, I could not let them in the bulding, but it was really sweet. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Unfortunately, I could not let them in the building, but it was really sweet. ähnelt.
         /// </summary>
-        public static string Unfortunately__I_could_not_let_them_in_the_bulding__but_it_was_really_sweet_ {
+        public static string Unfortunately__I_could_not_let_them_in_the_building__but_it_was_really_sweet_ {
             get {
-                return ResourceManager.GetString("Unfortunately, I could not let them in the bulding, but it was really sweet.", resourceCulture);
+                return ResourceManager.GetString("Unfortunately, I could not let them in the building, but it was really sweet.", resourceCulture);
             }
         }
         
