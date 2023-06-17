@@ -228,7 +228,7 @@
   <data name="Official YouTube channel" xml:space="preserve">
     <value>Offizieller YouTube Kanal</value>
   </data>
-  <data name="Official YouTube Kanal (@kezza52)" xml:space="preserve">
+  <data name="Official YouTube channel (@kezza52)" xml:space="preserve">
     <value>Offizieller YouTube Kanal (@kezza52)</value>
   </data>
   <data name="Only exception: You are a Nazi/racist/internet troll." xml:space="preserve">
@@ -1202,5 +1202,8 @@
   </data>
   <data name="[6] Official Kerry Shale Spotlight profile" xml:space="preserve">
     <value>[6] Offizielles Kerry Shale Spotlight Profil</value>
+  </data>
+  <data name="Best Interests (TV series) on BBC1" xml:space="preserve">
+    <value>Best Interests (TV-Serie) auf BBC1</value>
   </data>
 </root>

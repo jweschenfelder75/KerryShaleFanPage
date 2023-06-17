@@ -489,6 +489,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Best Interests (TV series) on BBC1 ähnelt.
+        /// </summary>
+        public static string Best_Interests__TV_series__on_BBC1 {
+            get {
+                return ResourceManager.GetString("Best Interests (TV series) on BBC1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Better follow that podcast on Apple, Spotify, Audible, etc instead. ähnelt.
         /// </summary>
         public static string Better_follow_that_podcast_on_Apple__Spotify__Audible__etc_instead_ {
@@ -2158,11 +2167,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Official YouTube Kanal (@kezza52) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Official YouTube channel (@kezza52) ähnelt.
         /// </summary>
-        public static string Official_YouTube_Kanal___kezza52_ {
+        public static string Official_YouTube_channel___kezza52_ {
             get {
-                return ResourceManager.GetString("Official YouTube Kanal (@kezza52)", resourceCulture);
+                return ResourceManager.GetString("Official YouTube channel (@kezza52)", resourceCulture);
             }
         }
         
