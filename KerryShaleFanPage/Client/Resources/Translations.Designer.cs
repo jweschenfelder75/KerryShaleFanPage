@@ -1996,6 +1996,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die London Time: ähnelt.
+        /// </summary>
+        public static string London_Time_ {
+            get {
+                return ResourceManager.GetString("London Time:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Memberships: ähnelt.
         /// </summary>
         public static string Memberships_ {
@@ -2460,6 +2469,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string Send_your_letter_and_wait_ {
             get {
                 return ResourceManager.GetString("Send your letter and wait.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Shale Time: ähnelt.
+        /// </summary>
+        public static string Shale_Time_ {
+            get {
+                return ResourceManager.GetString("Shale Time:", resourceCulture);
             }
         }
         

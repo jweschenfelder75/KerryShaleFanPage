@@ -1206,4 +1206,10 @@
   <data name="Best Interests (TV series) on BBC1" xml:space="preserve">
     <value>Best Interests (TV-Serie) auf BBC1</value>
   </data>
+  <data name="London Time:" xml:space="preserve">
+    <value>London Zeit:</value>
+  </data>
+  <data name="Shale Time:" xml:space="preserve">
+    <value>Shale Zeit:</value>
+  </data>
 </root>
