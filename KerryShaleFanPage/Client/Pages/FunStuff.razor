@@ -1,0 +1,46 @@
+﻿@page "/funstuff"
+
+<PageTitle>@Translate["Fun Stuff"] | Kerry Shale Fan Page</PageTitle>
+
+<h1>@Translate["Fun Stuff"]. @Translate["(Coming soon.)"]</h1>
+
+<RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
+    <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Normal" Gap="1rem" class="rz-p-4">
+        <RadzenColumn Size="6">
+            @Translate["London Time"]
+        </RadzenColumn>
+        <RadzenColumn Size="6">
+            @Translate["Shale Time"]
+        </RadzenColumn>
+        <RadzenColumn Size="6">
+            <div class="clock-container">
+                <div class="clock">
+                    <span class="h12"></span>
+                    <span class="h3"></span>
+                    <span class="h6"></span>
+                    <span class="h9"></span>
+                    <div class="hour" style="transform:rotate(@(hr1)deg);"><div></div></div>
+                    <div class="minute" style="transform:rotate(@(min1)deg);"><div></div></div>
+                    <div class="second" style="transform:rotate(@(sec1)deg);"><div></div></div>
+                    <span class="ctr"></span>
+                </div>
+            </div>
+        </RadzenColumn>
+        <RadzenColumn Size="6">
+            <div class="clock-container">
+                <div class="clock">
+                    <span class="h12"></span>
+                    <span class="h3"></span>
+                    <span class="h6"></span>
+                    <span class="h9"></span>
+                    <div class="hour" style="transform:rotate(@(hr2)deg);"><div></div></div>
+                    <div class="minute" style="transform:rotate(@(min2)deg);"><div></div></div>
+                    <div class="second" style="transform:rotate(@(sec2)deg);"><div></div></div>
+                    <span class="ctr"></span>
+                </div>
+            </div>
+        </RadzenColumn>
+    </RadzenRow>
+</RadzenCard>
+
+

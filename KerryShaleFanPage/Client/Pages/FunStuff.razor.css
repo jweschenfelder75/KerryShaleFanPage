@@ -1,0 +1,111 @@
+﻿.clock-container {
+    background-color: midnightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 75vmin;
+}
+
+.clock {
+    position: relative;
+    overflow: hidden;
+    background-color: inherit;
+    height: 70vmin;
+    width: 70vmin;
+    border-radius: 50%;
+    box-shadow: 0 -12px 12px rgba(255,255,255,.1), inset 0 -12px 12px rgba(255,255,255,.1), 0 12px 12px rgba(0,0,0,.1), inset 0 12px 12px rgba(0,0,0,.1);
+}
+
+    .clock div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: transparent;
+    }
+
+        .clock div div {
+            left: 50%;
+            width: 0;
+        }
+
+    .clock span {
+        position: absolute;
+        font-family: Arial;
+        font-size: 5vmin;
+        font-weight: bold;
+        color: lime;
+    }
+
+    .clock .h12 {
+        left: 50%;
+        top: 3%;
+        transform: translateX(-50%);
+    }
+
+        .clock .h12::before {
+            content: "12";
+        }
+
+    .clock .h3 {
+        left: 97%;
+        top: 50%;
+        transform: translate(-100%, -50%);
+    }
+
+        .clock .h3::before {
+            content: "3";
+        }
+
+    .clock .h6 {
+        left: 50%;
+        top: 97%;
+        transform: translate(-50%, -100%);
+    }
+
+        .clock .h6::before {
+            content: "6";
+        }
+
+    .clock .h9 {
+        left: 3%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+        .clock .h9::before {
+            content: "9";
+        }
+
+    .clock .ctr {
+        width: 3%;
+        height: 3%;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: wheat;
+    }
+
+    .clock .hour div {
+        top: 20%;
+        height: 30%;
+        border: 2px solid wheat;
+        margin-left: -2px;
+    }
+
+    .clock .minute div {
+        top: 10%;
+        height: 40%;
+        border: 2px solid wheat;
+        margin-left: -2px;
+    }
+
+    .clock .second div {
+        top: 5%;
+        height: 65%;
+        border: 1px solid red;
+        margin-left: -1px;
+    }
