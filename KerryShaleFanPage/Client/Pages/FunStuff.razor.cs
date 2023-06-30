@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,7 +12,11 @@ namespace KerryShaleFanPage.Client.Pages
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
 
-        Timer? timer;
+        private readonly string _currentCulture = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+
+        private Timer? _timer;
+        private string _londonTime = string.Empty;
+        private string _shaleTime = string.Empty;
 
         double hr1, min1, sec1;
         double hr2, min2, sec2;
@@ -22,7 +27,7 @@ namespace KerryShaleFanPage.Client.Pages
 
             SetClock(null);
 
-            timer = new Timer(SetClock, new AutoResetEvent(false), 10, 10); // 10 milliseconds
+            _timer = new Timer(SetClock, new AutoResetEvent(false), 10, 10); // 10 milliseconds
         }
 
         // NOTE: this math can be simplified!!!
@@ -38,6 +43,9 @@ namespace KerryShaleFanPage.Client.Pages
             hr2 = 360.0 * shaleTimeNow.Hour / 12 + 30.0 * shaleTimeNow.Minute / 60.0;
             min2 = 360.0 * shaleTimeNow.Minute / 60 + 6.0 * shaleTimeNow.Second / 60.0;
             sec2 = 360.0 * shaleTimeNow.Second / 60 + 6.0 * shaleTimeNow.Millisecond / 1000.0;
+            var timeFormat = _currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase) ? "HH:mm:ss U\\hr" : "hh:mm:ss tt";
+            _londonTime = $"{Translate["London Time:"]} {londonTimeNow.ToString(timeFormat)}";
+            _shaleTime = $"{Translate["Shale Time:"]} {londonTimeNow.AddMinutes(10).ToString(timeFormat)}";
             StateHasChanged(); // MUST CALL StateHasChanged() BECAUSE THIS IS TRIGGERED BY A TIMER INSTEAD OF A USER EVENT
         }
     }

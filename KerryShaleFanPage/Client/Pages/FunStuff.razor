@@ -7,10 +7,10 @@
 <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
     <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Normal" Gap="1rem" class="rz-p-4">
         <RadzenColumn Size="6">
-            @Translate["London Time"]
+            <RadzenLabel Text="@_londonTime" Style="white-space: nowrap;" />
         </RadzenColumn>
         <RadzenColumn Size="6">
-            @Translate["Shale Time"]
+            <RadzenLabel Text="@_shaleTime" Style="white-space: nowrap;" />
         </RadzenColumn>
         <RadzenColumn Size="6">
             <div class="clock-container">
