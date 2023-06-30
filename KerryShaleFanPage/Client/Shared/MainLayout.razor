@@ -10,12 +10,18 @@
                 <RadzenSidebarToggle Click="@(() => _sidebarExpanded = !_sidebarExpanded)" />
                 <RadzenLabel Text="Kerry Shale Fan Page" Style="color: white; width: 230px; white-space: nowrap;" />
                 <div class="rz-float-end">
-                    <div class="@_serverStatusBlinkingCssClass">
-                        <RadzenIcon Icon="@_serverStatusIcon" Visible="@_serverStatusAlertVisible" IconStyle="@_serverStatusIconStyle" />
-                    </div>
-                    <div>
-                        <a href="#" target="_self"><RadzenIcon Icon="vpn_key" Style="color: white; white-space: nowrap;" title="Coming soon." /></a>
-                    </div>
+                    <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Normal" Gap="1rem">
+                        <RadzenColumn Size="6">
+                            <div class="@_serverStatusBlinkingCssClass">
+                                <RadzenIcon Icon="@_serverStatusIcon" Visible="@_serverStatusAlertVisible" IconStyle="@_serverStatusIconStyle" />
+                            </div>
+                        </RadzenColumn>
+                        <RadzenColumn Size="6">
+                            <div>
+                                <a href="#" target="_self"><RadzenIcon Icon="vpn_key" Style="color: white;" title="Coming soon." /></a>
+                            </div>
+                        </RadzenColumn>
+                    </RadzenRow>
                 </div>
             </RadzenStack>
         </RadzenHeader>
