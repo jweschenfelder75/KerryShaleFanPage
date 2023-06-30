@@ -1859,12 +1859,12 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale is a Canadian actor, voice over genius and writer, based in London (United Kingdom) since 1978 [1]. ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Kerry Shale is a Canadian actor, voice over genius and writer, based in London (United Kingdom) since July 1978 [1]. ähnelt.
         /// </summary>
-        public static string Kerry_Shale_is_a_Canadian_actor__voice_over_genius_and_writer__based_in_London__United_Kingdom__since_1978__1__ {
+        public static string Kerry_Shale_is_a_Canadian_actor__voice_over_genius_and_writer__based_in_London__United_Kingdom__since_July_1978__1__ {
             get {
                 return ResourceManager.GetString("Kerry Shale is a Canadian actor, voice over genius and writer, based in London (U" +
-                        "nited Kingdom) since 1978 [1].", resourceCulture);
+                        "nited Kingdom) since July 1978 [1].", resourceCulture);
             }
         }
         
