@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,7 +26,7 @@ namespace KerryShaleFanPage.Client.Pages
 
             SetClock(null);
 
-            _timer = new Timer(SetClock, new AutoResetEvent(false), 10, 10); // 10 milliseconds
+            _timer = new Timer(SetClock, null, 0, 50); // 50 milliseconds
         }
 
         // NOTE: this math can be simplified!!!
