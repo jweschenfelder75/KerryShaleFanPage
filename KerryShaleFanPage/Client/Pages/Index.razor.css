@@ -69,7 +69,7 @@
     min-width: 100%;
     gap: var(--gap);
     margin: 0;
-    animation: scroll 60s linear infinite;
+    animation: scroll 120s linear infinite;
 }
 
     .marquee-content > * {
@@ -112,7 +112,7 @@
     min-width: 100%;
     gap: var(--gap);
     margin: 0;
-    animation: scroll-red 30s linear infinite;
+    animation: scroll-red 60s linear infinite;
 }
 
     .marquee-red-content > * {
