@@ -1969,6 +1969,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Local Time: ähnelt.
+        /// </summary>
+        public static string Local_Time_ {
+            get {
+                return ResourceManager.GetString("Local Time:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Location: ähnelt.
         /// </summary>
         public static string Location_ {

@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
+using System;
 using System.Threading.Tasks;
 using KerryShaleFanPage.Client.Services;
 using KerryShaleFanPage.Shared.Events;
 
 namespace KerryShaleFanPage.Client.Shared
 {
-    public partial class MaintenanceHeader
+    public partial class MaintenanceHeader : IAsyncDisposable
     {
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
@@ -31,12 +32,17 @@ namespace KerryShaleFanPage.Client.Shared
             }
         }
 
-        private void MaintenanceMessageReceived(object? sender, MaintenanceMessageEventArgs e)
+        private async void MaintenanceMessageReceived(object? sender, MaintenanceMessageEventArgs e)
         {
             _isEnabled = e.IsEnabled;
             _isMessageScrollEnabled = e.IsMessageScrollEnabled;
             _text = e.Message;
-            StateHasChanged();
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
         }
     }
 }

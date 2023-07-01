@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
+using System;
 using System.Globalization;
 using System.Threading.Tasks;
 
 namespace KerryShaleFanPage.Client.Shared
 {
-    public partial class CultureSelector
+    public partial class CultureSelector : IAsyncDisposable
     {
         [Inject]
         protected IJSRuntime? JsRuntime { get; set; }
@@ -37,6 +38,11 @@ namespace KerryShaleFanPage.Client.Shared
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
         }
     }
 }

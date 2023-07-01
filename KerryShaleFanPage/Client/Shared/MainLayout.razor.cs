@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
+using System;
 using System.Threading.Tasks;
 using Radzen;
 using KerryShaleFanPage.Client.Services;
@@ -8,7 +9,7 @@ using KerryShaleFanPage.Shared.Events;
 
 namespace KerryShaleFanPage.Client.Shared
 {
-    public partial class MainLayout : LayoutComponentBase
+    public partial class MainLayout : LayoutComponentBase, IAsyncDisposable
     {
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
@@ -35,7 +36,7 @@ namespace KerryShaleFanPage.Client.Shared
             }
         }
 
-        private void ServerStatusChanged(object? sender, ServerStatusEventArgs e)
+        private async void ServerStatusChanged(object? sender, ServerStatusEventArgs e)
         {
             switch (e.ServerStatus)
             {
@@ -72,7 +73,12 @@ namespace KerryShaleFanPage.Client.Shared
                         break;
                     }
             }
-            StateHasChanged();
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
         }
     }
 }

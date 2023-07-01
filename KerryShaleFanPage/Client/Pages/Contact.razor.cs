@@ -14,7 +14,7 @@ using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Client.Pages
 {
-    public partial class Contact
+    public partial class Contact : IAsyncDisposable
     {
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
@@ -60,7 +60,6 @@ namespace KerryShaleFanPage.Client.Pages
         [JSInvokable, EditorBrowsable(EditorBrowsableState.Never)]
         public void CallbackOnExpired(string response)
         {
-            //...
         }
 
         private IList<string> GetCategories()
@@ -84,8 +83,8 @@ namespace KerryShaleFanPage.Client.Pages
                 var contactData = new StringContent(JsonConvert.SerializeObject(args), Encoding.UTF8, "application/json");
                 var data = await Http.PostAsync("webapi/EMail", contactData);
                 _sendMailSuccessResponse = data.IsSuccessStatusCode;
-                StateHasChanged();
-            } 
+                await InvokeAsync(StateHasChanged);
+            }
             catch (Exception ex) 
             {
                 var exception = ex;
@@ -94,8 +93,12 @@ namespace KerryShaleFanPage.Client.Pages
 
         private Task InvalidSubmitAsync()
         {
-            //...
             return Task.CompletedTask;
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
         }
     }
 }

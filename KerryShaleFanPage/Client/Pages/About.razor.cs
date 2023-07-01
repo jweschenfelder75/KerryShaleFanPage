@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KerryShaleFanPage.Client.Pages
 {
-    public partial class About
+    public partial class About : IAsyncDisposable
     {
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
@@ -27,6 +27,11 @@ namespace KerryShaleFanPage.Client.Pages
 
             TimeSpan span = nowDate - birthDate;
             return (zeroDate + span).Year - 1;
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
         }
     }
 }

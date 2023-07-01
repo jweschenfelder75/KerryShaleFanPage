@@ -11,7 +11,7 @@ using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Client.Pages
 {
-    public partial class Gallery
+    public partial class Gallery : IAsyncDisposable
     {
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
@@ -49,12 +49,12 @@ namespace KerryShaleFanPage.Client.Pages
                 {
                     _imgNumber = 0;
                 }
-                StateHasChanged();
+                await InvokeAsync(StateHasChanged);
                 await Task.Delay(10000);
             }
         }
 
-        private Task BackAsync()
+        private async Task BackAsync()
         {
             if (_imgNumber == 0)
             {
@@ -64,11 +64,10 @@ namespace KerryShaleFanPage.Client.Pages
             {
                 _imgNumber--;
             }
-            StateHasChanged();
-            return Task.CompletedTask;
+            await InvokeAsync(StateHasChanged);
         }
 
-        private Task NextAsync()
+        private async Task NextAsync()
         {
             if (_imgNumber == (_maxImages - 1))
             {
@@ -78,9 +77,12 @@ namespace KerryShaleFanPage.Client.Pages
             {
                 _imgNumber++;
             }
-            StateHasChanged();
-            return Task.CompletedTask;
+            await InvokeAsync(StateHasChanged);
         }
 
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
+        }
     }
 }

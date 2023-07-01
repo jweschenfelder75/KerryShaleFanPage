@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -14,7 +14,7 @@ using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Client.Pages
 {
-    public partial class Log
+    public partial class Log : IAsyncDisposable
     {
         [Inject]
         protected IStringLocalizer<Resources.Translations> Translate { get; set; }
@@ -112,7 +112,12 @@ namespace KerryShaleFanPage.Client.Pages
                 .Select(e => new ChartDataItem(e.Key.LogLevel, e.Key.MonthYear, e.Count()))
                 .ToList();
 
-            StateHasChanged();
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            return ValueTask.CompletedTask;
         }
     }
 }

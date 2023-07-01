@@ -7,7 +7,7 @@
 <RadzenCard class="rz-my-5 rz-mx-auto" Style="background: rgba(255, 255, 255, 0.5);">
     <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Normal" Gap="1rem" class="rz-pt-4">
         <RadzenColumn Size="6">
-            <RadzenLabel Text="@_londonTime" Style="white-space: nowrap;" />
+            <RadzenLabel Text="@_localTime" Style="white-space: nowrap;" />
         </RadzenColumn>
         <RadzenColumn Size="6">
             <RadzenLabel Text="@_shaleTime" Style="white-space: nowrap;" />
@@ -17,28 +17,34 @@
         <RadzenColumn Size="6">
             <div class="clock-container">
                 <div class="clock">
-                    <span class="h12"></span>
-                    <span class="h3"></span>
-                    <span class="h6"></span>
-                    <span class="h9"></span>
-                    <div class="hour" style="transform:rotate(@(hr1)deg);"><div></div></div>
-                    <div class="minute" style="transform:rotate(@(min1)deg);"><div></div></div>
-                    <div class="second" style="transform:rotate(@(sec1)deg);"><div></div></div>
-                    <span class="ctr"></span>
+                    <div class="outer-clock-face">
+                        <div class="marking marking-one"></div>
+                        <div class="marking marking-two"></div>
+                        <div class="marking marking-three"></div>
+                        <div class="marking marking-four"></div>
+                        <div class="inner-clock-face">
+                            <div class="hand hour-hand" style="transform:rotate(@(hr1)deg);"></div>
+                            <div class="hand min-hand" style="transform:rotate(@(min1)deg);"></div>
+                            <div class="hand second-hand" style="transform:rotate(@(sec1)deg);"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </RadzenColumn>
         <RadzenColumn Size="6">
             <div class="clock-container">
                 <div class="clock">
-                    <span class="h12"></span>
-                    <span class="h3"></span>
-                    <span class="h6"></span>
-                    <span class="h9"></span>
-                    <div class="hour" style="transform:rotate(@(hr2)deg);"><div></div></div>
-                    <div class="minute" style="transform:rotate(@(min2)deg);"><div></div></div>
-                    <div class="second" style="transform:rotate(@(sec2)deg);"><div></div></div>
-                    <span class="ctr"></span>
+                    <div class="outer-clock-face">
+                        <div class="marking marking-one"></div>
+                        <div class="marking marking-two"></div>
+                        <div class="marking marking-three"></div>
+                        <div class="marking marking-four"></div>
+                        <div class="inner-clock-face">
+                            <div class="hand hour-hand" style="transform:rotate(@(hr2)deg);"></div>
+                            <div class="hand min-hand" style="transform:rotate(@(min2)deg);"></div>
+                            <div class="hand second-hand" style="transform:rotate(@(sec2)deg);"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </RadzenColumn>

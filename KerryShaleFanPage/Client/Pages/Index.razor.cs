@@ -12,7 +12,7 @@ using KerryShaleFanPage.Shared.Objects;
 
 namespace KerryShaleFanPage.Client.Pages
 {
-    public partial class Index
+    public partial class Index : IAsyncDisposable
     {
         [Inject]
         protected HttpClient Http { get; set; }
@@ -39,13 +39,14 @@ namespace KerryShaleFanPage.Client.Pages
         private int _windowWidth = 0;
 
         private Timer? _timer;
-        private string _londonTime = string.Empty;
+        private string _localTime = string.Empty;
         private string _shaleTime = string.Empty;
 
         protected override async Task OnInitializedAsync()
         {
             await base.OnInitializedAsync();
-            _timer = new Timer(Tick, null, 0, 5000);
+            Tick(null);
+            _timer = new Timer(Tick, new AutoResetEvent(false), 5000, 5000);
             var newsData = await Http.GetFromJsonAsync<NewsItemDto[]>("webapi/News");
             _newsItems = newsData?.ToList();
             var latestPodcastData = await Http.GetFromJsonAsync<PodcastEpisodeDto>("webapi/Podcast");
@@ -84,15 +85,22 @@ namespace KerryShaleFanPage.Client.Pages
             return Task.CompletedTask;
         }
 
-        private void Tick(object? obj)
+        private async void Tick(object? obj)
         {
             var timeNow = DateTime.Now;
-            var britishZone = TimeZoneInfo.FindSystemTimeZoneById("Europe/London");
-            var londonTimeNow = TimeZoneInfo.ConvertTime(timeNow, TimeZoneInfo.Local, britishZone);
+            var shaleTimeNow = timeNow.AddMinutes(10);
             var timeFormat = _currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase) ? "HH:mm U\\hr" : "hh:mm tt";
-            _londonTime = $"{Translate["London Time:"]} {londonTimeNow.ToString(timeFormat)}";
-            _shaleTime = $"{Translate["Shale Time:"]} {londonTimeNow.AddMinutes(10).ToString(timeFormat)}";
-            InvokeAsync(StateHasChanged);
+            _localTime = $"{Translate["Local Time:"]} {timeNow.ToString(timeFormat)}";
+            _shaleTime = $"{Translate["Shale Time:"]} {shaleTimeNow.ToString(timeFormat)}";
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public async ValueTask DisposeAsync()
+        {
+            if (_timer != null)
+            {
+                await _timer.DisposeAsync();
+            }
         }
     }
 }

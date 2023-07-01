@@ -1212,4 +1212,7 @@
   <data name="Shale Time:" xml:space="preserve">
     <value>Shale Zeit:</value>
   </data>
+  <data name="Local Time:" xml:space="preserve">
+    <value>Lokale Zeit:</value>
+  </data>
 </root>
