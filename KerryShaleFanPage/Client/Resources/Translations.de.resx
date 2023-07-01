@@ -1215,4 +1215,10 @@
   <data name="Local Time:" xml:space="preserve">
     <value>Lokale Zeit:</value>
   </data>
+  <data name="Elon Musk has restricted Twitter fully now by restricting the public vibibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page now slowly says good-bye to Twitter and will completely move to Meta's competition 'P92' as soon as it is available. RiP Twitter! Many thanks for your attention!" xml:space="preserve">
+    <value>Elon Musk hat Twitter nun komplett eingeschränkt, durch Einführung der Beschränkung der öffentlichen Sichtbarkeit aller Twitter-Profile sowie durch Einführung einer Limitierungsrate, wie viele Tweets man auf den Twitter-Profilen anderer Nutzer und den eigenem Twitter-Profil sehen kann. Diese Fan Page sagt nun langsam Twitter Good-bye und wird komplett zu Meta's Konkurrenz 'P92' umziehen, sobald dieses verfügbar ist. RiP Twitter! Vielen Dank für Ihre Aufmerksamkeit!</value>
+  </data>
+  <data name="IMPORTANT:" xml:space="preserve">
+    <value>WICHTIG:</value>
+  </data>
 </root>

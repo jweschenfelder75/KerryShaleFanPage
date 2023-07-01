@@ -768,6 +768,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Elon Musk has restricted Twitter fully now by restricting the public vibibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page now slowly says good-bye to Twitter and will completely move to Meta&apos;s competition &apos;P92&apos; as soon as it is available. RiP Twitter! Many thanks for your attention! ähnelt.
+        /// </summary>
+        public static string Elon_Musk_has_restricted_Twitter_fully_now_by_restricting_the_public_vibibility_of_all_Twitter_profiles_and_by_introducing_a_rate_limit_how_many_tweets_you_can_see_on_the_Twitter_profiles_of_others_and_your_own_Twitter_profile__This_fan_page_now_slowly_says_good_bye_to_Twitter_and_will_completely_move_to_Meta_s_competition__P92__as_soon_as_it_is_available__RiP_Twitter__Many_thanks_for_your_attention_ {
+            get {
+                return ResourceManager.GetString(@"Elon Musk has restricted Twitter fully now by restricting the public vibibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page now slowly says good-bye to Twitter and will completely move to Meta's competition 'P92' as soon as it is available. RiP Twitter! Many thanks for your attention!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Enjoy! ähnelt.
         /// </summary>
         public static string Enjoy_ {
@@ -1587,6 +1596,15 @@ namespace KerryShaleFanPage.Client.Resources {
                 return ResourceManager.GetString("If you open the Developer Debugging Tools of the web browser by pressing the F12 " +
                         "button, you will notice those console messages while the web app is trying to re" +
                         "establish the connection to the web server.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die IMPORTANT: ähnelt.
+        /// </summary>
+        public static string IMPORTANT_ {
+            get {
+                return ResourceManager.GetString("IMPORTANT:", resourceCulture);
             }
         }
         
