@@ -768,11 +768,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Elon Musk has restricted Twitter fully now by restricting the public visibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page now slowly says good-bye to Twitter and will completely move to Meta&apos;s competition &apos;P92&apos; as soon as it is available. RiP Twitter! Many thanks for your attention! ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Elon Musk has restricted Twitter fully now by restricting the public visibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page slowly says good-bye to Twitter and will completely move to Meta&apos;s competition &apos;P92&apos; as soon as it is hopefully avalable in Mid-July 2023. RiP Twitter! Many thanks for your attention! ähnelt.
         /// </summary>
-        public static string Elon_Musk_has_restricted_Twitter_fully_now_by_restricting_the_public_visibility_of_all_Twitter_profiles_and_by_introducing_a_rate_limit_how_many_tweets_you_can_see_on_the_Twitter_profiles_of_others_and_your_own_Twitter_profile__This_fan_page_now_slowly_says_good_bye_to_Twitter_and_will_completely_move_to_Meta_s_competition__P92__as_soon_as_it_is_available__RiP_Twitter__Many_thanks_for_your_attention_ {
+        public static string Elon_Musk_has_restricted_Twitter_fully_now_by_restricting_the_public_visibility_of_all_Twitter_profiles_and_by_introducing_a_rate_limit_how_many_tweets_you_can_see_on_the_Twitter_profiles_of_others_and_your_own_Twitter_profile__This_fan_page_slowly_says_good_bye_to_Twitter_and_will_completely_move_to_Meta_s_competition__P92__as_soon_as_it_is_hopefully_avalable_in_Mid_July_2023__RiP_Twitter__Many_thanks_for_your_attention_ {
             get {
-                return ResourceManager.GetString(@"Elon Musk has restricted Twitter fully now by restricting the public visibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page now slowly says good-bye to Twitter and will completely move to Meta's competition 'P92' as soon as it is available. RiP Twitter! Many thanks for your attention!", resourceCulture);
+                return ResourceManager.GetString(@"Elon Musk has restricted Twitter fully now by restricting the public visibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page slowly says good-bye to Twitter and will completely move to Meta's competition 'P92' as soon as it is hopefully avalable in Mid-July 2023. RiP Twitter! Many thanks for your attention!", resourceCulture);
             }
         }
         
@@ -2523,6 +2523,17 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string She_may_block_you_ {
             get {
                 return ResourceManager.GetString("She may block you.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Short information for Mr. Shale: This fan page will continue to advertise the podcast on all other channels. The next podcast episode will be available on 7/9/2023! ähnelt.
+        /// </summary>
+        public static string Short_information_for_Mr__Shale__This_fan_page_will_continue_to_advertise_the_podcast_on_all_other_channels__The_next_podcast_episode_will_be_available_on_7_9_2023_ {
+            get {
+                return ResourceManager.GetString("Short information for Mr. Shale: This fan page will continue to advertise the pod" +
+                        "cast on all other channels. The next podcast episode will be available on 7/9/20" +
+                        "23!", resourceCulture);
             }
         }
         
