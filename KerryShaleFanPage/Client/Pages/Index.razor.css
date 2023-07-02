@@ -112,7 +112,7 @@
     min-width: 100%;
     gap: var(--gap);
     margin: 0;
-    animation: scroll-red 90s linear infinite;
+    animation: scroll-red 100s linear infinite;
 }
 
     .marquee-red-content > * {
