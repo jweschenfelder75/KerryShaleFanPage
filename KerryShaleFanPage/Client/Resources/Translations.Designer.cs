@@ -3090,17 +3090,6 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page slowly says good-bye to Twitter and will completely move to Meta&apos;s competition &apos;P92&apos; aka &apos;Threads&apos; as soon as it is hopefully available in Mid-July 2023. RiP Twitter! ähnelt.
-        /// </summary>
-        public static string This_fan_page_slowly_says_good_bye_to_Twitter_and_will_completely_move_to_Meta_s_competition__P92__aka__Threads__as_soon_as_it_is_hopefully_available_in_Mid_July_2023__RiP_Twitter_ {
-            get {
-                return ResourceManager.GetString("This fan page slowly says good-bye to Twitter and will completely move to Meta\'s " +
-                        "competition \'P92\' aka \'Threads\' as soon as it is hopefully available in Mid-July" +
-                        " 2023. RiP Twitter!", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die This fan page will continue to advertise the Bob Dylan podcast with Kerry Shale and Lucas Hare on all other channels. ähnelt.
         /// </summary>
         public static string This_fan_page_will_continue_to_advertise_the_Bob_Dylan_podcast_with_Kerry_Shale_and_Lucas_Hare_on_all_other_channels_ {

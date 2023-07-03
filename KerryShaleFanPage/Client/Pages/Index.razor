@@ -41,6 +41,7 @@
                 {
                     <li>@((MarkupString)(((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn) ?? string.Empty))</li>
                 }
+                @*
                 @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
                 {
                     <li>
@@ -55,25 +56,11 @@
                         @Translate["There is no official announcement for it, therefore without any guarantee!"]
                     </li>
                 }
+                *@
+                <li>@Translate["There is no official announcement for a new podcast episode yet, therefore no guarantee if there will be a new episode available in the near future!"]</li>
             </ul>
         </div>
     }
-</p>
-
-<p>
-    <div class="marquee-red">
-        <ul class="marquee-red-content">
-            <li>@Translate["IMPORTANT:"]</li>
-            <li>@Translate["This fan page slowly says good-bye to Twitter and will completely move to Meta's competition 'P92' aka 'Threads' as soon as it is hopefully available in Mid-July 2023. RiP Twitter!"]</li>
-            <li>@Translate["This fan page will continue to advertise the Bob Dylan podcast with Kerry Shale and Lucas Hare on all other channels."]</li>
-        </ul>
-        <!-- Mirrors the content above -->
-        <ul class="marquee-red-content" aria-hidden="true">
-            <li>@Translate["IMPORTANT:"]</li>
-            <li>@Translate["This fan page slowly says good-bye to Twitter and will completely move to Meta's competition 'P92' aka 'Threads' as soon as it is hopefully available in Mid-July 2023. RiP Twitter!"]</li>
-            <li>@Translate["This fan page will continue to advertise the Bob Dylan podcast with Kerry Shale and Lucas Hare on all other channels."]</li>
-        </ul>
-    </div>
 </p>
 
 <p>&nbsp;</p>
