@@ -1221,8 +1221,8 @@
   <data name="Next podcast episode expected on" xml:space="preserve">
     <value>Next podcast episode expected on</value>
   </data>
-  <data name="There is no official announcement for a new podcast episode yet, therefore no guarantee if there will be a new episode available in the future!" xml:space="preserve">
-    <value>There is no official announcement for a new podcast episode yet, therefore no guarantee if there will be a new episode available in the future!</value>
+  <data name="There is no official announcement for a new podcast episode yet, therefore no guarantee if there will be a new episode available in the near future!" xml:space="preserve">
+    <value>There is no official announcement for a new podcast episode yet, therefore no guarantee if there will be a new episode available in the near future!</value>
   </data>
   <data name="There is no official announcement for it, therefore without any guarantee!" xml:space="preserve">
     <value>There is no official announcement for it, therefore without any guarantee!</value>
