@@ -17,6 +17,7 @@
                 {
                     <li>@((MarkupString)(((_currentCulture.Equals("de", StringComparison.InvariantCultureIgnoreCase)) ? newsItem?.NewsHtmlDe : newsItem?.NewsHtmlEn) ?? string.Empty))</li>
                 }
+                @*
                 @if (_latestPodcastEpisode != null && _latestPodcastEpisode.CalculatedExpectedNextDate.Date != DateTime.UtcNow.Date)
                 {
                     <li>
@@ -31,6 +32,8 @@
                         @Translate["There is no official announcement for it, therefore without any guarantee!"]
                     </li>
                 }
+                *@
+                @Translate["There is no official announcement for a new podcast episode yet, therefore no guarantee if there will be a new episode available in the future!"]
             </ul>
             <!-- Mirrors the content above -->
             <ul class="marquee-content" aria-hidden="true">

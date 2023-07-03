@@ -3043,6 +3043,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is no official announcement for a new podcast episode yet, therefore no guarantee if there will be a new episode available in the future! ähnelt.
+        /// </summary>
+        public static string There_is_no_official_announcement_for_a_new_podcast_episode_yet__therefore_no_guarantee_if_there_will_be_a_new_episode_available_in_the_future_ {
+            get {
+                return ResourceManager.GetString("There is no official announcement for a new podcast episode yet, therefore no gua" +
+                        "rantee if there will be a new episode available in the future!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die There is no official announcement for it, therefore without any guarantee! ähnelt.
         /// </summary>
         public static string There_is_no_official_announcement_for_it__therefore_without_any_guarantee_ {
