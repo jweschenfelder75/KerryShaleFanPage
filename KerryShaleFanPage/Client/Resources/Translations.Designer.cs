@@ -768,15 +768,6 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die Elon Musk has restricted Twitter fully now by restricting the public visibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page slowly says good-bye to Twitter and will completely move to Meta&apos;s competition &apos;P92&apos; as soon as it is hopefully available in Mid-July 2023. RiP Twitter! Many thanks for your attention! ähnelt.
-        /// </summary>
-        public static string Elon_Musk_has_restricted_Twitter_fully_now_by_restricting_the_public_visibility_of_all_Twitter_profiles_and_by_introducing_a_rate_limit_how_many_tweets_you_can_see_on_the_Twitter_profiles_of_others_and_your_own_Twitter_profile__This_fan_page_slowly_says_good_bye_to_Twitter_and_will_completely_move_to_Meta_s_competition__P92__as_soon_as_it_is_hopefully_available_in_Mid_July_2023__RiP_Twitter__Many_thanks_for_your_attention_ {
-            get {
-                return ResourceManager.GetString(@"Elon Musk has restricted Twitter fully now by restricting the public visibility of all Twitter profiles and by introducing a rate limit how many tweets you can see on the Twitter profiles of others and your own Twitter profile. This fan page slowly says good-bye to Twitter and will completely move to Meta's competition 'P92' as soon as it is hopefully available in Mid-July 2023. RiP Twitter! Many thanks for your attention!", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Enjoy! ähnelt.
         /// </summary>
         public static string Enjoy_ {
@@ -2140,6 +2131,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Next podcast episode expected on ähnelt.
+        /// </summary>
+        public static string Next_podcast_episode_expected_on {
+            get {
+                return ResourceManager.GetString("Next podcast episode expected on", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die No action is required by the end-user. ähnelt.
         /// </summary>
         public static string No_action_is_required_by_the_end_user_ {
@@ -3043,6 +3043,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is no official announcement for it, therefore without any guarantee! ähnelt.
+        /// </summary>
+        public static string There_is_no_official_announcement_for_it__therefore_without_any_guarantee_ {
+            get {
+                return ResourceManager.GetString("There is no official announcement for it, therefore without any guarantee!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die They are very well aware of the Kerry Shale fans. ähnelt.
         /// </summary>
         public static string They_are_very_well_aware_of_the_Kerry_Shale_fans_ {
@@ -3071,13 +3080,23 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page will continue to advertise the Bob Dylan podcast with Kerry Shale and Lucas Hare on all other channels. The next podcast episode will be available on 7/9/2023! ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page slowly says good-bye to Twitter and will completely move to Meta&apos;s competition &apos;P92&apos; aka &apos;Threads&apos; as soon as it is hopefully available in Mid-July 2023. RiP Twitter! ähnelt.
         /// </summary>
-        public static string This_fan_page_will_continue_to_advertise_the_Bob_Dylan_podcast_with_Kerry_Shale_and_Lucas_Hare_on_all_other_channels__The_next_podcast_episode_will_be_available_on_7_9_2023_ {
+        public static string This_fan_page_slowly_says_good_bye_to_Twitter_and_will_completely_move_to_Meta_s_competition__P92__aka__Threads__as_soon_as_it_is_hopefully_available_in_Mid_July_2023__RiP_Twitter_ {
+            get {
+                return ResourceManager.GetString("This fan page slowly says good-bye to Twitter and will completely move to Meta\'s " +
+                        "competition \'P92\' aka \'Threads\' as soon as it is hopefully available in Mid-July" +
+                        " 2023. RiP Twitter!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This fan page will continue to advertise the Bob Dylan podcast with Kerry Shale and Lucas Hare on all other channels. ähnelt.
+        /// </summary>
+        public static string This_fan_page_will_continue_to_advertise_the_Bob_Dylan_podcast_with_Kerry_Shale_and_Lucas_Hare_on_all_other_channels_ {
             get {
                 return ResourceManager.GetString("This fan page will continue to advertise the Bob Dylan podcast with Kerry Shale a" +
-                        "nd Lucas Hare on all other channels. The next podcast episode will be available " +
-                        "on 7/9/2023!", resourceCulture);
+                        "nd Lucas Hare on all other channels.", resourceCulture);
             }
         }
         
