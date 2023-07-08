@@ -50,28 +50,44 @@ namespace KerryShaleFanPage.Server.Services.HtmlAndApiServices
                 {
                     return null;
                 }
-                var latestEpisodeSubTag = latestEpisodeTag.Select("li[class^=ant-list-item]")[0];
+                var latestEpisodeSubTag = latestEpisodeTag.Select("li[class^=ant-list-item]")?[0];
                 if (latestEpisodeSubTag == null || latestEpisodeSubTag is { HasText: false })
                 {
                     return null;
                 }
-                var episodeTitleTag = latestEpisodeTag.Select("h4[class^=Typography__SubTitle]")[0];
+                var episodeTitleTag = latestEpisodeTag.Select("h4[class^=Typography__SubTitle]")?[0];
                 if (episodeTitleTag is { HasText: true })
                 {
                     episodeTitle = episodeTitleTag.Text.Substring(4).Trim();
                 }
                 episodeDate = DateTime.UtcNow.ToShortDateString();
-                var episodeLengthTag = latestEpisodeTag.Select("span[class^=EpisodeMobileListItem__Duration]")[0];
+                var episodeLengthTag = latestEpisodeTag.Select("span[class^=EpisodeListItem__Duration]")?[0];
                 if (episodeLengthTag is { HasText: true })
                 {
                     episodeLength = episodeLengthTag.Text;
+                } 
+                else
+                {
+                    episodeLengthTag = latestEpisodeTag.Select("span[class^=EpisodeMobileListItem__Duration]")?[0];
+                    if (episodeLengthTag is { HasText: true })
+                    {
+                        episodeLength = episodeLengthTag.Text;
+                    }
                 }
-                var episodeDescriptionTag = latestEpisodeTag.Select("div[class^=EpisodeMobileListItem__FeatCardSummary]")[0];
+                var episodeDescriptionTag = latestEpisodeTag.Select("div[class^=EpisodeListItem__FeatCardSummary]")?[0];
                 if (episodeDescriptionTag is { HasText: true })
                 {
                     episodeDescription = episodeDescriptionTag.Text;
+                } 
+                else
+                {
+                    episodeDescriptionTag = latestEpisodeTag.Select("div[class^=EpisodeMobileListItem__FeatCardSummary]")?[0];
+                    if (episodeDescriptionTag is { HasText: true })
+                    {
+                        episodeDescription = episodeDescriptionTag.Text;
+                    }
                 }
-                var imageSrcTag = latestEpisodeTag.Select("img")[0];
+                var imageSrcTag = latestEpisodeTag.Select("img")?[0];
                 if (imageSrcTag != null && imageSrcTag.HasAttr("src"))
                 {
                     imageSrc = imageSrcTag.Attr("src");
