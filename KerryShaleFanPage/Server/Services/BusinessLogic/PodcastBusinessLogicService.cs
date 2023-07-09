@@ -1,14 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using System;
+using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using KerryShaleFanPage.Server.Interfaces.BusinessLogic;
 using KerryShaleFanPage.Server.Interfaces.HtmlAndApiServices;
 using KerryShaleFanPage.Server.Interfaces.Repositories;
 using KerryShaleFanPage.Server.Interfaces.MailAndSmsServices;
-using KerryShaleFanPage.Server.Interfaces.Security;
 using KerryShaleFanPage.Shared.Extensions;
 using KerryShaleFanPage.Shared.Objects;
 using KerryShaleFanPage.Shared.Objects.Acast;
@@ -92,7 +90,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             else if (nowDate <= expectedNextEpisodeDate.AddDays(-7)) sleepPeriod = TimeSpan.FromHours(2);
             else if (nowDate <= expectedNextEpisodeDate.AddDays(-1)) sleepPeriod = TimeSpan.FromHours(1);
             else if (nowDate == expectedNextEpisodeDate) sleepPeriod = TimeSpan.FromMinutes(15);
-            else if (nowDate > expectedNextEpisodeDate) sleepPeriod = TimeSpan.FromHours(2);
+            else if (nowDate > expectedNextEpisodeDate) sleepPeriod = TimeSpan.FromHours(3);
             return sleepPeriod;
         }
 
@@ -120,6 +118,10 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             if (latestStoredPodcastEpisodeDto.Date >= latestCrawledPodcastEpisodeDto.Date 
                 || (latestStoredPodcastEpisodeDto.Title ?? string.Empty).Equals(latestCrawledPodcastEpisodeDto.Title ?? string.Empty, StringComparison.InvariantCultureIgnoreCase))
             {
+                if (DateTime.UtcNow.Date > latestStoredPodcastEpisodeDto.CalculatedExpectedNextDate.Date)
+                {
+                    _logger.LogWarning($"New podcast episode is overdue, it was expected on: {latestStoredPodcastEpisodeDto.CalculatedExpectedNextDate.Date.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)}");
+                }
                 return null;
             }
 
