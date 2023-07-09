@@ -2288,6 +2288,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Play Chicken Police ähnelt.
+        /// </summary>
+        public static string Play_Chicken_Police {
+            get {
+                return ResourceManager.GetString("Play Chicken Police", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Play Sherlock Holmes ähnelt.
         /// </summary>
         public static string Play_Sherlock_Holmes {

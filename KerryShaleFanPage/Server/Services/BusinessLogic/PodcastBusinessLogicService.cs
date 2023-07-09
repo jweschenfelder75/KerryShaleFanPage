@@ -92,6 +92,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             else if (nowDate <= expectedNextEpisodeDate.AddDays(-7)) sleepPeriod = TimeSpan.FromHours(2);
             else if (nowDate <= expectedNextEpisodeDate.AddDays(-1)) sleepPeriod = TimeSpan.FromHours(1);
             else if (nowDate == expectedNextEpisodeDate) sleepPeriod = TimeSpan.FromMinutes(15);
+            else if (nowDate > expectedNextEpisodeDate) sleepPeriod = TimeSpan.FromHours(2);
             return sleepPeriod;
         }
 
