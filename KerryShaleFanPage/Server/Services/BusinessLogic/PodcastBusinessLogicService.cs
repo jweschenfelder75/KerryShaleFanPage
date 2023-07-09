@@ -107,6 +107,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             if (latestCrawledPodcastEpisodeDto == null)
             {
                 // TODO: Information that there is obviously a problem fetching the latest episode!
+                _logger.LogWarning($"The latest podcast episode could not be fetched.");
                 return null;
             }
 
