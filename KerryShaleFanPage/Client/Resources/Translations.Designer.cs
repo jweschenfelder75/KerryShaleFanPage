@@ -850,6 +850,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die for banning the AfD party in Germany! ähnelt.
+        /// </summary>
+        public static string for_banning_the_AfD_party_in_Germany_ {
+            get {
+                return ResourceManager.GetString("for banning the AfD party in Germany!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die For information on postage prices to receive a letter from UK click ähnelt.
         /// </summary>
         public static string For_information_on_postage_prices_to_receive_a_letter_from_UK_click {
@@ -1591,15 +1600,6 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die IMPORTANT: ähnelt.
-        /// </summary>
-        public static string IMPORTANT_ {
-            get {
-                return ResourceManager.GetString("IMPORTANT:", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die In Edinburgh, he wrote and performed six solo shows at The Traverse, The Assembly Rooms and The Pleasance. ähnelt.
         /// </summary>
         public static string In_Edinburgh__he_wrote_and_performed_six_solo_shows_at_The_Traverse__The_Assembly_Rooms_and_The_Pleasance_ {
@@ -1947,6 +1947,15 @@ namespace KerryShaleFanPage.Client.Resources {
             get {
                 return ResourceManager.GetString("Later I came away from that idea when I witnessed some Facebook wars between reli" +
                         "gious groups.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Let us stand together, please sign ähnelt.
+        /// </summary>
+        public static string Let_us_stand_together__please_sign {
+            get {
+                return ResourceManager.GetString("Let us stand together, please sign", resourceCulture);
             }
         }
         
@@ -2679,6 +2688,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die The AfD, a Nazi party, is currently the STRONGEST party in Germany regarding to surveys. ähnelt.
+        /// </summary>
+        public static string The_AfD__a_Nazi_party__is_currently_the_STRONGEST_party_in_Germany_regarding_to_surveys_ {
+            get {
+                return ResourceManager.GetString("The AfD, a Nazi party, is currently the STRONGEST party in Germany regarding to s" +
+                        "urveys.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die The discrimination against the Jewish people found its sad height in the Holocaust, the genocide of the European Jewish people. ähnelt.
         /// </summary>
         public static string The_discrimination_against_the_Jewish_people_found_its_sad_height_in_the_Holocaust__the_genocide_of_the_European_Jewish_people_ {
@@ -3126,6 +3145,15 @@ namespace KerryShaleFanPage.Client.Resources {
                 return ResourceManager.GetString("This fan page will currently not advertise the Twitter profile @isitrollingpod be" +
                         "cause it has no intention to lure Kerry Shale fans in block tirades/rants and to" +
                         " see unlucky Kerry Shale fans afterwards.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die this petition (click me!) ähnelt.
+        /// </summary>
+        public static string this_petition__click_me__ {
+            get {
+                return ResourceManager.GetString("this petition (click me!)", resourceCulture);
             }
         }
         

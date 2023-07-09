@@ -1236,4 +1236,19 @@
   <data name="There is no information available whether and when the next podcast episode will be published." xml:space="preserve">
     <value>Es gibt keine Informationen darüber, ob und wann die nächste Podcast-Episode veröffentlicht wird.</value>
   </data>
+  <data name="for banning the AfD party in Germany!" xml:space="preserve">
+    <value>für das Verbot der AfD in Deutschland!</value>
+  </data>
+  <data name="IMPORTANT!" xml:space="preserve">
+    <value>ACHTUNG!</value>
+  </data>
+  <data name="Let us stand together, please sign" xml:space="preserve">
+    <value>Lasst uns zusammenhalten, bitte signiert</value>
+  </data>
+  <data name="The AfD, a Nazi party, is currently the STRONGEST party in Germany regarding to surveys." xml:space="preserve">
+    <value>Die AfD, eine Nazi-Partei, ist laut Umfragen aktuell die STÄRKSTE Partei in Deutschland.</value>
+  </data>
+  <data name="this petition (click me!)" xml:space="preserve">
+    <value>diese Petition (klick mich!)</value>
+  </data>
 </root>
