@@ -1233,4 +1233,7 @@
   <data name="Play Chicken Police" xml:space="preserve">
     <value>Play Chicken Police</value>
   </data>
+  <data name="There is no information available whether and when the next podcast episode will be published." xml:space="preserve">
+    <value>There is no information available whether and when the next podcast episode will be published.</value>
+  </data>
 </root>
