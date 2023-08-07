@@ -1813,11 +1813,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die June 4, 1952 [2] ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die June 4 [2] ähnelt.
         /// </summary>
-        public static string June_4__1952__2_ {
+        public static string June_4__2_ {
             get {
-                return ResourceManager.GetString("June 4, 1952 [2]", resourceCulture);
+                return ResourceManager.GetString("June 4 [2]", resourceCulture);
             }
         }
         
