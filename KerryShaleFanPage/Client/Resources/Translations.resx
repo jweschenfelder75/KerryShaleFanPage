@@ -1251,4 +1251,7 @@
   <data name="this petition (click me!)" xml:space="preserve">
     <value>this petition (click me!)</value>
   </data>
+  <data name="There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus." xml:space="preserve">
+    <value>There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus.</value>
+  </data>
 </root>

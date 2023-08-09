@@ -3062,6 +3062,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus. ähnelt.
+        /// </summary>
+        public static string There_is_no_information_available_when_the_next_podcast_episode_will_be_published__the_podcast_is_temporarily_on_hiatus_ {
+            get {
+                return ResourceManager.GetString("There is no information available when the next podcast episode will be published" +
+                        ", the podcast is temporarily on hiatus.", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die There is no information available whether and when the next podcast episode will be published. ähnelt.
         /// </summary>
         public static string There_is_no_information_available_whether_and_when_the_next_podcast_episode_will_be_published_ {
