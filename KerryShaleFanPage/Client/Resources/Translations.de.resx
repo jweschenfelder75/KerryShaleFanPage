@@ -1257,7 +1257,7 @@
   <data name="(the year of birth is hidden due to data protection reasons [7])" xml:space="preserve">
     <value>(das Geburtsjahr wurde aus Datenschutzgründen entfernt [7])</value>
   </data>
-  <data name="[7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07" xml:space="preserve">
-    <value>[7] Der echte Kerry Shale hatte IMDb am 07.08.2023 gebeten, sein Geburtsjahr zu entfernen</value>
+  <data name="[7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07, please do not try to re-add it" xml:space="preserve">
+    <value>[7] Der echte Kerry Shale hatte IMDb am 07.08.2023 gebeten, sein Geburtsjahr zu entfernen, bitte dieses nicht mehr anfügen</value>
   </data>
 </root>

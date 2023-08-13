@@ -162,12 +162,12 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die [7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07 ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die [7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07, please do not try to re-add it ähnelt.
         /// </summary>
-        public static string _7__The_real_Kerry_Shale_had_requested_IMDb_to_remove_the_year_of_birth_on_2023_08_07 {
+        public static string _7__The_real_Kerry_Shale_had_requested_IMDb_to_remove_the_year_of_birth_on_2023_08_07__please_do_not_try_to_re_add_it {
             get {
                 return ResourceManager.GetString("[7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/0" +
-                        "8/07", resourceCulture);
+                        "8/07, please do not try to re-add it", resourceCulture);
             }
         }
         
