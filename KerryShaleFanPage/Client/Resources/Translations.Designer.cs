@@ -162,6 +162,16 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die [7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07 ähnelt.
+        /// </summary>
+        public static string _7__The_real_Kerry_Shale_had_requested_IMDb_to_remove_the_year_of_birth_on_2023_08_07 {
+            get {
+                return ResourceManager.GetString("[7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/0" +
+                        "8/07", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die /img/edmund-burke-quote.jpg ähnelt.
         /// </summary>
         public static string _img_edmund_burke_quote_jpg {
@@ -185,6 +195,15 @@ namespace KerryShaleFanPage.Client.Resources {
         public static string _isitrollingpod_on_Twitter_ {
             get {
                 return ResourceManager.GetString("@isitrollingpod on Twitter:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die (the year of birth is hidden due to data protection reasons [7]) ähnelt.
+        /// </summary>
+        public static string _the_year_of_birth_is_hidden_due_to_data_protection_reasons__7__ {
+            get {
+                return ResourceManager.GetString("(the year of birth is hidden due to data protection reasons [7])", resourceCulture);
             }
         }
         

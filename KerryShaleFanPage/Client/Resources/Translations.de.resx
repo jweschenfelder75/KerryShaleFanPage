@@ -1254,4 +1254,10 @@
   <data name="There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus." xml:space="preserve">
     <value>Es gibt keine Informationen darüber, wann die nächste Podcast-Episode veröffentlicht wird, der Podcast befindet sich termporär in einer Pause.</value>
   </data>
+  <data name="(the year of birth is hidden due to data protection reasons [7])" xml:space="preserve">
+    <value>(das Geburtsjahr wurde aus Datenschutzgründen entfernt [7])</value>
+  </data>
+  <data name="[7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07" xml:space="preserve">
+    <value>[7] Der echte Kerry Shale hatte IMDb am 07.08.2023 gebeten, sein Geburtsjahr zu entfernen</value>
+  </data>
 </root>
