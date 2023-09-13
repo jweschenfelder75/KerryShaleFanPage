@@ -1263,4 +1263,7 @@
   <data name="[7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07, please do not try to re-add it" xml:space="preserve">
     <value>[7] The real Kerry Shale had requested IMDb to remove the year of birth on 2023/08/07, please do not try to re-add it</value>
   </data>
+  <data name="There is currently one scoped web service active:" xml:space="preserve">
+    <value>There is currently one scoped web service active:</value>
+  </data>
 </root>

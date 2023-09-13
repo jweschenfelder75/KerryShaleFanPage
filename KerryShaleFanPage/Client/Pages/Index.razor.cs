@@ -60,11 +60,11 @@ namespace KerryShaleFanPage.Client.Pages
 
         private IList<NewsItemDto>? _newsItems;
 
-        private PodcastEpisodeDto? _latestPodcastEpisode;
+        //private PodcastEpisodeDto? _latestPodcastEpisode;
 
-        private bool _showLatestPodcastEpisode => ShowLatestPodcastEpisode();
+        //private bool _showLatestPodcastEpisode => ShowLatestPodcastEpisode();
 
-        private string? _latestPodcastEpisodeImageBase64;
+        //private string? _latestPodcastEpisodeImageBase64;
 
         private readonly string _currentCulture = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
 
@@ -85,12 +85,12 @@ namespace KerryShaleFanPage.Client.Pages
             await SetTileContentBasedOnCurrentDay();
             var newsData = await Http.GetFromJsonAsync<NewsItemDto[]>("webapi/News");
             _newsItems = newsData?.ToList();
-            var latestPodcastData = await Http.GetFromJsonAsync<PodcastEpisodeDto>("webapi/Podcast");
-            _latestPodcastEpisode = latestPodcastData;
-            if (_latestPodcastEpisode != null && !string.IsNullOrWhiteSpace(_latestPodcastEpisode.ImageDataBase64))
-            {
-                _latestPodcastEpisodeImageBase64 = _latestPodcastEpisode.ImageDataBase64;
-            }
+            //var latestPodcastData = await Http.GetFromJsonAsync<PodcastEpisodeDto>("webapi/Podcast");
+            //_latestPodcastEpisode = latestPodcastData;
+            //if (_latestPodcastEpisode != null && !string.IsNullOrWhiteSpace(_latestPodcastEpisode.ImageDataBase64))
+            //{
+            //    _latestPodcastEpisodeImageBase64 = _latestPodcastEpisode.ImageDataBase64;
+            //}
         }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -101,17 +101,17 @@ namespace KerryShaleFanPage.Client.Pages
             await base.OnAfterRenderAsync(firstRender);
         }
 
-        private bool ShowLatestPodcastEpisode()
-        {
-            var dateNow = DateTime.UtcNow.Date;
-            if (_latestPodcastEpisode == null || string.IsNullOrWhiteSpace(_latestPodcastEpisodeImageBase64)
-                || !_latestPodcastEpisode.Date.HasValue || (dateNow > _latestPodcastEpisode.Date?.Date.AddDays(14)))
-            {
-                return false;
-            }
+        //private bool ShowLatestPodcastEpisode()
+        //{
+        //    var dateNow = DateTime.UtcNow.Date;
+        //    if (_latestPodcastEpisode == null || string.IsNullOrWhiteSpace(_latestPodcastEpisodeImageBase64)
+        //        || !_latestPodcastEpisode.Date.HasValue || (dateNow > _latestPodcastEpisode.Date?.Date.AddDays(14)))
+        //    {
+        //        return false;
+        //    }
 
-            return true;
-        }
+        //    return true;
+        //}
 
         private Task FlipCardAsync(int cardNumber)
         {

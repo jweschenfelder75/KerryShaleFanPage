@@ -94,22 +94,22 @@ namespace KerryShaleFanPage.Server
             services.AddScoped<IGenericService<NewsItemDto>, NewsService>();
             services.AddScoped<IGenericService<GalleryItemDto>, GalleryService>();
             services.AddScoped<IGenericRepository<LogEntry>, LogRepository>();
-            services.AddScoped<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
+            //services.AddScoped<IGenericRepository<PodcastEpisode>, PodcastEpisodeRepository>();
             services.AddScoped<IGenericRepositoryService<LogEntryDto>, LogRepositoryService>();
-            services.AddScoped<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
+            //services.AddScoped<IGenericRepositoryService<PodcastEpisodeDto>, PodcastEpisodeRepositoryService>();
 
             // services.AddScoped<ITwitterCrawlApiService, TwitterCrawlApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
             // services.AddScoped<ITwitterTweetApiService, TwitterTweetApiService>();  // TODO: Obsolete: We will not use Twitter API anymore!
             // services.AddScoped<IGenericCrawlHtmlService<TwitterEpisode>, TwitterCrawlHtmlService>();  // TODO: Unfinished & untested.
-            services.AddScoped<IGenericCrawlHtmlService<AcastEpisode>, AcastCrawlHtmlService>();
-            services.AddScoped<IGenericCrawlHtmlService<ListenNotesEpisode>, ListenNotesCrawlHtmlService>();
-            services.AddScoped<IGenericCrawlHtmlService<SpotifyEpisode>, SpotifyCrawlHtmlService>();
+            //services.AddScoped<IGenericCrawlHtmlService<AcastEpisode>, AcastCrawlHtmlService>();
+            //services.AddScoped<IGenericCrawlHtmlService<ListenNotesEpisode>, ListenNotesCrawlHtmlService>();
+            //services.AddScoped<IGenericCrawlHtmlService<SpotifyEpisode>, SpotifyCrawlHtmlService>();
 
             services.AddScoped<IGeneralBusinessLogicService, GeneralBusinessLogicService>();
-            services.AddScoped<IPodcastBusinessLogicService, PodcastBusinessLogicService>();
+            //services.AddScoped<IPodcastBusinessLogicService, PodcastBusinessLogicService>();
 
             services.AddHostedService<ScopedGeneralBackgroundService>();
-            services.AddHostedService<ScopedPodcastBackgroundService>();
+            //services.AddHostedService<ScopedPodcastBackgroundService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -40,6 +40,7 @@ namespace KerryShaleFanPage.Server.Services.BusinessLogic
             while (!cancellationToken.IsCancellationRequested)
             {
                 _logger.LogInformation($"General Business Logic Service was called (execution every: {_sleepPeriod.TotalMinutes} min).");
+                _logger.LogInformation("Podcast Background Service is deactivated by an administrator.");
 
                 await _maintenanceNotificationService.NotifyAllConnectedClientsInCaseOfMaintenanceAsync(cancellationToken);
 

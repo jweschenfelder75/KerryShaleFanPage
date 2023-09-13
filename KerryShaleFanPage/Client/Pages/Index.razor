@@ -34,7 +34,7 @@
                     </li>
                 }
                 *@
-                <li>@Translate["There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus."]</li>
+                @*<li>@Translate["There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus."]</li>*@
             </ul>
             <!-- Mirrors the content above -->
             <ul class="marquee-content" aria-hidden="true">
@@ -58,7 +58,7 @@
                     </li>
                 }
                 *@
-                <li>@Translate["There is no information available whether and when the next podcast episode will be published."]</li>
+                @*<li>@Translate["There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus."]</li>*@
             </ul>
         </div>
     }
@@ -105,26 +105,26 @@
                 <div class="flip-card-front">
                     <div class="row gx-0 justify-content-center">
                         <div class="col-7 col-xs-6 col-sm-6 col-md-6 col-lg-5 col-xl-5 col-xx-5 rz-col-xx-5 text-center">
-                            @if (_showLatestPodcastEpisode)
+                            @*@if (_showLatestPodcastEpisode)
                             {
                                 <img src="@_latestPodcastEpisodeImageBase64" alt="Latest podcast episode" />
                             }
                             else
-                            {
+                            {*@
                                 <img src="@_currentTileMainContent.First.ImagePath" alt="@_currentTileMainContent.First.Name" />
-                            }
+                            @*}*@
                         </div>
                         <div class="col-5 col-xs-6 col-sm-6 col-md-6 col-lg-7 col-xl-7 col-xx-7 rz-col-xx-7 text-center vertical-align">
                             <div class="d-none d-lg-block">
-                                @if (_showLatestPodcastEpisode)
+                                @*@if (_showLatestPodcastEpisode)
                                 {
-                                    @Translate["Hear the latest podcast episode"]<br />
+                                    @Translate["Hear the latest podcast episode"]<br />*@
                                     @*@($"({Translate["Next episode available"]}")<br />@($"{@Translate["on"]} {@_latestPodcastEpisode?.CalculatedExpectedNextDate.ToShortDateString()}.)")<br />*@
-                                }
+                                @*}
                                 else
-                                {
+                                {*@
                                     @Translate[@_currentTileMainContent.First.Url ?? string.Empty]<br />
-                                }
+                                @*}*@
                             </div>
                             <div>@Translate["CLICK ME!"]</div>
                         </div>
@@ -137,7 +137,7 @@
                         </div>
                     </div>
                     <div class="row gx-0 justify-content-center">
-                        @if (_showLatestPodcastEpisode)
+                        @*@if (_showLatestPodcastEpisode)
                         {
                             <div class="col-6 text-center vertical-align">
                                 <a href="https://podcasts.apple.com/gb/podcast/is-it-rolling-bob-talking-dylan/id1437321669" target="blank"><img src="/img/listen-on-apple-podcasts-1.png" alt="Bob Dylan podcast at Apple" /></a>&nbsp;
@@ -147,14 +147,14 @@
                             </div>
                         }
                         else
-                        {
+                        {*@
                             <div class="col-6 text-center vertical-align">
                                 <a href="@_currentTileSubContent.First.Url" target="blank"><img src="@_currentTileSubContent.First.ImagePath" alt="@_currentTileSubContent.First.Name" /></a>&nbsp;
                             </div>
                             <div class="col-6 text-center vertical-align">
                                 <a href="@_currentTileSubContent.Second.Url" target="blank"><img src="@_currentTileSubContent.Second.ImagePath" alt="@_currentTileSubContent.Second.Name" /></a>
                             </div>
-                        }
+                        @*}*@
                     </div>
                 </div>
             </div>

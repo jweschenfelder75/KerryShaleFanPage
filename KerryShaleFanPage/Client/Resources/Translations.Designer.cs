@@ -3090,6 +3090,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die There is currently one scoped web service active: ähnelt.
+        /// </summary>
+        public static string There_is_currently_one_scoped_web_service_active_ {
+            get {
+                return ResourceManager.GetString("There is currently one scoped web service active:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die There is no information available when the next podcast episode will be published, the podcast is temporarily on hiatus. ähnelt.
         /// </summary>
         public static string There_is_no_information_available_when_the_next_podcast_episode_will_be_published__the_podcast_is_temporarily_on_hiatus_ {

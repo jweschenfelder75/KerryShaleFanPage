@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <Content Remove="wwwroot\img\gallery\1645439428939.jpg" />
+    <Content Remove="wwwroot\img\gallery\Shutterstock_4217439f.jpg" />
+    <Content Remove="wwwroot\img\gallery\Shutterstock_4217836e.jpg" />
     <Content Remove="wwwroot\img\img.jpg" />
   </ItemGroup>
 
