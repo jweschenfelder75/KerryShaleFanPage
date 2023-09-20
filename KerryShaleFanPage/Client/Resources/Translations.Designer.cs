@@ -562,6 +562,15 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Bluesky (NEW!) ähnelt.
+        /// </summary>
+        public static string Bluesky__NEW__ {
+            get {
+                return ResourceManager.GetString("Bluesky (NEW!)", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Brent Spiner Biography ähnelt.
         /// </summary>
         public static string Brent_Spiner_Biography {

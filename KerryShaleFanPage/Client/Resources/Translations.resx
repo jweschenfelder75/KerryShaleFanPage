@@ -1266,4 +1266,7 @@
   <data name="There is currently one scoped web service active:" xml:space="preserve">
     <value>There is currently one scoped web service active:</value>
   </data>
+  <data name="Bluesky (NEW!)" xml:space="preserve">
+    <value>Bluesky (NEW!)</value>
+  </data>
 </root>
