@@ -3614,11 +3614,11 @@ namespace KerryShaleFanPage.Client.Resources {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die YouTube channel (NEW!) ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die YouTube channel (restored) ähnelt.
         /// </summary>
-        public static string YouTube_channel__NEW__ {
+        public static string YouTube_channel__restored_ {
             get {
-                return ResourceManager.GetString("YouTube channel (NEW!)", resourceCulture);
+                return ResourceManager.GetString("YouTube channel (restored)", resourceCulture);
             }
         }
     }
